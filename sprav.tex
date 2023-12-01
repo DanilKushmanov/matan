@@ -1148,9 +1148,9 @@
     \[\lim_{x\to\infty}f(x) = f(\lim_{x\to\infty}x) = f(x_0)\]
     \noindent Т.е. для непрерывности в точке функции множества меняются знаками предела и функции
     \begin{enumerate}
-        \item Через прирождение\\
-        $\varDelta x = x - x_0$ - прирождение аргумента\\
-        $\varDelta y = y - y_0$ - прирождение функции\\
+        \item Через приращение\\
+        $\varDelta x = x - x_0$ - приращение аргумента\\
+        $\varDelta y = y - y_0$ - приращение функции\\
         Функция $f(x)$, направленная в точке $x_0$, если $\lim_{\delta x = 0} \delta y = 0$
         \item Определение Гейне\\
         Функция $f(x)$ называется непрерывной в точке $x_0$, если для $\forall$ последовательности $\lim_{x\to\infty} x_n = x_0$\\
@@ -1528,6 +1528,142 @@
         \[|f(x_n') - f(x_n'')| = |\sin \pi n - \sin (\frac{\pi}{2} + 2\pi n)| = 1\]
         \[ \forall \delta : |x_n' - x_n''| < \delta \implies |f(x'_n) - f(x''_n)| = 1 \]
         \[ \forall \varepsilon : 0 < \varepsilon < 1 \implies \nexists \delta(\varepsilon) \]
-        Пусть $\varepsilon = \frac{1}{2}$. Тогда $\nexists \delta(\varepsilon)$.
+        Пусть $\varepsilon = \frac{1}{2}$. Тогда $\delta(\varepsilon) = \nexists$.
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
     \end{adjustwidth}
+    \underline{Замечание:} на практике, как правило, функции, которые растут больше, чем $y=x$, не является равн.-непр-ми на $D(f)$.
+
+    \section{Дифференциальные исчисления функции}
+    \subsection{Производная функции в точке}
+    \noindent $y = f(x)$\\
+    $\Delta x$ - приращение аргумента\\
+    $\Delta y = f(x_0 + \Delta x) - f(x_0)$ - приращение функции\par\noindent
+    \textbf{Производной} от функции $f(x)$ в точке $x_0$ называется предел отношения приращения функции в точке $x_0$ к приращению аргумента при стремлении последнего к 0.
+    \[ \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = \lim_{\Delta x \to 0} \frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x} = y' = \frac{dy}{dx} = \frac{d\sqcup}{dx}f \]
+    \[ y'''' = y^{IV} = y^{(4)}  \]
+    \underline{Замечание:} для существования производной от $f(x)$ в точке $x_0$ необходимо, чтобы $f(x)$ была определена в некоторой окрестности $x_0$ и в самой точке $x_0$.\\
+    \underline{Замечание:} функция имеет производную в точке $x_0$, если $\exists$ $\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$\\
+    \underline{Замечание:} если $\lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x} = \pm \infty$, то говорят, что функция имеет бесконечную производную в точке.\par\noindent
+    Если $\Delta x \to 0$ принимает только положительные значения то соответствующий предел называется правой производной от $f(x)$ в точке $x_0$.\\
+    Если $\Delta x \to 0$ принимает только отрицательные значения то соответствующий предел называется левой производной от $f(x)$ в точке $x_0$.\par\noindent
+    Функция $f(x)$ имеет производную на $[a; b]$, если она имеет производную во всех точках $(a; b)$, в точке $x=a$ имеет правую производную, в точку $x=b$ - левую.\par\noindent
+    \underline{Утверждение:} если $f(x)$ имеет в точке $x_0$ правую и левую производные, то $f(x)$ имеет в точке $x_0$ производную.\\
+    \underline{Утверждение:} если правая и левая производные в точке $x_0$ $\exists$ и не равны между собой, то производная в точке $x_0$ $\exists$.\\
+    \underline{Пример:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        \begin{center}
+            \includegraphics{4.1.1.png}
+        \end{center}
+        \[ \begin{matrix}
+            y'\\
+            \\
+        \end{matrix}\Big|\begin{matrix}
+            \\
+            x = 0
+        \end{matrix} \]
+        Правая производная
+        \[ \begin{matrix}
+            y'_+\\
+            \\
+        \end{matrix}\Big|\begin{matrix}
+            \\
+            x = 0
+        \end{matrix} = \lim_{\Delta x \to 0}\frac{f(x_0) - f(0)}{x_0 - 0} = \begin{vmatrix}
+            \Delta x \to 0 \sim x_0 \to 0\\
+            \\
+            \\
+        \end{vmatrix} = \lim_{x_0 \to 0} \frac{x_0 - 0}{x_0} = 1 \]
+        Левая производная
+        \[ \begin{matrix}
+            y'_-\\
+            \\
+        \end{matrix}\Big|\begin{matrix}
+            \\
+            x = 0
+        \end{matrix} = \lim_{\Delta x \to 0}\frac{f(-x_0) - f(0)}{-x_0 - 0} = \begin{vmatrix}
+            \Delta x \to 0 \sim x_0 \to 0\\
+            \\
+            \\
+        \end{vmatrix} = \lim_{x_0 \to 0} \frac{-x_0 - 0}{-x_0} = -1 \]
+        Функция $y = |x|$ не имеет производной в точке 0.
+    \end{adjustwidth}
+    %\underline{Пример:} докажем, что $y = x^2$ имеет производную в точке $x=0$.
+    %\begin{adjustwidth}{1.5em}{1.5em}
+    %    \includegraphics{4.1.2.png}\\
+    %
+    %\end{adjustwidth}
+    
+    \subsubsection*{Теорема 1.1}
+    Функция, имеющая конечную производную в точке, непрерывна в этой точке.\par\noindent
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Пусть существует $\lim_{x\to x_0} \frac{\Delta y}{\Delta x} = f'$ конечное.
+        \[ \frac{\Delta y}{\Delta x} = f' + \varepsilon(\Delta x), \lim_{\Delta x \to 0}\varepsilon(\Delta x) = 0 \]
+        \[ \Delta y = f' \Delta x + \varepsilon(\Delta x)\Delta x \]
+        \[ \lim_{\Delta x \to 0} \Delta y = \lim_{\Delta x \to 0} (f' \Delta x + \varepsilon(\Delta x)\Delta x) = \lim_{\Delta x \to 0} f'\Delta x + \lim_{\Delta x \to 0} \varepsilon(\Delta x)\Delta x = 0 + 0 = 0 \]
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+
+    \noindent Мгновенная скорость\par\noindent
+    Пусть $S = S(t)$ - закон движения в точке.\\
+    Рассмотрим $[ t, t + \Delta t ]$: $\Delta S = S(t+\Delta t) - S(t)$ - путь, пройденный за промежуток времени $\Delta t$.\\
+    $v_{\text{ср}} = \frac{\Delta S}{\Delta t}$ - средняя скорость.\\
+    Мгновенная скорость $v = \lim_{\Delta t \to 0} \frac{\Delta S}{\Delta t} = S'(t)$\\
+    $a = \lim_{\Delta t \to 0} \frac{\Delta v}{\Delta t}$ - ускорение.
+
+    \subsection{Геометрический смысл прооизводной}
+    \begin{center}
+        \includegraphics{4.2.1.png}
+    \end{center}
+    \[ M_0(x_0; f(x_0)) \]
+    \[ M(x_0 + \Delta x; f(x_0 + \Delta x)) \]
+    Запишем уравнение прямой $M_0M$\\
+    \underline{Замечание:} уравнение прямой, проходящей через точки $(x_0; y_0)$ и $(x_1; y_1)$:
+    \[ \frac{y_1}{y_0} - \frac{x_1}{x_0} = \]
+    \begin{gather*}
+        \frac{x - x_0}{x_0 + \Delta x - x_0} = \frac{y - f(x_0)}{f(x_0 + \Delta x) - f(x_0)}\\
+        \frac{x - x_0}{\Delta x} = \frac{y - y_0}{\Delta y}\\
+        \Delta y(x - x_0) = \Delta x(y - y_0) \text{ } \big| \text{ } * \Delta x\\
+        y - y_0 = \frac{\Delta y}{\Delta x}(x - x_0)\\
+        y = \frac{\Delta y}{\Delta x}(x - x_0) + f(x_0) \text{ } \big| \text{ } : M_0M\\
+        \text{tg } \angle \beta = \frac{|MN|}{|M_0N|} = \frac{\Delta y}{\Delta x}
+    \end{gather*}
+    Пусть $\Delta x \to 0$. Тогда точка $M$ будет стремиться к точке $M_0$, а угол $\beta$ к углу $\alpha$.
+    \[ \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = f'(x_0) \text{ по определению} \]
+    С другой стороны,
+    \[ \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = \lim_{\Delta x \to 0} \text{tg } \beta = tg \lim_{\Delta x \to 0} \beta = tg \alpha \]
+    Рассмотрим уравнение секущей при $\Delta x \to 0$
+    \[ y = f'(x_0)(x - x_0) + f(x_0) \]
+    \begin{center}
+        - уравнение касательной к графику функции $f(x)$ в точке $x_0$.
+    \end{center}
+
+    Допустим $f'(x_0) = \infty$. Тогда рассмотрим уравнение секущей:
+    \begin{gather*}
+        y = \frac{\Delta y}{\Delta x} (x-x_0) + y_0 \text{ } \big| \text{ } : \frac{\Delta y}{\Delta x}\\
+        \frac{y}{\frac{\Delta y}{\Delta x}} = x - x_0 + \frac{y_0}{\frac{\Delta y}{\Delta x}}
+    \end{gather*}
+    Перейдём к пределу при $\Delta x \to 0$. Тогда уравнение касательной примет вид \underline{$x = x_0$}.\par\noindent
+    \underline{Замечание:} если $L_1 \perp L_2$
+    \[ \begin{matrix}
+        L_1: y = k_1x + b_1\\
+        L_2: y = k_2x + b_2
+    \end{matrix} \implies k_1k_2 = -1 \]
+    Прямая, проходящая через точку $x_0$ перпендикулярно касательной, проведённой в этой точке, называется \underline{нормалью} к графику функции $f(x)$.
+    \[ K_\text{н} = -\frac{1}{K_\text{кас}} = -\frac{1}{f'(x_0)} \]
+    \[ y = -\frac{1}{f'(x_0)}(x - x_0) + y_0 \]
+
+    \subsection{Производные элементарных функций}
+    \begin{enumerate}
+        \item $y = \mathbb{C} = const$\\
+        $y(x) = \mathbb{C}, y(x + \Delta x) = \mathbb{C}$
+        \[ y' = \lim_{\Delta x \to 0}\frac{y(x+ \Delta x) - y(x)}{\Delta x} = \lim_{\Delta x \to 0}\frac{\mathbb{C} - \mathbb{C}}{\Delta x} = 0 \]
+        \item $y = \sin x$
+        \[ y' = \lim_{\Delta x \to 0} \frac{\sin(x + \Delta x) - \sin x}{\Delta x} = \lim_{\Delta x \to 0}\frac{2\sin \frac{\Delta x}{2} * \cos (x + \frac{\Delta x}{2})}{\frac{\Delta x}{2} * 2} = \cos x \]
+        Аналогично доказывается, что $(\cos x)' = - \sin x$
+    \end{enumerate}
 \end{document}
