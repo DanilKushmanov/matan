@@ -1141,21 +1141,6 @@
     \subsubsection*{Теорема 3.4}
     Если $\lim_{x\to x_0}f(x) = a, \lim_{x \to x_0}g(x) = b$ и $\forall x \in R$ из окрестности точки $x_0$:
     \[ f(x) \le g(x) \implies a \le b \]
-
-    \subsubsection*{Теорема 3.5}
-    Если $\varphi (x) \le f(x) \le g(x)$ и $\lim_{x\to x_0}\varphi(x) = \lim_{x\to x_0} g(x) = a$, то $\lim_{x\to x_0}f(x) = a$.
-
-    \subsubsection*{Теорема 3.6}
-    Если существуют конечные пределы $\lim_{x\to x_0}f(x)$ и $\lim_{x\to x_0}g(x)$, то существуют конечные пределы
-    \[\lim_{x\to x_0}(\lambda f(x) + \mu g(x)) = \lambda\lim_{x\to x_0}f(x) + \mu \lim_{x\to x_0}g(x)\]
-    \[\lim_{x \to x_0}(f(x) * g(x)) = \lim_{x\to x_0} f(x) * \lim_{x\to x_0} g(x)\]
-    \[\lim_{x\to x_0}\frac{f(x)}{g(x)} = \frac{\lim_{x\to x_0}f(x)}{\lim_{x\to x_0}g(x)}, \lim_{x\to x_0}g(x) \ne 0\]
-    
-    \noindent\textbf{Критерий Коши существования функции в точке}:
-    \begin{adjustwidth}{1.5em}{1.5em}
-        Для того, чтобы существовал конечный предел при $x \to x_0$ $f(x) \Leftrightarrow$ чтобы $f(x)$ была определена в окрестности точки $x_0$ за исключением быть может самой точки $x_0$ и 
-        \[ \forall \varepsilon > 0 \text{ } \exists U_\delta(x_0): \forall x', x'' \in U_\delta(x_0) \implies x', x'' \ne x_0, |f(x') - f(x'')| < \varepsilon \]
-    \end{adjustwidth}
     
     \subsection{Непрерывность функции в точке. Разрывы I и II родов.}
     \noindent Функция $f(x)$ называется непрерывной в точке $x_0$, если 
@@ -1163,23 +1148,17 @@
     \[\lim_{x\to\infty}f(x) = f(\lim_{x\to\infty}x) = f(x_0)\]
     \noindent Т.е. для непрерывности в точке функции множества меняются знаками предела и функции
     \begin{enumerate}
-        \item Через приращение\\
-        $\varDelta x = x - x_0$ - приращение аргумента\\
-        $\varDelta y = y - y_0$ - приращение функции\\
+        \item Через прирождение\\
+        $\varDelta x = x - x_0$ - прирождение аргумента\\
+        $\varDelta y = y - y_0$ - прирождение функции\\
         Функция $f(x)$, направленная в точке $x_0$, если $\lim_{\delta x = 0} \delta y = 0$
         \item Определение Гейне\\
         Функция $f(x)$ называется непрерывной в точке $x_0$, если для $\forall$ последовательности $\lim_{x\to\infty} x_n = x_0$\\
         Порождающая её последовательность $f(x_n)$ $\lim_{n\to\infty} f(x_0) = f(x_0)$
         \item Определение Коши\\
-        Функция $f(x)$ называется непрерывной в точке $x_0$ $\forall \varepsilon > 0$ $\exists$ $\delta = \delta(\varepsilon) > 0 : |x - x_0| < \delta \implies |f(x) - f(x_0)| < \varepsilon$
+        Функция $f(x)$ называется непрерывной в точке $x_0$ $\forall \varepsilon > 0$ $\exists$ $(\delta - \delta \varepsilon)$
     \end{enumerate}
-    Функция $f(x)$ называется непрерывной в точке $x_0$ справа (слева), если 
-    \[ \lim_{x \to x_0+0} f(x) = f(x_0) \]
-    \[ \left(\lim_{x \to x_0-0} f(x) = f(x_0)\right) \]
-    \underline{Утверждение:} если функции $f(x)$ и $g(x)$ называются непрерывными в точке $x_0$, то их сумма, разность и произведение тоже непрерывны в точке $x_0$. При условии, что $g(x) \ne 0$, частность $\frac{f(x)}{g(x)}$ тоже непрерывна в точке $x_0$.\par\noindent
-    Если функция $f(x)$ не является непрерывной в точке $x_0$, то говорят, что функция в точке $x_0$ \textbf{не имеет разрыв}.\\
-    Функция $f(x)$ имеет в точке $x_0$ \textbf{разрыв I рода}, если существуют конечные пределы функции $f(x)$ в точке $x_0$ справа и слева, но не все три числа $\lim_{x\to x_0 - 0}f(x) = f(x_0 - 0)$; $\lim_{x \to x_0 + 0}f(x) = f(x_0 + 0)$; $f(x_0)$ равны между собой.\\
-    Функция $f(x)$ имеет в точке $x_0$ \textbf{разрыв II рода}, если хотя бы один из пределов (справа или слева) не существует или бесконечен.\par\noindent
+    Функция $f(x)$ имеет в точке $x_0$ разрыв II рода, если хотя бы один из пределов (справа или слева) не существует или бесконечен.\par\noindent
     \underline{Пример 1:} рассмотрим при $x \ne 2$
     \begin{gather*}
         f(x) = \frac{x^2 - 4}{x-2}\\
@@ -1518,7 +1497,7 @@
         \[ |f(x') - f(x'')| = |x'^2 - (x' + h)^2| = |x'^2 - x'^2 - 2x'h - h^2| = |2x'h + h^2| \]
         Так как $x' \in R$, то можно так его выбрать, что $|2x'h + h^2| = \infty \implies$ функция $f(x) = x^2$ не является непрерывной на области своего определения.
     \end{enumerate}
-    \subsubsection*{Теорема 9.1 (Теорема Кантера)}
+    \subsubsection*{Теорема 9.1 (Теорема Кантора)}
     Если функция определена и непрерывна на отрезке $[a; b]$, то она равномерно-непрерывна на нём.\par\noindent
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
@@ -1535,12 +1514,8 @@
         $\lim_{k\to\infty}x_{n_k}' = \lim_{k\to\infty}x_{n_k}'' = x_0$\\
         Так как $f(x)$ непрерывнв на $[a; b]$, то она непрерывна в точке $x_0 \in [a;b]$\\
         Значит $\lim_{k\to\infty}f(x'_{n_k}) = \lim_{k\to\infty}f(x''_{n_k}) = f(x_0)$\\
-        Рассмотрим $|f(x') - f(x'')| \ge \varepsilon$ (*)
-        \begin{adjustwidth}{1.5em}{1.5em}
-            Перейдем в (*) к пределу при $k \to \infty$
-            \[ \varepsilon \le | \lim_{k\to\infty}f(x'_{n_k}) - \lim_{k\to\infty}f(x''_{n_k})| = |f(x_0) - f(x_0)| = 0 \]
-            Получили противоречие, т.к. $\varepsilon > 0 \implies f(x)$ - непрерывна.
-        \end{adjustwidth}
+        Рассмотрим $|f(x)$
+        % ААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААндрей
     \end{adjustwidth}
     \underline{Пример:} рассмотрим $g = \sin \frac{1}{x}, x \in (0; 1)$
     \begin{adjustwidth}{1.5em}{1.5em}
@@ -1553,151 +1528,84 @@
         \[|f(x_n') - f(x_n'')| = |\sin \pi n - \sin (\frac{\pi}{2} + 2\pi n)| = 1\]
         \[ \forall \delta : |x_n' - x_n''| < \delta \implies |f(x'_n) - f(x''_n)| = 1 \]
         \[ \forall \varepsilon : 0 < \varepsilon < 1 \implies \nexists \delta(\varepsilon) \]
-        Пусть $\varepsilon = \frac{1}{2}$. Тогда $\delta(\varepsilon) = \nexists$.
-        \begin{center}
-            \textbf{Ч.т.д.}
-        \end{center}
-    \end{adjustwidth}
-    \underline{Замечание:} на практике, как правило, функции, которые растут больше, чем $y=x$, не является равн.-непр-ми на $D(f)$.
-
-    \section{Дифференциальные исчисления функции}
-    \subsection{Производная функции в точке}
-    \noindent $y = f(x)$\\
-    $\Delta x$ - приращение аргумента\\
-    $\Delta y = f(x_0 + \Delta x) - f(x_0)$ - приращение функции\par\noindent
-    \textbf{Производной} от функции $f(x)$ в точке $x_0$ называется предел отношения приращения функции в точке $x_0$ к приращению аргумента при стремлении последнего к 0.
-    \[ \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = \lim_{\Delta x \to 0} \frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x} = y' = \frac{dy}{dx} = \frac{d\sqcup}{dx}f \]
-    \[ y'''' = y^{IV} = y^{(4)}  \]
-    \underline{Замечание:} для существования производной от $f(x)$ в точке $x_0$ необходимо, чтобы $f(x)$ была определена в некоторой окрестности $x_0$ и в самой точке $x_0$.\\
-    \underline{Замечание:} функция имеет производную в точке $x_0$, если $\exists$ $\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$\\
-    \underline{Замечание:} если $\lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x} = \pm \infty$, то говорят, что функция имеет бесконечную производную в точке.\par\noindent
-    Если $\Delta x \to 0$ принимает только положительные значения то соответствующий предел называется правой производной от $f(x)$ в точке $x_0$.\\
-    Если $\Delta x \to 0$ принимает только отрицательные значения то соответствующий предел называется левой производной от $f(x)$ в точке $x_0$.\par\noindent
-    Функция $f(x)$ имеет производную на $[a; b]$, если она имеет производную во всех точках $(a; b)$, в точке $x=a$ имеет правую производную, в точку $x=b$ - левую.\par\noindent
-    \underline{Утверждение:} если $f(x)$ имеет в точке $x_0$ правую и левую производные, то $f(x)$ имеет в точке $x_0$ производную.\\
-    \underline{Утверждение:} если правая и левая производные в точке $x_0$ $\exists$ и не равны между собой, то производная в точке $x_0$ $\exists$.\\
-    \underline{Пример:}
-    \begin{adjustwidth}{1.5em}{1.5em}
-        \begin{center}
-            \includegraphics{4.1.1.png}
-        \end{center}
-        \[ \begin{matrix}
-            y'\\
-            \\
-        \end{matrix}\Big|\begin{matrix}
-            \\
-            x = 0
-        \end{matrix} \]
-        Правая производная
-        \[ \begin{matrix}
-            y'_+\\
-            \\
-        \end{matrix}\Big|\begin{matrix}
-            \\
-            x = 0
-        \end{matrix} = \lim_{\Delta x \to 0}\frac{f(x_0) - f(0)}{x_0 - 0} = \begin{vmatrix}
-            \Delta x \to 0 \sim x_0 \to 0\\
-            \\
-            \\
-        \end{vmatrix} = \lim_{x_0 \to 0} \frac{x_0 - 0}{x_0} = 1 \]
-        Левая производная
-        \[ \begin{matrix}
-            y'_-\\
-            \\
-        \end{matrix}\Big|\begin{matrix}
-            \\
-            x = 0
-        \end{matrix} = \lim_{\Delta x \to 0}\frac{f(-x_0) - f(0)}{-x_0 - 0} = \begin{vmatrix}
-            \Delta x \to 0 \sim x_0 \to 0\\
-            \\
-            \\
-        \end{vmatrix} = \lim_{x_0 \to 0} \frac{-x_0 - 0}{-x_0} = -1 \]
-        Функция $y = |x|$ не имеет производной в точке 0.
-    \end{adjustwidth}
-    \underline{Пример:} докажем, что $y = x^2$ имеет производную в точке $x=0$.
-    \begin{adjustwidth}{1.5em}{1.5em}
-        \begin{center}
-            \includegraphics{4.1.2.png}
-        \end{center}
-        \begin{gather*}
-            \lim_{x \to 0+0}\frac{f(x) - f(x_0)}{\Delta x} = \lim_{x\to 0+0} \frac{x^2 - 0}{x - 0} = 0\\
-            \lim_{x \to 0-0}\frac{f(-x) - f(x_0)}{\Delta x} = \lim_{x\to 0-0} \frac{x^2 - 0}{-x-0} = 0
-        \end{gather*}
-        В точке $x = 0$ действительно $f'(x) = 0$.
-        \begin{center}
-            \textbf{Ч.т.д.}
-        \end{center}
-    \end{adjustwidth}
-    
-    \subsubsection*{Теорема 1.1}
-    Функция, имеющая конечную производную в точке, непрерывна в этой точке.\par\noindent
-    \underline{Доказательство:}
-    \begin{adjustwidth}{1.5em}{1.5em}
-        Пусть существует $\lim_{x\to x_0} \frac{\Delta y}{\Delta x} = f'$ конечное.
-        \[ \frac{\Delta y}{\Delta x} = f' + \varepsilon(\Delta x), \lim_{\Delta x \to 0}\varepsilon(\Delta x) = 0 \]
-        \[ \Delta y = f' \Delta x + \varepsilon(\Delta x)\Delta x \]
-        \[ \lim_{\Delta x \to 0} \Delta y = \lim_{\Delta x \to 0} (f' \Delta x + \varepsilon(\Delta x)\Delta x) = \lim_{\Delta x \to 0} f'\Delta x + \lim_{\Delta x \to 0} \varepsilon(\Delta x)\Delta x = 0 + 0 = 0 \]
-        \begin{center}
-            \textbf{Ч.т.д.}
-        \end{center}
+        Пусть $\varepsilon = \frac{1}{2}$. Тогда $\nexists \delta(\varepsilon)$.
     \end{adjustwidth}
 
-    \noindent Мгновенная скорость\par\noindent
-    Пусть $S = S(t)$ - закон движения в точке.\\
-    Рассмотрим $[ t, t + \Delta t ]$: $\Delta S = S(t+\Delta t) - S(t)$ - путь, пройденный за промежуток времени $\Delta t$.\\
-    $v_{\text{ср}} = \frac{\Delta S}{\Delta t}$ - средняя скорость.\\
-    Мгновенная скорость $v = \lim_{\Delta t \to 0} \frac{\Delta S}{\Delta t} = S'(t)$\\
-    $a = \lim_{\Delta t \to 0} \frac{\Delta v}{\Delta t}$ - ускорение.
+    %Отформачь все пж
+    \subsection*{Определние}
+    Функция $y=f(x)$ заданная в $u(x_0)$ называется дифферинцируемой в этой (.) если
+    ее приращение $\Delta y = f(x_0+\Delta x)=f(x_0)$ рпедставление в этой окружностьи в виде
+    $\Delta y = A \Delta x = o(\Delta x), \Delta x => 0, A = const$\\
+    \subsection*{Определние}
+    Линейная часть прирощения ф-ии $A\Delta x $ называется дифферинциалом ф-ии в (.)
+    $x_0$ и обозначается df|$x=x_0$ или df($x_0$)\\
+    Тогда $\Delta y = dy+o(\Delta x)$\\
+    \subsection*{Замечание}
+    $o(\Delta x)=o(A\Delta x)=o(dy)$\\
+    Тогда $\Delta y = dy + o(dy)| : dy$\\
+    $\frac{\Delta y}{dy}=1+\frac{o(dy)}{dy}$\\
+    $\lim_{\Delta x \to 0}{\frac{\Delta y}{dy}}=1$\\
+    Т е $\Delta y \sim dy $ при $\Delta x \to 0$\\
 
-    \subsection{Геометрический смысл прооизводной}
-    \begin{center}
-        \includegraphics{4.2.1.png}
-    \end{center}
-    \[ M_0(x_0; f(x_0)) \]
-    \[ M(x_0 + \Delta x; f(x_0 + \Delta x)) \]
-    Запишем уравнение прямой $M_0M$\\
-    \underline{Замечание:} уравнение прямой, проходящей через точки $(x_0; y_0)$ и $(x_1; y_1)$:
-    \[ \frac{x - x_0}{x_1 - x_0} = \frac{y - y_0}{y_1 - y_0} \]
-    \begin{gather*}
-        \frac{x - x_0}{x_0 + \Delta x - x_0} = \frac{y - f(x_0)}{f(x_0 + \Delta x) - f(x_0)}\\
-        \frac{x - x_0}{\Delta x} = \frac{y - y_0}{\Delta y}\\
-        \Delta y(x - x_0) = \Delta x(y - y_0) \text{ } \big| \text{ } * \Delta x\\
-        y - y_0 = \frac{\Delta y}{\Delta x}(x - x_0)\\
-        y = \frac{\Delta y}{\Delta x}(x - x_0) + f(x_0) \text{ } \big| \text{ } : M_0M\\
-        \text{tg } \angle \beta = \frac{|MN|}{|M_0N|} = \frac{\Delta y}{\Delta x}
-    \end{gather*}
-    Пусть $\Delta x \to 0$. Тогда точка $M$ будет стремиться к точке $M_0$, а угол $\beta$ к углу $\alpha$.
-    \[ \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = f'(x_0) \text{ по определению} \]
-    С другой стороны,
-    \[ \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = \lim_{\Delta x \to 0} \text{tg } \beta = tg \lim_{\Delta x \to 0} \beta = tg \alpha \]
-    Рассмотрим уравнение секущей при $\Delta x \to 0$
-    \[ y = f'(x_0)(x - x_0) + f(x_0) \]
-    \begin{center}
-        - уравнение касательной к графику функции $f(x)$ в точке $x_0$.
-    \end{center}
-
-    Допустим $f'(x_0) = \infty$. Тогда рассмотрим уравнение секущей:
-    \begin{gather*}
-        y = \frac{\Delta y}{\Delta x} (x-x_0) + y_0 \text{ } \big| \text{ } : \frac{\Delta y}{\Delta x}\\
-        \frac{y}{\frac{\Delta y}{\Delta x}} = x - x_0 + \frac{y_0}{\frac{\Delta y}{\Delta x}}
-    \end{gather*}
-    Перейдём к пределу при $\Delta x \to 0$. Тогда уравнение касательной примет вид \underline{$x = x_0$}.\par\noindent
-    \underline{Замечание:} если $L_1 \perp L_2$
-    \[ \begin{matrix}
-        L_1: y = k_1x + b_1\\
-        L_2: y = k_2x + b_2
-    \end{matrix} \implies k_1k_2 = -1 \]
-    Прямая, проходящая через точку $x_0$ перпендикулярно касательной, проведённой в этой точке, называется \underline{нормалью} к графику функции $f(x)$.
-    \[ K_\text{н} = -\frac{1}{K_\text{кас}} = -\frac{1}{f'(x_0)} \]
-    \[ y = -\frac{1}{f'(x_0)}(x - x_0) + y_0 \]
-
-    \subsection{Производные элементарных функций}
+    \subsection*{Теорема 9.1(необходимость и достаточность условия диф-ии в (.))}
+    Для того чтобы f(x) была диф-ема в (.) $x_0$ чтобы в этой (.) она имела конечную производную
+    \subsection*{Док-во}
+    => $\sqsupset$ f(x) диф-ема в (.) $x_0$\\
+    Покажем что $\exists$ $f'(x_0)$ - конечное\\
+    Тогда по \underline{Опр} $\Delta y = A \Delta x+o(\Delta x)$\\
+    $\Delta y = A \Delta x+ \epsilon(\Delta x)*\Delta x$\\
+    $\lim_{\Delta x \to 0}{\epsilon(\Delta x)}= 0$\\
+    $\frac{\Delta y}{\Delta x}=A+\epsilon(\Delta x)$\\
+    $lim_{\Delta x \to 0}{\frac{\Delta y}{\Delta x}}=A$\\
+    $f'(x)|x=x_0=A=const$\\
+    <= $\sqsupset f(x)$ имеет конечную производную в (.)$x_0$\\
+    Т е $\exists \lim_{\Delta x \to 0}{\frac{\Delta y}{\Delta x}}=f'(x_0)$\\
+    $\frac{\Delta y}{\Delta x}=f'(x_0)+\epsilon(\Delta x)|*\Delta x$\\
+    $\Delta y=f'(x_0)\Delta x+\epsilon(\Delta x)\Delta x= f'(x_0)\Delta x+o(\Delta x)$\\
+    ЧТД\\ 
+    \subsection*{Замечание}
+    Такие образом dy|$x=x_0=f'(x_0)\Delta x$
+    \section*{Геометрический смысл дифферинцирования}
+    \includegraphics[width=1\linewidth]{4.2.2.png}\\
+    Рассмотрим ф-ию y=f(x)\\
+    $M_0(x_0,f(x_0))$\\
+    $M(x_0, \Delta x,f(x_0+\Delta x))$\\
+    $\tg \alpha = f'(x_0)$\\
+    Рассмотрим $\Delta ABM_0 \; (AM_0)\tg \alpha = |AB|$\\
+    $f'(x_0)\Delta x = \Delta y$\\
+    $|MB|=o(\Delta x)$\\
+    \includegraphics[width=1\linewidth]{4.2.3.jpg}\\
+    Отсюда для независимой переменной x $\Delta x = dx$\\
+    Геометрический смысл дифферинцирования: это есть прирощение окружности касательной
+    производной к графику окружности в (.) $x_0$\\
+    $V=S(t)|t=t_0=\frac{dS}{dt}$\\
+    $dS=S'(t)|t=t_0$\\
+    $dt=S'(t)|t=t_0 \; \Delta t$\\
+    Дифферинциал dS равен пути который прошла бы рассматриваемая точка за время $\Delta t$
+    начиная с момента времени $t=t_0$, если бы на этом участке пути скорость была бы постоянно
+    равной $S'=t_0$
+    \subsection*{Свойства дифферинциалов}
     \begin{enumerate}
-        \item $y = \mathbb{C} = const$\\
-        $y(x) = \mathbb{C}, y(x + \Delta x) = \mathbb{C}$
-        \[ y' = \lim_{\Delta x \to 0}\frac{y(x+ \Delta x) - y(x)}{\Delta x} = \lim_{\Delta x \to 0}\frac{\mathbb{C} - \mathbb{C}}{\Delta x} = 0 \]
-        \item $y = \sin x$
-        \[ y' = \lim_{\Delta x \to 0} \frac{\sin(x + \Delta x) - \sin x}{\Delta x} = \lim_{\Delta x \to 0}\frac{2\sin \frac{\Delta x}{2} * \cos (x + \frac{\Delta x}{2})}{\frac{\Delta x}{2} * 2} = \cos x \]
-        Аналогично доказывается, что $(\cos x)' = - \sin x$
-    \end{enumerate}
+        \item $d(u+-V)=du+-dv$
+        \item $d(u*v)=udv+vdu$
+        \item $d(CU)=cdu$
+        \item $d(\frac{u}{v})=\frac{u'v-uv'}{v^2}=\frac{vdu-udv}{v^2}$
+    \end{enumerate} 
+    \subsection*{Док-во}
+    $d(\frac{u}{v})=(\frac{u}{v})'dx=\frac{u'v-uv'}{v^2}dx=\frac{vdu-udv}{v^2}$
+    \section*{Параграф 10(Примемение дифферинциалов в приближенных вычислениях. Дифференциал сложных функций)}
+    Если f(x) диф-ла в (.) $x_0$\\
+    $\Delta y=dy+o(dx)$\\
+    $\Delta y == dy$\\
+    $f(x_0+\Delta x)-f(x_0)==f'(x_0)dx|\Delta x$
+    $f(x_0+\Delta x)== f(x_0)+f'(x_0)\Delta x$
+    \subsection*{Пример}
+    $sin 32$\\
+    Рассмотрим $f(x)=sin x$\\
+    $32 = x_0+\Delta x=30 + 2$\\
+    $x_0=30;\Delta x = 2 = \frac{\pi}{90}$\\
+    $f'(x)=const$\\
+    $f(30)=\frac{1}{2}$
+    $f'(30)=\frac{\sqrt{3}}{2}$
+    $sin 32 = \frac{1}{2}+\frac{\sqrt{3}}{2}-\frac{\pi}{90}=0,53$
 \end{document}
