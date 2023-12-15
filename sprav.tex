@@ -1530,7 +1530,564 @@
         \[ \forall \varepsilon : 0 < \varepsilon < 1 \implies \nexists \delta(\varepsilon) \]
         Пусть $\varepsilon = \frac{1}{2}$. Тогда $\nexists \delta(\varepsilon)$.
     \end{adjustwidth}
+    \subsubsection*{Теорема 3.5}
+    Если $\varphi (x) \le f(x) \le g(x)$ и $\lim_{x\to x_0}\varphi(x) = \lim_{x\to x_0} g(x) = a$, то $\lim_{x\to x_0}f(x) = a$.
 
+    \subsubsection*{Теорема 3.6}
+    Если существуют конечные пределы $\lim_{x\to x_0}f(x)$ и $\lim_{x\to x_0}g(x)$, то существуют конечные пределы
+    \[\lim_{x\to x_0}(\lambda f(x) + \mu g(x)) = \lambda\lim_{x\to x_0}f(x) + \mu \lim_{x\to x_0}g(x)\]
+    \[\lim_{x \to x_0}(f(x) * g(x)) = \lim_{x\to x_0} f(x) * \lim_{x\to x_0} g(x)\]
+    \[\lim_{x\to x_0}\frac{f(x)}{g(x)} = \frac{\lim_{x\to x_0}f(x)}{\lim_{x\to x_0}g(x)}, \lim_{x\to x_0}g(x) \ne 0\]
+    
+    \noindent\textbf{Критерий Коши существования функции в точке}:
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Для того, чтобы существовал конечный предел при $x \to x_0$ $f(x) \Leftrightarrow$ чтобы $f(x)$ была определена в окрестности точки $x_0$ за исключением быть может самой точки $x_0$ и 
+        \[ \forall \varepsilon > 0 \text{ } \exists U_\delta(x_0): \forall x', x'' \in U_\delta(x_0) \implies x', x'' \ne x_0, |f(x') - f(x'')| < \varepsilon \]
+    \end{adjustwidth}
+    
+    \subsection{Непрерывность функции в точке. Разрывы I и II родов.}
+    \noindent Функция $f(x)$ называется непрерывной в точке $x_0$, если 
+    \[\lim_{x\to\infty}f(x) = f(x_0)\]
+    \[\lim_{x\to\infty}f(x) = f(\lim_{x\to\infty}x) = f(x_0)\]
+    \noindent Т.е. для непрерывности в точке функции множества меняются знаками предела и функции
+    \begin{enumerate}
+        \item Через приращение\\
+        $\varDelta x = x - x_0$ - приращение аргумента\\
+        $\varDelta y = y - y_0$ - приращение функции\\
+        Функция $f(x)$, направленная в точке $x_0$, если $\lim_{\delta x = 0} \delta y = 0$
+        \item Определение Гейне\\
+        Функция $f(x)$ называется непрерывной в точке $x_0$, если для $\forall$ последовательности $\lim_{x\to\infty} x_n = x_0$\\
+        Порождающая её последовательность $f(x_n)$ $\lim_{n\to\infty} f(x_0) = f(x_0)$
+        \item Определение Коши\\
+        Функция $f(x)$ называется непрерывной в точке $x_0$ $\forall \varepsilon > 0$ $\exists$ $\delta = \delta(\varepsilon) > 0 : |x - x_0| < \delta \implies |f(x) - f(x_0)| < \varepsilon$
+    \end{enumerate}
+    Функция $f(x)$ называется непрерывной в точке $x_0$ справа (слева), если 
+    \[ \lim_{x \to x_0+0} f(x) = f(x_0) \]
+    \[ \left(\lim_{x \to x_0-0} f(x) = f(x_0)\right) \]
+    \underline{Утверждение:} если функции $f(x)$ и $g(x)$ называются непрерывными в точке $x_0$, то их сумма, разность и произведение тоже непрерывны в точке $x_0$. При условии, что $g(x) \ne 0$, частность $\frac{f(x)}{g(x)}$ тоже непрерывна в точке $x_0$.\par\noindent
+    Если функция $f(x)$ не является непрерывной в точке $x_0$, то говорят, что функция в точке $x_0$ \textbf{не имеет разрыв}.\\
+    Функция $f(x)$ имеет в точке $x_0$ \textbf{разрыв I рода}, если существуют конечные пределы функции $f(x)$ в точке $x_0$ справа и слева, но не все три числа $\lim_{x\to x_0 - 0}f(x) = f(x_0 - 0)$; $\lim_{x \to x_0 + 0}f(x) = f(x_0 + 0)$; $f(x_0)$ равны между собой.\\
+    Функция $f(x)$ имеет в точке $x_0$ \textbf{разрыв II рода}, если хотя бы один из пределов (справа или слева) не существует или бесконечен.\par\noindent
+    \underline{Пример 1:} рассмотрим при $x \ne 2$
+    \begin{gather*}
+        f(x) = \frac{x^2 - 4}{x-2}\\
+        f(x) = \frac{x^2-4}{x-2} = x+2\\
+        f(2) = \nexists\\
+        \lim_{x\to 2-0} f(x) = \lim_{x\to 2-0}(x+2) = 4\\
+        \lim_{x\to 2+0} f(x) = 4
+    \end{gather*}
+    \begin{center}
+        \includegraphics{3.4.2}
+    \end{center}
+    $f(x)$ непрерывна $\forall x \in R$, кроме $x=2$, где $f(x)$ терпит разрыв I рода устранений.\par\noindent
+    \underline{Замечание:} рассмотрим 
+    $ g(x) = \begin{cases}
+        f(x), x \ne 2\\
+        4, x = 2
+    \end{cases}$;
+    \noindent $g(x)$ непрерывна $\forall x \in R$\par\noindent
+    \underline{Пример 2:} рассмотрим
+    \[
+        f(x) = [x] \text{ - целая часть }x, x > 0
+    \]
+    \begin{center}
+        \includegraphics{3.4.3}
+    \end{center}
+    \begin{gather*}
+        f(x) = 1\\
+        \lim_{x\to 1-0} [x] = 0\\
+        \lim_{x \to 1+0} [x] = 1
+    \end{gather*}
+    $\forall x \in N$ $f(x)$ терпит разрыв I рода (скачок), в остальных $x > 0$ $f(x)$ - непрерывна.\par\noindent
+    \underline{Пример 3:} рассмотрим
+    \[ f(x) = \frac{1}{x} \]
+    \begin{center}
+        \includegraphics{3.4.4}
+    \end{center}
+    \begin{gather*}
+        f(0) = \nexists\\
+        \lim_{x \to 0-0} \frac{1}{x} = -\infty\\
+        \lim_{x \to 0+0} \frac{1}{x} = \infty
+    \end{gather*}
+    $f(x)$ непрерывна $\forall x \in R$, кроме $x = 0$, где она терпит разрыв II рода.\\
+
+    \subsection{Замечательные пределы}
+    \subsubsection*{Теорема 5.1 (I Замечательный предел)}
+    \[ \lim_{x\to 0}\frac{\sin x}{x} = \lim_{x\to 0} \frac{x}{\sin x} = 1 \]\noindent
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        \begin{center}
+            \includegraphics{3.5.1}
+        \end{center}
+        Рассмотрим в координатной плоскости круг радиуса $R$ с центром в начале координат\\
+        \begin{gather*} 
+            S_{\triangle OAB} < S_{\text{сект}OAB} < S_{\triangle OAC}\\
+            \frac{1}{2}R^2\sin x < \frac{1}{2}R^2 x < \frac{1}{2} R^2 \text{tg } x\\
+            \sin x < x < \text{tg } x \text{ } \big| : \sin x \text{ } (\text{пусть } \sin x > 0)\\
+            1 < \frac{x}{\sin x} < \frac{1}{\cos x}\\
+            \lim_{x\to 0} 1 = 1, \lim_{x\to 0} \frac{1}{\cos x} = 1 \implies \lim_{x\to 0} \frac{1}{\sin x} = 1
+        \end{gather*}
+        \begin{center}
+            \underline{Замечание:} $f(x) = \cos x$ и $\frac{x}{\sin x}$, поэтому неравенство будет выполняться для $\frac{-\pi}{2} < x < 0$
+        \end{center}
+    \end{adjustwidth}
+
+    \subsubsection*{Теорема 5.2 (II Замечательный предел)}
+    \[ \lim_{x\to\infty}(1 + \frac{1}{x})^x = e \]
+    \[ \lim_{x\to 0}(1 + x)^{\frac{1}{x}} = e \]\noindent
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Надо показать, что \[\lim_{x\to 0-0} (1 + x)^{\frac{1}{x}} = \lim_{x\to 0+0}(1+x)^{\frac{1}{x}} = e\]
+        Замена: \[x = \frac{1}{y} \implies \lim_{y\to -\infty}(1 + \frac{1}{y})^y = \lim_{y\to\infty}(1 + \frac{1}{y})^y = e\]
+        \underline{Замечание:} будем считать известным фактом, что $\forall n \in N$ верно $\lim_{n\to\infty}(1+\frac{1}{n})^n = e$.\par\noindent
+        Пусть $x_n \to \infty$ (доказываем по определению Гейне)\\
+        Покажем, что $\lim_{x_n\to\infty}(1 + \frac{1}{x_n})^{x_n} = e$. $\posl{x}{n}$ - произвольная посл-ть: $\lim_{n\to\infty}x_n = \infty$\\
+        Рассмотрим посл-ть $k_n = [x_n]$ - целая часть $x_n$.\\
+        \begin{gather*}
+            k_n \le x_n < k_n + 1\\
+            \frac{1}{k_n + 1} < \frac{1}{x_n} \le \frac{1}{k_n}\\
+            1 + \frac{1}{k_n + 1} < 1 + \frac{1}{x_n} \le 1 + \frac{1}{k_n}\\
+            (1 + \frac{1}{k_n + 1})^{k_n} < (1 + \frac{1}{x_n})^{k_n} \le (1 + \frac{1}{k_n})^{k_n}\\
+            \text{т.к. } k_n \le x_n < k_n + 1\\
+            (1 + \frac{1}{k_n + 1})^{k_n} < (1 + \frac{1}{x_n})^{k_n} \le (1 + \frac{1}{k_n})^{k_n+1}\\
+        \end{gather*}
+        \begin{enumerate}
+            \item \[\lim_{n\to\infty}(1+\frac{1}{k_n+1})^{k_n+1-1} = \lim_{n\to\infty}(1+\frac{1}{k_n+1})^{k_n+1}(1+\frac{1}{k_n+1})^{-1} = e \times 1 = e\]
+            \item \[\lim_{n\to\infty}(1+\frac{1}{k_n})^{k_n+1} = \lim_{n\to\infty}(1+\frac{1}{k_n})^{k_n}(1+\frac{1}{k_n})^{1} = e \times 1 = e\]
+        \end{enumerate}
+        Тогда $\lim_{x_n \to \infty}(1 + \frac{1}{x_n})^{x_n} = e$ (по теореме о двух милиционерах)
+        Рассмотрим $x_n \to -\infty$. Замена: $x_n' = -x_n$.\\
+        Рассмотрим $\lim_{x_n \to -\infty}(1+\frac{1}{x_n})^{x_n} = \lim_{x_n'\to\infty}(1 + \frac{1}{-x_n'})^{-x_n'} = e$\\
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+
+    \subsection{Эквивалентные бесконечно малые функции в точке}
+    \noindent Функция $f(x)$ называется беск. малой при $x \to x_0$, если $\lim_{x \to x_0}f(x) = 0$\\
+    \underline{Замечание:} Функция, которая является беск. м. в одной точке, может не быть беск. б. в другой точке.\par\noindent
+    \subsubsection*{Теорема 6.1}
+    Сумма и произведения конечного числа беск. м. функция в точке есть функция беск. м. в точке.
+    \subsubsection*{Теорема 6.2}
+    Произведение беск. м. функции в точке на ограниченную есть беск. м. функция в точке.\par\noindent
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Пусть $f(x)$ - беск. м. функция в точке $x_0 \implies \lim_{x\to x_0}f(x)=0$\\
+        Пусть $g(x)$ - ограничена в окрестности точки $x_0$ ($u(x_0)$) $\implies \exists$ $M : |g(x)| \le M$\\
+        $0 \le |f(x)g(x)| \le M|f(x)|$\\
+        По теореме о двух милиционерах так как $\lim_{x\to x_0}0 = 0$ и $\lim_{x\to x_0}M|f(x)| = M \times 0 = 0$, то $\lim_{x\to x_0}|f(x)g(x)| = 0 \implies \lim_{x\to x_0}f(x)g(x) = 0$
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+    \underline{Пример:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        \[\lim_{x\to0} x\sin \frac{1}{x} = 0\]
+        $x$ - беск. м.\\
+        $\sin \frac{1}{x}$ - огр.
+    \end{adjustwidth}
+    \subsubsection*{Эквивалентность беск. м. функций}
+    \noindent Пусть $f(x)$ и $g(x)$ являются беск. м. функциями в точке $x_0$. Тогда они называются эквивалентными беск. м. функциями в точке $x_0$, если
+    \[ \lim_{x\to x_0}\frac{f(x)}{g(x)} = 1 \]
+    Обозначение: $f(x) \sim g(x), x \to x_0$\\
+    Например, $\sin x \sim x, x \to 0$
+    \begin{center}
+        \includegraphics{3.6.1}
+    \end{center}
+    \underline{Замечание:} если $f_1(x) \sim f_2(x), x \to x_0$, а $g_1(x) \sim g_2(x), x \to x_0$, то
+    \[ \lim_{x\to x_0}\frac{f_1(x)}{g_1(x)} = \lim_{x\to x_0}\frac{f_2(x)}{g_2(x)} = \lim_{x\to x_0}\frac{f_2(x)}{g_1(x)} = \lim_{x\to x_0}\frac{f_1(x)}{g_2(x)} \]
+    \begin{adjustwidth}{1.5em}{1.5em}
+        При нахождении предела дроби можно заменять на эквивалентные беск. м. или числитель, или знаменатель, или и то, и другое (но не часть числителя или знаменателя).
+        \begin{center}
+            Так \textbf{НЕЛЬЗЯ}:
+        \end{center}
+        \[ \text{tg } x - \sin x \sim^? 0 \]
+    \end{adjustwidth}
+    Основные эквивалентности при $x \to 0$
+    \begin{enumerate}
+        \item $\sin x \sim x$
+        \item $\tg x \sim x$
+        \item $\ln(1+x) \sim x$
+        \item $e^x - 1 \sim x$
+        \item $a^x - 1 \sim x \ln a$
+        \item $(1+x)^m - 1 \sim mx$
+        \item $\arcsin x \sim x$
+        \item $\arctan x \sim x$
+        \item $1 - \cos x \sim \frac{x^2}{2}$
+    \end{enumerate}
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        \begin{enumerate}
+            \item доказано (I Замечательный предел)
+            \item \[\lim_{x\to 0}\frac{\text{tg } x}{x} = \lim_{x\to 0}\frac{\sin x}{x \cos x} = 1\]
+            \item \[\lim_{x\to 0}\frac{\ln(1+x)}{x} = \lim_{x\to 0}\frac{1}{x} \times \ln(1+x) = \lim_{x\to 0}\ln(1+x)^{\frac{1}{x}} = \ln \lim_{x\to 0}(1+x)^{\frac{1}{x}} = \ln e = 1\]
+            \item частный случай пункта 5 $(a = e)$
+            \item \[\lim_{x\to 0}\frac{a^x-1}{x \ln a} = \begin{vmatrix}
+                a^x - 1 = y\\
+                x \to 0 \implies y \to 0\\
+                \ln a^x = \ln(1+y)\\
+                x\ln a = \ln(1+y)
+            \end{vmatrix} = \lim_{y\to 0}\frac{y}{\ln(1+y)} = 1\]
+            \item \begin{gather*}
+                \lim_{x\to 0}\frac{(1+x)^m-1}{mx} = \lim_{x\to 0}\frac{(1+x)^m-1}{\ln(1+x)}\frac{\ln(1+x)}{mx} =\\= \lim_{x\to 0}\frac{(1+x)^m-1}{\ln (1+x)} \lim_{x\to 0}\frac{\ln(1+x)}{mx} = \lim_{x\to 0}\frac{(1+x)^m-1}{m\ln(1+x)} = \begin{vmatrix}
+                    (1+x)^m - 1 = y\\
+                    x \to 0 \implies y \to 0\\
+                    (1+x)^m = y + 1\\
+                    \ln(1+x)^m = \ln(1+y)\\
+                    m\ln(1+x) = \ln(1+y)
+                \end{vmatrix} =\\= \lim_{y\to 0}\frac{y}{\ln(1+y)} = 1
+            \end{gather*}
+            \item \[\lim_{x\to 0}\frac{\arcsin x}{x} = \begin{vmatrix}
+                \arcsin x = y\\
+                x \to 0 \implies y \to 0\\
+                x = \sin y
+            \end{vmatrix} = \lim_{y\to 0}\frac{y}{\sin y} = 1\]
+            \item \[\lim_{x\to 0}\frac{\arctan x}{x} = \begin{vmatrix}
+                \arctan x = y\\
+                x \to 0 \implies y \to 0\\
+                x = \text{tg } y
+            \end{vmatrix} = \lim_{y\to 0}\frac{y}{\text{tg } y} = \lim_{y\to 0}\frac{y\cos y}{\sin y} = 1\]
+            \item \[\lim_{x\to 0}\frac{1-cos x}{\frac{x^2}{2}} = \lim_{x\to 0}\frac{2\sin^2(\frac{x}{2})}{\frac{x^2}{2}} = 1\]
+        \end{enumerate}
+    \end{adjustwidth}
+
+    \subsection{Порядок переменной. Сравнение функций в окрестности заданной точки.}
+    \noindent Рассмотрим функции $f(x)$ и $g(x)$, заданные в $u(x_0)$ за исключением быть может самой точки $x_0$.\par\noindent
+    $x_0$ - конечная, $\pm \infty$.\\
+    Пусть $g(x) \ne 0$ $\forall x \in u(x_0)$.\par\noindent
+    Если $\lim_{x\to x_0}\frac{f(x)}{g(x)} = \left[ \frac{0}{0} \right] = 0$, то в этом случае $f(x) = o(g(x))$, ($o$ читается как "$o$ малое"), т.е. $f(x)$ является беск. м. более высокого порядка малости, чем $g(x)$ при $x \to x_0$.\par\noindent
+    Если $\lim_{x\to x_0}\frac{f(x)}{g(x)} = k \ne 0$, то $f(x)$ и $g(x)$ называются беск. малой одного порядка при $x \to x_0$.\par\noindent
+    Беск. малая $f(x)$ при $x \to x_0$ имеет $k$-ый порядок малости по отношению к $g(x)$ при $x \to x_0$, если $f(x)$ имеет тот же порядок малости, что и $g^k(x)$, т.е. $\lim_{x\to x_0}\frac{f(x)}{g^k(x)} = 0$
+    
+    \subsubsection*{Теорема 7.1}
+    Для того, чтобы функции $f(x)$ и $g(x)$ были эквивалентными при $x \to x_0 \Leftrightarrow f(x) = g(x) + o(g(x)), x \to x_0$\par\noindent
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        \textbf{Докажем необходимость ($\Rightarrow$)}\par\noindent
+        Пусть $f(x) \sim g(x), x \to x_0$. Тогда по определению $\lim_{x \to x_0}\frac{f(x)}{g(x)} = 1$.\\
+        Следовательно, \begin{gather*}
+            \lim_{x\to x_0}\varepsilon(x) = 0\\
+            \frac{f(x)}{g(x)} = 1 + \varepsilon(x) \Big| \times g(x)\\
+            f(x) = g(x) + \varepsilon(x) g(x) = g(x) + o(g(x))
+        \end{gather*}\noindent
+        \textbf{Докажем достаточность ($\Leftarrow$)}\par\noindent
+        Пусть $f(x) = g(x) + o(g(x)), x \to x_0$\\
+        Например, 
+        \begin{gather*}
+            f(x) = g(x) + \varepsilon(x) g(x) \Big| : g(x)\\
+            \frac{f(x)}{g(x)} = 1 + \varepsilon(x)\\
+            \lim_{x \to x_0} \frac{f(x)}{g(x)} = 1
+        \end{gather*}
+        Т.е. $f(x) \sim g(x), x \to x_0$.
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+
+    Функция $f(x)$ называется функцией, ограниченной относительно функции $g(x)$ в $u(x_0)$, если ограничена функция $\frac{f(x)}{g(x)}$, т.е.
+    \[ \left|\frac{f(x)}{g(x)}\right| \le c \text{ или } \left|f(x)\right| \le c\left|g(x)\right| \]
+    В этом случае $f(x) = O(g(x)), x \to x_0$\\
+    $f(x) = O(1), x \to x_0$ = "функция $f(x)$ ограничена.
+
+    \subsection{Глобальные свойства функций, непрерывных на отрезке}
+    \noindent Функция $f(x)$ называется непрерывной на отрезке $[a; b]$, если она непрерывна в каждой точке интервала $(a; b)$, в точке $x = a$ справа, в точке $x = b$ слева.
+    \subsubsection*{Теорема 8.1 (I-ая теорема Вейерштрасса)}
+    Если функция $f(x)$ непрерывна на $[a; b]$, то она ограничена на нём, т.е.
+    \[ \exists M > 0 : \left|f(x)\right| \le M \text{ } \forall x \in [a; b] \]\noindent
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Предположим противное. Пусть $f(x)$ непрерывна на $[a; b]$, но при этом не ограничена на нём.\\
+        Составим последовательность $x_n$ следующим образом:
+            \begin{gather*}
+                \exists x_1 \in [a; b] : f(x_1) > 1\\
+                \exists x_2 \in [a; b] : f(x_2) > 2\\
+                \vdots\\
+                \exists x_n \in [a; b] : f(x_n) > 2\\
+                \vdots
+            \end{gather*}
+        В результате получили посл-ть $\posl{x}{n}$. Она ограничена ($\forall n$ $x_n \in [a; b]$). По теореме Больцано-Вейерштрасса (т. 8.1 гл. 2) из неё можно извлечь сходяющуся подпосл-ть $x_{n_k}$\\
+        Пусть $\lim_{k\to\infty}x_{n_k} = \alpha$\\
+        Так как $f(x)$ непрерывна на $[a; b]$, то по определению $\lim_{x\to x_0} f(x) = f(x_0)$\\
+        В нашем случае $\lim_{k\to\infty} f(x_{n_k}) = f(\lim_{k\to\infty}x_{n_{k}}) = f(\alpha)$ - конечное число (в силу непрерывности)\\
+        Однако $f(\alpha)$ является беск. б. по построению $x_n$ ($f(x_n)$ беск. б.), $f(\alpha) = \infty$.\\
+        Получили противоречие, т.е. $f(x)$ ограничена.
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center} 
+    \end{adjustwidth}
+    \subsubsection*{Теорема 8.2 (II-ая теорема Вейерштрасса)}
+    Среди значений, которые на отрезке $[a; b]$ принимает непрерывная функция, существует наибольшее и наименьшее значения (в том числе может быть и в крайних точках).\par\noindent
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        По I-ой теореме Вейерштрасса $f(x)$ ограничена сверху, т.е. $\exists k : f(x) \le k \text{ }  \forall x \in [a; b]$\\
+        Тогда существует точная верхняя грань $f(x)$ на $[a; b]$. $M = \sup f(x), x \in [a; b]$\\
+        Составим вспомогательную посл-ть $\posl{x}{n}$ на основе свойства $\sup f(x)$.
+        \begin{gather*}
+            \exists x_1 : M - 1 < f(x_1) \le M\\
+            \exists x_2 : M - \frac{1}{2} < f(x_2) \le M\\
+            \vdots\\
+            \exists x_n : M - \frac{1}{n} < f(x_n) \le M\\
+            \vdots
+        \end{gather*}
+        $\posl{x}{n}$ ограничена ($\forall n x_n \in [a; b]$)\\
+        Тогда по теореме Больцано-Вейерштрасса из неё можно извлечь сходящуюся подпосл-ть $x_{n_k}, \lim_{k\to\infty}x_{n_k} = \alpha$
+        \begin{enumerate}
+            \item С одной стороны, $f(x)$ непрерывна на $[a; b] \implies \lim_{k\to\infty}f(x_{n_k}) = f(\lim_{k\to\infty}x_{n_k}) = f(\alpha)$
+            \item С другой стороны $M - \frac{1}{n} < f(x_n) \le M$, следовательно
+            \[
+                M - \frac{1}{n_k} < f(x_{n_k}) \le M
+            \]
+            Т.к. $\lim_{k\to\infty} (M - \frac{1}{n_k}) = M$ и $\lim_{k\to\infty} M = M$, то $\lim_{k\to\infty}f(x_{n_k}) = M$ (по т. о двух милиционерах), т.е. $f(\alpha) = M$.\\
+            $\beta \in [a; b] : f(\beta) = m$
+        \end{enumerate}
+    \end{adjustwidth}
+    \subsubsection*{Теорема 8.3 (Теорема Больцано-Коши)}
+    Если функция $f(x)$ непрерывна на $[a; b]$ и $f(a) = m, f(b) = n$, то на интервале $(a; b)$ $f(x)$ по крайней мере один раз принимает значение $p$, заключённое между $m$ и $n$.
+    \begin{center}
+        \includegraphics{3.8.1}
+    \end{center}
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Для доказательства надо найти точку $\xi$, $f(\xi) = p$.\\
+        Разобъём отрезок $[a; b]$ на 2 равных отрезка точкой $\frac{a + b}{2}$\\
+        Варианты:
+        \begin{enumerate}
+            \item $f(\frac{a+b}{2}) = p \implies \xi = \frac{a+b}{2}$. \textbf{Ч.т.д.}
+            \item $f(\frac{a+b}{2}) \ne p$. Тогда либо $f(\frac{a+b}{2}) < p$, либо $f(\frac{a+b}{2}) > p$.\\
+            В первом случае далее выберем отрезок $[\frac{a+b}{2}; b]$, во втором - $[a; \frac{a+b}{2}]$. Переобозначим выбранный отрезок $[a_1; b_1]$, $f(a_1) < p < f(b_1)$. $b_1 - a_1 = \frac{b-a}{2}$.\\
+            Разделим $[a_1; b_1]$ на 2 равных отрезка и выберем тот, на левом конце которого значение функции меньше $p$, а на правом - больше.\\
+            Тогда либо через конечное число шагов мы получим такую точку $\xi$, либо систему вложенных отрезков $[a_n; b_n], f(a_n) < p < f(b_n), b_n - a_n = \frac{b-a}{2^n} \to_{n \to \infty} 0$\\
+            Тогда по теореме о вложенных отрезках $\exists$ точка $\xi$, принадлежащая всем отрезкам одновременно и $\lim_{n\to\infty}a_n = \lim_{n\to\infty} b_n = \xi$\\
+            В точке $\xi$ $f(x)$ непрерывна.
+            \[ \lim_{n\to\infty}a_n = \lim_{n\to\infty}b_n = f(\xi) \]
+            Тогда по теореме о двух милиционерах:
+            \[ f(a_n) < p < f(b_n) \implies \lim_{n\to\infty}p = f(\xi) \]
+        \end{enumerate}
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+    \textbf{Следствие теоремы Больцано-Коши:} если функция непрерывна на отрезке и на его концах принимает значения разных знаков, то на этом отрезке существует хотя бы одна точка такая, что значение $f(x)$ в этой точке равно 0.\par\noindent
+    \underline{Замечание:} будем считать элементарные функции непрерывными на своей области определения: $\lim_{x\to x_0}\text{tg }\dots = \text{tg } \lim_{x\to x_0}\dots$\\
+    \underline{Замечание:} замена неопределённостей может идти по такому принципу
+    \begin{gather*}
+        u^v \to e^{\ln u * v}\\
+        1^\infty \to \left[0 \times \infty\right] \to \begin{cases}
+            \left[\frac{0}{0}\right]\\
+            \left[\frac{\infty}{\infty}\right]
+        \end{cases}\\
+        \infty^0 \to \left[\infty \times 0\right]\\
+        0^0 \to \left[\infty \times 0\right]
+    \end{gather*}
+
+    \subsection{Равномерная непрерывная функция}\noindent
+    Вспомним определение непрерывности функции в точке по Коши:
+    \[ \forall \varepsilon > 0 \text{ } \exists \text{ } \delta = \delta(\varepsilon) : |x - x_0| < \delta \implies |f(x) - f(x_0)| < \varepsilon \]
+    Зафиксируем $\varepsilon$. Вообще говоря, в каждой точке $x$ существует своё $\delta$, т.е. $\delta = \delta(\varepsilon, x)$.\\
+    В связи с этим выделяют класс функций (непрерывных), для которых при фиксированном $\varepsilon > 0$ можно указать $\delta > 0$, пригодная сразу для всех $x$, принадлежащая некоторому $X$.\par\noindent
+    Функция, определённая на множестве $X$, называется \textbf{равномерно-непрерывной} на этом множестве, если
+    \[ \forall \varepsilon > 0 \text{ } \exists \text{ } \delta = \delta(\varepsilon) : \forall x', x'' \in X : |x' - x''| < \delta \implies |f(x') - f(x'')| < \varepsilon \]
+    \begin{center}
+        \includegraphics{3.9.1.png}
+    \end{center}
+    \underline{Примеры:}
+    \begin{enumerate}
+        \item $f(x) = x, x \in R$\\
+        Пусть $x', x'' \in R : |x' - x''| < \delta$
+        \[
+            |f(x') - f(x'')| = |x' - x''| < \delta = \varepsilon
+        \]
+        \begin{center}
+            \includegraphics{3.9.2.png}
+        \end{center}
+        \item $f(x) = x^2, x \in R$\\
+        Пусть $x', x'' \in R : |x' - x''| < \delta$\\
+        Пусть $x'' = x' + h \implies |x' - x' - h| = |h| < \delta$
+        \[ |f(x') - f(x'')| = |x'^2 - (x' + h)^2| = |x'^2 - x'^2 - 2x'h - h^2| = |2x'h + h^2| \]
+        Так как $x' \in R$, то можно так его выбрать, что $|2x'h + h^2| = \infty \implies$ функция $f(x) = x^2$ не является непрерывной на области своего определения.
+    \end{enumerate}
+    \subsubsection*{Теорема 9.1 (Теорема Кантера)}
+    Если функция определена и непрерывна на отрезке $[a; b]$, то она равномерно-непрерывна на нём.\par\noindent
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Предположим противное. Пусть \[\forall \varepsilon > 0 \text{ } \exists \text{ } \delta = \delta(\varepsilon) : \forall x', x'' \in [a;b] :  |x' - x''| < \delta \implies |f(x') - f(x'')| \ge \varepsilon \]
+        Зададим последовательность $\delta_n : \lim_{n\to\infty} \delta_n = 0$.\\
+        Построим две вспомогательные последовательности $x_n'$ и $x_n''$:
+        \[ \exists \text{ } x_1', x_1'' : |x_1' - x_1''| < \delta_1 \implies |f(x_1') - f(x_1'')| \ge \varepsilon \]
+        \[ \exists \text{ } x_2', x_2'' : |x_2' - x_2''| < \delta_2 \implies |f(x_2') - f(x_2'')| \ge \varepsilon \]
+        \[ \exists \text{ } x_n', x_n'' : |x_n' - x_n''| < \delta_n \implies |f(x_n') - f(x_n'')| \ge \varepsilon \]
+        Рассмотрим $\posl{x'}{n}$: она ограничена. Тогда по теореме. Больцано-Вейерштрасса из неё можно извлечь сх-ся подпосл-ть $\posl{x'}{n_k}$.\\
+        Пусть $\lim_{k\to\infty} x'_{n_k} = x_0$\\
+        Аналогично м. извлечь $\posl{x''}{n_k}$\\
+        Т.к. $|x_n' - x_n''| < \delta_n \implies |x_{n_k}' - x_{n_k}''| < \delta_{n_k}$\\
+        $\lim_{k\to\infty}x_{n_k}' = \lim_{k\to\infty}x_{n_k}'' = x_0$\\
+        Так как $f(x)$ непрерывнв на $[a; b]$, то она непрерывна в точке $x_0 \in [a;b]$\\
+        Значит $\lim_{k\to\infty}f(x'_{n_k}) = \lim_{k\to\infty}f(x''_{n_k}) = f(x_0)$\\
+        Рассмотрим $|f(x') - f(x'')| \ge \varepsilon$ (*)
+        \begin{adjustwidth}{1.5em}{1.5em}
+            Перейдем в (*) к пределу при $k \to \infty$
+            \[ \varepsilon \le | \lim_{k\to\infty}f(x'_{n_k}) - \lim_{k\to\infty}f(x''_{n_k})| = |f(x_0) - f(x_0)| = 0 \]
+            Получили противоречие, т.к. $\varepsilon > 0 \implies f(x)$ - непрерывна.
+        \end{adjustwidth}
+    \end{adjustwidth}
+    \underline{Пример:} рассмотрим $g = \sin \frac{1}{x}, x \in (0; 1)$
+    \begin{adjustwidth}{1.5em}{1.5em}
+        На $(0; 1)$ $y$ является непрерывна. Покажем, что на $(0; 1)$ $y$ не является равномерно-непрерывной функцией.\\
+        Рассмотрим $x'_n$:
+        \[x'_n = \frac{1}{\pi n}, \lim_{n\to\infty} x'_n = 0, x_n' \in (0; 1)\]
+        Рассмотрим $x''_n$: 
+        \[x''_n = \frac{1}{\frac{\pi}{2}+2\pi n}, \lim_{n\to\infty}x_n'' = 0, x''_n \in (0; 1)\]
+        Рассмотрим 
+        \[|f(x_n') - f(x_n'')| = |\sin \pi n - \sin (\frac{\pi}{2} + 2\pi n)| = 1\]
+        \[ \forall \delta : |x_n' - x_n''| < \delta \implies |f(x'_n) - f(x''_n)| = 1 \]
+        \[ \forall \varepsilon : 0 < \varepsilon < 1 \implies \nexists \delta(\varepsilon) \]
+        Пусть $\varepsilon = \frac{1}{2}$. Тогда $\delta(\varepsilon) = \nexists$.
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+    \underline{Замечание:} на практике, как правило, функции, которые растут больше, чем $y=x$, не является равн.-непр-ми на $D(f)$.
+
+    \section{Дифференциальные исчисления функции}
+    \subsection{Производная функции в точке}
+    \noindent $y = f(x)$\\
+    $\Delta x$ - приращение аргумента\\
+    $\Delta y = f(x_0 + \Delta x) - f(x_0)$ - приращение функции\par\noindent
+    \textbf{Производной} от функции $f(x)$ в точке $x_0$ называется предел отношения приращения функции в точке $x_0$ к приращению аргумента при стремлении последнего к 0.
+    \[ \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = \lim_{\Delta x \to 0} \frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x} = y' = \frac{dy}{dx} = \frac{d\sqcup}{dx}f \]
+    \[ y'''' = y^{IV} = y^{(4)}  \]
+    \underline{Замечание:} для существования производной от $f(x)$ в точке $x_0$ необходимо, чтобы $f(x)$ была определена в некоторой окрестности $x_0$ и в самой точке $x_0$.\\
+    \underline{Замечание:} функция имеет производную в точке $x_0$, если $\exists$ $\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$\\
+    \underline{Замечание:} если $\lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x} = \pm \infty$, то говорят, что функция имеет бесконечную производную в точке.\par\noindent
+    Если $\Delta x \to 0$ принимает только положительные значения то соответствующий предел называется правой производной от $f(x)$ в точке $x_0$.\\
+    Если $\Delta x \to 0$ принимает только отрицательные значения то соответствующий предел называется левой производной от $f(x)$ в точке $x_0$.\par\noindent
+    Функция $f(x)$ имеет производную на $[a; b]$, если она имеет производную во всех точках $(a; b)$, в точке $x=a$ имеет правую производную, в точку $x=b$ - левую.\par\noindent
+    \underline{Утверждение:} если $f(x)$ имеет в точке $x_0$ правую и левую производные, то $f(x)$ имеет в точке $x_0$ производную.\\
+    \underline{Утверждение:} если правая и левая производные в точке $x_0$ $\exists$ и не равны между собой, то производная в точке $x_0$ $\exists$.\\
+    \underline{Пример:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        \begin{center}
+            \includegraphics{4.1.1.png}
+        \end{center}
+        \[ \begin{matrix}
+            y'\\
+            \\
+        \end{matrix}\Big|\begin{matrix}
+            \\
+            x = 0
+        \end{matrix} \]
+        Правая производная
+        \[ \begin{matrix}
+            y'_+\\
+            \\
+        \end{matrix}\Big|\begin{matrix}
+            \\
+            x = 0
+        \end{matrix} = \lim_{\Delta x \to 0}\frac{f(x_0) - f(0)}{x_0 - 0} = \begin{vmatrix}
+            \Delta x \to 0 \sim x_0 \to 0\\
+            \\
+            \\
+        \end{vmatrix} = \lim_{x_0 \to 0} \frac{x_0 - 0}{x_0} = 1 \]
+        Левая производная
+        \[ \begin{matrix}
+            y'_-\\
+            \\
+        \end{matrix}\Big|\begin{matrix}
+            \\
+            x = 0
+        \end{matrix} = \lim_{\Delta x \to 0}\frac{f(-x_0) - f(0)}{-x_0 - 0} = \begin{vmatrix}
+            \Delta x \to 0 \sim x_0 \to 0\\
+            \\
+            \\
+        \end{vmatrix} = \lim_{x_0 \to 0} \frac{-x_0 - 0}{-x_0} = -1 \]
+        Функция $y = |x|$ не имеет производной в точке 0.
+    \end{adjustwidth}
+    \underline{Пример:} докажем, что $y = x^2$ имеет производную в точке $x=0$.
+    \begin{adjustwidth}{1.5em}{1.5em}
+        \begin{center}
+            \includegraphics{4.1.2.png}
+        \end{center}
+        \begin{gather*}
+            \lim_{x \to 0+0}\frac{f(x) - f(x_0)}{\Delta x} = \lim_{x\to 0+0} \frac{x^2 - 0}{x - 0} = 0\\
+            \lim_{x \to 0-0}\frac{f(-x) - f(x_0)}{\Delta x} = \lim_{x\to 0-0} \frac{x^2 - 0}{-x-0} = 0
+        \end{gather*}
+        В точке $x = 0$ действительно $f'(x) = 0$.
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+    
+    \subsubsection*{Теорема 1.1}
+    Функция, имеющая конечную производную в точке, непрерывна в этой точке.\par\noindent
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Пусть существует $\lim_{x\to x_0} \frac{\Delta y}{\Delta x} = f'$ конечное.
+        \[ \frac{\Delta y}{\Delta x} = f' + \varepsilon(\Delta x), \lim_{\Delta x \to 0}\varepsilon(\Delta x) = 0 \]
+        \[ \Delta y = f' \Delta x + \varepsilon(\Delta x)\Delta x \]
+        \[ \lim_{\Delta x \to 0} \Delta y = \lim_{\Delta x \to 0} (f' \Delta x + \varepsilon(\Delta x)\Delta x) = \lim_{\Delta x \to 0} f'\Delta x + \lim_{\Delta x \to 0} \varepsilon(\Delta x)\Delta x = 0 + 0 = 0 \]
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+
+    \noindent Мгновенная скорость\par\noindent
+    Пусть $S = S(t)$ - закон движения в точке.\\
+    Рассмотрим $[ t, t + \Delta t ]$: $\Delta S = S(t+\Delta t) - S(t)$ - путь, пройденный за промежуток времени $\Delta t$.\\
+    $v_{\text{ср}} = \frac{\Delta S}{\Delta t}$ - средняя скорость.\\
+    Мгновенная скорость $v = \lim_{\Delta t \to 0} \frac{\Delta S}{\Delta t} = S'(t)$\\
+    $a = \lim_{\Delta t \to 0} \frac{\Delta v}{\Delta t}$ - ускорение.
+
+    \subsection{Геометрический смысл прооизводной}
+    \begin{center}
+        \includegraphics{4.2.1.png}
+    \end{center}
+    \[ M_0(x_0; f(x_0)) \]
+    \[ M(x_0 + \Delta x; f(x_0 + \Delta x)) \]
+    Запишем уравнение прямой $M_0M$\\
+    \underline{Замечание:} уравнение прямой, проходящей через точки $(x_0; y_0)$ и $(x_1; y_1)$:
+    \[ \frac{x - x_0}{x_1 - x_0} = \frac{y - y_0}{y_1 - y_0} \]
+    \begin{gather*}
+        \frac{x - x_0}{x_0 + \Delta x - x_0} = \frac{y - f(x_0)}{f(x_0 + \Delta x) - f(x_0)}\\
+        \frac{x - x_0}{\Delta x} = \frac{y - y_0}{\Delta y}\\
+        \Delta y(x - x_0) = \Delta x(y - y_0) \text{ } \big| \text{ } * \Delta x\\
+        y - y_0 = \frac{\Delta y}{\Delta x}(x - x_0)\\
+        y = \frac{\Delta y}{\Delta x}(x - x_0) + f(x_0) \text{ } \big| \text{ } : M_0M\\
+        \text{tg } \angle \beta = \frac{|MN|}{|M_0N|} = \frac{\Delta y}{\Delta x}
+    \end{gather*}
+    Пусть $\Delta x \to 0$. Тогда точка $M$ будет стремиться к точке $M_0$, а угол $\beta$ к углу $\alpha$.
+    \[ \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = f'(x_0) \text{ по определению} \]
+    С другой стороны,
+    \[ \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = \lim_{\Delta x \to 0} \text{tg } \beta = tg \lim_{\Delta x \to 0} \beta = tg \alpha \]
+    Рассмотрим уравнение секущей при $\Delta x \to 0$
+    \[ y = f'(x_0)(x - x_0) + f(x_0) \]
+    \begin{center}
+        - уравнение касательной к графику функции $f(x)$ в точке $x_0$.
+    \end{center}
+
+    Допустим $f'(x_0) = \infty$. Тогда рассмотрим уравнение секущей:
+    \begin{gather*}
+        y = \frac{\Delta y}{\Delta x} (x-x_0) + y_0 \text{ } \big| \text{ } : \frac{\Delta y}{\Delta x}\\
+        \frac{y}{\frac{\Delta y}{\Delta x}} = x - x_0 + \frac{y_0}{\frac{\Delta y}{\Delta x}}
+    \end{gather*}
+    Перейдём к пределу при $\Delta x \to 0$. Тогда уравнение касательной примет вид \underline{$x = x_0$}.\par\noindent
+    \underline{Замечание:} если $L_1 \perp L_2$
+    \[ \begin{matrix}
+        L_1: y = k_1x + b_1\\
+        L_2: y = k_2x + b_2
+    \end{matrix} \implies k_1k_2 = -1 \]
+    Прямая, проходящая через точку $x_0$ перпендикулярно касательной, проведённой в этой точке, называется \underline{нормалью} к графику функции $f(x)$.
+    \[ K_\text{н} = -\frac{1}{K_\text{кас}} = -\frac{1}{f'(x_0)} \]
+    \[ y = -\frac{1}{f'(x_0)}(x - x_0) + y_0 \]
+
+    \subsection{Производные элементарных функций}
+    \begin{enumerate}
+        \item $y = \mathbb{C} = const$\\
+        $y(x) = \mathbb{C}, y(x + \Delta x) = \mathbb{C}$
+        \[ y' = \lim_{\Delta x \to 0}\frac{y(x+ \Delta x) - y(x)}{\Delta x} = \lim_{\Delta x \to 0}\frac{\mathbb{C} - \mathbb{C}}{\Delta x} = 0 \]
+        \item $y = \sin x$
+        \[ y' = \lim_{\Delta x \to 0} \frac{\sin(x + \Delta x) - \sin x}{\Delta x} = \lim_{\Delta x \to 0}\frac{2\sin \frac{\Delta x}{2} * \cos (x + \frac{\Delta x}{2})}{\frac{\Delta x}{2} * 2} = \cos x \]
+        Аналогично доказывается, что $(\cos x)' = - \sin x$
+    \end{enumerate}
     %Отформачь все пж
     \subsection*{Определние}
     Функция $y=f(x)$ заданная в $u(x_0)$ называется дифферинцируемой в этой (.) если
@@ -1609,4 +2166,23 @@
     $f'(30)=\frac{\sqrt{3}}{2}$
     $sin 32 = \frac{1}{2}+\frac{\sqrt{3}}{2}-\frac{\pi}{90}=0,53$
     %тест ебанной ветки
+    \section*{Параграф 11(Производные)}
+    \subsection*{Определение}
+    $\sqsupset$ функция y=f(x) имеет производную $y'=f(x)$ во всех (.) некоторой окрестности
+    (.) $x_0$. Если функция f(x) имеет в (.) $x_0$ производную [(f(x))']|$x=x_0$, то оно называется
+    второй производной функцией f(x) в (.) $x_0$\\
+    f''=(f')'\\
+    Аналогично \\
+    $f^n=(f^(m+1))'$%большая часть пропущена, спиздить у кого-то записи
+    \begin{enumerate}
+        \item $y=a^x$\\
+        $y''=a^x\ln^2(a)$\\
+        $y^n=a^x\ln^n(a)$
+        \item $y=\sin(x)$\\
+        $y(n)=sin(x)=sin(\frac{n\pi}{2}+x)$
+        \item $y=\cos(x)$\\
+        $cos^n=cos(\frac{n\pi}{2}+x)$
+        \item $y=ln(x)$
+        
+    \end{enumerate}
 \end{document}
