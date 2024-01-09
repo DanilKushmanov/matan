@@ -1,3 +1,6 @@
+# этот еблан из-за пдфки не может как положено пулл реквесты читать мда
+*.pdf
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
