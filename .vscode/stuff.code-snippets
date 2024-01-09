@@ -49,6 +49,14 @@
 		],
 		"description": "stuff for matan"
 	},
+	"proiz1": {
+		"scope": "tex,latex",
+		"prefix": "big_diff",
+		"body": [
+			"\\begin{matrix}$1\\\\\\\\\\\\\\\\\\end{matrix}\\Big|\\begin{matrix}\\\\\\\\$2\\\\\\\\\\\\end{matrix}$0"
+		],
+		"description": "stuff for matan"
+	},
 	"chtd": {
 		"scope": "tex,latex",
 		"prefix": "чтд",
@@ -58,6 +66,15 @@
 			"\\end{center}$0",
 		],
 		"description": "stuff for mat"
+	},
+	"theorem": {
+		"scope": "tex,latex",
+		"prefix": "теорема",
+		"body": [
+			"\\subsubsection*{Теорема $1}\\label{th:$2}",
+			"$3\\par\\noindent",
+			"$0"
+		]
 	},
 	"dokazatelstvo": {
 		"scope": "tex,latex",
