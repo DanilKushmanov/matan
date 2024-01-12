@@ -91,7 +91,7 @@
 		"scope": "tex,latex",
 		"prefix": "утвер",
 		"body": [
-			"\\underline{Утверждение:}"
+			"\\textbf{Утверждение:}"
 		],
 		"description": "stuff for mat"
 	},
@@ -99,7 +99,7 @@
 		"scope": "tex,latex",
 		"prefix": "следствие",
 		"body": [
-			"\\underline{Следствие:}"
+			"\\textbf{Следствие:}"
 		],
 		"description": "stuff for mat"
 	},
