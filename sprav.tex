@@ -2605,5 +2605,115 @@
     %  КОНЕЦ ПЕРВОГО СЕМЕСТРА
     %
     % -----------------------------------
-
+    %первая пара в 2 семестре%
+    \section{Неопределнные интегралы}
+    \subsection{Определение. Основные понятия}
+    \underbar{Задача} Известна производная функции f'(x). Требуется найти саму ф-ию f(x)\\ 
+    Или: по известной скорости восстановить закон движения\\
+    \underbar{Определение} Функция F(x) называется первообразной для функции f(x) на (a;b),
+    если F(x) дифференцируема на (a;b) и F(x) z f(x)\\
+    \subsection*{Теорма 5.1.1}\label{th:5.1.1}
+    \underbar{Определение} Если F(x) - первообразная для f(x) на (a;b), то F(x)+C, C- число\\%хуево написано не прочитать%
+    \underbar{Док-во} (F(x)+C)' = F'(x)=f(x) \underbar{ЧТД}
+    \subsection*{Теорема 5.1.2}\label{th:5.1.2}
+    Для того, чтобы две дифференцируемые на (a;b) ф-ии были превообразны для одной и той же функции <=>
+    чтобы на (a;b) они отличались на постоянную\\
+    \underbar{Док-во} $\sqsupset F_1(x) - F_2(x); \phi'(x)=F_1'(x)-F_2'(x)=f(x)-f(x)=0$. Тогда
+    по Теореме 4.12.5 $\phi(x) = const$ \\
+    <= $\sqsupset F_1(x)-F_2(x) = C \\ F_1(x)=C+F_2(x) \\ F_1'(x)=(C+F_2(x))' \\ f(x) = f(x)$\\
+    \underbar{Определение} Совокупность всех первообразных функций f(x) на (a;b) называется неопределенным
+    интегралов от фукнции f(x) и обозначается $\int f(x)dx$\\
+    $\int$ - знак интеграла\\ f(x)dx - интегральное выражение \\ f(x) - подинтегральная функция\\
+    dx - знак (обладающий свойством дифференцирования)
+    \subsection{Св-ва неопределенного интеграла}
+    \begin{enumerate}
+        \item $\phi \int f(x)dx = f(x)dx$\\ \underbar{Док-во} $\phi \int 
+        f(x)dx=(F(x)+C)'dx=f(x)dx$
+        \item $\int F(X) = F(x)+C$ \\ \underbar{Док-во} $\int \phi F(x) = \int F'(x) dx = \int
+        f(x)dx=F(x)+C$
+        \item $\int f(x)dx = k \int f(x)dx,k=const$ \\ \underbar{Док-во} F'(x)=f(x)\\
+        (kF(x))'=kf(x),т е kF(x) является первообразной для функции kf(x): те левая часть: $ 
+        \int kf(x)dx = kF(x)+C_1$\\ правая часть: $k(f(x)dx)=k(F(x)+C_2)=kF(x)+KC_2$\\
+        Если $C_1=C_2$, то ЧТД
+        \item $\int f(x)+-g(x) dx = \int f(x)dx+-\int g(x)dx$\\ \underbar{Док-во} 
+        Докажем По опр $F_1'(x)=f(x),F_2'(x)=g(x). (F_1+F_2)'=F_1'+F_2'=f(x)+g(x).$ Те по опр
+        $F_1(x)+F_2(x)$ явдяется первообразно для ф-ии f(x)+g(x)
+        \item $\int (k_1f(x)+k_2g(x))dx = k_1\int f(x)dx +k_2\int g(x)dx$
+    \end{enumerate}
+    \subsection*{Упражнения}
+    \begin{enumerate}
+        \item $\int \frac{dx}{x} = ln(x) + C$
+        \item $\int \frac{dx}{\sqrt{x}}=2\sqrt{x}+C$
+        \item $\int a^x dx = \frac{a^x}{ln(a)}+C$
+        \item $\int e^x dx = e^x + C$
+        \item $\int sin x dx = -cosx + C$
+        \item $\int cosx dx = sinx + C$
+        \item $\int \frac{dx}{cos^2x} = tgx+C$
+        \item $\int \frac{dx}{sin^2x}=-ctg x + C$
+        \item $\int ch(x)dx = shx+C$
+        \item $\int sh(x)dx=ch(x)+C$
+        \item $\int \frac{dx}{ch^2(x)}=tg(x)+C$
+        \item $\int \frac{dx}{sh^2(x)}=-ctg(x)+C$
+        \item $\int \frac{dx}{x^2+a^2}=\frac{1}{a}arctg \frac{x}{a}+C$
+        \item $\int \frac{dx}{x^2-a^2}=\frac{1}{2a}ln|\frac{x-a}{x+a}|+C$
+        \item $\int \frac{dx}{\sqrt{x^2+-a^2}}=ln|x+\sqrt{x^2+-a^2}|+C$
+        \item $\int \frac{dx}{\sqrt{a^2-x^2}}=arcsin(\frac{x}{a})+C=-arccos(\frac{x}{1})+C$\\
+    \end{enumerate}
+    \underbar{Док-во} По опр%не написано, терпите%
+    \subsection{Формула замены переменной в неопределенном интеграле}
+    %28.02.2024%
+    \subsection*{Теорема 5.3.1}
+    $\sqsubset y=f(x)$ и $x=y(t)$ определена на $\Delta x$ и $\Delta y$ и $\phi (\Delta_t) \in C$\\
+    Если f(x) имеет на $\Delta_x$ первообразную f(x), те $\int f(x) dx = F(x)+C$\\
+    f(t) диф-ма на $\Delta_t$ то функция \\
+    %дописать%
+    
+    Доказательство: $f(x)$ и F(x) определены на $\Delta_x \; \phi(\Delta_t) \in \Delta_x$, те определено сложной
+    функцией $F(\phi_t) f(\phi_t)$ \\
+    $(F(\phi(t)))' = F'(\phi(t))+(\phi'(t))=f(\phi(t))+\phi'(t)$\\
+    По определению функция $F(\phi(t))$ является первообразной для $F(\phi(t))\phi(t)$ на $\Delta_x$\\
+    Тогда $\int f(\phi(t))\phi(t)=F(\phi(t))+C = F(x)+C = \int F(x)dx$\\
+    ЧТД \\ %че бля%
+    Примеры:
+    \begin{enumerate}
+        \item $\int \tg x \; dx = \int \frac{\sin(x) dx}{cosx} = |t = cosx; x = arccos t;dx = -
+        \frac{1}{\sqrt{1-t^2}} dt | \\ = \int \frac{dt}{t} = -\ln{t} + C = -\ln(cosx) + C$ \\ 
+        $dt = sinxdx = \int \frac{\sqrt{1-t^2}dt}{\sqrt{1-t^2}t}$ \\
+        \item $\int \sqrt{1-x^2}dx = |x = sin(t);dx = cos(t)dt| = \\ \int \sqrt{1-sin^2 t} cost dt=
+        \int cos^2 t dt = \int \frac{1+cos^2 t}{2} dt = \\  \int \frac{1}{2} dt + \frac{1}{2} \int 
+        cos2t dt = \frac{1}{2} t + \frac{1}{4} sin 2t + C = \\  \frac{1}{2} arcsinx + \frac{1}{4}
+        sin(2arcsinx) + C$
+    \end{enumerate}
+    \section*{Параграф 4 Формула интегрирования по частям}
+    \subsection*{Теорема 5.4.1}
+    Если функция V(x) и U(x) дифференцируемы на некотором промежутке и на этом промежутке существует
+    $\exists \int $VDU то на нем существует $\exists \int$ udv и $\int $UDV = UV - $\int$ VDU\\
+    Док-во $\int UDV = \int UV dx = $\\%дописать%
+    Формула интегрирования по частям применяется в случаях:
+    \begin{enumerate}
+        \item $\int P_n(x) = |sin(ax);cos(ax);e^{ax};...| dx $\\
+        $a = P_n(x)| dv =|$все говно выше$|dx| du = | V =$
+        \item $\int P_n(x)=|arctg(ax);arcsin(ax);ln(ax);$не табличные$|dx$\\
+        $U= $|говно выше|$| dv=P_n(x)dx | du = | V =$
+        \item $\int |arctg(ax);arcsin(ax);ln(ax);$не табличные$|dx|$ \\
+        $dv=dx|V=$|говно выше|$|du= |V=X $
+    \end{enumerate}
+    Пример:
+    \begin{enumerate}
+        \item $\int ln(x)dx = |u =ln(x);dv=dx;du=\frac{dx}{x};v=x|=x ln(x)-\int dx=x ln(x)+x+C$\\
+        \item $\int x sin(x) dx = |u=x;dv=sinxdx;du=dx;V=-cosx| = -xcosx + \int cosxdx =\\ -xcosx+sinx+C$
+    \end{enumerate}
+    \section*{Параграф 5 }
+    \subsection*{Интегрирование рациональных функций}
+    \subsection*{Элементарные дроби}
+    Любая рациональныая дробь представима в виде элементарных\\
+    I $\frac{A}{x-a}$ \; II $\frac{A}{(x-a)^k}$ \; III $\frac{Bx+c}{x^2+px+q}$ D<0 \; IV $\frac{Bx+c}{(x^2+px+q)^k}$ D<0\\%дискриминант меньше нуля надо ниже пиздануть%
+    Покажем что элементарные дроби интегрируются:
+    \begin{enumerate}
+        \item $\int \frac{A}{x-a} dx = A \int \frac{d(x-a)}{x-a} = Aln(x-a)+C $
+        \item $\int \frac{Adx}{(x-a)^k} = (x-a)^{-k}d(x-a)=A\frac{(x-a)^{-k+1}}{-k+1}+C$
+        \item $\int \frac{Bx+C}{x^2+px+q}dx = \int \frac{(Bx+c)dx}{x^2+2\frac{1}{2}px+\frac{p^2}{4}-\frac{p^2}{4}+q} = \int
+        \frac{(Bx+C)dx}{(x+\frac{p}{2})^2+q-\frac{p^2}{4}} = \int \frac{(Bx+c)dx}{(x+\frac{p}{2})^2+a^2} $\\%a^2=q-p^4/4%
+        $(x+a)^2=x^2+2xa+a^2$
+    \end{enumerate}
 \end{document}
