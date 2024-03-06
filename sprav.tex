@@ -2454,11 +2454,12 @@
     Если $\forall x \in u(x_0)$ $f(x) < f(x_0)$ ($f(x) > f(x_0)$), то эта точка $x_0$ - точка строгого локального максимума (минимума).
     % здесь был какой-то пример, надо будет дописать
     \subsubsection*{Теорема 4.17.2 (первое достаточное условие экстремума функции)}\label{th:4.17.2}
-    %я проебал и этот моментик
+    %это определение я спиздил с инета если че. 
+    Пусть функция непрерывна в точке и дифференцируема в некоторой окрестности этой точки кроме, быть может, самой точки. Если производная меняет знак при переходе через точку , то точка является точкой экстремума.
     \par\noindent
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
-        %да и этот
+        %я проебал это
     \end{adjustwidth}
     \subsubsection*{Теорема 4.17.3 (второе достаточное условие экстремума функции)}\label{th:4.17.3}
     Пусть $x_0$ - стац. точка функции $f(x)$, $f(x)$ имеет вторую непр. производную в $u(x_0)$. Тогда, если $f''(x_0) < 0$, то точка $x_0$ - точка максимума; если $f''(x_0) > 0$, то точка $x_0$ - точка минимума.\par\noindent
@@ -2598,12 +2599,88 @@
         \begin{center}
             \textbf{Ч.т.д.}
         \end{center}
-    \end{adjustwidth}
+    \end{adjustwidth} 
     
     % -----------------------------------
     %
-    %  КОНЕЦ ПЕРВОГО СЕМЕСТРА
+    %  КОНЕЦ ПЕРВОГО СЕМЕСТРА ЛЕСГООООООООООООООООООООООООООО
     %
     % -----------------------------------
 
+    \section{Неопределённые интегралы}
+    \subsection{Определение. Основные понятия}
+    \underline{Задача}. Известна производная функции $f(x)$. Требуется найти саму функцию $f(x)$.
+    %здесь был материал по интегралам
+    \subsection{Свойства неопределённого интеграла}
+    %здесь был материал по интегралам
+    \subsection{Формула замены переменной в неопределённом интеграле}
+    \subsubsection*{Теорема 5.3.1}\label{th:5.3.1}
+    Пусть функции $y=f(x)$ и $x=\phi(t)$ определены на $\Delta x$ и $\Delta t$ и $\phi(\Delta t) \subset \Delta x$.\\
+    Если $f(x)$ имеет на $\Delta x$ первообразную $F(x)$, т.е. $\int \,f(x)dx = F(x) + C$, а $\phi(t)$ дифференциуема на $\Delta t$, то функция $F(\phi(t))\phi'(t)$ имеет на $\Delta t$ первообразная $F(\phi(t))$
+    \[ \boxed{\int \, f(x)dx = \int f(\phi(t))\phi'(t)dt} \]
+    \subsection{Че-то новое}
+    % в общем много пропущенного
+    \subsubsection*{Теорема 5.4.1}\label{th:5.4.1}
+    Если функции $u(x)$ и $v(x)$ дифференциуемы на некотором промежутке и на этом промежутке $\exists \int vdu$, то на нём $\exists \int udv$ и
+    \[ \boxed{\int udv = uv - \int vdu} \]
+    
+    \begin{enumerate}
+        \item \begin{gather*} 
+            = \int \frac{(Bx + C)dx}{(x+\frac{p}{2})^2 + a^2} = \begin{vmatrix}
+                x + \frac{p}{2} = t\\
+                x = t - \frac{p}{2}\\
+                dx = dt
+            \end{vmatrix} = \int \frac{(B(t-\frac{p}{2})+C)dt}{t^2 + a^2} = B \int \frac{tdt}{t^2+a^2} + (-\frac{Bp}{2} + C) \int \frac{dt}{t^2+a^2} =\\
+            = \frac{B}{2}\ln|t^2+a^2| + \frac{1}{a}\left(-\frac{Bp}{2} + C\right)\arctg \frac{t}{a} + \mathbb{C}
+        \end{gather*}
+        \item \begin{gather*}
+            \int \frac{(Ax+B)}{(x^2 + px + q)^k}dx = \int \frac{(Ax+B)}{(x^2 + \boxed{2} * \frac{1}{2}p\boxed{x} + \frac{p^2}{4} - \frac{p^2}{4} + q)^k}dx =\\
+            = \int \frac{(Ax+B)dx}{[(x + \frac{p}{2})^2 + \underbrace{q - \frac{p^2}{4}}_{a^2, \, >0}]^k} = \begin{vmatrix}
+                t = x + \frac{p}{2}\\
+                x = t - \frac{p}{2}\\
+                dx = dt
+            \end{vmatrix} = \int \frac{A(t - \frac{p}{2}) + B}{(t^2 + a^2)^k}dt =\\
+            = A \int \frac{tdt}{(t^2 + a^2)^k} + \left(-\frac{Ap}{2} + B\right)\int \frac{dt}{(t^2 + a^2)^k} = \frac{A}{2}
+        \end{gather*}
+    \end{enumerate}
+
+    Рассмотрим
+    \begin{gather*}
+        I_k = \int \frac{1dt}{(t^2 + a^2)^k} = \frac{1}{a^2} \int \frac{(t^2 + a^2 - t^2)dt}{(t^2 + a^2)^k} = \frac{1}{a^2} \int \frac{dt}{(t^2+a^2)^{k-1}} - \frac{1}{a^2}\int\frac{t^2dt}{(t^2 + a^2)^k} =\\
+        = \frac{1}{a^2}I_{k-1} - \begin{vmatrix}
+            u = t & du = dt\\
+            dv = \frac{tdt}{(t^2 + a^2)^k} & v = \frac{1}{2}\frac{(t^2+a^2)^{-k+1}}{(1-k)}\\
+        \end{vmatrix} =\\
+        = \frac{1}{a^2}I_{k-1} - \frac{1}{a^2} \left( \frac{t}{2(1-k)(t^2+a^2)^{k-1}} - \frac{1}{2(1-k)} \right) \int \frac{dt}{(t^2 + a^2)^{k-1}} =\\
+        = \frac{1}{a^2}I_{k-1} + \frac{t}{2a^2(k-1)(t^2+a^2)^{k-1}} - \frac{1}{2a^2(k-1)}I_{k-1} =\\
+        = \left| \frac{1}{a^2}(1 - \frac{1}{2(k-1)}) = \frac{1}{a^2}\frac{(2k-3)}{2(k-1)} \right| =\\
+        = \frac{t}{2a^2(k-1)(t^2+a^2)^{k-1}} + \frac{2k-3}{a^2(2k-2)}I_{k-1}\dots
+    \end{gather*}
+
+    \underline{Пример:}
+    \begin{gather*}
+        \int \frac{7x^2 + 26x - 9}{x^4 + 4x^3 + 4x^2 - 9}dx = \int \frac{7x^2 + 26x - 9}{(x-1)(x+3)(x^2 + 2x + 3)dx} \circeq
+    \end{gather*}
+    \begin{gather*}
+        \frac{7x^2 + 26x - 9}{(x-1)(x+3)(x^2+2x+3)} = \frac{A}{x-1} + \frac{B}{x+3} + \frac{Cx+D}{x^2+2x+3} =\\
+        = \frac{A(x+3)(x^2+2x+3) + B(x-1)(x^2+2x+3) + (Cx+D)(x-1)(x+3)}{(x-1)(x+3)(x^2+2x+3)2C}
+    \end{gather*}
+    \begin{gather*}
+        x^3 : 0 = A+B+C\\
+        x^2 : 7 = 5A+B+2C+D\\
+        x : 26 = 9A+B-3C+2D\\
+        x^0 : -9 = 9A-3B-3D
+    \end{gather*}
+    \begin{gather*}
+        A = 1, B = 1, C = -2, D = 5
+    \end{gather*}
+    \begin{gather*}
+        \circeq \int \frac{dx}{x-1} + \int \frac{dx}{x+3} + \int \frac{-2x+5}{x^2+2x+3}dx =\\
+        = \int \frac{dx}{x-1} + \int \frac{dx}{x+3} + (-1) \int \frac{2x+2 - 2 - 1*5}{x^2+2x+3}dx =\\
+        = \int \frac{dx}{x-1} + \int \frac{dx}{x+3} - \int \frac{2x+2}{x^2+2x+3}dx + 7\int \frac{d(x+1)}{(x+1)^2+2} =\\
+        = \int \frac{dx}{x-1} + \int \frac{dx}{x+3} - \int \frac{d(x^2+2x+3)}{x^2+2x+3}dx + 7\int \frac{d(x+1)}{(x+1)^2+2} =\\
+        = \ln |x-1| + \ln |x+3| - \ln |x^2+2x+3| + \frac{7}{\sqrt{2}}\arctg \frac{x+1}{\sqrt{2}} + \mathbb{C}
+    \end{gather*}
+
+    \subsection{Интегрирование тригонометрических функций}
 \end{document}
