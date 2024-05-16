@@ -1,3 +1,4 @@
+% !TEX root = sprav.tex
 \documentclass[12pt]{article}
 \usepackage[a4paper, total={7in,10in}]{geometry}
 \usepackage{polyglossia}
@@ -9,7 +10,7 @@
 \usepackage{changepage}
 \usepackage{hyperref}
 \graphicspath{{./images/}}
-\setmainlanguage{russian}
+\setmainlanguage[babelshorthands=true]{russian}
 \setotherlanguage{english}
 \newfontfamily\russianfont[Script=Cyrillic]{Times New Roman}
 \newfontfamily\englishfont{Times New Roman}
@@ -25,7 +26,7 @@
 \DeclareMathOperator*{\ctg-like}{\cot-like}
 \DeclareMathOperator*{\arctg-like}{\arctan-like}
 \DeclareMathOperator*{\arcctg-like}{\arctan-like}
-
+ 
 \begin{document}
     \justifying
     \tableofcontents
@@ -171,7 +172,7 @@
         \end{center}
     \end{adjustwidth}
     \subsubsection*{Несчётные множества.}
-    \subsubsection*{Теорема 1.2.1}\label{th:1.2.1} 
+    \subsubsection*{Теорема 1.2.1}\label{th:1.2.1}
     Множество $H$ всех бесконечных наборов из цифр $0$ и $1$ не является счётным.\par
     \noindent \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
@@ -2683,4 +2684,103 @@
     \end{gather*}
 
     \subsection{Интегрирование тригонометрических функций}
+    \begin{enumerate}
+        % ААААААААААААААААААААААААААААААААААААААААААААААААААААааааа
+        \item Интегралы вида $\int R(\sin x; \cos x)dx$\\
+        \subsubsection*{Универсальная тригонометрическая подстановка}
+        \[ \boxed{t = \tg \frac{x}{2}} \]
+        \[ \boxed{\sin x = \frac{2\tg\frac{x}{2}}{1 + \tg^2 \frac{x}{2}} = \frac{2t}{1 + t^2}} \]
+        \[ \boxed{\cos x = \frac{1-t^2}{1 + t^2}} \]
+        \[ \frac{x}{2} = \arctg t, \,\,\, x = 2 \arctg t, \,\,\, \boxed{ dx = \frac{2dt}{1+t^2} } \]
+        \underline{Пример:}
+        \begin{gather*} 
+            \int \frac{dx}{3 + 5\cos x} = \begin{vmatrix}
+                t = \tg \frac{x}{2}\\
+                \cos x = \frac{1 - t^2}{1 + t^2}\\
+                dx = \frac{2dt}{1 + t^2}
+            \end{vmatrix} = \int \frac{\frac{2dt}{1+t^2}}{3 + \frac{5-5t^2}{1 + t^2}} = \int \frac{\frac{2dt}{1 + t^2}}{\frac{3 + 3t^2 + 5 - 5t^2}{1 + t^2}} =\\
+            = 2 \int \frac{dt}{-2t^2 + 8} = - \int \frac{dt}{t^2 - 4} = -\frac{1}{4} \ln \left|\frac{t-2}{t+2}\right| + \mathbb{C} = -\frac{1}{4}\ln \left|\frac{\tg\frac{x}{2} - 2}{\tg\frac{x}{2} + 2}\right| + \mathbb{C}
+        \end{gather*}
+        \underline{Пример:}
+        \begin{gather*}
+            \int \frac{dx}{\sin x} = \begin{vmatrix}
+                t = \tg \frac{x}{2}\\
+                \sin x = \frac{2t}{1 + t^2}\\
+                dx = \frac{2dt}{1 + t^2}
+            \end{vmatrix} = \int \frac{\frac{2dt}{1 + t^2}}{\frac{2t}{1 + t^2}} = \int \frac{dt}{t} = \ln |t| + \mathbb{C} = \ln \left|\tg \frac{x}{2}\right| + \mathbb{C}
+        \end{gather*}
+        \textbf{Частные случаи:}
+        \begin{enumerate}
+            \item Подынтегральная функция нечётна относительно $\sin x$.
+        \end{enumerate}
+    \end{enumerate}
+
+    % ААААААААААААААААААААААААААААААААААААААААААААААААААААА
+
+    \section{Определённые интегралы}
+    \subsection{Задачи, приводящие к определённым интегралам}
+    \begin{enumerate}
+        \item Площадь криволинейной трапеции.
+        \begin{adjustwidth}{1.5em}{1.5em}
+            \includegraphics{6.1.1.png}\\
+            Пусть $f(x) \ge 0\, \forall x \in [a;b]$
+            \begin{enumerate}
+                \item Произведём разбиение $[a;b]\, R$
+                \[ a = x_0 < x_1 < \dots < x_n = b \]
+                \item В каждом элементарном отрезка $[x_i; x_{i+1}]$ произвольным образом выберем точку $\xi_i$.
+                \item Вычислим $f(\xi_i)$
+                \item Вычислим $f(\xi_i)\Delta x_i$
+                \item Вычислим \[ \sigma_R = \sum_{i=0}^{n}f(\xi_i)\Delta x_i \]
+                \item Обозначим $\lambda_R$ - диаметр разбиения: $\lambda_R = \underset{i}{max}[x_i; x_{i+1}]$\\
+                Пусть $\lambda_R \to 0$. Вычислим $\lim_{n\to\infty}\sigma_R = S$.
+            \end{enumerate}
+        \end{adjustwidth}
+        \item Вычисление массы стержня.
+    \end{enumerate}
+    \subsection{Определение определённого интеграла}
+    Пусть на $[a;b]$ задана функция $f(x)$.
+    \begin{enumerate}
+        \item Произведём разбиение отрезка $[a;b]$ \[ a = x_0 < x_1 < \dots < x_n = b\,\,\,\, R \]
+        \item В каждом экзепляре $[x_i; x_{i+1}]$ произвольным образом выберем точку $\xi_i$ ($\lambda_R = max[x_i; x_{i+1}]$).
+        \item Вычислим $f(\xi_i)\Delta x_i$.
+        \item Составим $\sigma_R = \sum_{i=0}^{n}f(\xi)\Delta x_i$.
+    \end{enumerate}
+    Если существует \underline{конечный} предел интегральной суммы $\sigma_R$ при $\lambda_R \to 0$, не зависящий от способа разбиения $[a; b]$ и выбора точки $\xi_i$, то он называется \textbf{определённым интегралом} от функции $f(x)$ на $[a;b]$.
+    \[ \lim_{x_R \to 0}\sigma_R = \int_{a}^{b}f(x)dx \]
+    \subsubsection*{Определение определённого интеграла на языке "$\epsilon-\delta$"}
+    Число $I$ называется определённым интегралом от функции $f(x)$ на $[a;b]$, если
+    \[ \forall \epsilon > 0\, \exists \delta = \delta(\epsilon) > 0 : \forall \lambda_R < \delta \implies |I-\sigma_R| < \epsilon \]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    % это пиздец
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    \section{Я хз}
+    \subsection{Ну и мем}
+    \subsubsection*{Ну хуй с ним пока что}
 \end{document}
