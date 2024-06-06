@@ -134,5 +134,15 @@
 			"\\forall \\varepsilon > 0 \\text{ } \\exists \\text{ } N = N(\\varepsilon) \\text{ } \\big| \\text{ } \\forall n > N \\text{ } |x_{n} - a| < \\varepsilon"
 		],
 		"description": "stuff for mat"
-	}
+	},
+	"img":{
+	  "scope": "tex,latex",
+	  "prefix": "img",
+	  "body": [
+		"\\begin{center}",
+		"\t$0\\includegraphics[width=0.7\\linewidth]{}",
+		"\\end{center}"
+	  ],
+	  "description": "stuff for mat"
+	},
 }

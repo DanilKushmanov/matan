@@ -9,6 +9,7 @@
 \usepackage{graphicx}
 \usepackage{changepage}
 \usepackage{hyperref}
+\usepackage{cancel}
 \graphicspath{{./images/}}
 \setmainlanguage[babelshorthands=true]{russian}
 \setotherlanguage{english}
@@ -760,14 +761,14 @@
     \begin{enumerate}
         \item База индукции.\\
         При $n = 1$ должно выполняться равенство $(a+b)^{1} = \sum_{k=0}^{1}C^{k}_{1}a^{k}b^{1-k}$\\
-        $a+b = C^{0}_{1}a^{0}b^{1} + C^{1}_{1}a^{1}b^{0}$\\
+        $a+b = C^{0}_{1}a^{0}b^{1} + \mathbb{C}^{1}_{1}a^{1}b^{0}$\\
         $a+b = b+a$
         \item Преположение индукции.\\
         Пусть при $n = m$ верно равенство $(a+b)^{m} = \sum_{k=0}^{m}C^{k}_{m}a^{k}b^{m-k}$
         \item Шаг индукции.\\
         Докажем справедливость равенства для $n = m + 1$, т.е докажем, что $(a+b)^{m+1} = \sum_{k=0}^{m + 1}C^{k}_{m+1}a^{k}b^{m-1-k}$\\
         \underline{Доказательство:}\\
-        \underline{Замечание:} $C^{k+1}_{m} + C^{k}_{m} = \frac{m!}{(k-1)!(m-k+1)} + \frac{m!}{k!(m-k)!} = \frac{m!}{(k-1)!(m-k)!}(\frac{1}{m-k+1} + \frac{1}{k}) = \frac{m!}{(k-1)!(m-k)!}(\frac{k+m-k+1}{(m-k+1)k}) = \frac{m!}{(k-1)!(m-k)!}(\frac{m+1}{(m-k+1)k}) = \frac{(m+1)!}{k!(m-k+1)!} = C^{k}_{m+1}$\\
+        \underline{Замечание:} $C^{k+1}_{m} + \mathbb{C}^{k}_{m} = \frac{m!}{(k-1)!(m-k+1)} + \frac{m!}{k!(m-k)!} = \frac{m!}{(k-1)!(m-k)!}(\frac{1}{m-k+1} + \frac{1}{k}) = \frac{m!}{(k-1)!(m-k)!}(\frac{k+m-k+1}{(m-k+1)k}) = \frac{m!}{(k-1)!(m-k)!}(\frac{m+1}{(m-k+1)k}) = \frac{(m+1)!}{k!(m-k+1)!} = C^{k}_{m+1}$\\
         \begin{gather*}
             (a+b)^{m+1}=(a+b)^m \times (a+b) = (\sum_{k=0}^{m}C^{k}_{m}a^{k}b^{m-k}) \times (a+b) =\\
             \sum_{k=0}^{m}C^{k}_{m}a^{k+1}b^{m-k} + \sum_{k=0}^{m}C^{k}_{m}a^{k}b^{m-k+1} = \sum_{k=1}^{m+1}C^{k-1}_{m}a^{k}b^{m-(k-1)} + \sum_{k=0}^{m}C^{k}_{m}a^{k}b^{m-k+1} =\\
@@ -786,7 +787,7 @@
         \item Покажем, что эта посл-ть ограничена снизу.
         \begin{gather*}
             x_n = (1 + \frac{1}{n})^n =\\
-            = C^{1}_{n}*1^{n-1}\times(\frac{1}{n})^{1} + C^{2}_{n}\times1^{n-2}*(\frac{1}{n})^{2} + \dots + C^n_{n}\times1^{0}\times(\frac{1}{n})^n =\\
+            = C^{1}_{n}*1^{n-1}\times(\frac{1}{n})^{1} + \mathbb{C}^{2}_{n}\times1^{n-2}*(\frac{1}{n})^{2} + \dots + \mathbb{C}^n_{n}\times1^{0}\times(\frac{1}{n})^n =\\
             = 1 + 1 + \frac{n(n-1)}{2!} \times \frac{1}{n^{2}} + \dots +\\
             + \frac{1}{k!}n(n-1)\dots(n-k+1)\frac{1}{n^{k}}+\dots+\\
             +\frac{1}{n!}n(n-1)\dots(n-n+1)\frac{1}{n^n} \ge 2 \text{, } \forall n
@@ -2610,73 +2611,269 @@
 
     \section{Неопределённые интегралы}
     \subsection{Определение. Основные понятия}
-    \underline{Задача}. Известна производная функции $f(x)$. Требуется найти саму функцию $f(x)$.
-    %здесь был материал по интегралам
+    \underline{Задача}. Известна производная функции $f(x)$. Требуется найти саму функцию $f(x)$.\\
+    Или: по известной скорости восстановить закон движения.\par\noindent
+    Функция $F(x)$ называется первообразной для функции $f(x)$ на некотором интервале $(a; b)$, если $F(x)$ дифференциуема на $(a; b)$ и $F'(x) = f(x)$.
+    \subsubsection*{Теорема 5.1.1}\label{th:5.1.1}
+    Если $F(x)$ первообразная для $f(x)$ на $(a; b)$, то $F(x) + \mathbb{C}$, $C = const$, тоже первообразная.\par\noindent
+    \underline{Доказательство:}
+    \[ (F(x) + \mathbb{C})' = F'(x) = f(x) \]
+    \begin{center}
+        \textbf{Ч.т.д.}
+    \end{center}
+    \subsubsection*{Теорема 5.1.2}\label{th:5.1.2}
+    Для того, чтобы две дифференциуемые на $(a;b)$ функции были первообразными для одной и той же функции $\Leftrightarrow$ чтобы на $(a; b)$ они отличались на постоянную.\par\noindent
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        \textbf{Докажем необходимость ($\Rightarrow$)}\par\noindent
+        Пусть $F_1(x)$ и $F_2(x)$ - две первообразные для $f(x)$ на $(a; b)$.\\
+        Тогда по определению $F_1'(x) = F_2'(x) = f(x)$.\\
+        Пусть $\varphi(x) = F_1(x) - F_2(x), \phi'(x) = F_1'(x) - F_2'(x) = f(x) - f(x) = 0$.\\
+        Тогда по \hyperref[th:4.12.5]{теореме 4.12.5} $\varphi(x) = const$.\par\noindent
+        
+        \textbf{Докажем достаточность ($\Leftarrow$)}\par\noindent
+        Пусть
+        \begin{gather*}
+            F_1(x) - F_2(x) = const\\
+            F_1(x) = C + F_2(x)\\
+            F_1'(x) = (C + F_2(x))'\\
+            f(x) = f(x)
+        \end{gather*}
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+    Совокупность всех первообразующих функции $f(x)$ на $(a; b)$ называется \underline{неопределенным интегралом} от функции $f(x)$ и обозначается 
+    \[ \int f(x)dx \]
+    $\int$ - знак интеграла, $f(x)dx$ - подынтегральное выражение, $f(x)$ - подынтегральная функция; $dx$ - знак.
+    
     \subsection{Свойства неопределённого интеграла}
-    %здесь был материал по интегралам
+    \begin{enumerate}
+        \item \[ d \int f(x) dx = f(x)dx \]
+        \underline{Доказательство:}
+        \[ d \int f(x)dx = d(F(x) + \mathbb{C}) = (F(x) + \mathbb{C})'dx = f(x)dx \]
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+        \item \[ \int dF(x) = F(x) + \mathbb{C} \]
+        \underline{Доказательство:}
+        \[ \int dF(x) = \int F'(x)dx = \int f(x)dx = F(x) + \mathbb{C} \]
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+        \item \[ \int k f(x) dx = k \int f(x) dx, k = const \]
+        \underline{Доказательство:}
+        \begin{adjustwidth}{1.5em}{1.5em}
+            $F'(x) = f(x)$\\
+            $(k(F(x)))' = kf(x)$, т.е. $kF(x)$ является первообразной для $kf(x)$ на $(a; b)$\\
+            Т.е. левая часть: $\int kf(x)dx = kF(x) + \mathbb{C}_1$\\
+            А правая часть: $k \int f(x)dx = k(F(x) + \mathbb{C}_2) = kF(x) + kC_2$, если обозначать $C_1 = kC_2$, то \textbf{ч.т.д.}
+        \end{adjustwidth}
+        \item \[ \int (f(x) \pm g(x)) dx = \int f(x) dx \pm \int g(x)dx \]
+        \underline{Доказательство:}
+        \begin{adjustwidth}{1.5em}{1.5em}
+            Докажем для "+"\par\noindent
+            По определению: $F_1'(x) = f(x)$, $F_2'(x) = g(x)$\\
+            $(F_1 + F_2)' = F_1' + F_2' = f(x) + g(x)$\\
+            Т.е. по определению $F_1(x) + F_2(x)$ является первообразной для функции $f(x) + g(x)$\\
+            левая часть: $\int (f(x) + g(x))dx = F_1(x) + F_2(x) + \mathbb{C}_1$\\
+            правая часть: $\int f(x)dx + \int g(x)dx = F_1(x) + \mathbb{C}_2 + F_2(x) + \mathbb{C}_3$\\
+            Если обозначать $C_1 = kC_2$, то \textbf{ч.т.д.}
+        \end{adjustwidth}
+        \item \[ \int (k_1 f(x) + k_2 g(x))dx = k_1 \int f(x)dx + k_2 \int g(x)dx \]
+        \underline{Доказательство:}
+        \begin{adjustwidth}{1.5em}{1.5em}
+            По определению: $F_1'(x) = f(x), F_2'(x) = g(x)$\\
+            $(k_1F_1(x) + k_2F_2(x))' = k_1f(x) + k_2g(x)$, т.е. по определению $(k_1F_1(x) + k_2F_2(x))$ является первообразной для функции $k_1f(x) + k_2g(x)$ на $(a; b)$\\
+            Т.е. левая часть: $\int (k_1f(x) + k_2g(x))dx = k_1F_1(x) + k_2F_2(x) + \mathbb{C}_1$\\
+            правая часть: $k_1\int f(x)dx + k_2\int g(x)dx = k_1(F_1(x) + \mathbb{C}_2) + k_2(F_2(x) + \mathbb{C}_3) = k_1F_1(x) + k_1\mathbb{C}_2 + k_2F_2(x) + k_2\mathbb{C}_3$\\
+            Если обозначать $\mathbb{C}_1 = k_1\mathbb{C}_2 + k_2\mathbb{C}_3$, то \textbf{ч.т.д.}
+        \end{adjustwidth}
+    \end{enumerate}
+
     \subsection{Формула замены переменной в неопределённом интеграле}
     \subsubsection*{Теорема 5.3.1}\label{th:5.3.1}
-    Пусть функции $y=f(x)$ и $x=\phi(t)$ определены на $\Delta x$ и $\Delta t$ и $\phi(\Delta t) \subset \Delta x$.\\
-    Если $f(x)$ имеет на $\Delta x$ первообразную $F(x)$, т.е. $\int \,f(x)dx = F(x) + C$, а $\phi(t)$ дифференциуема на $\Delta t$, то функция $F(\phi(t))\phi'(t)$ имеет на $\Delta t$ первообразная $F(\phi(t))$
-    \[ \boxed{\int \, f(x)dx = \int f(\phi(t))\phi'(t)dt} \]
-    \subsection{Че-то новое}
-    % в общем много пропущенного
-    \subsubsection*{Теорема 5.4.1}\label{th:5.4.1}
-    Если функции $u(x)$ и $v(x)$ дифференциуемы на некотором промежутке и на этом промежутке $\exists \int vdu$, то на нём $\exists \int udv$ и
-    \[ \boxed{\int udv = uv - \int vdu} \]
-    
+    Пусть функции $y=f(x)$ и $x=\varphi(t)$ определены на $\Delta x$ и $\Delta t$ и $\varphi(\Delta t) \subset \Delta x$.\\
+    Если $f(x)$ имеет на $\Delta x$ первообразную $F(x)$, т.е. $\int \,f(x)dx = F(x) + \mathbb{C}$, а $\varphi(t)$ дифференциуема на $\Delta t$, то функция $F(\varphi(t))\phi'(t)$ имеет на $\Delta t$ первообразная $F(\varphi(t))$
+    \[ \boxed{\int \, f(x)dx = \int f(\varphi(t))\phi'(t)dt} \]
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Функции $f(x)$ и $F(x)$ определены на $\Delta x$, $\phi (\Delta t)$ с $\Delta x$, т.е. определены сложные функции\\
+        $f(\varphi(t))$ и $F(\varphi(t))$
+        \[ F(\varphi(t))' = F'(\varphi(t)) * \phi'(t) = f(\varphi(t)) * \phi'(t) \]
+        Т.е. по определению функция $F(\varphi(t))$ является первообразной для $f(\varphi(t))\phi'(t)$\\
+        Тогда $\underbrace{ f(\varphi(t))\phi'(t)dt } = F(\varphi(t)) + \mathbb{C} = F(x) + \mathbb{C} = \underbrace{ \int f(x)dx }$
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+    \underline{Примеры:}
     \begin{enumerate}
-        \item \begin{gather*} 
-            = \int \frac{(Bx + C)dx}{(x+\frac{p}{2})^2 + a^2} = \begin{vmatrix}
-                x + \frac{p}{2} = t\\
-                x = t - \frac{p}{2}\\
-                dx = dt
-            \end{vmatrix} = \int \frac{(B(t-\frac{p}{2})+C)dt}{t^2 + a^2} = B \int \frac{tdt}{t^2+a^2} + (-\frac{Bp}{2} + C) \int \frac{dt}{t^2+a^2} =\\
-            = \frac{B}{2}\ln|t^2+a^2| + \frac{1}{a}\left(-\frac{Bp}{2} + C\right)\arctg \frac{t}{a} + \mathbb{C}
+        \item \begin{gather*}
+            \int \tg(x)dx = \int \frac{\sin x dx}{\cos x} = \begin{vmatrix}
+                t = \cos x\\
+                x = \arccos t\\
+                dx = - \frac{1}{\sqrt{1 - t^2}}dt
+            \end{vmatrix} = - \int \frac{\sqrt{1 - t^2}dt}{\sqrt{1 - t^2}t} = - \int \frac{dt}{t} =\\
+            = -\ln |t| + \mathbb{C} = -\ln |\cos x| + \mathbb{C}
         \end{gather*}
         \item \begin{gather*}
-            \int \frac{(Ax+B)}{(x^2 + px + q)^k}dx = \int \frac{(Ax+B)}{(x^2 + \boxed{2} * \frac{1}{2}p\boxed{x} + \frac{p^2}{4} - \frac{p^2}{4} + q)^k}dx =\\
-            = \int \frac{(Ax+B)dx}{[(x + \frac{p}{2})^2 + \underbrace{q - \frac{p^2}{4}}_{a^2, \, >0}]^k} = \begin{vmatrix}
-                t = x + \frac{p}{2}\\
-                x = t - \frac{p}{2}\\
-                dx = dt
-            \end{vmatrix} = \int \frac{A(t - \frac{p}{2}) + B}{(t^2 + a^2)^k}dt =\\
-            = A \int \frac{tdt}{(t^2 + a^2)^k} + \left(-\frac{Ap}{2} + B\right)\int \frac{dt}{(t^2 + a^2)^k} = \frac{A}{2}
+            \int \sqrt{1 - x^2}dx = \begin{vmatrix}
+                x = \sin t\\
+                dx = \cos t dt
+            \end{vmatrix} = \int \sqrt{1 - \sin^2 t}\cos t dt = \int \cos^2 t dt =\\
+            = \int \frac{1+\cos 2t}{2}dt = \int \frac{1}{2}dt + \int \frac{\cos 2t}{2}dt = \frac{1}{2}t + \frac{1}{4}\sin 2t + \mathbb{C} = \frac{1}{2}\arcsin x + \frac{1}{4}\sin (2\arcsin x) + \mathbb{C}
         \end{gather*}
     \end{enumerate}
 
-    Рассмотрим
-    \begin{gather*}
-        I_k = \int \frac{1dt}{(t^2 + a^2)^k} = \frac{1}{a^2} \int \frac{(t^2 + a^2 - t^2)dt}{(t^2 + a^2)^k} = \frac{1}{a^2} \int \frac{dt}{(t^2+a^2)^{k-1}} - \frac{1}{a^2}\int\frac{t^2dt}{(t^2 + a^2)^k} =\\
-        = \frac{1}{a^2}I_{k-1} - \begin{vmatrix}
-            u = t & du = dt\\
-            dv = \frac{tdt}{(t^2 + a^2)^k} & v = \frac{1}{2}\frac{(t^2+a^2)^{-k+1}}{(1-k)}\\
-        \end{vmatrix} =\\
-        = \frac{1}{a^2}I_{k-1} - \frac{1}{a^2} \left( \frac{t}{2(1-k)(t^2+a^2)^{k-1}} - \frac{1}{2(1-k)} \right) \int \frac{dt}{(t^2 + a^2)^{k-1}} =\\
-        = \frac{1}{a^2}I_{k-1} + \frac{t}{2a^2(k-1)(t^2+a^2)^{k-1}} - \frac{1}{2a^2(k-1)}I_{k-1} =\\
-        = \left| \frac{1}{a^2}(1 - \frac{1}{2(k-1)}) = \frac{1}{a^2}\frac{(2k-3)}{2(k-1)} \right| =\\
-        = \frac{t}{2a^2(k-1)(t^2+a^2)^{k-1}} + \frac{2k-3}{a^2(2k-2)}I_{k-1}\dots
-    \end{gather*}
+    \subsubsection*{Таблица интегралов}
+    % я не буду это писать
+    \includegraphics[width=0.7\linewidth,keepaspectratio]{5.3.1.png}
 
+    \subsection{Формула интегрирования по частям}
+    \subsubsection*{Теорема 5.4.1}\label{th:5.4.1}
+    Если функции $u(x)$ и $v(x)$ дифференциуемы на некотором промежутке и на этом промежутке $\exists \int vdu$, то на нём $\exists \int udv$ и
+    \[ \boxed{\int udv = uv - \int vdu} \]
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        \begin{gather*}
+            \int udv = \int uv'dx = \left| (uv)' = u'v + uv' \right| =\\
+            = \int [(uv)' - u'v]dx = \int (uv)'dx - \int u'vdx = uv - \int vdu
+        \end{gather*}
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+
+    \subsubsection*{Формула интегрирования по частям применяется в случаях:}    
+    \begin{enumerate}
+        \item \begin{gather*}
+            \int P_n(x) * \underset{\text{таблич. интегралы}}{\begin{Bmatrix}
+                \sin \alpha x\\
+                \cos \alpha x\\
+                e^{\alpha x}\\
+                \dots
+            \end{Bmatrix}}dx,\, \begin{matrix}
+                u = P_n(x) & du = \dots \\
+                dv = \underset{\text{табл}}{\left\{ \dots \right\}}dx & v = \dots
+            \end{matrix}
+        \end{gather*}
+        \item \begin{gather*}
+            \int P_n(x) * \underset{\text{не таблич.}}{\begin{Bmatrix}
+                \arcsin \alpha x\\
+                \arctg \alpha x\\
+                ln \alpha x\\
+                \dots
+            \end{Bmatrix}}dx,\,\begin{matrix}
+                u = \left\{ \dots \right\} & du = \dots \\
+                dv = P_n(x)dx & v = \dots
+            \end{matrix}
+        \end{gather*}
+        \item \begin{gather*}
+            \int \underset{\text{не таблич.}}{\begin{Bmatrix}
+                \arcsin \alpha x\\
+                \arctg \alpha x\\
+                ln \alpha x\\
+                \dots
+            \end{Bmatrix}}dx,\,\begin{matrix}
+                u = \left\{ \dots \right\} & du = \dots \\
+                dv = dx & v = x
+            \end{matrix}
+        \end{gather*}
+        % \item \begin{gather*} 
+        %     = \int \frac{(Bx + \mathbb{C})dx}{(x+\frac{p}{2})^2 + a^2} = \begin{vmatrix}
+        %         x + \frac{p}{2} = t\\
+        %         x = t - \frac{p}{2}\\
+        %         dx = dt
+        %     \end{vmatrix} = \int \frac{(B(t-\frac{p}{2})+C)dt}{t^2 + a^2} = B \int \frac{tdt}{t^2+a^2} + (-\frac{Bp}{2} + \mathbb{C}) \int \frac{dt}{t^2+a^2} =\\
+        %     = \frac{B}{2}\ln|t^2+a^2| + \frac{1}{a}\left(-\frac{Bp}{2} + \mathbb{C}\right)\arctg \frac{t}{a} + \mathbb{C}
+        % \end{gather*}
+        % \item \begin{gather*}
+        %     \int \frac{(Ax+B)}{(x^2 + px + q)^k}dx = \int \frac{(Ax+B)}{(x^2 + \boxed{2} * \frac{1}{2}p\boxed{x} + \frac{p^2}{4} - \frac{p^2}{4} + q)^k}dx =\\
+        %     = \int \frac{(Ax+B)dx}{[(x + \frac{p}{2})^2 + \underbrace{q - \frac{p^2}{4}}_{a^2, \, >0}]^k} = \begin{vmatrix}
+        %         t = x + \frac{p}{2}\\
+        %         x = t - \frac{p}{2}\\
+        %         dx = dt
+        %     \end{vmatrix} = \int \frac{A(t - \frac{p}{2}) + B}{(t^2 + a^2)^k}dt =\\
+        %     = A \int \frac{tdt}{(t^2 + a^2)^k} + \left(-\frac{Ap}{2} + B\right)\int \frac{dt}{(t^2 + a^2)^k} = \frac{A}{2}
+        % \end{gather*}
+    \end{enumerate}
+    \underline{Примеры:}
+    \begin{enumerate}
+        \item \[ \int \ln x dx = \begin{vmatrix}
+            u = \ln x & du = \frac{dx}{x} \\
+            dv = dx & v = x
+        \end{vmatrix} = x\ln x - \int dx = x\ln x - x + \mathbb{C} \]
+        \item \[ \int x \sin x dx = \begin{vmatrix}
+            u = x & du = dx\\
+            dv = \sin x dx & v = -\cos x
+        \end{vmatrix} = -x \cos x + \int \cos x dx = -x \cos x + \sin x + \mathbb{C} \]
+    \end{enumerate}
+
+    \subsection{Интегрирование рациональных дробей}
+    \subsubsection*{Элементарные дроби}
+    \begin{enumerate}
+        \item \[\frac{A}{x-a}\]
+        \item \[\frac{A}{(x-a)^k}\]
+        \item \[\frac{Bx+C}{x^2+px+q}\]
+        \item \[\frac{Bx+C}{(x^2+px+q)^k}\]
+    \end{enumerate}
+    Покажем, что элементарные дроби интегрируются:
+    \begin{enumerate}
+        \item \[ \int \frac{A}{x - a}dx = A\int \frac{d(x-a)}{x-a} = A\ln|x-a| + \mathbb{C} \]
+        \item \[ \int \frac{A}{(x - a)^k}dx = A\int (x-a)^{-k} \frac{d(x-a)}{x-a} = A \frac{(x-a)^{-k+1}}{-k+1} + \mathbb{C} \]
+        \item \begin{gather*} 
+            \int \frac{(Bx+C)}{x^2+px+q}dx = \int \frac{(Bx+C)dx}{x^2+2*\frac{1}{2}px + \frac{p^2}{4} - \frac{p^2}{4} + q} =\\
+            = \int \frac{(Bx+C)dx}{(x+\frac{p}{2})^2 + \underset{a^2}{\underbrace{q - \frac{p^2}{4}}}} = \int \frac{(Bx+C)dx}{(x+\frac{p}{2})^2+a^2} =\\
+            = \begin{vmatrix}
+                t = x + \frac{p}{2}\\
+                x = t - \frac{p}{2}\\
+                dx = dt
+            \end{vmatrix} = \int \frac{(B(t - \frac{p}{2}) + C)dt}{t^2 + a^2} = B \int \frac{tdt}{t^2+a^2} + (-\frac{Bp}{2} + \mathbb{C})\int \frac{dt}{t^2+a^2} =\\
+            = \frac{B}{2}\ln|t^2+a^2| + \frac{1}{a}(-\frac{Bp}{2} + \mathbb{C})\arctg \frac{t}{a} + \mathbb{C} = \left|t = x+\frac{p}{2}\right| =\\
+            = \frac{B}{2}\ln\left|(x + \frac{p}{x})^2 + a^2\right| + \frac{1}{a}(-\frac{Bp}{2} + \mathbb{C})\arctg \frac{x+2}{a} + \mathbb{C}
+        \end{gather*}
+        \item \begin{gather*}
+            \int \frac{Ax+B}{(x^2 + px + q)^k}dx = \int \frac{(Ax+B)dx}{(x^2+2*\frac{1}{2}px + \frac{p^2}{4} - \frac{p^2}{4} + q)^k} = \int \frac{(Ax+B)dx}{[(x+\frac{p}{2})^2 + \underset{a^2}{\underbrace{q - \frac{p^2}{4}}}]^k} =\\
+            = \begin{vmatrix}
+                t = x + \frac{p}{2}\\
+                x = t - \frac{p}{2}\\
+                dx = dt
+            \end{vmatrix} = \int \frac{A(t - \frac{p}{2}) + B}{(t^2 + a^2)^k}dt = A \int \frac{tdt}{(t^2 + a^2)^k} + (-\frac{Ap}{2} + B)\int \frac{dt}{(t^2 + a^2)^k} =\\
+            = \frac{A}{2}\frac{(t^2 + a^2)^{-k+1}}{-k+1} + (-\frac{Ap}{2} + B)\int \frac{dt}{(t^2 + a^2)^k}
+        \end{gather*}
+        Рассмотрим
+        \begin{gather*}
+            I_k = \int \frac{1dt}{(t^2 + a^2)^k} = \frac{1}{a^2} \int \frac{(t^2 + a^2 - t^2)dt}{(t^2 + a^2)^k} = \frac{1}{a^2} \int \frac{dt}{(t^2+a^2)^{k-1}} - \frac{1}{a^2}\int\frac{t^2dt}{(t^2 + a^2)^k} =\\
+            = \frac{1}{a^2}I_{k-1} - \begin{vmatrix}
+                u = t & du = dt\\
+                dv = \frac{tdt}{(t^2 + a^2)^k} & v = \frac{1}{2}\frac{(t^2+a^2)^{-k+1}}{(1-k)}\\
+            \end{vmatrix} =\\
+            = \frac{1}{a^2}I_{k-1} - \frac{1}{a^2} \left( \frac{t}{2(1-k)(t^2+a^2)^{k-1}} - \frac{1}{2(1-k)} \right) \int \frac{dt}{(t^2 + a^2)^{k-1}} =\\
+            = \frac{1}{a^2}I_{k-1} + \frac{t}{2a^2(k-1)(t^2+a^2)^{k-1}} - \frac{1}{2a^2(k-1)}I_{k-1} =\\
+            = \left| \frac{1}{a^2}(1 - \frac{1}{2(k-1)}) = \frac{1}{a^2}\frac{(2k-3)}{2(k-1)} \right| =\\
+            = \frac{t}{2a^2(k-1)(t^2+a^2)^{k-1}} + \frac{2k-3}{a^2(2k-2)}I_{k-1}
+        \end{gather*}
+    \end{enumerate}
     \underline{Пример:}
     \begin{gather*}
-        \int \frac{7x^2 + 26x - 9}{x^4 + 4x^3 + 4x^2 - 9}dx = \int \frac{7x^2 + 26x - 9}{(x-1)(x+3)(x^2 + 2x + 3)dx} \circeq
+        \int \frac{7x^2 + 26x - 9}{x^4 + 4x^3 + 4x^2 - 9}dx = \int \frac{7x^2 + 26x - 9}{(x-1)(x+3)(x^2 + 2x + 3)dx} \boxed{=}
     \end{gather*}
     \begin{gather*}
         \frac{7x^2 + 26x - 9}{(x-1)(x+3)(x^2+2x+3)} = \frac{A}{x-1} + \frac{B}{x+3} + \frac{Cx+D}{x^2+2x+3} =\\
         = \frac{A(x+3)(x^2+2x+3) + B(x-1)(x^2+2x+3) + (Cx+D)(x-1)(x+3)}{(x-1)(x+3)(x^2+2x+3)2C}
     \end{gather*}
-    \begin{gather*}
-        x^3 : 0 = A+B+C\\
-        x^2 : 7 = 5A+B+2C+D\\
-        x : 26 = 9A+B-3C+2D\\
-        x^0 : -9 = 9A-3B-3D
-    \end{gather*}
+    \begin{align*}
+        x^3 : &\, 0 = A+B+C\\
+        x^2 : &\, 7 = 5A+B+2C+D\\
+        x^1 : &\, 26 = 9A+B-3C+2D\\
+        x^0 : &\, -9 = 9A-3B-3D
+    \end{align*}
     \begin{gather*}
         A = 1, B = 1, C = -2, D = 5
     \end{gather*}
     \begin{gather*}
-        \circeq \int \frac{dx}{x-1} + \int \frac{dx}{x+3} + \int \frac{-2x+5}{x^2+2x+3}dx =\\
+        \boxed{=} \int \frac{dx}{x-1} + \int \frac{dx}{x+3} + \int \frac{-2x+5}{x^2+2x+3}dx =\\
         = \int \frac{dx}{x-1} + \int \frac{dx}{x+3} + (-1) \int \frac{2x+2 - 2 - 1*5}{x^2+2x+3}dx =\\
         = \int \frac{dx}{x-1} + \int \frac{dx}{x+3} - \int \frac{2x+2}{x^2+2x+3}dx + 7\int \frac{d(x+1)}{(x+1)^2+2} =\\
         = \int \frac{dx}{x-1} + \int \frac{dx}{x+3} - \int \frac{d(x^2+2x+3)}{x^2+2x+3}dx + 7\int \frac{d(x+1)}{(x+1)^2+2} =\\
@@ -2685,41 +2882,219 @@
 
     \subsection{Интегрирование тригонометрических функций}
     \begin{enumerate}
-        % ААААААААААААААААААААААААААААААААААААААААААААААААААААааааа
+        \item $\int \cos^{2n+1}x dx; \int \sin^{2n+1}x dx$\\
+        \underline{Замены:} используем метод подстановки: $t = \sin x$ и $t = \cos x$ соответственно.
+        \item $\int \cos^{2n}x dx; \int \sin^{2n}x dx$\\
+        \underline{Замены:} используем тригонометрические формулы уменьшения степени:
+        \[ \cos^{2}x = \frac{1+\cos 2x}{2}; \sin^2x = \frac{1-\cos 2x}{2} \]
+        \underline{Замечание:} аналогично решаются примеры вида $\int \sin^{2n}x \cos^{2n}x dx$
+        \item $\int \sin mx \cos nx dx; \int \sin mx \sin nx dx; \int \cos mx \cos nx dx$\\
+        \underline{Замены:} используем тригонометрические формулы:
+        \begin{gather*}
+            \sin mx \cos nx = \frac{1}{2}\left[ \sin(m-n)x + \sin(m+n)x \right]\\
+            \sin mx \sin nx = \frac{1}{2}\left[ \cos(m-n)x - \cos(m+n)x \right]\\
+            \cos mx \cos nx = \frac{1}{2}\left[ \cos(m-n)x + \cos(m+n)x \right]
+        \end{gather*}
+        \item $\int \tg^nx dx; \int \ctg^nx dx$\\
+        \underline{Замены:} 
+        \[ \boxed{ \tg^2x = \frac{1}{\cos^2x}-1; \ctg^2x = \frac{1}{\sin^2x}-1 } \]
         \item Интегралы вида $\int R(\sin x; \cos x)dx$\\
         \subsubsection*{Универсальная тригонометрическая подстановка}
         \[ \boxed{t = \tg \frac{x}{2}} \]
         \[ \boxed{\sin x = \frac{2\tg\frac{x}{2}}{1 + \tg^2 \frac{x}{2}} = \frac{2t}{1 + t^2}} \]
         \[ \boxed{\cos x = \frac{1-t^2}{1 + t^2}} \]
-        \[ \frac{x}{2} = \arctg t, \,\,\, x = 2 \arctg t, \,\,\, \boxed{ dx = \frac{2dt}{1+t^2} } \]
-        \underline{Пример:}
-        \begin{gather*} 
-            \int \frac{dx}{3 + 5\cos x} = \begin{vmatrix}
-                t = \tg \frac{x}{2}\\
-                \cos x = \frac{1 - t^2}{1 + t^2}\\
-                dx = \frac{2dt}{1 + t^2}
-            \end{vmatrix} = \int \frac{\frac{2dt}{1+t^2}}{3 + \frac{5-5t^2}{1 + t^2}} = \int \frac{\frac{2dt}{1 + t^2}}{\frac{3 + 3t^2 + 5 - 5t^2}{1 + t^2}} =\\
-            = 2 \int \frac{dt}{-2t^2 + 8} = - \int \frac{dt}{t^2 - 4} = -\frac{1}{4} \ln \left|\frac{t-2}{t+2}\right| + \mathbb{C} = -\frac{1}{4}\ln \left|\frac{\tg\frac{x}{2} - 2}{\tg\frac{x}{2} + 2}\right| + \mathbb{C}
-        \end{gather*}
-        \underline{Пример:}
-        \begin{gather*}
-            \int \frac{dx}{\sin x} = \begin{vmatrix}
-                t = \tg \frac{x}{2}\\
-                \sin x = \frac{2t}{1 + t^2}\\
-                dx = \frac{2dt}{1 + t^2}
-            \end{vmatrix} = \int \frac{\frac{2dt}{1 + t^2}}{\frac{2t}{1 + t^2}} = \int \frac{dt}{t} = \ln |t| + \mathbb{C} = \ln \left|\tg \frac{x}{2}\right| + \mathbb{C}
-        \end{gather*}
+        \[ \frac{x}{2} = \arctg t, \,\,\, x = 2 \arctg t, \,\,\, \boxed{ dx = \frac{2dt}{1+t^2}} \text{ - ВЫУЧИТЬ!} \]
+        Интеграл от дробно-рациональной функции:
+        \[ \int R(\sin x; \cos x)dx = \int R\left( \frac{2t}{1+t^2}\frac{1-t^2}{1+t^2} \right)\frac{2dt}{1+t^2} \]
+        \underline{Примеры:}
+        \begin{enumerate}
+            \item \begin{gather*} 
+                \int \frac{dx}{3 + 5\cos x} = \begin{vmatrix}
+                    t = \tg \frac{x}{2}\\
+                    \cos x = \frac{1 - t^2}{1 + t^2}\\
+                    dx = \frac{2dt}{1 + t^2}
+                \end{vmatrix} = \int \frac{\frac{2dt}{1+t^2}}{3 + \frac{5-5t^2}{1 + t^2}} = \int \frac{\frac{2dt}{1 + t^2}}{\frac{3 + 3t^2 + 5 - 5t^2}{1 + t^2}} =\\
+                = 2 \int \frac{dt}{-2t^2 + 8} = - \int \frac{dt}{t^2 - 4} = -\frac{1}{4} \ln \left|\frac{t-2}{t+2}\right| + \mathbb{C} = -\frac{1}{4}\ln \left|\frac{\tg\frac{x}{2} - 2}{\tg\frac{x}{2} + 2}\right| + \mathbb{C}
+            \end{gather*}
+            \item \begin{gather*}
+                \int \frac{dx}{\sin x} = \begin{vmatrix}
+                    t = \tg \frac{x}{2}\\
+                    \sin x = \frac{2t}{1+t^2}\\
+                    dx = \frac{2dt}{1+t^2}
+                \end{vmatrix} = \int \frac{\frac{2dt}{1+t^2}}{\frac{2t}{1+t^2}} = \int \frac{2dt}{2t} = \ln |t| + \mathbb{C} = \ln |\tg \frac{x}{2}| + \mathbb{C}
+            \end{gather*}
+        \end{enumerate}
         \textbf{Частные случаи:}
         \begin{enumerate}
             \item Подынтегральная функция нечётна относительно $\sin x$.
+            \[ \int R (-\sin x; \cos x)dx = - \int R(\sin x; \cos x)dx \]
+            \underline{Пример:} $\frac{\sin^3x}{\cos^4x}$. \underline{Замена:} $\boxed{t = \cos x}$
+            \item Подынтегральная функция нечётна относительно $\cos x$.
+            \[ \int R (\sin x; -\cos x)dx = - \int R(\sin x; \cos x)dx \]
+            \underline{Пример:} $\cos^5x\sin^8x$. \underline{Замена:} $\boxed{t = \sin x}$
+            \item Подынтегральная функция чётна или нечётна относительно обоих $\sin x$ и $\cos x$.
+            \[ \int R (-\sin x; -\cos x)dx = \int R(\sin x; \cos x)dx \]
+            \underline{Пример:} $\sin^2x \cos^6x$ или $\sin^3x \cos^5x$. \underline{Замены:}
+            \[ t = \tg x \] 
+            \[\boxed{\sin x = \frac{\tg x}{\sqrt{1 + \tg^2 x}} = \frac{t}{\sqrt{1 + t^2}}} \]
+            \[ \boxed{\cos x = \frac{1}{\sqrt{1 + t^2}}} \]
+            \[ x = \arctg t \]
+            \[ \boxed{dx = \frac{dt}{1+t^2}} \text{ - ВЫУЧИТЬ!} \]
+        \end{enumerate}
+        \underline{Примеры:}
+        \begin{enumerate}
+            \item \begin{gather*}
+                \int \frac{\sin^3 xdx}{\cos^4 x} = \begin{vmatrix}
+                    t = \cos x
+                \end{vmatrix} = - \int \frac{\sin^2x d\cos x}{\cos^4 x} = - \int \frac{(1 - \cos^2x)d\cos x}{\cos^4 x} =\\
+                = -\int\frac{d\cos x}{\cos^4 x} - \int \frac{\cos^2 x d\cos x}{\cos^4 x} = \frac{1}{3\cos^3 x} - \frac{1}{\cos x} + \mathbb{C}
+            \end{gather*}
+            \item \begin{gather*}
+                \int \frac{dx}{4\cos^2x + 3\sin^2x} = \begin{vmatrix}
+                    t = \tg x\\
+                    \sin x = \frac{t}{\sqrt{1 + t^2}}\\
+                    \cos x = \frac{1}{\sqrt{1 + t^2}}\\
+                    dx = \frac{dt}{1 + t^2}
+                \end{vmatrix} = \int \frac{\frac{dt}{1+t^2}}{\frac{4}{1+t^2} + \frac{3t^2}{1 + t^2}} = \int \frac{dt}{3t^2+4} =\\
+                = \frac{1}{\sqrt{3}}\int \frac{d(\sqrt{3}t)}{(\sqrt{3}t)^2 + 4} = \frac{1}{2\sqrt{3}}\arctg \frac{\sqrt{3}\tg x}{2} + \mathbb{C}
+            \end{gather*}
         \end{enumerate}
     \end{enumerate}
+    
+    \subsection{Интегрирование иррациональных функций}
+    \begin{enumerate}
+        \item $\int R(x, \sqrt{a^2 - x^2})dx$\\
+        \underline{Замена:} 
+        \[ x = a \sin t \text{ или } x = a \cos t \]
+        Замена $a \sin t$ удобнее:
+        \[ \sqrt{a^2 - x^2} = \sqrt{a^2 - a^2 \sin^2 t} = \sqrt{a^2(1 - \sin^2 t)} = a \cos t \]
+        \[ dx = a \cos t dt \]
 
-    % ААААААААААААААААААААААААААААААААААААААААААААААААААААА
+        \item $\int R(x, \sqrt{x^2 + a^2})dx$\\
+        \underline{Замена:} 
+        \[ x = a \tg t \text{ или } x = a \ctg t \]
+        Замена $a \tg t$ удобнее:
+        \[ \sqrt{x^2 + a^2} = \sqrt{a^2 tg^2 t + a^2} = \frac{a}{\cos t} \]
+        \[ dx = \frac{a}{\cos^2 t}dt \]
+
+        \item $\int R(x, \sqrt{x^2 - a^2})dx$\\
+        \underline{Замена:}
+        \[ x = \frac{a}{\cos t} \text{ или } x = \frac{a}{\sin t} \]
+        Замена $\frac{a}{\cos t}$ удобнее:
+        \[ \sqrt{x^2 - a^2} = \sqrt{\frac{a^2}{\cos^2 t} - a^2} = a \tg t \]
+        \[ dx = \frac{a \sin t}{\cos^2 t}dt \]
+        \underline{Пример:}
+        \begin{gather*}
+            \int \frac{\sqrt{1 - x^2}dx}{x} = \begin{vmatrix}
+                x = \sin t\\
+                t = \arcsin x\\
+                dx = \cos t dt
+            \end{vmatrix} = \int \frac{\cos^2 t}{\sin t}dt = \int \frac{1 - \sin^2 t}{\sin t}dt = \int \frac{dt}{\sin t} - \int \sin t dt =\\
+            = \ln \left| \tg \frac{t}{2} \right| + \cos t + \mathbb{C} = \ln \left| \tg \frac{\arcsin x}{2} \right| + \cos (\arcsin x) + \mathbb{C}
+        \end{gather*}
+
+        \item \[ I = \int R\left( x, \left(\frac{ax+b}{cx+d}\right)^{r_1}, \dots, \left( \frac{ax+b}{cx+d} \right)^{r_n} \right)dx \boxed{=}\]
+        $r_1, \dots, r_n$ - рац. числа.
+        \[ r_1 = \frac{p_1}{m},\, r_2 = \frac{p_2}{m}, \dots, r_n = \frac{p_n}{m} \]
+        $m$ - общий знаменатель дробей $r$.\\
+        \underline{Замена:}
+        \[ \boxed{\frac{ax + b}{cx + d} = t^m} \]
+        \[ x = \frac{t^m * d - b}{a - ct^m} = p(t) \]
+        \[ dx = p'(t)dt \]
+        \[ \boxed{=} \int R (p(t), (t^m)^{\frac{p_1}{m}}, \dots, (t^m)^{\frac{p_n}{m}})p'(t)dt = \underbrace{\int R_1(t)dt}_{\text{дробно рац. ф-ия}} \]
+        \underline{Частный случай:}
+        \[ I = \int R(x, (ax+b)^{r_1}, \dots, (ax+b)^{r_n})dx \to ax+b = t^m \]
+        \[ I = \int R(x, x^{r_1}, \dots, x^{r_n} ) \to x = t^m \]
+        \underline{Пример:}
+        \begin{gather*}
+            \int \frac{xdx}{\sqrt[3]{1+x} - \sqrt{1 + x}} = \begin{vmatrix}
+                \frac{1}{3} : \frac{1}{2} \to 6\\
+                t = \sqrt[6]{1 + x}\\
+                1 + x = t^6\\
+                x = t^6 - 1\\
+                dx = 6t^5dt
+            \end{vmatrix} = \int \frac{(t^6 - 1)6t^5dt}{t^2 - t^3} = -6 \int \frac{(t^6 - 1)t^3}{t-1}dt =\\
+            = -6 \int t^3(t^5 + t^4 + t^2 + t + 1)dt = \dots \text{(дальше разбивать на сумму интегралов и всё по старому)}
+        \end{gather*}
+
+        \item Интегралы от дифференциального бинома
+        \[ \int (a + bx^n)^p x^m dx \]
+        \[ a,b \in R; m,n,p \in Q \]
+        Интегрируются только в трёх случаях:
+        \begin{enumerate}
+            \item $p$ - целое. \underline{Замена:} $x = t^s$, где $s$ - общий знаменатель дробей $m$ и $n$.
+            \item $p$ - дробь, $\frac{m+1}{n}$ - целое. \underline{Замена:} $a + bx^n = t^s$, где $s$ - знаменатель дроби $p$.
+            \item $p$ - дробь, $\frac{m+1}{n}$ - дробь, $p + \frac{m+1}{n}$ - целое. \underline{Замена:} $ax^{-n} + b = t^s$, где $s$ - знаменатель дроби $p$.
+        \end{enumerate}
+        \underline{Пример:}
+        \begin{gather*}
+            \int \frac{\sqrt[3]{(1+2x^3)^2}dx}{x^6} = \int (1 - 2x^3)^{\frac{2}{3}}x^{-6}dx \boxed{=}\\
+            p = \frac{2}{3}\, n = 3\, m = 6\\
+            \boxed{=} \begin{vmatrix}
+                x^{-3} + 2 = t^3\\
+                -3x^{-4}dx = 3t^2dt\\
+                x^{-4}dx = -t^2dt
+            \end{vmatrix} = \int [x^3(x^{-3}+2)]^{\frac{2}{3}}x^{-6}dx = \int x^2(x^{-3}+2)^\frac{2}{3}x^{-6}dx = \int (x^{-3} + 2)^{\frac{2}{3}}x^{-4}dx =\\
+            = \int (t^3)^\frac{2}{3} - t^2dt = -\int t^4dt = -\frac{t^5}{5} + \mathbb{C} = \begin{vmatrix}
+                x^{-3} = t^3-2\\
+                t^3 = x^{-3} + 2\\
+                t = (x^{-3}+2)^{\frac{1}{3}}
+            \end{vmatrix} = -\frac{\sqrt[3]{(x^{-3}+2)^2}(x^{-3}+2)}{5}
+        \end{gather*}
+
+        \item Интеграл вида
+        \[ \int R (x, \sqrt{ax^2 + bx + c})dx \]
+        \underline{\textbf{Подстановки Эйлера:}}
+        \begin{enumerate}
+            \item I подстановка Эйлера (при $a > 0$)
+            \[ \sqrt{ax^2 + bx + c} = t \pm x\sqrt{a} \]
+            \[ \cancel{ax^2} + bx + c = t^2 \pm 2tx\sqrt{a} + \cancel{ax^2} \Rightarrow x, dx \]
+            \item II подстановка Эйлера (при $c > 0$)
+            \[ \sqrt{ax^2 + bx + c} = tx \pm \sqrt{c} \]
+            \[ ax^2 + bx + \cancel{c} = t^2x^2 \pm 2tx\sqrt{c} + \cancel{c} \]
+            \[ ax+b = t^2x \pm 2t\sqrt{c} \Rightarrow x, dx \]
+            \item III подстановка Эйлера (при $ax^2 + bx + c = 0 \Rightarrow \exists x_1, x_2 \in R$)
+            \[ \sqrt{\frac{a(x-x_1)}{x-x_2}} = t \sqrt{ax^2 + bx + c} = \sqrt{a(x-x_1)(x-x_2)} = \sqrt{\frac{a(x-x_1)(x-x_2)^2}{x-x_2}} = t(x-x_2) \]
+            \[ \frac{a(x-x_1)}{x-x_2} = t^2 \Rightarrow x, dx \]
+        \end{enumerate}
+        \underline{Пример:}
+        \begin{gather*}
+            \int \frac{dx}{x + \sqrt{x^2+x+1}} = \begin{vmatrix}
+                \sqrt{x^2 + x + 1} = t - x & dx = \frac{2t(2t+1)-2(t^2-1)}{(2t+1)^2} \\
+                x^2 + x + 1 = t^2 - 2tx + x^2 & dx = \frac{2t^2 + 2t + 2}{(2t+1)^2}dt\\
+                x(1 + 2t) = t^2 - 1\\
+                x = \frac{t^2 - 1}{2t + 1}
+            \end{vmatrix} = \int \frac{2t^2 + 2t + 2}{(2t+1)^2t}dt \boxed{=}\\
+            \frac{2t^2 + 2t + 2}{(2t+1)^2t} = \frac{A}{2t+1} + \frac{B}{(2t+1)^2} + \frac{C}{t} = \frac{2At^2 + At + Bt + 4t^2C + 4Ct + C}{(2t+1)^2t}\\
+        \end{gather*}
+        \begin{align*}
+            t^2 :\, &2A + 4C = 2\\
+            t^1 :\, &A + B + 4C = 2\\
+            t^0 :\, &C = 2
+        \end{align*}
+        \begin{gather*}
+            A = -3\, B = -3\, C = 2\\
+            \boxed{=} \int \frac{-3dt}{2t+1} - \int \frac{3dt}{(2t+1)^2}+2 \int \frac{dt}{t} = -3 \int \frac{dt}{2t+1} - 3 \int \frac{dt}{(2t+1)^2} + 2 \int \frac{dt}{t} =\\
+            = -\frac{3}{2}\int \frac{d(2t+1)}{2t+1} - \frac{3}{2}\int \frac{d(2t+1)}{(2t+1)^2} + 2\int\frac{dt}{t} = -\frac{3}{2}\ln |2t+1| + \frac{3}{2}\frac{1}{2t+1} + 2 \ln |t| + \mathbb{C} =\\
+            = -\frac{3}{2} \ln |2\sqrt{x^2+x+1}+2x+1| + \frac{3}{2}\frac{1}{2\sqrt{x^2+x+1}+2x+1} + 2 \ln |\sqrt{x^2+x+1}+x| + \mathbb{C}
+        \end{gather*}
+
+        \item Интегралы вида
+        \[ \int \frac{dx}{(x-\alpha)\sqrt{ax^2 + bx + c}} \]
+        \underline{Замена:} 
+        \[ \boxed{t = \frac{1}{x-\alpha}} \]
+        \underline{Пример:}
+        \[ \int \frac{dx}{(x-1)\sqrt{-x^2+3x-2}} = \begin{vmatrix}
+            t = \frac{1}{x-1}\\
+            x - 1 = \frac{1}{t}\\
+            x = \frac{1}{t} + 1\\
+            dx = -\frac{1}{t^2}dt
+        \end{vmatrix} = \int \frac{-\frac{1}{t^2}dt}{\frac{1}{t}\sqrt{-\left( \frac{1}{t} + 1 \right)^2 + \frac{3}{t} + 3 - 2}} \]
+    \end{enumerate}
 
     \section{Определённые интегралы}
     \subsection{Задачи, приводящие к определённым интегралам}
-    \begin{enumerate}
+    \begin{itemize}
         \item Площадь криволинейной трапеции.
         \begin{adjustwidth}{1.5em}{1.5em}
             \includegraphics{6.1.1.png}\\
@@ -2736,7 +3111,7 @@
             \end{enumerate}
         \end{adjustwidth}
         \item Вычисление массы стержня.
-    \end{enumerate}
+    \end{itemize}
     \subsection{Определение определённого интеграла}
     Пусть на $[a;b]$ задана функция $f(x)$.
     \begin{enumerate}
@@ -2753,34 +3128,105 @@
 
 
 
+    \section{Функции нескольких переменных}
+    \subsection{Основные понятия}
+    Рассмотрим упорядоченное множество $E$ пар чисел $(x; y)$\\
+    Пары $(x_1; y_1)$ и $(x_2; y_2)$ равны $\Leftrightarrow$ $x_1 = x_2, y_1 = y_2$.\par\noindent
+    Пусть каждой паре $(x; y) \in E$ по некоторому закону ставится в соответствие единственное число $z$. Тогда говорят, что на $E$ определена функция $z = f(x; y)$.\\
+    \underline{Примеры:}
+    \begin{center}
+        \includegraphics{7.1.1.png}
+    \end{center}
+    Рассмотрим множество упорядоченных систем
+    \[ (x_1, x_2, \dots, x_n), n \in N \]
+    Элементы этого множества можно рассматривать как точку $n$-мерного пространства $R^n$, а можно как $n$-мерные векторы.\\
+    В первом случае для них вводится понятие расстояния, во втором случае - соответствующие векторные операции.\par\noindent
+    \textbf{В случае вектора:}
+    \begin{align*}
+        \text{Пусть }&\overline{x} (x_1, \dots, x_n)\\
+        &\overline{y}(y_1,\dots,y_n)
+    \end{align*}
+    \begin{gather*}
+        \lambda\overline{x} + \mu \overline{y} = (\lambda x_1 + \mu y_1; \lambda x_2 + \mu y_2; \dots; \lambda x_n + \mu y_n)\\
+        \overline{x}\overline{y} = x_1y_1 + \dots + x_ny_n
+    \end{gather*}
+    Множество всех упорядоченных систем $\overline{x} = (x_1, \dots, x_n)$, для которых определены линейная комбинация и скалярное произведение двух элементов называется $n$-мерным арифметическим Евклидовым пространством.\par\noindent
+    \textbf{В случае точки:}
+    \begin{gather*}
+        \rho (x,y) \text{ - расстояние между точками}\\
+        \rho (x,y) = |x - y| = \sqrt{ \sum_{i = 1}^{n} (x_i - y_i)^2 }
+    \end{gather*}
+    Множество точек $x = (x_1, \dots, x_n)$, для которых выполняется неравенство $\rho (x, x^0) < \varepsilon$, называется $\varepsilon$-окрестностью точки $x^0$.\\
+    Точки множества называется внутренними точками, если $\exists$ $\varepsilon$-окрестность, целиком содержащаяся в этом множестве.\\
+    Точки множества называется граничными точками, если $\forall$ её $\varepsilon$-окрестность содержит как внутренние, так и внешние точки.\\
+    Точки множества называется внешними точками, если $\exists$ $\varepsilon$-окрестность, не содержащая ни одной точки множества.\par\noindent
+    Пусть в $R^n$
+    \begin{center}
+        \includegraphics{7.1.2.png}
+    \end{center}
+    Т.е. в пространстве $R^n$ задана последовательность $\{x^k\}$.\\
+    Точка $x^0 = (x^0_1, x^0_2, x^0_3, \dots, x^0_n)$ называется пределом последовательности $\{x^k\}$, если $\lim_{k\to\infty} \rho(x^k, x^0) = 0$\\
+    Обозначение: $\lim_{k\to\infty}x^k=x^0$\\
+    Или: Точка $x^0 = (x^0_1, x^0_2, x^0_3, \dots, x^0_n)$ называется пределом последовательности $\{x^k\}$, если $\forall \varepsilon > 0$ $\exists \text{ } n_0 \text{ } \big| \text{ } \forall n > n_0 : \rho(x^n, x^0) < \varepsilon$\\
+    Определение $\lim_{k\to\infty}x^k=x^0$ эквивалентно $n$ одномерным пределам.
+    \[ \lim_{k\to\infty}x^k_1 = x^0_1; \lim_{k\to\infty}x^k_2 = x^0_2; \dots; \lim_{k\to\infty}x^k_n = x^0_n \]
 
+    \subsection{Предел функции в точке}
+    \noindent Пусть функция $f(x_1, \dots, x_n)$ определена в $u(x^0)$, быть может за исключением самой точки $x^0$.\\
+    \textbf{По Гейне:} точка $a$ (одномерное число) называется пределом функции $f$ в точке $x^0$ ($f(x_1, \dots, x_n)$), если $\forall$ последовательности $\{x^k\} : \lim_{k\to\infty}x^k=x^0$, числовая последовательность $\{ f(x^k) \}$ (одномерная) имеет своим пределом точку $a$ ($\lim_{k\to x^0}f(x)=a$).\par\noindent
+    \textbf{По Коши:} точка $a$ называется пределом функции $f(x_1, \dots, x_n)$ в точке $x^0$, если
+    \[ \forall \varepsilon > 0 \text{ } \exists \text{ } \delta = \delta(\varepsilon) > 0 : \rho(x, x^0) < \delta \implies |f(x_1, \dots, x_n) - a| < \varepsilon \]
+    Рассмотрим функцию $f(x,y)$, заданную в окрестности точки $(x_0; y_0)$
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Пусть $\overline{\omega} (\omega_x, \omega_y)$ - единичный вектор.\\
+        $\frac{x - x_0}{\omega_x} = \frac{y - y_0}{\omega_y}$ - уравнение прямой, проходящей через точку $(x_0; y_0)$ с направляющим вектором $\overline{\omega}$.
+        \[ \begin{cases}
+            x = \omega_xt + x_0\\
+            y = \omega_yt + y_0
+        \end{cases}\text{ - параметрическое уравнение прямой} \]
+        Пусть $t \ge 0$. Получим луч, выходящий из точки $(x_0; y_0)$ в направлении $\overline{\omega}$.
+        \begin{center}
+            \includegraphics{7.2.1.png}
+        \end{center}
+        Рассмотрим $\underbrace{f(x; y)}_{\text{ф. 2-х перем. x, y}} = \underbrace{f(x_0+\omega_xt; y_0+\omega_yt)}_{\text{ф. 1 перем. t}}$.
+    \end{adjustwidth}
+    $\lim_{t \to 0} f(x_0+\omega_xt; y_0+\omega_yt)$, если он $\exists$, называется пределом функции $f(x, y)$ в точке $(x_0; y_0)$ по направлению $\overline{\omega}$.\\
+    \underline{Пример:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Рассмотрим $f(x,y) = \frac{x^2y}{x^4 + y^2}$; $f(x,y)$ определена $\forall x, y \in R$, кроме точки $(0, 0)$.
+        \[ \lim_{x \to 0\,y \to 0} \frac{x^2y}{x^4 + y^2} = \left[ \frac{0}{0} \right] = \begin{vmatrix}
+            y = kx\\
+            x \to 0 \Rightarrow y \to 0
+        \end{vmatrix} = \lim_{x\to 0} \frac{kx^3}{x^4+k^2x^2} = \lim_{x \to 0}\frac{kx}{x^2+k^2} = 0 \]
+        Проверим, может ли быть несовпадение пределов при другом значении $y$.
+        \[ \lim_{x \to 0\,y \to 0} \frac{x^2y}{x^4 + y^2} = \begin{vmatrix}
+            y = x^2\\
+            x \to 0 \Rightarrow y \to 0
+        \end{vmatrix} = \lim_{x \to 0}\frac{x^4}{x^4+x^4} = \frac{1}{2} \]
+        Пределы не совпали $\Rightarrow$ предел $\nexists$.
+    \end{adjustwidth}
+    Определение:
+    \[\begin{matrix}
+        \lim_{x \to x_0\, y \to y_0}f(x;y)=\infty & \forall M > 0\, \exists\, \delta = \delta(M): \rho(\underset{M(x,y)}{M}, \underset{M_0(x_0, y_0)}{M_0}) < \delta \Rightarrow |f(x;y)| > M\\
+        \lim_{x\to\infty\, y\to\infty}f(x,y) = a & \forall \varepsilon > 0\, \exists\, K = K(\varepsilon): |x| > K, |y| > K \Rightarrow |f(x,y) - a| < \varepsilon\\
+        \lim_{x\to-\infty\, y\to y_0}f(x,y) = -\infty & \forall M > 0\, \exists\, \delta = \delta(M): x < -\frac{1}{\delta}, |y-y_0|<\delta \Rightarrow f(x,y) < -M
+    \end{matrix}\]
 
-
-
-
-
-
-
-
-
-
-    % это пиздец
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    \section{Я хз}
-    \subsection{Ну и мем}
-    \subsubsection*{Ну хуй с ним пока что}
+    \subsection{Непрерывность функций нескольких переменных.}
+    Функция $f(x_1, \dots, x_n)$ называется непрерывной в точке $x^0 = (x^0_1, x^0_2, \dots, x^0_n)$, если она определена в некоторой окрестности точки $x^0$, в том числе и в самой точке $x^0$ и $\lim_{x \to x_0} f(x) = f(x^0)$ при $x = (x_1, \dots, x_n)$, $x^0 = (x^0_1, \dots, x^0_n)$.\par\noindent
+    \textbf{В эквивалентной форме:}
+    \begin{enumerate}
+        \item \[ \lim_{\Delta x_i \to 0} f(x^0_1 + \Delta x_1; x^0_2 + \Delta x_2; \dots; x^0_n + \Delta x_n) = f(x^0_1; x^0_2; \dots; x^0_n) \]
+        \item Пусть $\Delta f = f(x_1 + \Delta x_1; x_2 + \Delta x_2; \dots; x_n + \Delta x_n) - f(x_1; x_2; \dots; x_n)$ - приращение $f$.\\
+        $f(x_1; \dots; x_n)$ непрерывна в точке $x^0$, если $\lim_{\Delta x_i \to 0}\Delta f = 0$.
+    \end{enumerate}
+    \underline{Замечание:} сумма, разность, произведение и частное непрерывных функций в точке так же являются непрерывной функцией в точке.\par\noindent
+    \underline{Замечание:} функции
+    \[ \begin{cases}
+        x_1 = \varphi_1(t)\\
+        x_2 = \varphi_2(t)\\
+        \vdots\\
+        x_n = \varphi_n(t)
+    \end{cases} \]
+    $a \le t \le b$, непрерывные на $[a;b]$, определяют непрерывную кривую в $R^n$, соединяющую точки $x^1 = (\varphi_1(a); \varphi_2(a); \dots; \varphi_n(a))$ и $x^2 = (\varphi_1(b); \varphi_2(b); \dots; \varphi_n(b))$, где $t$ - параметр кривой.
 \end{document}
