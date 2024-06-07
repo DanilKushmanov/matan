@@ -2427,7 +2427,7 @@
         \textbf{Докажем достаточность ($\Leftarrow$)}\par\noindent
         Пусть $\forall x \in (a; b) \text{ } f'(x) \ge 0$\\
         Покажем, что $f(x)$ неубывающая на $(a;b)$.\\
-        Выберем произвольно $x_1, x_2 \in (a; b)$. Пусть $x_1 < x_2$. Тогда по теореме Лагранжа (12.4):
+        Выберем произвольно $x_1, x_2 \in (a; b)$. Пусть $x_1 < x_2$. Тогда по \hyperref[th:4.12.4]{теореме Лагранжа}:
         \[ f(x_2) - f(x_1) = f'(\xi)(x_2-x_1), \xi \in (x_1; x_2) \]
         По условию \[f'(x) \ge 0 \text{ } \forall x \in (a; b) \implies f'(\xi) \ge 0, x_2 - x_1 > 0 \implies f(x_2) - f(x_1) \ge 0 \implies f(x_1) \le f(x_2)\]
         Т.к. $x_1, x_2$ - произвольные и $\in (a; b) \implies$ на $(a;b)$ $f(x)$ неубывающая.
@@ -3171,7 +3171,7 @@
     Определение $\lim_{k\to\infty}x^k=x^0$ эквивалентно $n$ одномерным пределам.
     \[ \lim_{k\to\infty}x^k_1 = x^0_1; \lim_{k\to\infty}x^k_2 = x^0_2; \dots; \lim_{k\to\infty}x^k_n = x^0_n \]
 
-    \subsection{Предел функции в точке}
+    \subsection{Предел функций нескольких переменных в точке}
     \noindent Пусть функция $f(x_1, \dots, x_n)$ определена в $u(x^0)$, быть может за исключением самой точки $x^0$.\\
     \textbf{По Гейне:} точка $a$ (одномерное число) называется пределом функции $f$ в точке $x^0$ ($f(x_1, \dots, x_n)$), если $\forall$ последовательности $\{x^k\} : \lim_{k\to\infty}x^k=x^0$, числовая последовательность $\{ f(x^k) \}$ (одномерная) имеет своим пределом точку $a$ ($\lim_{k\to x^0}f(x)=a$).\par\noindent
     \textbf{По Коши:} точка $a$ называется пределом функции $f(x_1, \dots, x_n)$ в точке $x^0$, если
@@ -3228,5 +3228,250 @@
         \vdots\\
         x_n = \varphi_n(t)
     \end{cases} \]
-    $a \le t \le b$, непрерывные на $[a;b]$, определяют непрерывную кривую в $R^n$, соединяющую точки $x^1 = (\varphi_1(a); \varphi_2(a); \dots; \varphi_n(a))$ и $x^2 = (\varphi_1(b); \varphi_2(b); \dots; \varphi_n(b))$, где $t$ - параметр кривой.
+    $a \le t \le b$, непрерывные на $[a;b]$, определяют непрерывную кривую в $R^n$, соединяющую точки $x^1 = (\varphi_1(a); \varphi_2(a); \dots; \varphi_n(a))$ и $x^2 = (\varphi_1(b); \varphi_2(b); \dots; \varphi_n(b))$, где $t$ - параметр кривой.\\
+    Множество $G$ называется связным, если $\forall$ его две точки можно соединить непрерывной кривой, целиком лежащей в $G$.
+    
+    \subsection{Частные производные функций нескольких переменных.}
+    \[ f'(x) = \frac{df}{dx} = \lim_{\Delta x \to 0}\frac{f(x+\Delta x) - f(x)}{\Delta x} \]
+    Пусть функция $f(x_1, \dots, x_n)$ определена в некоторой окрестности точки $x^0 = (x^0_1, x^0_2, \dots, x^0_n)$\\
+    $\Delta x_k f = f(x_1, x_2, \dots, x_k + \Delta x_k, \dots, x_n) - f(x_1, x_2, \dots, x_k, \dots, x_n)$ - частное приращение функции по переменной $x_k$.
+    \[ \lim_{\Delta x_k \to 0} \frac{\Delta x_k f}{\Delta x_k} = \frac{\partial f}{\partial x_k} = f'_{x_k} \]
+    Т.е. частная производная по переменной $x_k$ - это обычная производная по этой переменной при условии, что все остальные фиксированные.\\
+    \underline{Пример:}
+    \[ f(x,y) = x^y \]
+    \[ \frac{\partial f}{\partial x} = yx^{y-1} \]
+    \[ \frac{\partial f}{\partial y} = x^y \ln x \]
+    \underline{Замечание (\textbf{!!!}):} из существования у функции всех частных производных \textbf{НЕ} следует непрерывность этой функции в рассматриваемой точке (в отличие от функции одной переменной).
+    \begin{center}
+        \includegraphics{7.4.1.png}
+    \end{center}
+    \begin{gather*}
+        f(x, y) = \begin{cases}
+            0, xy = 0\\
+            1, xy \ne 0
+        \end{cases}\\
+        \frac{\partial f}{\partial x} \Big|_{(0; 0)} = \frac{\partial f}{\partial y} \Big|_{(0; 0)} = 0\\
+        \text{Но } f \text{ не является непрерывной в точке } (0; 0)\\
+        \lim_{x\to 0\, y\to 0}f(x,y) = | y = x | = 1 \ne f(0;0) = 0
+    \end{gather*}
+
+    \subsection{Дифференциуемость функций нескольких переменных.}\noindent
+    Пусть функция $z = f(x;y)$ определена в некоторой окрестности точки $M_0 = u(M_0, \delta)$.\\
+    Пусть точка $M (x; y) \in u(M_0; \delta)$.
+    \begin{center}
+        \includegraphics{7.5.1.png}
+    \end{center}
+    Функция $z = f(x;y)$ называется дифференциуемой в точке $M_0 (x_0; y_0)$, если существуют конечные $A$ и $B$ такие, что приращение $\Delta z$ в окрестности точки $M_0$ представимо в виде
+    \[ \Delta z = A \Delta x + B \Delta y + o(\rho), \rho \to 0, \rho = \sqrt{\Delta x^2 + \Delta y^2} \]
+    \underline{Замечание:} рассмотрим $\varepsilon = \varepsilon (\Delta x; \Delta y): \lim_{\rho \to 0}\varepsilon = 0$. Тогда $o(\rho) = \underset{\text{б. малое}}{\varepsilon(\Delta x; \Delta y)} * \underset{\text{б. малое}}{\rho}$. Тогда:
+    \[ \Delta z = A \Delta x + B \Delta y + \varepsilon (\Delta x; \Delta y) * \rho \]
+    Если $z = f(x; y)$ дифференциуема в точке $(x_0; y_0)$, то линейная часть приращения $\Delta z = A \Delta x + B \Delta y$ называется дифференциалом функции $z$ в точке $(x_0; y_0)$.
+    \begin{gather*}
+        \Delta x = dx, \Delta y = dy\\
+        \Delta z = Adx + Bdy
+    \end{gather*}
+    \subsubsection*{Теорема 7.5.1}\label{th:7.5.1}
+    Для того, чтобы функция $z = f(x;y)$, заданная в $u(M_0; \delta)$, была дифференциуемой в точке $M_0$ $\Leftrightarrow$ чтобы существовали: 
+    \[\varepsilon_1 = \varepsilon_1(\Delta x; \Delta y)\]
+    \begin{center}
+        и
+    \end{center}
+    \[\varepsilon_2 = \varepsilon_2 (\Delta x; \Delta y)\] 
+    \begin{center}
+        такие, что
+    \end{center}
+    \[\lim_{\rho \to 0}\varepsilon_1 = \lim_{\rho \to 0}\varepsilon_2 = 0\]
+    \begin{center}
+        и что $\Delta z$ в $u(M_0; \delta)$ имело бы вид
+    \end{center}
+    \[ \Delta z = A \Delta x + B \Delta y + \varepsilon_1 (\Delta x; \Delta y)\Delta x + \varepsilon_2 (\Delta x; \Delta y)\Delta y \]
+    \noindent\underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        \textbf{Докажем необходимость ($\Rightarrow$)}\par\noindent
+        Пусть $z = f(x; y)$ дифференциуема в точке $M_0$. Тогда по определению:
+        \[ \Delta z = A \Delta x + B \Delta y + \varepsilon (\Delta x; \Delta y)\rho \]
+        Рассмотрим 
+        \[ \varepsilon_\rho = \varepsilon \sqrt{\Delta x^2 + \Delta y^2} = \frac{\varepsilon (\Delta x^2 + \Delta y^2)}{\sqrt{\Delta x^2 + \Delta y^2}} = \left( \frac{\varepsilon \Delta x}{\sqrt{\Delta x^2 + \Delta y^2}} \right)\Delta x + \left( \frac{\varepsilon \Delta y}{\sqrt{\Delta x^2 + \Delta y^2}} \right)\Delta y \]
+        Положим
+        \[ \varepsilon_1 (\Delta x; \Delta y) = \left( \frac{\varepsilon \Delta x}{\sqrt{\Delta x^2 + \Delta y^2}} \right) \]
+        \[ \varepsilon_2 (\Delta x; \Delta y) = \left( \frac{\varepsilon \Delta y}{\sqrt{\Delta x^2 + \Delta y^2}} \right) \]
+        Пусть $\varepsilon_1 (0; 0) = \varepsilon_2 (0; 0) = 0$ (доопределили в точке $(0; 0)$).\\
+        Тогда $\varepsilon_\rho = \varepsilon_1 \Delta x + \varepsilon_2 \Delta y$.
+        \[ \left| \frac{\Delta x}{\rho} \right| \le 1\, \left| \frac{\Delta y}{\rho} \right| \le 1\, \rho \ne 0 \]
+        \[ | \varepsilon_1 | = \left| \frac{\varepsilon \Delta x}{\rho} \right| \le \underset{\to 0\, \rho \to 0}{|\varepsilon|} \]
+        \[ | \varepsilon_2 | = \left| \frac{\varepsilon \Delta y}{\rho} \right| \le \underset{\to 0\, \rho \to 0}{|\varepsilon|} \]
+        \[ \rho \ne 0 \]
+        При $\rho = 0$ $\varepsilon = \varepsilon_1 = \varepsilon_2$.\\
+        Тогда $\lim_{\rho \to 0}\varepsilon_1 = 0$ и $\lim_{\rho \to 0}\varepsilon_2 = 0$.\par\noindent
+
+        \textbf{Докажем достаточность ($\Leftarrow$)}\par\noindent
+        Пусть 
+        \[ \Delta z = A \Delta x + B \Delta y + \varepsilon_1 \Delta x + \varepsilon_2 \Delta y \]
+        Рассмотрим 
+        \[ \varepsilon_1 \Delta x + \varepsilon_2 \Delta y = \left( \frac{\varepsilon_1 \Delta x}{\rho} + \frac{\varepsilon_2 \Delta y}{\rho} \right) \rho, \rho \ne 0 \]
+        Пусть
+        \[ \varepsilon(\Delta x; \Delta y) = \begin{cases}
+            \frac{\varepsilon_1 \Delta x}{\rho} + \frac{\varepsilon_2 \Delta y}{\rho}, \rho \ne 0\\
+            0, \rho = 0
+        \end{cases} \]
+        Тогда
+        \[ \varepsilon_1 \Delta x + \varepsilon_2 \Delta y = \varepsilon_\rho\, \forall \rho \]
+        Рассмотрим
+        \[ |\varepsilon| = \left| \varepsilon_1 \frac{\Delta x}{\rho} + \varepsilon_2 \frac{\delta y}{\rho} \right| \le |\varepsilon_1| \underbrace{\frac{|\Delta x|}{\rho}}_{= 1} + |\varepsilon_2| \underbrace{\frac{|\Delta y|}{\rho}}_{= 1} \le |\varepsilon_1| + |\varepsilon_2| \]
+        \[ \lim_{\rho \to 0}\varepsilon = 0 \]
+        То есть
+        \[ \Delta z = A \Delta x + B \Delta y + \varepsilon (\Delta x; \Delta y)\rho \]
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+    \subsubsection*{Теорема 7.5.2}\label{th:7.5.2}
+    Если функция дифференциуема в некоторой точке, то она непрерывна в этой точке.\par\noindent
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Так как функция дифференциуема в точке $M_0$, то по определению:
+        \[ \Delta z = A \Delta x + B \Delta y + \varepsilon_1 \Delta x + \varepsilon_2 \Delta y \]
+        \[ \lim_{\rho \to 0} \Delta z = 0 \]
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+    \subsubsection*{Теорема 7.5.3}\label{th:7.5.3}
+    Если функция $z = f(x; y)$ дифференциуема в точке $(x_0; y_0)$, то в этой точке $\exists$ частные производные по $x$ и по $y$:
+    \[ \frac{\partial f}{\partial x} \Big|_{M_0} = A \]
+    \[ \frac{\partial f}{\partial y} \Big|_{M_0} = B \]
+    Тогда 
+    \[ dz = A\Delta x + B\Delta y = \frac{\partial f}{\partial x} \Big|_{M_0}dx + \frac{\partial f}{\partial y} \Big|_{M_0}dy \]
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Т.к. $z = f(x;y)$ дифференциуема в точке $M_0$, то по определению:
+        \[ \Delta z = A \Delta x + B \Delta y + \varepsilon_1 \Delta x + \varepsilon_2 \Delta y \]
+        Пусть $\Delta y = 0$. Тогда 
+        \[ \Delta_x z = A \Delta x + \varepsilon_1 \Delta x \]
+        \[ \frac{\Delta_x z}{\Delta x} = A + \varepsilon_1 \]
+        \[ \lim_{\Delta x \to 0} \frac{\Delta_x z}{\Delta x} = \lim_{\Delta x \to 0}(A + \varepsilon_1) \]
+        \[ \frac{\partial z}{\partial x} \Big|_{M_0} = A \]
+        Аналогично
+        \[ \frac{\partial z}{\partial y} \Big|_{M_0} = B \]
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+    \underline{Замечание:} функция, имеющая в некоторой точке частные производные, может быть недифференцируемой функцией в этой точке, т.к. дифференциуемая функция обязана быть непрерывной, а есть случаи, когда функция имеет конечные частные производные, но не является непрерывной.
+    \subsubsection*{Теорема 7.5.4 (достаточное условие дифференциуемости)}\label{th:7.5.4}
+    Если функция имеет в окрестности точки частные производные и они \underline{непрерывны} в этой точке, то функция дифференциуема в этой точке.\par\noindent
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Пусть $z = f(x;y)$ задана в $u(M_0; \delta)$, имеет частную производную $\frac{\partial f}{\partial x} \Big|_{M_0}$ и $\frac{\partial f}{\partial y} \Big|_{M_0}$, $\frac{\partial f}{\partial x}$ и $\frac{\partial f}{\partial y}$ непрерывны в точке $M_0$.\\
+        Рассмотрим
+        \[ \Delta z = f(x_0 + \Delta x; y_0 + \Delta y) - f(x_0; y_0) = [ f(x_0 + \Delta x; y_0 + \Delta y) - f(x_0; y_0 + \Delta y) ] + [f(x_0; y_0 + \Delta y) - f(x_0; y_0)] \]
+        По \hyperref[th:4.12.4]{теореме Лагранжа}:
+        \begin{gather*}
+            f(b) - f(a) = f'(\xi)(b-a), \xi \in (a, b)\\
+            f(b) - f(a) = f'(a + \theta(b-a))(b-a), 0 < \theta < 1\\
+            f(x + \Delta x) - f(x) = f'(x + \theta \Delta x) \Delta x
+        \end{gather*}
+        Тогда
+        \[ \Delta z = f'_x (x_0 + \theta_1 \Delta x; y_0 + \Delta y)\Delta x + f'_y(x_0; y_0 + \theta_2 \Delta y)\Delta y\,\,\,\,\, (*) \]
+        Т.к. частные производные $f'_x$ и $f'_y$ непрерывны в точке $(x_0; y_0)$, то
+        \[ \lim_{\rho \to 0} f'_x(x_0 + \theta_1 \Delta x; y_0 + \Delta y) = f'_x(x_0; y_0) \]
+        \[ \lim_{\rho \to 0} f'_y(x_0; y_0 + \theta_2 \Delta y) = f'_y(x_0; y_0) \]
+        \underline{Замечание:}
+        \[ \lim_{n\to\infty} x_n = a \]
+        \[ \lim_{x \to x_0} f(x) = a \]
+        \[ x_n = a + \alpha_n, \{ \alpha_n \}\text{ - беск. малая} \]
+        \[ \forall x \in u(x_0)\, f(x) = a + \varepsilon(x), \lim_{x\to x_0} \varepsilon(x) = 0 \]
+        Тогда
+        \[ \begin{vmatrix}
+            f'_x(x_0 + \theta_1 \Delta x; y_0 + \Delta y) = f'_x (x_0; y_0) + \varepsilon_1 (\Delta x; \Delta y); \lim_{\rho \to 0} \varepsilon_1(\Delta x; \Delta y) = 0\\
+            f'_y(x_0; y_0 + \theta_2 \Delta y) = f'_y (x_0; y_0) + \varepsilon_2 (\Delta x; \Delta y); \lim_{\rho \to 0} \varepsilon_2(\Delta x; \Delta y) = 0
+        \end{vmatrix} \,\,\,\,\, (**) \]
+        Подставим $(**)$ в $(*)$. Тогда
+        \[ \Delta z = f'_x(x_0; y_0)\Delta x + f'_y(x_0; y_0)\Delta y + \varepsilon_1\Delta x + \varepsilon_2 \Delta y \]
+        Т.е. по определению функция дифференциуема в точке $(x_0; y_0)$.
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+
+    \subsection{Дифференциуемость сложной функции.}
+    \subsubsection*{Теорема 7.6.1 (о производной сложной функции)}\label{th:7.6.1}
+    Если $x = x(t)$, $y = y(t)$ дифференциуемы в точке $t_0$, а функция $z = f(x;y)$ дифференциуема в точке $(x_0; y_0)$, где $x_0 = x(t_0)$, $y_0 = y(t_0)$, тогда сложная функция $f(x(t), y(t))$ дифференциуема в точке $t_0$ и 
+    \[ \frac{df}{dt} = \frac{\partial f}{\partial x} * \frac{dx}{dt} + \frac{\partial f}{\partial y} * \frac{dy}{dt} \]
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Так как $f(x;y)$ дифференциуема в точке $(x_0; y_0)$, то по определению:
+        \[ \Delta z = \frac{\partial z}{\partial x} \Delta x + \frac{\partial z}{\partial y} \Delta y + \varepsilon_1 \Delta x + \varepsilon_2 \Delta y \,\,\,\,\, (*) \]
+        \[ \lim_{\rho \to 0} \varepsilon_1 = \lim_{\rho \to 0} \varepsilon_2 = 0 \]
+        Так как $x(t), y(t)$ дифференциуемы в точке $t_0 \Rightarrow$ они непрерывны в точке $t_0 \Rightarrow$ т.е. при $\Delta t \to 0 \Rightarrow \Delta x, \Delta y \to 0 \Rightarrow \Delta t \to 0 \Rightarrow \rho \to 0$.\\
+        То есть $\lim_{\rho \to 0} \varepsilon_1 = \lim_{\rho \to 0}\varepsilon_2 = \lim_{\Delta t \to 0} \varepsilon_1 = \lim_{\Delta \to 0}\varepsilon_2 = 0$.\\
+        Разделим (*) на $\Delta t$:
+        \[ \frac{\Delta z}{\Delta t} = \frac{\partial f}{\partial x} * \frac{dx}{dt} + \frac{\partial f}{\partial y} * \frac{dy}{dt} + \varepsilon_1 \frac{\Delta x}{\Delta t} + \varepsilon_2 \frac{\Delta y}{\Delta t} \]
+        \[ \lim_{\Delta t \to 0} \frac{\Delta z}{\Delta t} = \frac{dz}{dt} = \frac{\partial f}{\partial x} * \frac{dx}{dt} + \frac{\partial f}{\partial y} * \frac{dy}{dt} \]
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+    \underline{Замечание:} пусть $f = f(x_1, \dots, x_n)$
+    \begin{gather*}
+        x_1 = x_1(t_1, \dots, t_m)\\
+        x_2 = x_2(t_1, \dots, t_m)\\
+        \vdots\\
+        x_n = x_n(t_1, \dots, t_m)\\
+    \end{gather*}
+    \[ \frac{\partial f}{\partial t_j} = \frac{\partial f}{\partial x_1} * \frac{\partial x_1}{\partial t_j} + \frac{\partial f}{\partial x_2} * \frac{\partial x_2}{\partial t_j} + \dots + \frac{\partial f}{\partial x_n} * \frac{\partial x_n}{\partial t_j} = \sum_{i=1}^{n} \frac{\partial f}{\partial x_i} * \frac{\partial x_i}{\partial t_j} = \frac{\partial f}{\partial t_j} \]
+
+    \subsection{Инвариантность формы записи первого дифференциала.}
+    Если функции $x_i = x_i(t_1, \dots, t_m)$ ($i = \overline{1,n}$) непрерывны в точке $(t^0_1, \dots, t^0_m)$, а функция $y = f(x_1, \dots, x_n)$ имеет непрерывные частные производные в точке $x^0 = (x^0_1, \dots, x^0_n)$, где $x^0_i = x^0_i(t)$ ($i = \overline{1,n}$), тогда запись первого дифференциала обладает свойством инвариантности относительно независимых и зависимых переменных.
+    \[ dy = \frac{\partial f}{\partial x_1}dx_1 + \frac{\partial f}{\partial x_2}dx_2 + \dots + \frac{\partial f}{\partial x_n}dx_n = \sum_{i=1}^{n}\frac{\partial f}{\partial x_i}dx_i \]
+    \[ dx_i = \frac{\partial x_i}{\partial t_1}dt_1 + \frac{\partial x_i}{\partial t_2}dt_2 + \dots + \frac{\partial x_i}{\partial t_m}dt_m = \sum_{j=1}^{m} \frac{\partial x_i}{\partial t_j}dt_j \]
+
+    \subsection{Геометрический смысл частных производных и дифференциалов.}
+    Рассмотрим $z = f(x; y)$. Пусть $z$ в точке $(x_0; y_0)$ имеет частную производную.
+    \[ \frac{\partial f}{\partial x} \Big|_{(x_0; y_0)} = \frac{df(x; y_0)}{dx} \Big|_{x = x_0} = \tg \alpha \]
+    \[ \alpha{ - угол наклона касательной к графику функции } z = f(x; y) \]
+    \[ \left(\text{к кривой} \begin{cases}
+        z = f(x; y)\\
+        y = y_0
+    \end{cases} \text{в точке } (x_0; y_0)\right) \]
+    \begin{center}
+        \includegraphics{7.8.1.png}
+    \end{center}
+    Пусть $z = f(x;y)$ дифференциуема в точке $(x_0; y_0)$.
+    \[ \Delta z = \frac{\partial f}{\partial x} \Big|_{(x_0; y_0)} \Delta x + \frac{\partial f}{\partial y} \Big|_{(x_0; y_0)} \Delta y + o(\rho), \rho \to 0 \]
+    \[ \Delta z = z - z_0 \]
+    \[ \Delta y = y - y_0 \]
+    \[ \Delta x = x - x_0 \]
+    \[ z = z_0 + \frac{\partial f}{\partial x} \Big|_{(x_0; y_0)} (x-x_0) + \frac{\partial f}{\partial y} \Big|_{(x_0; y_0)} (y-y_0) + o(\rho) \,\,\,\,\, (1) \]
+    Плоскость, определяемая уравнением
+    \[ z = z_0 + \frac{\partial f}{\partial x} \Big|_{(x_0; y_0)} (x-x_0) + \frac{\partial f}{\partial y} \Big|_{(x_0; y_0)} (y-y_0) \,\,\,\,\, (2) \]
+    называется касательной плоскостью к графику функции $z = f(x;y)$ в точке $(x_0; y_0)$.\\
+    Обозначим в $(2)$ $z = z_{\text{кас}}$\\
+    Тогда из $(1)$ и $(2)$ следует, что $z - z_{\text{кас}} = o(\rho), \rho \to 0$.
+    \begin{center}
+        \includegraphics{7.8.2.png}
+    \end{center}
+    Рассмотрим $(2)$:
+    \[ 1 * z_{\text{кас}} = z + \underbrace{\frac{\partial f}{\partial x} \Big|_{(x_0; y_0)} (x-x_0) + \frac{\partial f}{\partial y} \Big|_{(x_0; y_0)} (y-y_0)} \]
+    \[ z_{\text{кас}} = z_0 + df \Big|_{(x_0; y_0)} \]
+    \[ df \Big|_{x_0; y_0} = z_{\text{кас}} - z_0 \]
+    \[ \bar{n} \left(\frac{\partial f}{\partial x} \Big|_{(x_0; y_0)} (x-x_0); \frac{\partial f}{\partial y} \Big|_{(x_0; y_0)} (y-y_0); -1\right) \]
+    Прямая вида
+    \[ \frac{x - x_0}{\left( \frac{\partial f}{\partial x} \right) \Big|_{(x_0; y_0)}} = \frac{y - y_0}{\left( \frac{\partial f}{\partial y} \right) \Big|_{(x_0; y_0)}} = \frac{z - z_0}{-1} \]
+    называется нормалью к поверхности $z = f(x; y)$ в точке $(x_0; y_0)$.
+    \underline{Замечание:} если поверхность задана неявно $F(x,y,z) = 0$:
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Уравнение касательной плоскости: 
+        \[ \frac{\partial F}{\partial x} \Big|_{(x_0; y_0; z_0)} (x-x_0) + \frac{\partial F}{\partial y} \Big|_{(x_0; y_0; z_0)} (y-y_0) + \frac{\partial F}{\partial z} \Big|_{(x_0; y_0; z_0)} (z-z_0) = 0 \]
+        Уравнение нормали:
+        \[ \frac{x - x_0}{\left( \frac{\partial F}{\partial x} \right) \Big|_{M_0}} = \frac{y - y_0}{\left( \frac{\partial F}{\partial y} \right) \Big|_{M_0}} = \frac{z - z_0}{\left( \frac{\partial F}{\partial z} \right) \Big|_{M_0}} \]
+    \end{adjustwidth}
+    \subsubsection*{Частные дифференциалы}
+    Если частное приращение функции $z = f(x;y)$ и $\Delta_x f$ можно представить в виде $\Delta_x f = A \Delta x + \varepsilon$, то $A \Delta x$ называются частным дифференциалом функции $f(x;y)$ в точке 
+    \[ d_x f = A\Delta x = Adx = \frac{\partial f}{\partial x} \Big|_{M_0}dx \]
+    Аналогично
+    \[ d_y f = \frac{\partial f}{\partial y} \Big|_{M_0}dy \]
+    Рассмотрим $z = f(x;y)$
+    \[ dz = \frac{\partial f}{\partial x} \Big|_{M_0}dx + \frac{\partial f}{\partial y} \Big|_{M_0}dy = d_x f \Big|_{M_0} + d_y f \Big|_{M_0} \]
+    $dz$ - полный дифференциал.
 \end{document}

@@ -145,4 +145,12 @@
 	  ],
 	  "description": "stuff for mat"
 	},
+	"diff_fnp": {
+		"scope": "tex,latex",
+		"prefix": "diff_fnp",
+		"body": [
+			"\\Delta z = A \\Delta x + B \\Delta y + \\varepsilon_1 \\Delta x + \\varepsilon_2 \\Delta y"
+		],
+		"description": "stuff for mat"
+	}
 }
