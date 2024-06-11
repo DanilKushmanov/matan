@@ -205,7 +205,7 @@
 		"scope": "tex,latex",
 		"prefix": "xi",
 		"body": [
-			"$\\xi_i$"
+			"\\xi_i"
 		],
 		"description": "stuff for mat"
 	},
@@ -213,7 +213,7 @@
 		"scope": "tex,latex",
 		"prefix": "sr",
 		"body": [
-			"$\\sigma_R$"
+			"\\sigma_R"
 		],
 		"description": "stuff for mat"
 	},
