@@ -3624,4 +3624,72 @@
     \[ d^2 f = \sum_{i=1}^{n} \sum_{j=1}^{n} \frac{\partial^2 f}{\partial x_i \partial x_j} dx_i dx_j \]
     Аналогично определяются дифференциалы более высокого порядка:
     \[ d^k f = \delta(d^{k-1}f)\Big|_{dx_i = \delta x_i} \]
+    $y = f(x)$\\
+    $dy = f'(x)dx$\\
+    Рассмотрим $f = f(x_1\, \dots\, x_n)$:
+    \[ d^k f = \left( \frac{\partial}{\partial x_1} dx_1 + \frac{\partial}{\partial x_2} dx_2 + \dots + \frac{\partial}{\partial x_n} dx_n \right)^{(k)}f \]
+    $(k)$ - символическая степень.\par\noindent
+    Рассмотрим $f = f(x;y)$:
+    \begin{gather*}
+            d^2 f=\left(\frac{\partial}{\partial x} d x+\frac{\partial}{\partial y} d y\right)^{(2)} f=\left(\frac{\partial^2}{\partial x^2} d x^2+2 \frac{\partial^2}{\partial x \partial y} d x d y+\frac{\partial^2}{\partial y^2} d y^2\right) f= \\
+            = \frac{\partial^2 f}{\partial x^2} d x^2+2 \frac{\partial^2 f}{\partial x \partial y} d x d y+\frac{\partial^2 f}{\partial y^2} d y^2 \\
+            d^3 f=\left(\frac{\partial}{\partial x} d x+\frac{\partial}{\partial y} d y\right)^{(3)} f=\frac{\partial^3 f}{\partial x^3} d x^3+3 \frac{\partial^3 f}{\partial x^2 \partial y} d x^2 d y+3 \frac{\partial^3 f}{\partial x \partial y^2} d x d y^2+\frac{\partial^3 f}{\partial y^3} d y^3
+    \end{gather*}
+    Рассмотрим $g = g(x; y; z)$:
+    \begin{gather*}
+        d^2 g=\left(\frac{\partial}{\partial x} d x+\frac{\partial}{\partial y} d y+\frac{\partial}{\partial z} d z\right)^2 g=\frac{\partial^2 g}{\partial x^2} d x^2+\frac{\partial^2 g}{\partial y^2} d y^2+\frac{\partial^2 g}{\partial z^2} d z^2+ \\
+        +2 \frac{\partial^2 g}{\partial x \partial y} d x d y+2 \frac{\partial^2 g}{\partial x \partial z} d x d z+2 \frac{\partial^2 g}{\partial y \partial z} d y d z
+    \end{gather*}
+    Рассмотрим $f = f(x_1\, \dots\, x_n)$. Пусть $x_i = x_i(t_1\, \dots\, t_k)$ - зависимые переменные.
+    \begin{gather*}
+        d^2 f=\delta(d f) \Big|_{\delta x_i=d x_i}=\delta\left(\sum_{i=1}^n \frac{\partial f}{\partial x_i} d x_i\right)=\begin{vmatrix}d(u v)=u d v+v d u\\\\\end{vmatrix} \boxed{=} \\
+        \boxed{=} \sum_{i=1}^n \frac{\partial f}{\partial x_i}\left(\delta d x_i\right)+\sum_{i=1}^n \delta\left(\frac{\partial f}{\partial x_i}\right) d x_i=\sum_{i=1}^n \frac{\partial f}{\partial x_i} d^2 x_i+\sum_{i=1}^n \sum_{i=j}^n \frac{\partial^2 f}{\partial x_j \partial x_i} d x_i d x_j
+    \end{gather*}
+    В случае зависимости переменных $x_i$ первая сумма $\ne 0$, т.е. второй дифференциал не обладает свойством инвариантности формы записи относительно переменных.
+
+    \subsection{Формула Тейлора для функции двух переменных}
+    \subsubsection*{Теорема 7.13.1}\label{th:7.13.1}
+    Пусть $f = f(x;y)$ непрерывна вместе со своими частными производными до $(n+1)$ порядка в окрестности точки $(x_0; y_0)$. Тогда $\forall\, \Delta x; \Delta y : \rho = \sqrt{\Delta x^2 + \Delta y^2} < \delta$ справедлива формула:
+    \[ f(\underbrace{x_0 + \Delta x}_{x}; \underbrace{y_0 + \Delta y}_{y}) = \underbrace{ \sum_{k=0}^{n} \frac{d^k f \Big|_{(x_0; y_0)}}{k!} }_{\text{многочлен Тейлора}} + \underbrace{ \frac{d^{n+1} f \Big|_{(x_0 + \theta_1 \Delta x; y_0 + \theta_2 \Delta y)}}{(n+1)!} }_{\text{остаточный член в форме Лагранжа}} \]
+    \begin{center}
+        или
+    \end{center}
+    \[ f(x_0 + \Delta x; y_0 + \Delta y) = \sum_{k=0}^{n} \frac{1}{k!}\left( \frac{\partial }{\partial x}\Delta x + \frac{\partial }{\partial y}\Delta y \right)^{(k)} f \Big|_{(x_0; y_0)} + \underbrace{o(\rho^n)}_{\text{ост. член в форме Пеано}} \]
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Рассмотрим $F(t)$. Пусть $F(t)$ $(n + 1)$ раз дифференциуема в точке $t_0$. Тогда:
+        \[ F(t) = F(t_0) + \frac{F'(t_0)}{1!}(t-t_0) + \frac{F''(t_0)}{2!}(t-t_0)^2 + \dots + \frac{F^{(n)}(t_0)}{n!}(t-t_0)^n + \frac{F^{(n+1)}(\xi)}{(n+1)!}(t-t_0)^{n+1} \]
+        \[ \underbrace{F(t) - F(t_0)}_{\Delta F} = \frac{1}{1!}dF\Big|_{t=t_0} + \frac{1}{2!}d^2F\Big|_{t=t_0} + \dots + \frac{1}{n!}d^nF\Big|_{t=t_0} + \frac{1}{(n+1)!}d^{n+1}F\Big|_{t=\xi} \]
+        Рассмотрим $f = f(x; y)$. Пусть $M_0(x_0; y_0)$, $M(x; y) = M(x_0 + \Delta x; y_0 + \Delta y)$.\\
+        Запишем уравнение отрезка $M_0M$ в параметрическом виде:
+        \[ \frac{x - x_0}{x_1 - x_0} = \frac{y - y_0}{y_1 - y_0} \]
+        \[ \frac{x - x_0}{\Delta x} = \frac{y - y_0}{\Delta y} = t \]
+        Рассмотрим $f = f(x; y)$ вдоль отрезка $M_0M$:
+        \[ f = f(x_0 + t \Delta x; y_0 + t \Delta y) \text{ - функция одной переменной} \]
+        А для неё справедлива формула Тейлора ($t_0 = 0$).
+        \[ \begin{cases}
+            x = x_0 + t \Delta x\\
+            y = y_0 + t \Delta y
+        \end{cases}\,\,\, t \in [0; 1] \]
+        \[ F(t) = F(0) + F'(0)t + \dots + \frac{1}{n!}F^{(n)}(0)t^n + \frac{1}{(n+1)!}F^{(n+1)}(\xi)t^{n+1} \]
+        Рассмотрим
+        \[ \Delta f = f(x_0 + \Delta x; y_0 + \Delta y) - f(x_0; y_0) = \overset{\xi \in (0; 1)}{F(1) - F(0)} \]
+        \[ \Delta f = F(1) - F(0) = F'(0) + \frac{F''(0)}{2!} + \dots + \frac{F^{(n)}(0)}{n!} + \frac{F^{(n+1)}(\xi)}{(n+1)!} \]
+        Найдём $F'(0)$:
+        \[ F(t) = f(\underbrace{x_0 + t\Delta x}_{x}; \underbrace{y_0 + t\Delta y}_{y}) \]
+        \begin{gather*}
+            F'(t)=\frac{\partial f}{\partial x} \frac{d x}{d t}+\frac{\partial f}{\partial y} \frac{d y}{d t}=\frac{\partial f}{\partial x} \Delta x+\frac{\partial f}{\partial y} \Delta y=d f \quad F'(0)=d f \Big|_{(x_0, y_0)} \\
+            F''(t)=\left(\frac{\partial f}{\partial x} \Delta x+\frac{\partial f}{\partial y} \Delta y\right)'_t =\left(\frac{\partial f}{\partial x}\right)'_t \Delta x+\left(\frac{\partial f}{\partial y}\right)'_t \Delta y= \\
+            =\begin{vmatrix}
+                \frac{\partial f}{\partial x}=\frac{\partial f}{\partial x}\left(x_0+t\Delta x, y_0+t \Delta y\right)\\
+                \frac{\partial f}{\partial y}=\frac{\partial f}{\partial y}\left(x_0+t \Delta x, y_0+t \Delta y\right)
+            \end{vmatrix} =\left[\frac{\partial^2 f}{\partial x^2} \Delta x+\frac{\partial^2 f}{\partial y \partial x} \Delta y\right] \Delta x+\left[\frac{\partial^2 f}{\partial x \partial y} \Delta x+\frac{\partial^2 f}{\partial y^2} \Delta y\right] \Delta y \boxed{=}  \\
+            \boxed{=} \frac{\partial^2 f}{\partial x^2} \Delta x^2+2 \frac{\partial^2 f}{\partial x \partial y} \Delta x \Delta y+\frac{\partial^2 f}{\partial y^2} \Delta y^2=d^2 f \Rightarrow F^{\prime \prime}(0)=d^2 f \Big|_{(x_0, y_0)}
+        \end{gather*}
+        и т.д.
+        \[ F^{(n)}(0) = d^n f \Big|_{(x_0; y_0)} \]
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
 \end{document}
