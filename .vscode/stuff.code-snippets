@@ -152,5 +152,13 @@
 			"\\Delta z = A \\Delta x + B \\Delta y + \\varepsilon_1 \\Delta x + \\varepsilon_2 \\Delta y"
 		],
 		"description": "stuff for mat"
+	},
+	"op_nobla": {
+		"scope": "tex,latex",
+		"prefix": "nabla_op",
+		"body": [
+			"\\overline{\\nabla}"
+		],
+		"description": "stuff for mat"
 	}
 }

@@ -2864,10 +2864,10 @@
         = \frac{A(x+3)(x^2+2x+3) + B(x-1)(x^2+2x+3) + (Cx+D)(x-1)(x+3)}{(x-1)(x+3)(x^2+2x+3)2C}
     \end{gather*}
     \begin{align*}
-        x^3 : &\, 0 = A+B+C\\
-        x^2 : &\, 7 = 5A+B+2C+D\\
-        x^1 : &\, 26 = 9A+B-3C+2D\\
-        x^0 : &\, -9 = 9A-3B-3D
+        &x^3 : & 0 &= A+B+C\\
+        &x^2 : & 7 &= 5A+B+2C+D\\
+        &x^1 : & 26 &= 9A+B-3C+2D\\
+        &x^0 : & -9 &= 9A-3B-3D
     \end{align*}
     \begin{gather*}
         A = 1, B = 1, C = -2, D = 5
@@ -3458,7 +3458,7 @@
     \[ \bar{n} \left(\frac{\partial f}{\partial x} \Big|_{(x_0; y_0)} (x-x_0); \frac{\partial f}{\partial y} \Big|_{(x_0; y_0)} (y-y_0); -1\right) \]
     Прямая вида
     \[ \frac{x - x_0}{\left( \frac{\partial f}{\partial x} \right) \Big|_{(x_0; y_0)}} = \frac{y - y_0}{\left( \frac{\partial f}{\partial y} \right) \Big|_{(x_0; y_0)}} = \frac{z - z_0}{-1} \]
-    называется нормалью к поверхности $z = f(x; y)$ в точке $(x_0; y_0)$.
+    называется нормалью к поверхности $z = f(x; y)$ в точке $(x_0; y_0)$.\par\noindent
     \underline{Замечание:} если поверхность задана неявно $F(x,y,z) = 0$:
     \begin{adjustwidth}{1.5em}{1.5em}
         Уравнение касательной плоскости: 
@@ -3474,4 +3474,154 @@
     Рассмотрим $z = f(x;y)$
     \[ dz = \frac{\partial f}{\partial x} \Big|_{M_0}dx + \frac{\partial f}{\partial y} \Big|_{M_0}dy = d_x f \Big|_{M_0} + d_y f \Big|_{M_0} \]
     $dz$ - полный дифференциал.
+
+    \subsection{Применение дифференциалов в приближённых вычислениях.}\noindent
+    Рассмотрим $f = f(x; y; z)$.\\
+    Пусть $f$ дифференциуема в точке $M_0 (x_0; y_0; z_0)$.\\
+    Тогда 
+    \[ \Delta f = \frac{\partial f}{\partial x} \Big|_{M_0}dx + \frac{\partial f}{\partial y} \Big|_{M_0}dy + \frac{\partial f}{\partial z} \Big|_{M_0}dz + o(\rho), \rho \to 0\]
+    \[ \Delta f = df \Big|_{M_0} + \cancel{o(\rho)}, \rho \to 0 \]
+    \[ \underbrace{\Delta f}_{f - f_0} \approx df \Big|_{M_0} \]
+    \[ \boxed{ f(x; y; z) \approx f(x_0; y_0; z_0) + \frac{\partial f}{\partial x} \Big|_{M_0}dx + \frac{\partial f}{\partial y} \Big|_{M_0}dy + \frac{\partial f}{\partial z} \Big|_{M_0}dz  } \]
+    \underline{Пример:} вычислить приближённо.
+    \begin{adjustwidth}{1.5em}{1.5em}
+        \[ \frac{1.03^2}{\sqrt[3]{0.98} * \sqrt[4]{1.05}} = ? \]
+        Рассмотрим 
+        \[ f(x; y; z) = \frac{x^2}{\sqrt[3]{y} * \sqrt[4]{z}} \]
+        \begin{gather*}
+            x = 1.03 = x_0 + \Delta x = 1 + 0.03\\
+            y = 0.98 = y_0 + \Delta y = 1 - 0.02\\
+            z = 1.05 = z_0 + \Delta z = 1 + 0.05
+        \end{gather*}
+        \[ (x_0; y_0; z_0) = (1; 1; 1) \]
+        \[ \Delta x = 0.03\,\, \Delta y = -0.02\,\, \Delta z = 0.05 \]
+        \[ f(x_0; y_0; z_0) = 1 \]
+        \begin{align*}
+            \frac{\partial f}{\partial x} &= \frac{2x}{\sqrt[3]{y} * \sqrt[4]{z}} & \frac{\partial f}{\partial x} \Big|_{M_0} &= 2\\
+            \frac{\partial f}{\partial y} &= \frac{x^2}{\sqrt[4]{z}}\frac{(-\frac{1}{3})}{\sqrt[3]{y^4}} & \frac{\partial f}{\partial y} \Big|_{M_0} &= -\frac{1}{3}\\
+            \frac{\partial f}{\partial z} &= \frac{x^2}{\sqrt[3]{y}}\frac{(-\frac{1}{4})}{\sqrt[4]{z^5}} & \frac{\partial f}{\partial z} \Big|_{M_0} &= -\frac{1}{4}\\
+        \end{align*}
+        \[ \frac{1.03^2}{\sqrt[3]{0.98} * \sqrt[4]{1.05}} \approx 1 + 2 * 0.03 - \frac{1}{3} * (-0.02) - \frac{1}{4} * 0.05 \approx 1.0482 \]
+    \end{adjustwidth}
+
+    \subsection{Производная по направлению функции в точке. Градиент функции в точке.}\noindent
+    Рассмотрим функцию $f = f(x; y; z)$.\\
+    Пусть она определена в окрестности точки $(x_0; y_0; z_0)$ и пусть задан произвольный вектор $\overline{l} \ne 0$.\\
+    Пусть $\overline{l_0} = \frac{\overline{l}}{|\overline{l}|} = \underset{\text{направленные косинусы}}{\left( \overline{\cos \alpha; \cos \beta; \cos \gamma} \right)}$
+    \begin{center}
+        \includegraphics{7.10.1.png}
+    \end{center}
+    Запишем уравнение луча, выходящего из точки $(x_0; y_0; z_0)$ в направлении вектора $l$:
+    \[ \frac{x - x_0}{\cos \alpha} = \frac{y - y_0}{\cos \beta} = \frac{z - z_0}{\cos \gamma} = t \]
+    \[ \begin{cases}
+        x = x_0 + t\cos \alpha\\
+        y = y_0 + t\cos \beta\\
+        z = z_0 + t\cos \gamma
+    \end{cases}\,\,\,\,\, t \ge 0 \]
+    \underline{Замечание:}
+    \[ \sqrt{\cos^2 \alpha + \cos^2 \beta + \cos^2 \gamma} = 1\text{, т.к. } |\overline{l_0}| = 1 \]
+    \[ \cos^2 \alpha + \cos^2 \beta + \cos^2 \gamma = 1\]
+    \[ \sqrt{\frac{(x - x_0)^2}{t^2} = \frac{(y - y_0)^2}{t^2} = \frac{(z - z_0)^2}{t^2}} = 1 \]
+    \[ \sqrt{(x - x_0)^2 = (y - y_0)^2 = (z - z_0)^2} = t\text{ - расстояние от точки } (x_0; y_0; z_0) \text{ до } (x; y; z) \]
+    Рассмотрим $f(x;y;z)$ на построенном луче.\\
+    Получится функция $f(x_0 + t\cos \alpha; y_0 + t \cos \beta; z_0 + t \cos \gamma)$.\par\noindent
+    Производная сложной функции $f$ по переменной $t$ в точке $t = 0$ называется производной функции $f$ в точке $(x_0; y_0; z_0)$ по направлению $l$.
+    \[ \frac{\partial f}{\partial l} \Big|_{(x_0; y_0; z_0)} = \frac{df}{dt}\Big|_{t_0} \]
+    \begin{center}
+        или
+        \end{center}
+    \[ \frac{\partial f}{\partial l} \Big|_{(x_0; y_0; z_0)} = \lim_{t \to 0}\frac{f(M) - f(M_0)}{t} \]
+    Вычислим
+    \begin{gather*}
+        \frac{d}{dt}f(\underbrace{x_0 + \cos \alpha t}_x; \underbrace{y_0 + \cos \beta t}_y; \underbrace{z_0 + \cos \gamma t}_z) = \frac{\partial f}{\partial x} \frac{dx}{dt} + \frac{\partial f}{\partial y} \frac{dy}{dt} + \frac{\partial f}{\partial z} \frac{dz}{dt} =\\
+        = \frac{\partial f}{\partial x} \cos \alpha + \frac{\partial f}{\partial y} \cos \beta + \frac{\partial f}{\partial z} \cos \gamma = \left( \overline{\frac{\partial f}{\partial x}; \frac{\partial f}{\partial y}; \frac{\partial f}{\partial z}} \right)\left( \overline{\cos \alpha; \cos \beta; \cos \gamma} \right) \boxed{=}
+    \end{gather*}
+    Вектор с координатами 
+    \[ \left( \overline{\frac{\partial f}{\partial x}; \frac{\partial f}{\partial y}; \frac{\partial f}{\partial z}} \right) \]
+    вычисленный в точке $(x_0; y_0; z_0)$, называется \textbf{градиентом} функции $f(x; y; z)$ в точке $(x_0; y_0; z_0)$.\\
+    Обозначение: $\overline{\text{grad}f} \Big|_{M_0}$.\par\noindent
+    $\overline{\nabla}$ - оператор Набла.
+    \[ \overline{\nabla} = \left( \overline{ \frac{\partial \sqcup}{\partial x}; \frac{\partial \sqcup}{\partial y}; \frac{\partial \sqcup}{\partial z} } \right) \]
+    *вместо $\sqcup$ подставляем функцию (например, $f$), относительно которой применяем оператор Набла.
+    \[ \overline{\nabla} f = \overline{\text{grad}f}\text{,} \]
+    \[ \boxed{=} \, \boxed{ \overline{\text{grad}f}\Big|_{M_0} * \overline{l_0} = \frac{\partial f}{\partial l}\Big|_{M_0} } \]
+    \[ \overline{a}\overline{b} = |\overline{a}||\overline{b}|\cos(\underbrace{\overline{a}, \overline{b}}_{\varphi}) = \text{пр}_{\overline{b}} \overline{a} * |\overline{b}| \]
+    \begin{center}
+        \includegraphics{7.10.2.png}
+    \end{center}
+    \[ \boxed{ \frac{\partial f}{\partial l} \Big|_{M_0} = \text{пр}_{\overline{l_0}}\overline{\text{grad}f}\Big|_{M_0} } \]
+    \[ \frac{\partial f}{\partial l}\Big|_{M_0} = \overline{\text{grad}f}\Big|_{M_0} * \overline{l_0} = |\overline{\text{grad}f}|\Big|_{M_0} * |\underset{=1}{\overline{l_0}}| * \cos \varphi \Rightarrow \frac{\partial f}{\partial l} \to \max \Leftrightarrow \varphi = 0 \]
+    Наибольшее значение $\frac{\partial f}{\partial l}\Big|_{M_0}$ будет иметь в направлении градиента в этой точке.\par\noindent
+    \underline{Замечание:} Если $\overline{\nabla} f\Big|_{M_0} = \overline{0}$, то это значит, что производные функции по всем направлениям в этой точке равны $0$.
+
+    \subsection{Линии и поверхности уровня}\noindent
+    Рассмотрим $z = f(x;y)$.\\
+    Линия вида $f(x;y) = \mathbb{C}$ называется \textbf{линией уровня от функции} $Z$.
+    \begin{center}
+        \includegraphics{7.11.1.png}
+    \end{center}
+    \[ \frac{x-x_0}{\frac{\partial f}{\partial x}} = \frac{y-y_0}{\frac{\partial f}{\partial y}} \]
+    Вектор градиента функции в точке $M_0$ направлен перпендикулярно линии уровня.\\
+    Рассмотрим $f = f(x;y;z)$.\\
+    Поверхность вида $f(x;y;z) = \mathbb{C}$ называется \textbf{поверхностью уровня функции} $f$.\\
+    Вектор $\overline{\text{grad}f \Big|_{M_0}}$ направлен по нормали к этой поверхности.
+
+    \subsection{Частные производные и дифференциалы высших порядков}\noindent
+    Рассмотрим $f = f(x;y)$. Имеем $\frac{\partial f}{\partial x}$; $\frac{\partial f}{\partial y}$.\\
+    $\frac{\partial f}{\partial x}$ является функцией от $x$ и $y$: 
+    \[ \frac{\partial f}{\partial x} = \frac{\partial f}{\partial x} (x; y) \]
+    \[ \frac{\partial f}{\partial y} = \frac{\partial f}{\partial y} (x; y) \]
+    Поэтому они тоже имеют частные производные.
+    \begin{align*}
+        f_{xx}'' &= (f'_x)'_x = \frac{\partial }{\partial x} \left( \frac{\partial f}{\partial x} \right) = \frac{\partial^2 f}{\partial x^2}; & f_{yy}'' &= (f'_y)'_y = \frac{\partial }{\partial y} \left( \frac{\partial f}{\partial y} \right) = \frac{\partial^2 f}{\partial y^2}\\
+        f_{xy}'' &= (f'_x)'_y = \frac{\partial }{\partial y} \left( \frac{\partial f}{\partial x} \right) = \frac{\partial^2 f}{\partial y \partial x}; & f_{yx}'' &= (f'_y)'_x = \frac{\partial }{\partial x} \left( \frac{\partial f}{\partial y} \right) = \frac{\partial^2 f}{\partial x \partial y}
+    \end{align*} 
+    Аналогично определяются производные более высокого порядка.
+    \[ \frac{\partial^5 f}{\partial x^5}; \frac{\partial^5 f}{\partial x^2 \partial y^3}; \frac{\partial^5 f}{\partial x \partial y \partial x \partial y \partial x}; \frac{\partial^2 f}{\partial x \partial y} \overset{?}{=} \frac{\partial^2 f}{\partial y \partial x} \]
+    \subsubsection*{Теорема 7.12.1 (Шварца)}\label{th:7.12.1}
+    Если функция определена вместе со своими частными производныи $f'_x; f'_y; f_{xy}''; f_{yx}''$ в некоторой окрестности точки $(x_0; y_0)$ и \underline{$f_{xy}''; f_{yx}''$ непрерывны} в этой точке, то:
+    \[ \frac{\partial^2 f}{\partial x \partial y} \Big|_{(x_0; y_0)} = \frac{\partial^2 f}{\partial y \partial x} \Big|_{(x_0; y_0)} \]
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Рассмотрим повторные приращения:
+        \[ \Delta_{xy} f = \Delta x (\Delta y f) = \Delta x [ f(x_0; y_0 + \Delta y) - f(x_0; y_0) ] = [ f(x_0 + \Delta x; y_0 + \Delta y) - f(x_0 + \Delta x; y_0) ] - [ f(x_0; y_0 + \Delta y) - f(x_0; y_0) ] \]
+        \[ \Delta_{yx} f = \Delta y (\Delta x f) = \Delta y [ f(x_0 + \Delta x; y_0) - f(x_0; y_0) ] = [ f(x_0 + \Delta x; y_0 + \Delta y) - f(x_0; y_0 + \Delta y) ] - [ f(x_0 + \Delta x; y_0) - f(x_0; y_0) ] \]
+        \[ \Delta_{xy}f = \Delta_{yx}f \]
+        Обозначим
+        \[ \varphi(x) = f(x, y_0 + \Delta y) - f(x; y_0) \]
+        \[ \varphi'(x) = f'(x; y_0 + \Delta y) - f'(x;y_0) \]
+        Тогда
+        \begin{gather*}
+            \Delta_{xy}f = \varphi (x_0 + \Delta x) - \varphi(x_0) \underset{\hyperref[th:4.12.4]{Th. Лагранжа}}{=} \varphi'(\xi)\Delta x = \varphi'(x_0 + \theta_1 \Delta x)\Delta x =\\
+            = [ f'_x(x_0 + \theta_1 \Delta x; y_0 + \Delta y) - f'_x(x_0 + \theta_1 \Delta x; y_0) ] \Delta x \underset{\hyperref[th:4.12.4]{Th. Лагранжа}}{=}\\
+            = f_{xy}''(x_0 + \theta_1 \Delta x; y_0 + \theta_2 \Delta y)\Delta x \Delta y
+        \end{gather*}
+        Аналогично 
+        \[ \Delta_{yx}f = f_{yx}''(x_0 + \theta_3 \Delta x; y_0 + \theta_4 \Delta y)\Delta x \Delta y \]
+        Т.к. $\Delta_{xy}f = \Delta_{yx}f$, то
+        \[ f_{xy}''(x_0 + \theta_1 \Delta x; y_0 + \theta_2 \Delta y)\Delta x \Delta y = f_{yx}''(x_0 + \theta_3 \Delta x; y_0 + \theta_4 \Delta y)\Delta x \Delta y \]
+        Т.к. $f_{xy}''; f_{yx}''$ непрерывны в точке $(x_0; y_0)$, то
+        \[ \left.\begin{aligned}
+            \lim_{\substack{\Delta x \to 0 \\ \Delta y \to 0}} f_{xy}'' (x_0 + \theta_1 \Delta x; y_0 + \theta_2 \Delta y) = f_{xy}'' (x_0; y_0)\\
+            \lim_{\substack{\Delta x \to 0 \\ \Delta y \to 0}} f_{yx}'' (x_0 + \theta_3 \Delta x; y_0 + \theta_4 \Delta y) = f_{yx}'' (x_0; y_0)
+        \end{aligned}\right\rbrace \Rightarrow f_{xy}'' (x_0; y_0) = f_{yx}''(x_0; y_0) \]
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+    \textbf{Следствие:} в случае выполнения условий теоремы Шварца следует независимость результата дифференцирования от порядка переменных для функций любого числа переменных.
+    \[ f_{xyz}''' = (f'_x)_{yz}'' = (f'_x)_{zy}'' = (f''_{xz})'_y = (f''_{zx})'_y = (f'_z)''_{xy} = (f'_z)''_{yx} \]
+    \[ f_{xyz}''' = f_{zyx}''' \]
+    \subsubsection*{Дифференциалы высших порядков}
+    Рассмотрим $f = f(x_1; \dots; x_n)$.
+    \[ df = \frac{\partial f}{\partial x_1}dx_1 + \frac{\partial f}{\partial x_2}dx_2 + \dots + \frac{\partial f}{\partial x_n}dx_n = \sum_{i=1}^{n}\frac{\partial f}{\partial x_i}dx_i \]
+    \underline{Замечание:} в общем случае $df$ - функция $2n$ переменных $(x_1\, \dots\, x_n; dx_1\, \dots\, dx_n)$.\par\noindent
+    Найдём второй дифференциал, рассматривая $df$ только как функцию $x_1\, \dots\, x_n$ (при фиксированных $dx_1\, \dots\, dx_n$).\\
+    Обозначим дифференциал при повторном дифференцировании $\delta$:
+    \[ \delta(df) = \sum_{i=1}^{n}\left[ \delta(\frac{\partial f}{\partial x_i}) \right] = \sum_{i=1}^{n} ( \sum_{j=1}^{n} \frac{\partial^2 f}{\partial x_j \partial x_i} \delta x_j )dx_i = \underbrace{\sum_{i=1}^{n} \sum_{j=1}^{n} \frac{\partial^2 f}{\partial x_j \partial x_i} dx_i \delta x_j}_{\substack{\text{билинейная форма} \\ \text{относительно переменных} \\ dx_1\, \dots\, dx_n;\,\, \delta x_1\, \dots\, \delta x_n}} \]
+    Соответствующая билинейной форме квадратичная форма $(dx_1 = \delta x_1; dx_2 = \delta x_2; \dots; dx_n = \delta x_n)$ называется \textbf{вторым дифференициалом функции} $f$.
+    \[ d^2 f = \delta (df) \Big|_{dx_i = \delta x_i} \]
+    \[ d^2 f = \sum_{i=1}^{n} \sum_{j=1}^{n} \frac{\partial^2 f}{\partial x_i \partial x_j} dx_i dx_j \]
+    Аналогично определяются дифференциалы более высокого порядка:
+    \[ d^k f = \delta(d^{k-1}f)\Big|_{dx_i = \delta x_i} \]
 \end{document}
