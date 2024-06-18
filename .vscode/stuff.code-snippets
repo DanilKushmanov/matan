@@ -135,6 +135,86 @@
 		],
 		"description": "stuff for mat"
 	},
+	"sn1":{
+		"scope": "tex,latex",
+		"prefix": "sn1",
+		"body": [
+			"\\sum_{i=0}^{n-1}"
+		],
+		"description": "stuff for mat"
+	},
+	"us":{
+		"scope": "tex,latex",
+		"prefix": "us",
+		"body": [
+			"\\underline{S_R}"
+		],
+		"description": "stuff for mat"
+	},
+	"os":{
+		"scope": "tex,latex",
+		"prefix": "os",
+		"body": [
+			"\\overline{S_R}"
+		],
+		"description": "stuff for mat"
+	},
+	"lrlim":{
+		"scope": "tex,latex",
+		"prefix": "lrlim",
+		"body": [
+			"\\lim_{\\lambda_R \\to 0}"
+		],
+		"description": "stuff for mat"
+	},
+	"dxi":{
+		"scope": "tex,latex",
+		"prefix": "dxi",
+		"body": [
+			"\\Delta x_i"
+		],
+		"description": "stuff for mat"
+	},
+	"te":{
+		"scope": "tex,latex",
+		"prefix": "te",
+		"body": [
+			"Т.е. "
+		],
+		"description": "stuff for mat"
+	},
+	"opr":{
+		"scope": "tex,latex",
+		"prefix": "опр",
+		"body": [
+			"\\underline{Определение: }"
+		],
+		"description": "stuff for mat"
+	},
+	"xi":{
+		"scope": "tex,latex",
+		"prefix": "xi",
+		"body": [
+			"\\xi_i"
+		],
+		"description": "stuff for mat"
+	},
+	"sr":{
+		"scope": "tex,latex",
+		"prefix": "sr",
+		"body": [
+			"\\sigma_R"
+		],
+		"description": "stuff for mat"
+	},
+	"abint":{
+		"scope": "tex,latex",
+		"prefix": "abint",
+		"body": [
+			"\\int_{a}^{b}"
+		],
+		"description": "stuff for mat"
+	},
 	"img":{
 	  "scope": "tex,latex",
 	  "prefix": "img",
