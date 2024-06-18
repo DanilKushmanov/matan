@@ -140,7 +140,7 @@
 	  "prefix": "img",
 	  "body": [
 		"\\begin{center}",
-		"\t$0\\includegraphics[width=0.7\\linewidth]{}",
+		"\t\\includegraphics{$0}",
 		"\\end{center}"
 	  ],
 	  "description": "stuff for mat"
@@ -158,6 +158,14 @@
 		"prefix": "nabla_op",
 		"body": [
 			"\\overline{\\nabla}"
+		],
+		"description": "stuff for mat"
+	},
+	"partproiz": {
+		"scope": "tex,latex",
+		"prefix": "partproiz",
+		"body": [
+			"\\frac{\\partial f}{\\partial $1}$0"
 		],
 		"description": "stuff for mat"
 	}

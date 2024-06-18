@@ -1930,7 +1930,7 @@
         Т.е. $\Delta y \sim dy $ при $\Delta x \to 0$
     \end{adjustwidth}
 
-    \subsection*{Теорема 4.9.1 (необходимость и достаточность условия дифференции в точке)}\label{th:4.9.1}
+    \subsubsection*{Теорема 4.9.1 (необходимость и достаточность условия дифференции в точке)}\label{th:4.9.1}
     Для того чтобы $f(x)$ была дифференциуема в точке $x_0$ $\Leftrightarrow$ чтобы в этой точке она имела конечную производную.\par\noindent
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
@@ -3692,4 +3692,379 @@
             \textbf{Ч.т.д.}
         \end{center}
     \end{adjustwidth}
+
+    \subsection{Экстремум функции нескольких переменных}
+    Рассмотрим $f = f(x_1\, \dots\, x_n)$. Пусть она определена в окрестности точки $(x^0_1\, \dots\, x^0_n)$.\\
+    Точка $x^0$ называется \textbf{точкой локального максимума (минимума)}, если существует окрестность этой точки:
+    \begin{align*} 
+        \forall x = (x_1\, \dots\, x_n) \in \text{ окрестности } \quad &f(x) \le f(x^0) \\
+        &(f(x) \ge f(x^0))
+    \end{align*}
+    \underline{Замечание:} если неравенство строгое, то точка $x^0$ называется точкой \textbf{строгого} локального максимума (минимума).\par\noindent
+    Точки локального максимума и минимума функции называются \textbf{точками экстремума} функции.\\
+    Точка $x^0$ называется точкой локального максимума (минимума), если существует окрестность этой точки такая, что $\Delta f = f(x) - f(x^0)$ не меняет знак.\\
+    $\Delta f \ge 0$ - точка локального минимума.\\
+    $\Delta f \le 0$ - точка локального максимума.
+    \subsubsection*{Теорема 7.14.1 (необходимое условие экстремума)}\label{th:7.14.1}
+    Если функция определена в окрестности точки экстремума $x^0$ и если в этой окрестности существует частная производная первого порядка $\frac{\partial f}{\partial x_i}\,(i = \overline{1;n})$, то все они равны нулю в этой точке.\par\noindent
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Пусть $i = 1$. Докажем, что $\frac{\partial f}{\partial x_1} \Big|_{x^0} = 0$.\\
+        Зафиксируем координаты: $x_2 = x^0_2; x_3 = x^0_3; \dots; x_n = x^0_n$.\\
+        Тогда $f = f(x_1, x^0_2, x^0_3, \dots, x^0_n)$ - функция одной переменной.\\
+        Так как по условию точка $x^0 = (x^0_1, x^0_2, \dots, x^0_n)$ - точка локального экстремума функции $f(x_1\, \dots\, x_n)$, то точка $x^0_1$ - точка локального экстремума функции $f(x_1, x^0_2, \dots, x^0_n)$.\\
+        Тогда по \hyperref[th:4.12.1]{теореме Ферма}:
+        \[ \frac{df(x_1, x^0_2, \dots, x^0_n)}{dx_1} \Big|_{x_1 = x^0_1} = \frac{\partial f(x_1\, \dots\, x_n)}{\partial x_1} \Big|_{(x^0_1\, \dots\, x^0_n)} = 0 \]
+        Аналогично можно доказать, что все остальные частные производные тоже равны нулю в точке $(x^0_1\, \dots\, x^0_n)$.
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+    Точки, в которых все $\frac{\partial f}{\partial x_i} = 0 \quad i = \overline{1,n}$ называются \textbf{стационарными} точками функции $f$.\\
+    Точки, в которых все частные производные равны нулю или не существуют, называются \textbf{критическими} точками функции $f$.\par\noindent
+    \underline{Замечание:} пусть точка $x^0 = (x^0_1\, \dots\, x^0_n)$ - стационарная точка. Тогда
+    \[ df \Big|_{x^0} = 0 \]
+    \[ \overline{\text{grad}f} \Big|_{x^0} = \overline{0} \]
+    \underline{Замечание:} условие равенства нулю всех частных производных в точке является необходимым условием, но не является достаточным.\\
+    \underline{Пример:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        \begin{gather*}
+            f = x^2 y\\
+            \left.\begin{aligned}
+                \frac{\partial f}{\partial x} = 2xy &= 0\\
+                x^2 &= 0
+            \end{aligned}\right\rbrace \Rightarrow \text{ точка } (0; 0) \text{ - стац. (одна из)}\\
+            \frac{\partial f}{\partial y} = x^2 = 0
+        \end{gather*}
+        Рассмотрим $\Delta f$ в окрестности точки $(0; 0)$:
+        \[ \Delta f = f(x) - f(x^0) = f(x_0 + \Delta x, y_0 + \Delta y) - f(\underset{= 0}{x_0};y_0) = (x_0 + \Delta x)^2 (y_0 + \Delta y) - x^2_0 y_0 = \boxed{\Delta x^2 \Delta y} \]
+        Приращение $\Delta f$ в окрестности точки $(0; 0)$ имеет разные знаки $\Rightarrow$ точка $(0; 0)$ не является точкой экстремума.
+    \end{adjustwidth}
+
+    \subsection{Достаточные условия локального экстремума}
+    Рассмотрим
+    \begin{gather*}
+        d^2 f \Big|_{x^0} = \sum_{i=1}^{n}\sum_{j=1}^{n} \frac{\partial^2 f}{\partial x_i \partial x_j} \Big|_{x^0} dx_i dx_j = \quad (x^0 \text{ - стац. точка})\\
+        \sum_{i=1}^{n}\sum_{j=1}^{n}a_{ij}(x_i - x^0_i)(x_j - x^0_j) \text{ - квадратичная форма}
+    \end{gather*}
+    Рассмотрим $\Phi (h) = \Phi (h_1\, \dots\, h_n)$ - квадратичная форма.\\
+    Если для любого набора $(h_1\, \dots\, h_n)$ $\Phi(h) > 0$, то квадратичная форма называется \textbf{положительно определённой}.\\
+    Если для любого набора $(h_1\, \dots\, h_n)$ $\Phi(h) < 0$, то квадратичная форма называется \textbf{отрицательно определённой}.\\
+    Рассмотрим $f = f(x_1\, \dots\, x_n)$:
+    \[ d^2 f \Big|_{x^0} = \sum_{i=1}^{n}\sum_{j=1}^{n} \frac{\partial^2 f}{\partial x_i \partial x_j} \Big|_{x^0} dx_i dx_j = \sum_{i=1}^{n}\sum_{j=1}^{n}a_{ij}h_ih_j = \Phi(h_1\, \dots\, h_n) \]
+    Если для любого набора $(h_1\, \dots\, h_n)$ $\Phi(h_1\, \dots\, h_n) > 0$, то квадратичная форма называется \textbf{положительно определённой}.\\
+    Если для любого набора $(h_1\, \dots\, h_n)$ $\Phi(h_1\, \dots\, h_n) < 0$, то квадратичная форма называется \textbf{отрицательно определённой}.\\
+    Если $\Phi(h_1\, \dots\, h_n)$ принимает как положительные значений, так и отрицательные, то квадратичная форма называется \textbf{знакопеременной}.\\
+    Если для любого набора $(h_1\, \dots\, h_n)$ $\Phi(h_1\, \dots\, h_n) \underset{(\le 0)}{\ge 0}$, то квадратичная форма называется \textbf{квазизнакоопределённой}.\\
+    Если $\Phi(h_1\, \dots\, h_n)$ принимает как положительные значений, так и отрицательные, так и нулевые значения, то квадратичная форма называется \textbf{квазизнакопеременной}.
+    \subsubsection*{Теорема 7.15.1 (достаточные условия экстремума)}\label{th:7.15.1}
+    Пусть $f = f(x_1\, \dots\, x_n)$ дважды непрерывно дифференциуема в окрестности критической точки $x^0 = (x^0_1; x^0_2; \dots; x^0_n)$. Тогда, если:
+    \begin{enumerate}
+        \item $d^2f \Big|_{x^0}$ является положительно определённой квадратичной формой, тогда $x^0$ - точка минимума.
+        \item $d^2f \Big|_{x^0}$ является отрицательно определённой квадратичной формой, тогда $x^0$ - точка максимума.
+        \item $d^2f \Big|_{x^0}$ является знакопеременной или квазизнакопеременной, тогда $x^0$ - не является точкой экстремума.
+        \item $d^2f \Big|_{x^0}$ является квазизнакоопределённой, тогда необходимо провести дополнительное исследование на экстремум (по определению точки экстремума).
+    \end{enumerate}
+    Для определения знакоопределённости квадратичной формы используется \textbf{критерий Сильвестра}:
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Обозначим: 
+        \[ \frac{\partial^2 f}{\partial x_i \partial x_j} \Big|_{x^0} = a_{ij} \quad x^0 \text{ - стац. точка.} \]
+        Составляем матрицу квадратичной формы второго дифференциала:
+        \[
+            \begin{pmatrix}
+                a_{11} & a_{12} & \dots & a_{1n} \\
+                a_{21} & a_{22} & \dots & a_{2n} \\
+                \dots & \dots & \dots & \dots \\
+                a_{n1} & a_{n2} & \dots & a_{nn} \\
+            \end{pmatrix} 
+        \]
+        \begin{enumerate}
+            \item Положительно определённая квадратичная форма (т. минимума): \[ \begin{pmatrix}
+                + & & & \\
+                & + & & \\
+                & & \dots & \\
+                & & & + \\
+            \end{pmatrix} \]
+            \item Отрицательно определённая квадратичная форма (т. максимума): \[ \begin{pmatrix}
+                \overset{\text{обяз.}}{-} & & & & & \\
+                & + & & & & \\
+                & & - & & & \\
+                & & & + & & \\
+                & & & & - & \\
+                & & & & & \dots \\
+            \end{pmatrix} \]
+            \item Знакопеременная квадратичная форма (экстремума нет): \[ \underset{\text{произвольное чередование + и -}}{\begin{pmatrix}
+                + & & & & & & \\
+                & + & & & & & \\
+                & & - & & & & \\
+                & & & - & & & \\
+                & & & & + & & \\
+                & & & & & - & \\
+                & & & & & & \dots \\
+            \end{pmatrix}} \]
+            \item Квазиположительноопределённая квадратичная форма (требуется доп. исследование $\Rightarrow$ точка минимума или экстремума нет): \[ \begin{pmatrix}
+                + & & & & & \\
+                & + & & & & \\
+                & & 0 & & & \\
+                & & & + & & \\
+                & & & & 0 & \\
+                & & & & & \dots \\
+            \end{pmatrix} \]
+            \item Квазиотрицательноопределённая квадратичная форма (требуется доп. исследование $\Rightarrow$ точка максимума или экстремума нет): \[ \begin{pmatrix}
+                - & & & & & & & & \\
+                & + & & & & & & & \\
+                & & 0 & & & & & & \\
+                & & & 0 & & & & & \\
+                & & & & - & & & & \\
+                & & & & & + & & & \\
+                & & & & & & 0 & & \\
+                & & & & & & & + & \\
+                & & & & & & & & \dots \\
+            \end{pmatrix} \]
+            \item Квазизнакопеременная квадратичная форма (экстремума нет): \[ \begin{pmatrix}
+                + & & & & & & & & \\
+                & - & & & & & & & \\
+                & & - & & & & & & \\
+                & & & 0 & & & & & \\
+                & & & & - & & & & \\
+                & & & & & - & & & \\
+                & & & & & & 0 & & \\
+                & & & & & & & + & \\
+                & & & & & & & & \dots \\
+            \end{pmatrix} \]
+        \end{enumerate}
+    \end{adjustwidth}
+    
+    \subsection{Неявные функции}
+    Если $F(x;y)$ определена на некотором множестве $R_2$ и $\exists$ функция одной переменной, определённой на некотором $R_1$ и $F(x, f(x)) = 0$, то функция $f(x)$ называется \textbf{неявной функцией}, определённой уравнением $F(x;y) = 0$.
+    \[ F(x;\underset{f(x)}{y}) = 0 = (x-x_0)^2 + (y-y_0)^2 \quad (x_0; y_0) \]
+    \[ F(x;\underset{f(x)}{y}) = 0 = x^2 + y^2 + 1 \]
+    \subsubsection*{Теорема 7.16.1 (о существовании неявной функции)}\label{th:7.16.1}
+    Если $F(x;y)$ непрерывна в некоторой окрестности точки $(x_0; y_0)$ и $F(x_0; y_0) = 0$, $F'_y(x_0; y_0) \ne 0$, то $\exists$ $u(x_0)$ и $u(y_0)$ такие, что $\forall x \in u(x_0)$ $\exists$ единственное решение $y \in u(y_0)$ уравнения $F(x;y) = 0$\\
+    Это решение обозначается $y = f(x)$. Оно непрерывно в $u(x_0)$ и $y_0 = f(x_0)$.\\
+    Если дополнительно в окрестности точки $(x_0; y_0)$ $\exists$ непрерывная $F'_x(x; y)$, то функция $y = f(x)$ в точке $x_0$ имеет производную
+    \[ \boxed{ y' = -\frac{F'_x}{F'_y} \Big|_{x_0; y_0} } \]
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Пусть $F(x; y)$ непрерывна в окрестности точки $(x_0; y_0)$.\\
+        По условию $F'_y(x_0; y_0) \ne 0$. Пусть для определённости $F'_y(x_0; y_0) > 0$.\\
+        По условию $F'_y$ непрерывна в точке $(x_0; y_0) \implies F'_y$ непрерывна в некоторой окрестности точки $(x_0; y_0)$ и (по \hyperref[th:3.3.2]{теореме о сохранении знака}) $F'_y > 0$ в этой окрестности точки $(x_0; y_0)$.\\
+        Так как $F'_y > 0 \implies F(x; y)$ возрастает по переменной $y$ на $[y_0 - \varepsilon; y_0 + \varepsilon]$ и $F(x_0; y_0) = 0$ по условию.\\
+        Тогда $F(x_0; y_0 - \varepsilon) < 0$, $F(x_0; y_0 + \varepsilon) > 0$.\\
+        Так как $F(x;y)$ непрерывна в окрестности точки $(x_0; y_0)$, то $\exists\, \delta$ такая, что в $u_\delta(x_0)$ функция $F(x; y)$ сохраняет такой же знак, как и в точке $(x_0; y_0 - \varepsilon)$ и $(x_0; y_0 + \varepsilon)$.\\
+        Таким образом $\forall x \in (x_0 - \delta; x_0 + \delta)$ выполняется
+        \begin{align*}
+            F(x; y_0 - \varepsilon) < 0\\
+            F(x; y_0 + \varepsilon) > 0
+        \end{align*}
+        Зафиксируем произвольное $x \in (x_0 - \delta; x_0 + \delta)$ и рассмотрим $F(x; y)$ функцию только переменной $y$ на $[ y_0 - \varepsilon; y_0 + \varepsilon ]$.\\
+        Эта функция непрерывна, строго возрастает и имеет противоположные знаки на концах отрезка. Тогда по \hyperref[th:3.8.3]{теореме Больцано-Коши (следствие)} $\exists$ значение $y^*$ (единственное) $\in (y_0 - \varepsilon; y_0 + \varepsilon)$ такое, что $F(x; y^*) = 0$.\\
+        Таким образом определена однозначная функция такая, что каждому $x \in (x_0 - \delta; x_0 + \delta)$ соответствует единственное значение $y^* \in (y_0 - \varepsilon; y_0 + \varepsilon)$.\\
+        Обозначим эту функцию $y^* = f(x)$.
+        \[ \forall x \in (x_0 - \delta; x_0 + \delta) \quad F(x; y^*) = F(x; f(x)) = 0 \]
+        Докажем, что $y^* = f(x)$ непрерывна в точке $x_0$: она непрерывна, т.к. 
+        \[ \forall \varepsilon > 0\,\exists\,\delta > 0 : |x - x_0| < \delta \implies |y^* - f(x_0)| < \varepsilon \]
+        Функция $y^* = f(x)$ будет непрерывна $\forall x \in (x_0 - \delta; x_0 + \delta)$.\\
+        Пусть $x^* \in u(x_0; y_0)$. Всегда $\exists$ $u(x^*; y^*) < u(x_0; y_0)$. Тогда
+        \[ \forall \varepsilon_1 > 0\, \exists\, \delta_1 > 0 : |x - x^*| < \delta_1 \implies | f(x) - f(x^*)| < \varepsilon_1 \]
+        Т.е. $y^* = f(x)$ непрерывна в точке $x^* \implies$ она непрерывна $\forall x \in (x_0 - \delta; x_0 + \delta)$.\\
+        Пусть функция $F(x; y)$ в $u(x_0; y_0)$ имеет непрерывную частную производную $F'_x$.\\
+        Тогда по \hyperref[th:7.5.4]{достаточному условию дифференциуемости (Th. 7.5.4)} $F(x; y)$ дифференциуема в точке $(x_0; y_0)$.\\
+        Тогда по определению дифференциуемости функции в точке
+        \[ \Delta F = F'_x \Big|_{(x_0; y_0)} \Delta x + F'_y \Big|_{(x_0; y_0)} \Delta y + \overbrace{\varepsilon_1 \Delta x + \varepsilon_2 \Delta y}^{\text{\hyperref[th:7.5.1]{Th. 7.5.1}}} \]
+        \[ F(\underset{=0}{x_0 + \Delta x}; y_0 + \Delta y) - F(\underset{=0}{x_0}; y_0) = F'_x \Big|_{(x_0; y_0)} \Delta x + F'_y \Big|_{(x_0; y_0)} \Delta y + \varepsilon_1 \Delta x + \varepsilon_2 \Delta y \]
+        \underline{Замечание:} 
+        \[ \begin{aligned}
+            &f(x_0) = y_0\\
+            &f(x_0 + \Delta x) = y_0 + \Delta y
+        \end{aligned} \]
+        Тогда
+        \begin{gather*}
+            F'_x \Big|_{(x_0; y_0)} \Delta x + F'_y \Big|_{(x_0; y_0)} \Delta y + \varepsilon_1 \Delta x + \varepsilon_2 \Delta y = 0 \quad \Big| : \Delta x\\
+            F'_x \Big|_{(x_0; y_0)} + F'_y \Big|_{(x_0; y_0)} \frac{\Delta y}{\Delta x} + \varepsilon_1 + \varepsilon_2 \frac{\Delta y}{\Delta x} = 0\\
+            \frac{\Delta y}{\Delta x} \left( F'_y \Big|_{(x_0; y_0)} + \varepsilon_2 \right) = - \left( F'_x \Big|_{(x_0; y_0)} + \varepsilon_1 \right)\\
+            \frac{\Delta y}{\Delta x} = - \frac{F'_x \Big|_{(x_0; y_0)} + \varepsilon_1}{F'_y \Big|_{(x_0; y_0)} + \varepsilon_2}
+        \end{gather*}
+        \underline{Замечание:} $\rho = \sqrt{\Delta x^2 + \Delta y^2}$
+        Так как функция $y^* = f(x)$ непрерывна в $u(x_0)$, то $\lim_{\Delta x \to 0} \Delta y = 0$.
+        \[
+            \lim_{\Delta x \to 0}\rho = \lim_{\Delta x \to 0} \sqrt{\Delta x^2 + \Delta y^2} = 0
+        \]
+        Рассмотрим
+        \[ \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = \boxed{ - \frac{F'_x}{F'_y} \Big|_{(x_0; y_0)} = y' \Big|_{x^0} } \]
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+    Рассмотрим $F(x; \underset{y(x)}{y}) = 0$
+    \[ \frac{\partial f}{\partial x} + \frac{\partial f}{\partial y} \frac{dy}{dx} = 0 \]
+    \[ y' = - \frac{F'_x}{F'_y} \]
+    \subsubsection*{Теорема 7.16.2}\label{th:7.16.2}
+    Пусть $F(x_1\, \dots\, x_n; y)$ определена в окрестности точки $(x^0_1\, x^0_2\, \dots\, x^0_n; y_0)$ и непрерывна вместе со своей частной производной $F'_y(x^0_1\, \dots\, x^0_n; y_0) \ne 0$ и $F(x^0_1\, x^0_2\, \dots\, x^0_n; y_0) = 0$. Тогда $\exists$ окрестность $u(x^0_1\, x^0_2\, \dots\, x^0_n)$ и $u(y_0)$ такие, что уравнение $F(x_1\, \dots\, x_n; y) = 0$ однозначно разрешимо в этих окрестностях.\\
+    Это решение $y^* = f(x_1\, \dots\, x_n)$ непрерывно в $u(x^0_1\, \dots\, x^0_n)$.\\
+    При дополнительном условии $F'_{x_i}$ непрерывна в точке $(x^0_1\, \dots\, x^0_n; y_0)$, функция $y^* = f(x_1\, \dots\, x_n)$ имеет в точке $(x^0_1\, \dots\, x^0_n)$ частную производную:
+    \[ \frac{\partial f}{\partial x_i} = -\frac{F'_{x_i}}{F'_{y}} \quad i = \overline{1,n} \]
+    Рассмотрим $F(x_1\, \dots\, x_n; y) = 0$.
+    \[ \frac{\partial y}{\partial x_2} = \frac{\partial F}{\partial x_2} * 1 + \frac{\partial F}{\partial y}\frac{\partial y}{\partial x_2} = 0 \]
+    \[ \frac{\partial y}{\partial x_2} = -\frac{F'_{x_2}}{F'_y} \]
+    \subsubsection*{Системы функций, заданных неявно}\noindent
+    Рассмотрим совокупность неявных функций $y_1\, \dots\, y_n$, определяемых системой уравнений
+    \[ \begin{cases}
+        F_1(x_1\, \dots\, x_m; y_1\, \dots\, y_n) = 0\\
+        F_2(x_1\, \dots\, x_m; y_1\, \dots\, y_n) = 0\\
+        \dots\\
+        F_n(x_1\, \dots\, x_m; y_1\, \dots\, y_n) = 0\\
+    \end{cases} \]
+    При определённых условиях эта система разрешима относительно функций
+    \[ \begin{aligned}
+        y_1 &= y_1(x_1\, \dots\, x_m)\\
+        y_2 &= y_2(x_1\, \dots\, x_m)\\
+        \dots\\
+        y_n &= y_n(x_1\, \dots\, x_m)\\
+    \end{aligned} \]
+    Определитель вида
+    \[ 
+        \begin{vmatrix}
+            \frac{\partial F_1}{\partial y_1} & \dots & \frac{\partial F_1}{\partial y_n}\\
+            \frac{\partial F_2}{\partial y_1} & \dots & \frac{\partial F_2}{\partial y_n}\\
+            \dots & \dots & \dots\\
+            \frac{\partial F_n}{\partial y_1} & \dots & \frac{\partial F_n}{\partial y_n}\\
+        \end{vmatrix}
+    \]
+    называется \textbf{определителем Якоби} или \textbf{Якобианом}
+    \subsubsection*{Теорема 7.16.3}\label{th:7.16.3}
+    Если функции $F_i(x_1\, \dots\, x_m; y_1\, \dots\, y_n) \quad i = \overline{1, n}$ имеют непрерывные частные производные в окрестности точки $M_0(x^0_1\, \dots\, x^0_m; y^0_1\, \dots\, y^0_n)$ и $F_i(M_0)=0$ и Якобиан $\frac{D(F_1\, \dots\, F_n)}{D(y_1\, \dots\, y_n)}\Big|_{M_0} \ne 0$, то $\exists$ окрестность $u(x^0_1\, \dots\, x^0_m)$ и $u(y^0_1\, \dots\, y^0_n)$ такие, что система уравнений $F_i(x_1\, \dots\, x_m; y_1\, \dots\, y_n) = 0 \quad i = \overline{1, n}$ однозначно разрешима в окрестности точки $M_0$ относительно переменных $y_1\, \dots\, y_n$, т.е. 
+    \[ y^0_i = f_i(x_1\, \dots\, x_m) \quad i = \overline{1, n} \]
+    Все $y^*_i$ имеют непрерывную частную производную в окрестностях $u(x^0_1\, \dots\, x^0_n)$.
+
+    \subsection{Условный экстремум}
+    Пусть задана функция $F = F(x_1\, \dots\, x_m; y_1\, \dots\, y_n)$\\
+    \underline{Задача:} найти экстремум этой функции, если переменные $x_i, y_j$ связаны между собой уравнениями 
+    \[ \begin{cases}
+        f_1(x_1\, \dots\, x_m; y_1\, \dots\, y_n) = 0\\
+        f_2(x_1\, \dots\, x_m; y_1\, \dots\, y_n) = 0\\
+        \dots\\
+        f_n(x_1\, \dots\, x_m; y_1\, \dots\, y_n) = 0\\
+    \end{cases} \quad \text{\underline{условия связи}} \] 
+    Точка $M_0 (x^0_1\, \dots\, x^0_m; y^0_1\, \dots\, y^0_n)$, \underline{удовлетворяющая условиям связи}, называется точкой \textbf{условного максимума (минимума)}, если $\exists$ окрестность точки $M_0$ такая, что 
+    \[ \forall (x_1\, \dots\, x_m; y_1\, \dots\, y_n) \in u(M_0) : \underset{(F(M) \ge F(M_0))}{F(M) \le F(M_0)} \]
+    \underline{Пример:}
+    Рассмотрим $F(x;y) = x^2 + y^2$. Найти экстремум $F$ при условии: $x + y - 1 = 0$.
+    \begin{center}
+        \includegraphics{7.17.1.png}
+    \end{center}
+    1 способ:
+    \begin{gather*}
+        y = 1 - x\\
+        F(x, y(x)) = x^2 + (1 - x)^2 = x^2 + 1 - 2x + x^2 = 2x^2 - 2x + 1\\
+        F' = 4x - 2 = 0
+        x = \frac{1}{2}, y = 1 - x = \frac{1}{2}
+    \end{gather*}
+    Получили точку $\left( \frac{1}{2}; \frac{1}{2} \right)$
+    \begin{center}
+        \includegraphics{7.17.2.png}
+    \end{center}
+    Ответ: точка $\left( \frac{1}{2}; \frac{1}{2} \right)$ - точка условного минимума.\\
+    \underline{В общем виде:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Рассмотрим $F(x_1\, \dots\, x_m; y_1\, \dots\, y_n) = F$\\
+        Рассмотрим $f_i = f_i(x_1\, \dots\, x_m; y_1\, \dots\, y_n) = 0 \quad i = \overline{1, n}$ - условия связи.\\
+        Пусть $\frac{D(f_1\, \dots\, f_n)}{D(y_1\, \dots\, y_n)} \Big|_{M_0} \ne 0$. Тогда по \hyperref[th:7.16.3]{теореме 7.16.3} система условий связи разрешима в окрестности точки $M_0$.
+        \[ y_i = \varphi (x_1\, \dots\, x_m) \quad i = \overline{1, n} \]
+        Все $y_i$ имеют непрерывную частную производную в точке $(x^0_1\, \dots\, x^0_n)$.\\
+        Подставляя все $y_i$ в $F$, получим функцию переменных $x_1\, \dots\, x_n$.
+        \[ F(x_1\, \dots\, x_m; y_1\, \dots\, y_n) = \Phi (x_1\, \dots\, x_m; y_1(x_1\, \dots\, x_m)\, \dots\, y_n(x_1\, \dots\, x_m)) = \Phi (x_1\, \dots\, x_m) \]
+        Если $F$ достигает условного экстремума в точке $M_0 (x^0_1\, \dots\, x^0_m; y^0_1\, \dots\, y^0_n)$, то $\Phi$ достигает обычного экстремума в точке $P_0(x^0_1\, \dots\, x^0_m)$.\\
+        Сложность - в разрешении системы условий связи.
+    \end{adjustwidth}
+
+    \subsection{Метод неопределённых множителей Лагранжа}
+    Рассмотрим $F = F(x_1\, \dots\, x_m; y_1\, \dots\, y_n) \quad (1)$.
+    \[ \begin{cases}
+        f_1(x_1\, \dots\, x_m; y_1\, \dots\, y_n) = 0\\
+        \dots\\
+        f_n(x_1\, \dots\, x_m; y_1\, \dots\, y_n) = 0\\
+    \end{cases} \quad (2) \]
+    Пусть $M_0 (x^0_1\, \dots\, x^0_m; y^0_1\, \dots\, y^0_n)$ - точка условного экстремума.\\
+    Тогда по необходимому условию жкстремума:
+    \[ 
+        \begin{cases}
+            \frac{\partial f_1}{\partial x_1}dx_1 + \frac{\partial f_1}{\partial x_2}dx_2 + \dots + \frac{\partial f_1}{\partial x_n}dx_m + \frac{\partial f_1}{\partial y_1}dy_1 + \dots + \frac{\partial f_1}{\partial y_n}dy_n = 0\\
+            \dots\\
+            \frac{\partial f_n}{\partial x_1}dx_1 + \frac{\partial f_n}{\partial x_2}dx_2 + \dots + \frac{\partial f_n}{\partial x_n}dx_m + \frac{\partial f_n}{\partial y_1}dy_1 + \dots + \frac{\partial f_n}{\partial y_n}dy_n = 0\\
+        \end{cases} \quad (3)
+    \]
+    Получили систему $n$ уравнений $(n + m)$ неизвестных.\\
+    По \hyperref[th:7.16.3]{теореме 7.16.3}:
+    \[ \frac{D(f_1\, \dots\, f_n)}{D(y_1\, \dots\, y_n)} \ne 0 \implies \text{rang}(3) = n \]
+    Тогда векторы $\overline{\text{grad}}f_1\, \dots\, \overline{\text{grad}}f_n$ являются линейно независимыми.\\
+    Значит её можно выбрать в качестве базиса.\\
+    Рассмотрим $(1)$. Т.к. $M_0$ - точка условного экстремума:
+    \[ dF = 0 \implies \frac{\partial F}{\partial x_1}dx_1 + \frac{\partial F}{\partial x_2}dx_2 + \dots + \frac{\partial F}{\partial x_m}dx_m + \frac{\partial F}{\partial y_1}dy_1 + \dots + \frac{\partial F}{\partial y_n}dy_n = 0 \]
+    Значит 
+    \[ -\overline{\text{grad}}F = \lambda_1 \overline{\text{grad}}f_1 + \dots + \lambda_n \overline{\text{grad}}f_n \]
+    \[ \overline{\text{grad}(F + \lambda_1 f_1 + \lambda_2 f_2 + \dots + \lambda_n f_n)} = 0 \]
+    Функция $L = F + \lambda_1 f_1 + \lambda_2 f_2 + \dots + \lambda_n f_n$ называется \textbf{функцией Лагранжа}.\\
+    $\lambda_1\, \dots\, \lambda_n$ - множители Лагранжа.\\
+    Составим систему:
+    \[ \begin{cases}
+        \frac{\partial L}{\partial x_1} = \frac{\partial F}{\partial x_1} + \lambda_1 \frac{\partial f_1}{\partial x_1} + \dots + \lambda_n \frac{\partial f_n}{\partial x_1} = 0\\
+        \dots\\
+        \frac{\partial L}{\partial x_m} = \frac{\partial F}{\partial x_m} + \lambda_1 \frac{\partial f_1}{\partial x_m} + \dots + \lambda_n \frac{\partial f_n}{\partial x_m} = 0\\
+        \frac{\partial L}{\partial y_1} = \frac{\partial F}{\partial y_1} + \lambda_1 \frac{\partial f_1}{\partial y_1} + \dots + \lambda_n \frac{\partial f_n}{\partial y_1} = 0\\
+        \dots\\
+        \frac{\partial L}{\partial y_n} = \frac{\partial F}{\partial y_n} + \lambda_1 \frac{\partial f_1}{\partial y_n} + \dots + \lambda_n \frac{\partial f_n}{\partial y_n} = 0\\
+    \end{cases} \]
+    Уравнений: $n + m$.\\
+    \underline{Неизвестные:} $x_1\, \dots\, x_m, y_1\, \dots\, y_n, \lambda_1\, \dots\, \lambda_n \quad m + 2n$.\\
+    Добавляем к этой системе уравнения связи
+    \[ \begin{cases}
+        f_1(x_1\, \dots\, x_m; y_1\, \dots\, y_n) = 0\\
+        \dots\\
+        f_n(x_1\, \dots\, x_m; y_1\, \dots\, y_n) = 0\\
+    \end{cases} \]
+    Получим $2n+m$ уравнений с $2n+m$ неизвестных.\\
+    Для каждого набора $\lambda_1\, \dots\, \lambda_n$ будет найдена стационарная точка $(x^0_1\, \dots\, x^0_m; y^0_1\, \dots\, y^0_n)$.\\
+    Применяя критерий Сильвестра при выполнении условий связи к функции Лагранжа, можно определить характер стационарной точки.\par\noindent
+    \underline{Пример:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Рассмотрим $F = x + y + z$.\\
+        Условие связи: $xy + yz + xz = 3$.\\
+        Найти условный экстремум.
+        Решение: составим функцию Лагранжа.
+        \[ L = x + y + z + \lambda (xy + yz + xz - 3) \]
+        Составим систему
+        \[ \left\lbrace\begin{aligned}
+            \frac{\partial L}{\partial x} &= 1 + \lambda (y + z) = 0 & x &= y = z = -\frac{1}{2\lambda}\\
+            \frac{\partial L}{\partial y} &= 1 + \lambda (x + z) = 0 & \lambda &= \pm\frac{1}{2}\\
+            \frac{\partial L}{\partial z} &= 1 + \lambda (y + x) = 0 & \lambda_1 &=-\frac{1}{2}: \quad A(1; 1; 1)\\
+            xy &+ yz + xz - 3 = 0 & \lambda_2 &= \frac{1}{2}: \quad B(-1; -1; -1)
+        \end{aligned}\right. \]
+        \begin{align}
+            \frac{\partial^2 L}{\partial x^2} &= 0 & \frac{\partial^2 L}{\partial y^2} &= 0 & \frac{\partial^2 L}{\partial z^2} &= 0\\
+            \frac{\partial^2 L}{\partial x \partial y} &= \lambda & \frac{\partial^2 L}{\partial x \partial z} &= \lambda & \frac{\partial^2 L}{\partial y \partial z} &= \lambda
+        \end{align}
+        \[ d^2 L = \left( \frac{\partial}{\partial x}dx + \frac{\partial}{\partial y}dy + \frac{\partial}{\partial z}dz \right)^{(2)}L = 2\lambda dx dy + 2\lambda dy dz + 2 \lambda dx dz \boxed{=} \]
+        \[ xy + yz + xz - 3 = 0 \]
+        \[ df = 0 \quad \frac{\partial f}{\partial x}dx + \frac{\partial f}{\partial y}dy + \frac{\partial f}{\partial z}dz = 0 \]
+        \[ (y+z)dx + (x+z)dy + (x+y)dz = 0 \]
+        В точках $A$ и $B$:
+        \[ dx + dy + dz = 0 \]
+        \[ dz = -(dx + dy) \]
+        \[ \boxed{=} 2\lambda dxdy - 2\lambda dy(dx + dy) - 2\lambda dx(dx + dy) = -2 \lambda (dx^2 + dy^2 + dxdy) \]
+        \[ \text{Точка }A \quad \begin{pmatrix}
+            -2\lambda & -\lambda \\
+            -\lambda & -2\lambda
+        \end{pmatrix} = \begin{pmatrix}
+            1 & \frac{1}{2}\\
+            \frac{1}{2} & 1
+        \end{pmatrix} = \boxed{ + } \implies \text{ точка } A \text{ - т. условного минимума.} \]
+        \[ \text{Точка }B \quad \begin{pmatrix}
+            -1 & -\frac{1}{2}\\
+            -\frac{1}{2} & -1
+        \end{pmatrix} = \boxed{ - } \implies \text{ точка } B \text{ - т. условного максимума.} \]
+        \[ d^2 L > 0 \text{ для точки }A \]
+        \[ d^2 L < 0 \text{ для точки }B \]
+    \end{adjustwidth}
+
 \end{document}
