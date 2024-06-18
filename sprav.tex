@@ -1,3 +1,4 @@
+% !TEX root = sprav.tex
 \documentclass[12pt]{article}
 \usepackage[a4paper, total={7in,10in}]{geometry}
 \usepackage{polyglossia}
@@ -8,8 +9,9 @@
 \usepackage{graphicx}
 \usepackage{changepage}
 \usepackage{hyperref}
+\usepackage{cancel}
 \graphicspath{{./images/}}
-\setmainlanguage{russian}
+\setmainlanguage[babelshorthands=true]{russian}
 \setotherlanguage{english}
 \newfontfamily\russianfont[Script=Cyrillic]{Times New Roman}
 \newfontfamily\englishfont{Times New Roman}
@@ -25,7 +27,7 @@
 \DeclareMathOperator*{\ctg-like}{\cot-like}
 \DeclareMathOperator*{\arctg-like}{\arctan-like}
 \DeclareMathOperator*{\arcctg-like}{\arctan-like}
-
+ 
 \begin{document}
     \justifying
     \tableofcontents
@@ -171,7 +173,7 @@
         \end{center}
     \end{adjustwidth}
     \subsubsection*{Несчётные множества.}
-    \subsubsection*{Теорема 1.2.1}\label{th:1.2.1} 
+    \subsubsection*{Теорема 1.2.1}\label{th:1.2.1}
     Множество $H$ всех бесконечных наборов из цифр $0$ и $1$ не является счётным.\par
     \noindent \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
@@ -759,14 +761,14 @@
     \begin{enumerate}
         \item База индукции.\\
         При $n = 1$ должно выполняться равенство $(a+b)^{1} = \sum_{k=0}^{1}C^{k}_{1}a^{k}b^{1-k}$\\
-        $a+b = C^{0}_{1}a^{0}b^{1} + C^{1}_{1}a^{1}b^{0}$\\
+        $a+b = C^{0}_{1}a^{0}b^{1} + \mathbb{C}^{1}_{1}a^{1}b^{0}$\\
         $a+b = b+a$
         \item Преположение индукции.\\
         Пусть при $n = m$ верно равенство $(a+b)^{m} = \sum_{k=0}^{m}C^{k}_{m}a^{k}b^{m-k}$
         \item Шаг индукции.\\
         Докажем справедливость равенства для $n = m + 1$, т.е докажем, что $(a+b)^{m+1} = \sum_{k=0}^{m + 1}C^{k}_{m+1}a^{k}b^{m-1-k}$\\
         \underline{Доказательство:}\\
-        \underline{Замечание:} $C^{k+1}_{m} + C^{k}_{m} = \frac{m!}{(k-1)!(m-k+1)} + \frac{m!}{k!(m-k)!} = \frac{m!}{(k-1)!(m-k)!}(\frac{1}{m-k+1} + \frac{1}{k}) = \frac{m!}{(k-1)!(m-k)!}(\frac{k+m-k+1}{(m-k+1)k}) = \frac{m!}{(k-1)!(m-k)!}(\frac{m+1}{(m-k+1)k}) = \frac{(m+1)!}{k!(m-k+1)!} = C^{k}_{m+1}$\\
+        \underline{Замечание:} $C^{k+1}_{m} + \mathbb{C}^{k}_{m} = \frac{m!}{(k-1)!(m-k+1)} + \frac{m!}{k!(m-k)!} = \frac{m!}{(k-1)!(m-k)!}(\frac{1}{m-k+1} + \frac{1}{k}) = \frac{m!}{(k-1)!(m-k)!}(\frac{k+m-k+1}{(m-k+1)k}) = \frac{m!}{(k-1)!(m-k)!}(\frac{m+1}{(m-k+1)k}) = \frac{(m+1)!}{k!(m-k+1)!} = C^{k}_{m+1}$\\
         \begin{gather*}
             (a+b)^{m+1}=(a+b)^m \times (a+b) = (\sum_{k=0}^{m}C^{k}_{m}a^{k}b^{m-k}) \times (a+b) =\\
             \sum_{k=0}^{m}C^{k}_{m}a^{k+1}b^{m-k} + \sum_{k=0}^{m}C^{k}_{m}a^{k}b^{m-k+1} = \sum_{k=1}^{m+1}C^{k-1}_{m}a^{k}b^{m-(k-1)} + \sum_{k=0}^{m}C^{k}_{m}a^{k}b^{m-k+1} =\\
@@ -785,7 +787,7 @@
         \item Покажем, что эта посл-ть ограничена снизу.
         \begin{gather*}
             x_n = (1 + \frac{1}{n})^n =\\
-            = C^{1}_{n}*1^{n-1}\times(\frac{1}{n})^{1} + C^{2}_{n}\times1^{n-2}*(\frac{1}{n})^{2} + \dots + C^n_{n}\times1^{0}\times(\frac{1}{n})^n =\\
+            = C^{1}_{n}*1^{n-1}\times(\frac{1}{n})^{1} + \mathbb{C}^{2}_{n}\times1^{n-2}*(\frac{1}{n})^{2} + \dots + \mathbb{C}^n_{n}\times1^{0}\times(\frac{1}{n})^n =\\
             = 1 + 1 + \frac{n(n-1)}{2!} \times \frac{1}{n^{2}} + \dots +\\
             + \frac{1}{k!}n(n-1)\dots(n-k+1)\frac{1}{n^{k}}+\dots+\\
             +\frac{1}{n!}n(n-1)\dots(n-n+1)\frac{1}{n^n} \ge 2 \text{, } \forall n
@@ -1928,7 +1930,7 @@
         Т.е. $\Delta y \sim dy $ при $\Delta x \to 0$
     \end{adjustwidth}
 
-    \subsection*{Теорема 4.9.1 (необходимость и достаточность условия дифференции в точке)}\label{th:4.9.1}
+    \subsubsection*{Теорема 4.9.1 (необходимость и достаточность условия дифференции в точке)}\label{th:4.9.1}
     Для того чтобы $f(x)$ была дифференциуема в точке $x_0$ $\Leftrightarrow$ чтобы в этой точке она имела конечную производную.\par\noindent
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
@@ -2425,7 +2427,7 @@
         \textbf{Докажем достаточность ($\Leftarrow$)}\par\noindent
         Пусть $\forall x \in (a; b) \text{ } f'(x) \ge 0$\\
         Покажем, что $f(x)$ неубывающая на $(a;b)$.\\
-        Выберем произвольно $x_1, x_2 \in (a; b)$. Пусть $x_1 < x_2$. Тогда по теореме Лагранжа (12.4):
+        Выберем произвольно $x_1, x_2 \in (a; b)$. Пусть $x_1 < x_2$. Тогда по \hyperref[th:4.12.4]{теореме Лагранжа}:
         \[ f(x_2) - f(x_1) = f'(\xi)(x_2-x_1), \xi \in (x_1; x_2) \]
         По условию \[f'(x) \ge 0 \text{ } \forall x \in (a; b) \implies f'(\xi) \ge 0, x_2 - x_1 > 0 \implies f(x_2) - f(x_1) \ge 0 \implies f(x_1) \le f(x_2)\]
         Т.к. $x_1, x_2$ - произвольные и $\in (a; b) \implies$ на $(a;b)$ $f(x)$ неубывающая.
@@ -2609,73 +2611,269 @@
 
     \section{Неопределённые интегралы}
     \subsection{Определение. Основные понятия}
-    \underline{Задача}. Известна производная функции $f(x)$. Требуется найти саму функцию $f(x)$.
-    %здесь был материал по интегралам
+    \underline{Задача}. Известна производная функции $f(x)$. Требуется найти саму функцию $f(x)$.\\
+    Или: по известной скорости восстановить закон движения.\par\noindent
+    Функция $F(x)$ называется первообразной для функции $f(x)$ на некотором интервале $(a; b)$, если $F(x)$ дифференциуема на $(a; b)$ и $F'(x) = f(x)$.
+    \subsubsection*{Теорема 5.1.1}\label{th:5.1.1}
+    Если $F(x)$ первообразная для $f(x)$ на $(a; b)$, то $F(x) + \mathbb{C}$, $C = const$, тоже первообразная.\par\noindent
+    \underline{Доказательство:}
+    \[ (F(x) + \mathbb{C})' = F'(x) = f(x) \]
+    \begin{center}
+        \textbf{Ч.т.д.}
+    \end{center}
+    \subsubsection*{Теорема 5.1.2}\label{th:5.1.2}
+    Для того, чтобы две дифференциуемые на $(a;b)$ функции были первообразными для одной и той же функции $\Leftrightarrow$ чтобы на $(a; b)$ они отличались на постоянную.\par\noindent
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        \textbf{Докажем необходимость ($\Rightarrow$)}\par\noindent
+        Пусть $F_1(x)$ и $F_2(x)$ - две первообразные для $f(x)$ на $(a; b)$.\\
+        Тогда по определению $F_1'(x) = F_2'(x) = f(x)$.\\
+        Пусть $\varphi(x) = F_1(x) - F_2(x), \phi'(x) = F_1'(x) - F_2'(x) = f(x) - f(x) = 0$.\\
+        Тогда по \hyperref[th:4.12.5]{теореме 4.12.5} $\varphi(x) = const$.\par\noindent
+        
+        \textbf{Докажем достаточность ($\Leftarrow$)}\par\noindent
+        Пусть
+        \begin{gather*}
+            F_1(x) - F_2(x) = const\\
+            F_1(x) = C + F_2(x)\\
+            F_1'(x) = (C + F_2(x))'\\
+            f(x) = f(x)
+        \end{gather*}
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+    Совокупность всех первообразующих функции $f(x)$ на $(a; b)$ называется \underline{неопределенным интегралом} от функции $f(x)$ и обозначается 
+    \[ \int f(x)dx \]
+    $\int$ - знак интеграла, $f(x)dx$ - подынтегральное выражение, $f(x)$ - подынтегральная функция; $dx$ - знак.
+    
     \subsection{Свойства неопределённого интеграла}
-    %здесь был материал по интегралам
+    \begin{enumerate}
+        \item \[ d \int f(x) dx = f(x)dx \]
+        \underline{Доказательство:}
+        \[ d \int f(x)dx = d(F(x) + \mathbb{C}) = (F(x) + \mathbb{C})'dx = f(x)dx \]
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+        \item \[ \int dF(x) = F(x) + \mathbb{C} \]
+        \underline{Доказательство:}
+        \[ \int dF(x) = \int F'(x)dx = \int f(x)dx = F(x) + \mathbb{C} \]
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+        \item \[ \int k f(x) dx = k \int f(x) dx, k = const \]
+        \underline{Доказательство:}
+        \begin{adjustwidth}{1.5em}{1.5em}
+            $F'(x) = f(x)$\\
+            $(k(F(x)))' = kf(x)$, т.е. $kF(x)$ является первообразной для $kf(x)$ на $(a; b)$\\
+            Т.е. левая часть: $\int kf(x)dx = kF(x) + \mathbb{C}_1$\\
+            А правая часть: $k \int f(x)dx = k(F(x) + \mathbb{C}_2) = kF(x) + kC_2$, если обозначать $C_1 = kC_2$, то \textbf{ч.т.д.}
+        \end{adjustwidth}
+        \item \[ \int (f(x) \pm g(x)) dx = \int f(x) dx \pm \int g(x)dx \]
+        \underline{Доказательство:}
+        \begin{adjustwidth}{1.5em}{1.5em}
+            Докажем для "+"\par\noindent
+            По определению: $F_1'(x) = f(x)$, $F_2'(x) = g(x)$\\
+            $(F_1 + F_2)' = F_1' + F_2' = f(x) + g(x)$\\
+            Т.е. по определению $F_1(x) + F_2(x)$ является первообразной для функции $f(x) + g(x)$\\
+            левая часть: $\int (f(x) + g(x))dx = F_1(x) + F_2(x) + \mathbb{C}_1$\\
+            правая часть: $\int f(x)dx + \int g(x)dx = F_1(x) + \mathbb{C}_2 + F_2(x) + \mathbb{C}_3$\\
+            Если обозначать $C_1 = kC_2$, то \textbf{ч.т.д.}
+        \end{adjustwidth}
+        \item \[ \int (k_1 f(x) + k_2 g(x))dx = k_1 \int f(x)dx + k_2 \int g(x)dx \]
+        \underline{Доказательство:}
+        \begin{adjustwidth}{1.5em}{1.5em}
+            По определению: $F_1'(x) = f(x), F_2'(x) = g(x)$\\
+            $(k_1F_1(x) + k_2F_2(x))' = k_1f(x) + k_2g(x)$, т.е. по определению $(k_1F_1(x) + k_2F_2(x))$ является первообразной для функции $k_1f(x) + k_2g(x)$ на $(a; b)$\\
+            Т.е. левая часть: $\int (k_1f(x) + k_2g(x))dx = k_1F_1(x) + k_2F_2(x) + \mathbb{C}_1$\\
+            правая часть: $k_1\int f(x)dx + k_2\int g(x)dx = k_1(F_1(x) + \mathbb{C}_2) + k_2(F_2(x) + \mathbb{C}_3) = k_1F_1(x) + k_1\mathbb{C}_2 + k_2F_2(x) + k_2\mathbb{C}_3$\\
+            Если обозначать $\mathbb{C}_1 = k_1\mathbb{C}_2 + k_2\mathbb{C}_3$, то \textbf{ч.т.д.}
+        \end{adjustwidth}
+    \end{enumerate}
+
     \subsection{Формула замены переменной в неопределённом интеграле}
     \subsubsection*{Теорема 5.3.1}\label{th:5.3.1}
-    Пусть функции $y=f(x)$ и $x=\phi(t)$ определены на $\Delta x$ и $\Delta t$ и $\phi(\Delta t) \subset \Delta x$.\\
-    Если $f(x)$ имеет на $\Delta x$ первообразную $F(x)$, т.е. $\int \,f(x)dx = F(x) + C$, а $\phi(t)$ дифференциуема на $\Delta t$, то функция $F(\phi(t))\phi'(t)$ имеет на $\Delta t$ первообразная $F(\phi(t))$
-    \[ \boxed{\int \, f(x)dx = \int f(\phi(t))\phi'(t)dt} \]
-    \subsection{Че-то новое}
-    % в общем много пропущенного
-    \subsubsection*{Теорема 5.4.1}\label{th:5.4.1}
-    Если функции $u(x)$ и $v(x)$ дифференциуемы на некотором промежутке и на этом промежутке $\exists \int vdu$, то на нём $\exists \int udv$ и
-    \[ \boxed{\int udv = uv - \int vdu} \]
-    
+    Пусть функции $y=f(x)$ и $x=\varphi(t)$ определены на $\Delta x$ и $\Delta t$ и $\varphi(\Delta t) \subset \Delta x$.\\
+    Если $f(x)$ имеет на $\Delta x$ первообразную $F(x)$, т.е. $\int \,f(x)dx = F(x) + \mathbb{C}$, а $\varphi(t)$ дифференциуема на $\Delta t$, то функция $F(\varphi(t))\phi'(t)$ имеет на $\Delta t$ первообразная $F(\varphi(t))$
+    \[ \boxed{\int \, f(x)dx = \int f(\varphi(t))\phi'(t)dt} \]
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Функции $f(x)$ и $F(x)$ определены на $\Delta x$, $\phi (\Delta t)$ с $\Delta x$, т.е. определены сложные функции\\
+        $f(\varphi(t))$ и $F(\varphi(t))$
+        \[ F(\varphi(t))' = F'(\varphi(t)) * \phi'(t) = f(\varphi(t)) * \phi'(t) \]
+        Т.е. по определению функция $F(\varphi(t))$ является первообразной для $f(\varphi(t))\phi'(t)$\\
+        Тогда $\underbrace{ f(\varphi(t))\phi'(t)dt } = F(\varphi(t)) + \mathbb{C} = F(x) + \mathbb{C} = \underbrace{ \int f(x)dx }$
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+    \underline{Примеры:}
     \begin{enumerate}
-        \item \begin{gather*} 
-            = \int \frac{(Bx + C)dx}{(x+\frac{p}{2})^2 + a^2} = \begin{vmatrix}
-                x + \frac{p}{2} = t\\
-                x = t - \frac{p}{2}\\
-                dx = dt
-            \end{vmatrix} = \int \frac{(B(t-\frac{p}{2})+C)dt}{t^2 + a^2} = B \int \frac{tdt}{t^2+a^2} + (-\frac{Bp}{2} + C) \int \frac{dt}{t^2+a^2} =\\
-            = \frac{B}{2}\ln|t^2+a^2| + \frac{1}{a}\left(-\frac{Bp}{2} + C\right)\arctg \frac{t}{a} + \mathbb{C}
+        \item \begin{gather*}
+            \int \tg(x)dx = \int \frac{\sin x dx}{\cos x} = \begin{vmatrix}
+                t = \cos x\\
+                x = \arccos t\\
+                dx = - \frac{1}{\sqrt{1 - t^2}}dt
+            \end{vmatrix} = - \int \frac{\sqrt{1 - t^2}dt}{\sqrt{1 - t^2}t} = - \int \frac{dt}{t} =\\
+            = -\ln |t| + \mathbb{C} = -\ln |\cos x| + \mathbb{C}
         \end{gather*}
         \item \begin{gather*}
-            \int \frac{(Ax+B)}{(x^2 + px + q)^k}dx = \int \frac{(Ax+B)}{(x^2 + \boxed{2} * \frac{1}{2}p\boxed{x} + \frac{p^2}{4} - \frac{p^2}{4} + q)^k}dx =\\
-            = \int \frac{(Ax+B)dx}{[(x + \frac{p}{2})^2 + \underbrace{q - \frac{p^2}{4}}_{a^2, \, >0}]^k} = \begin{vmatrix}
-                t = x + \frac{p}{2}\\
-                x = t - \frac{p}{2}\\
-                dx = dt
-            \end{vmatrix} = \int \frac{A(t - \frac{p}{2}) + B}{(t^2 + a^2)^k}dt =\\
-            = A \int \frac{tdt}{(t^2 + a^2)^k} + \left(-\frac{Ap}{2} + B\right)\int \frac{dt}{(t^2 + a^2)^k} = \frac{A}{2}
+            \int \sqrt{1 - x^2}dx = \begin{vmatrix}
+                x = \sin t\\
+                dx = \cos t dt
+            \end{vmatrix} = \int \sqrt{1 - \sin^2 t}\cos t dt = \int \cos^2 t dt =\\
+            = \int \frac{1+\cos 2t}{2}dt = \int \frac{1}{2}dt + \int \frac{\cos 2t}{2}dt = \frac{1}{2}t + \frac{1}{4}\sin 2t + \mathbb{C} = \frac{1}{2}\arcsin x + \frac{1}{4}\sin (2\arcsin x) + \mathbb{C}
         \end{gather*}
     \end{enumerate}
 
-    Рассмотрим
-    \begin{gather*}
-        I_k = \int \frac{1dt}{(t^2 + a^2)^k} = \frac{1}{a^2} \int \frac{(t^2 + a^2 - t^2)dt}{(t^2 + a^2)^k} = \frac{1}{a^2} \int \frac{dt}{(t^2+a^2)^{k-1}} - \frac{1}{a^2}\int\frac{t^2dt}{(t^2 + a^2)^k} =\\
-        = \frac{1}{a^2}I_{k-1} - \begin{vmatrix}
-            u = t & du = dt\\
-            dv = \frac{tdt}{(t^2 + a^2)^k} & v = \frac{1}{2}\frac{(t^2+a^2)^{-k+1}}{(1-k)}\\
-        \end{vmatrix} =\\
-        = \frac{1}{a^2}I_{k-1} - \frac{1}{a^2} \left( \frac{t}{2(1-k)(t^2+a^2)^{k-1}} - \frac{1}{2(1-k)} \right) \int \frac{dt}{(t^2 + a^2)^{k-1}} =\\
-        = \frac{1}{a^2}I_{k-1} + \frac{t}{2a^2(k-1)(t^2+a^2)^{k-1}} - \frac{1}{2a^2(k-1)}I_{k-1} =\\
-        = \left| \frac{1}{a^2}(1 - \frac{1}{2(k-1)}) = \frac{1}{a^2}\frac{(2k-3)}{2(k-1)} \right| =\\
-        = \frac{t}{2a^2(k-1)(t^2+a^2)^{k-1}} + \frac{2k-3}{a^2(2k-2)}I_{k-1}\dots
-    \end{gather*}
+    \subsubsection*{Таблица интегралов}
+    % я не буду это писать
+    \includegraphics[width=0.7\linewidth,keepaspectratio]{5.3.1.png}
 
+    \subsection{Формула интегрирования по частям}
+    \subsubsection*{Теорема 5.4.1}\label{th:5.4.1}
+    Если функции $u(x)$ и $v(x)$ дифференциуемы на некотором промежутке и на этом промежутке $\exists \int vdu$, то на нём $\exists \int udv$ и
+    \[ \boxed{\int udv = uv - \int vdu} \]
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        \begin{gather*}
+            \int udv = \int uv'dx = \left| (uv)' = u'v + uv' \right| =\\
+            = \int [(uv)' - u'v]dx = \int (uv)'dx - \int u'vdx = uv - \int vdu
+        \end{gather*}
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+
+    \subsubsection*{Формула интегрирования по частям применяется в случаях:}    
+    \begin{enumerate}
+        \item \begin{gather*}
+            \int P_n(x) * \underset{\text{таблич. интегралы}}{\begin{Bmatrix}
+                \sin \alpha x\\
+                \cos \alpha x\\
+                e^{\alpha x}\\
+                \dots
+            \end{Bmatrix}}dx,\, \begin{matrix}
+                u = P_n(x) & du = \dots \\
+                dv = \underset{\text{табл}}{\left\{ \dots \right\}}dx & v = \dots
+            \end{matrix}
+        \end{gather*}
+        \item \begin{gather*}
+            \int P_n(x) * \underset{\text{не таблич.}}{\begin{Bmatrix}
+                \arcsin \alpha x\\
+                \arctg \alpha x\\
+                ln \alpha x\\
+                \dots
+            \end{Bmatrix}}dx,\,\begin{matrix}
+                u = \left\{ \dots \right\} & du = \dots \\
+                dv = P_n(x)dx & v = \dots
+            \end{matrix}
+        \end{gather*}
+        \item \begin{gather*}
+            \int \underset{\text{не таблич.}}{\begin{Bmatrix}
+                \arcsin \alpha x\\
+                \arctg \alpha x\\
+                ln \alpha x\\
+                \dots
+            \end{Bmatrix}}dx,\,\begin{matrix}
+                u = \left\{ \dots \right\} & du = \dots \\
+                dv = dx & v = x
+            \end{matrix}
+        \end{gather*}
+        % \item \begin{gather*} 
+        %     = \int \frac{(Bx + \mathbb{C})dx}{(x+\frac{p}{2})^2 + a^2} = \begin{vmatrix}
+        %         x + \frac{p}{2} = t\\
+        %         x = t - \frac{p}{2}\\
+        %         dx = dt
+        %     \end{vmatrix} = \int \frac{(B(t-\frac{p}{2})+C)dt}{t^2 + a^2} = B \int \frac{tdt}{t^2+a^2} + (-\frac{Bp}{2} + \mathbb{C}) \int \frac{dt}{t^2+a^2} =\\
+        %     = \frac{B}{2}\ln|t^2+a^2| + \frac{1}{a}\left(-\frac{Bp}{2} + \mathbb{C}\right)\arctg \frac{t}{a} + \mathbb{C}
+        % \end{gather*}
+        % \item \begin{gather*}
+        %     \int \frac{(Ax+B)}{(x^2 + px + q)^k}dx = \int \frac{(Ax+B)}{(x^2 + \boxed{2} * \frac{1}{2}p\boxed{x} + \frac{p^2}{4} - \frac{p^2}{4} + q)^k}dx =\\
+        %     = \int \frac{(Ax+B)dx}{[(x + \frac{p}{2})^2 + \underbrace{q - \frac{p^2}{4}}_{a^2, \, >0}]^k} = \begin{vmatrix}
+        %         t = x + \frac{p}{2}\\
+        %         x = t - \frac{p}{2}\\
+        %         dx = dt
+        %     \end{vmatrix} = \int \frac{A(t - \frac{p}{2}) + B}{(t^2 + a^2)^k}dt =\\
+        %     = A \int \frac{tdt}{(t^2 + a^2)^k} + \left(-\frac{Ap}{2} + B\right)\int \frac{dt}{(t^2 + a^2)^k} = \frac{A}{2}
+        % \end{gather*}
+    \end{enumerate}
+    \underline{Примеры:}
+    \begin{enumerate}
+        \item \[ \int \ln x dx = \begin{vmatrix}
+            u = \ln x & du = \frac{dx}{x} \\
+            dv = dx & v = x
+        \end{vmatrix} = x\ln x - \int dx = x\ln x - x + \mathbb{C} \]
+        \item \[ \int x \sin x dx = \begin{vmatrix}
+            u = x & du = dx\\
+            dv = \sin x dx & v = -\cos x
+        \end{vmatrix} = -x \cos x + \int \cos x dx = -x \cos x + \sin x + \mathbb{C} \]
+    \end{enumerate}
+
+    \subsection{Интегрирование рациональных дробей}
+    \subsubsection*{Элементарные дроби}
+    \begin{enumerate}
+        \item \[\frac{A}{x-a}\]
+        \item \[\frac{A}{(x-a)^k}\]
+        \item \[\frac{Bx+C}{x^2+px+q}\]
+        \item \[\frac{Bx+C}{(x^2+px+q)^k}\]
+    \end{enumerate}
+    Покажем, что элементарные дроби интегрируются:
+    \begin{enumerate}
+        \item \[ \int \frac{A}{x - a}dx = A\int \frac{d(x-a)}{x-a} = A\ln|x-a| + \mathbb{C} \]
+        \item \[ \int \frac{A}{(x - a)^k}dx = A\int (x-a)^{-k} \frac{d(x-a)}{x-a} = A \frac{(x-a)^{-k+1}}{-k+1} + \mathbb{C} \]
+        \item \begin{gather*} 
+            \int \frac{(Bx+C)}{x^2+px+q}dx = \int \frac{(Bx+C)dx}{x^2+2*\frac{1}{2}px + \frac{p^2}{4} - \frac{p^2}{4} + q} =\\
+            = \int \frac{(Bx+C)dx}{(x+\frac{p}{2})^2 + \underset{a^2}{\underbrace{q - \frac{p^2}{4}}}} = \int \frac{(Bx+C)dx}{(x+\frac{p}{2})^2+a^2} =\\
+            = \begin{vmatrix}
+                t = x + \frac{p}{2}\\
+                x = t - \frac{p}{2}\\
+                dx = dt
+            \end{vmatrix} = \int \frac{(B(t - \frac{p}{2}) + C)dt}{t^2 + a^2} = B \int \frac{tdt}{t^2+a^2} + (-\frac{Bp}{2} + \mathbb{C})\int \frac{dt}{t^2+a^2} =\\
+            = \frac{B}{2}\ln|t^2+a^2| + \frac{1}{a}(-\frac{Bp}{2} + \mathbb{C})\arctg \frac{t}{a} + \mathbb{C} = \left|t = x+\frac{p}{2}\right| =\\
+            = \frac{B}{2}\ln\left|(x + \frac{p}{x})^2 + a^2\right| + \frac{1}{a}(-\frac{Bp}{2} + \mathbb{C})\arctg \frac{x+2}{a} + \mathbb{C}
+        \end{gather*}
+        \item \begin{gather*}
+            \int \frac{Ax+B}{(x^2 + px + q)^k}dx = \int \frac{(Ax+B)dx}{(x^2+2*\frac{1}{2}px + \frac{p^2}{4} - \frac{p^2}{4} + q)^k} = \int \frac{(Ax+B)dx}{[(x+\frac{p}{2})^2 + \underset{a^2}{\underbrace{q - \frac{p^2}{4}}}]^k} =\\
+            = \begin{vmatrix}
+                t = x + \frac{p}{2}\\
+                x = t - \frac{p}{2}\\
+                dx = dt
+            \end{vmatrix} = \int \frac{A(t - \frac{p}{2}) + B}{(t^2 + a^2)^k}dt = A \int \frac{tdt}{(t^2 + a^2)^k} + (-\frac{Ap}{2} + B)\int \frac{dt}{(t^2 + a^2)^k} =\\
+            = \frac{A}{2}\frac{(t^2 + a^2)^{-k+1}}{-k+1} + (-\frac{Ap}{2} + B)\int \frac{dt}{(t^2 + a^2)^k}
+        \end{gather*}
+        Рассмотрим
+        \begin{gather*}
+            I_k = \int \frac{1dt}{(t^2 + a^2)^k} = \frac{1}{a^2} \int \frac{(t^2 + a^2 - t^2)dt}{(t^2 + a^2)^k} = \frac{1}{a^2} \int \frac{dt}{(t^2+a^2)^{k-1}} - \frac{1}{a^2}\int\frac{t^2dt}{(t^2 + a^2)^k} =\\
+            = \frac{1}{a^2}I_{k-1} - \begin{vmatrix}
+                u = t & du = dt\\
+                dv = \frac{tdt}{(t^2 + a^2)^k} & v = \frac{1}{2}\frac{(t^2+a^2)^{-k+1}}{(1-k)}\\
+            \end{vmatrix} =\\
+            = \frac{1}{a^2}I_{k-1} - \frac{1}{a^2} \left( \frac{t}{2(1-k)(t^2+a^2)^{k-1}} - \frac{1}{2(1-k)} \right) \int \frac{dt}{(t^2 + a^2)^{k-1}} =\\
+            = \frac{1}{a^2}I_{k-1} + \frac{t}{2a^2(k-1)(t^2+a^2)^{k-1}} - \frac{1}{2a^2(k-1)}I_{k-1} =\\
+            = \left| \frac{1}{a^2}(1 - \frac{1}{2(k-1)}) = \frac{1}{a^2}\frac{(2k-3)}{2(k-1)} \right| =\\
+            = \frac{t}{2a^2(k-1)(t^2+a^2)^{k-1}} + \frac{2k-3}{a^2(2k-2)}I_{k-1}
+        \end{gather*}
+    \end{enumerate}
     \underline{Пример:}
     \begin{gather*}
-        \int \frac{7x^2 + 26x - 9}{x^4 + 4x^3 + 4x^2 - 9}dx = \int \frac{7x^2 + 26x - 9}{(x-1)(x+3)(x^2 + 2x + 3)dx} \circeq
+        \int \frac{7x^2 + 26x - 9}{x^4 + 4x^3 + 4x^2 - 9}dx = \int \frac{7x^2 + 26x - 9}{(x-1)(x+3)(x^2 + 2x + 3)dx} \boxed{=}
     \end{gather*}
     \begin{gather*}
         \frac{7x^2 + 26x - 9}{(x-1)(x+3)(x^2+2x+3)} = \frac{A}{x-1} + \frac{B}{x+3} + \frac{Cx+D}{x^2+2x+3} =\\
         = \frac{A(x+3)(x^2+2x+3) + B(x-1)(x^2+2x+3) + (Cx+D)(x-1)(x+3)}{(x-1)(x+3)(x^2+2x+3)2C}
     \end{gather*}
-    \begin{gather*}
-        x^3 : 0 = A+B+C\\
-        x^2 : 7 = 5A+B+2C+D\\
-        x : 26 = 9A+B-3C+2D\\
-        x^0 : -9 = 9A-3B-3D
-    \end{gather*}
+    \begin{align*}
+        &x^3 : & 0 &= A+B+C\\
+        &x^2 : & 7 &= 5A+B+2C+D\\
+        &x^1 : & 26 &= 9A+B-3C+2D\\
+        &x^0 : & -9 &= 9A-3B-3D
+    \end{align*}
     \begin{gather*}
         A = 1, B = 1, C = -2, D = 5
     \end{gather*}
     \begin{gather*}
-        \circeq \int \frac{dx}{x-1} + \int \frac{dx}{x+3} + \int \frac{-2x+5}{x^2+2x+3}dx =\\
+        \boxed{=} \int \frac{dx}{x-1} + \int \frac{dx}{x+3} + \int \frac{-2x+5}{x^2+2x+3}dx =\\
         = \int \frac{dx}{x-1} + \int \frac{dx}{x+3} + (-1) \int \frac{2x+2 - 2 - 1*5}{x^2+2x+3}dx =\\
         = \int \frac{dx}{x-1} + \int \frac{dx}{x+3} - \int \frac{2x+2}{x^2+2x+3}dx + 7\int \frac{d(x+1)}{(x+1)^2+2} =\\
         = \int \frac{dx}{x-1} + \int \frac{dx}{x+3} - \int \frac{d(x^2+2x+3)}{x^2+2x+3}dx + 7\int \frac{d(x+1)}{(x+1)^2+2} =\\
@@ -2683,4 +2881,1190 @@
     \end{gather*}
 
     \subsection{Интегрирование тригонометрических функций}
+    \begin{enumerate}
+        \item $\int \cos^{2n+1}x dx; \int \sin^{2n+1}x dx$\\
+        \underline{Замены:} используем метод подстановки: $t = \sin x$ и $t = \cos x$ соответственно.
+        \item $\int \cos^{2n}x dx; \int \sin^{2n}x dx$\\
+        \underline{Замены:} используем тригонометрические формулы уменьшения степени:
+        \[ \cos^{2}x = \frac{1+\cos 2x}{2}; \sin^2x = \frac{1-\cos 2x}{2} \]
+        \underline{Замечание:} аналогично решаются примеры вида $\int \sin^{2n}x \cos^{2n}x dx$
+        \item $\int \sin mx \cos nx dx; \int \sin mx \sin nx dx; \int \cos mx \cos nx dx$\\
+        \underline{Замены:} используем тригонометрические формулы:
+        \begin{gather*}
+            \sin mx \cos nx = \frac{1}{2}\left[ \sin(m-n)x + \sin(m+n)x \right]\\
+            \sin mx \sin nx = \frac{1}{2}\left[ \cos(m-n)x - \cos(m+n)x \right]\\
+            \cos mx \cos nx = \frac{1}{2}\left[ \cos(m-n)x + \cos(m+n)x \right]
+        \end{gather*}
+        \item $\int \tg^nx dx; \int \ctg^nx dx$\\
+        \underline{Замены:} 
+        \[ \boxed{ \tg^2x = \frac{1}{\cos^2x}-1; \ctg^2x = \frac{1}{\sin^2x}-1 } \]
+        \item Интегралы вида $\int R(\sin x; \cos x)dx$\\
+        \subsubsection*{Универсальная тригонометрическая подстановка}
+        \[ \boxed{t = \tg \frac{x}{2}} \]
+        \[ \boxed{\sin x = \frac{2\tg\frac{x}{2}}{1 + \tg^2 \frac{x}{2}} = \frac{2t}{1 + t^2}} \]
+        \[ \boxed{\cos x = \frac{1-t^2}{1 + t^2}} \]
+        \[ \frac{x}{2} = \arctg t, \,\,\, x = 2 \arctg t, \,\,\, \boxed{ dx = \frac{2dt}{1+t^2}} \text{ - ВЫУЧИТЬ!} \]
+        Интеграл от дробно-рациональной функции:
+        \[ \int R(\sin x; \cos x)dx = \int R\left( \frac{2t}{1+t^2}\frac{1-t^2}{1+t^2} \right)\frac{2dt}{1+t^2} \]
+        \underline{Примеры:}
+        \begin{enumerate}
+            \item \begin{gather*} 
+                \int \frac{dx}{3 + 5\cos x} = \begin{vmatrix}
+                    t = \tg \frac{x}{2}\\
+                    \cos x = \frac{1 - t^2}{1 + t^2}\\
+                    dx = \frac{2dt}{1 + t^2}
+                \end{vmatrix} = \int \frac{\frac{2dt}{1+t^2}}{3 + \frac{5-5t^2}{1 + t^2}} = \int \frac{\frac{2dt}{1 + t^2}}{\frac{3 + 3t^2 + 5 - 5t^2}{1 + t^2}} =\\
+                = 2 \int \frac{dt}{-2t^2 + 8} = - \int \frac{dt}{t^2 - 4} = -\frac{1}{4} \ln \left|\frac{t-2}{t+2}\right| + \mathbb{C} = -\frac{1}{4}\ln \left|\frac{\tg\frac{x}{2} - 2}{\tg\frac{x}{2} + 2}\right| + \mathbb{C}
+            \end{gather*}
+            \item \begin{gather*}
+                \int \frac{dx}{\sin x} = \begin{vmatrix}
+                    t = \tg \frac{x}{2}\\
+                    \sin x = \frac{2t}{1+t^2}\\
+                    dx = \frac{2dt}{1+t^2}
+                \end{vmatrix} = \int \frac{\frac{2dt}{1+t^2}}{\frac{2t}{1+t^2}} = \int \frac{2dt}{2t} = \ln |t| + \mathbb{C} = \ln |\tg \frac{x}{2}| + \mathbb{C}
+            \end{gather*}
+        \end{enumerate}
+        \textbf{Частные случаи:}
+        \begin{enumerate}
+            \item Подынтегральная функция нечётна относительно $\sin x$.
+            \[ \int R (-\sin x; \cos x)dx = - \int R(\sin x; \cos x)dx \]
+            \underline{Пример:} $\frac{\sin^3x}{\cos^4x}$. \underline{Замена:} $\boxed{t = \cos x}$
+            \item Подынтегральная функция нечётна относительно $\cos x$.
+            \[ \int R (\sin x; -\cos x)dx = - \int R(\sin x; \cos x)dx \]
+            \underline{Пример:} $\cos^5x\sin^8x$. \underline{Замена:} $\boxed{t = \sin x}$
+            \item Подынтегральная функция чётна или нечётна относительно обоих $\sin x$ и $\cos x$.
+            \[ \int R (-\sin x; -\cos x)dx = \int R(\sin x; \cos x)dx \]
+            \underline{Пример:} $\sin^2x \cos^6x$ или $\sin^3x \cos^5x$. \underline{Замены:}
+            \[ t = \tg x \] 
+            \[\boxed{\sin x = \frac{\tg x}{\sqrt{1 + \tg^2 x}} = \frac{t}{\sqrt{1 + t^2}}} \]
+            \[ \boxed{\cos x = \frac{1}{\sqrt{1 + t^2}}} \]
+            \[ x = \arctg t \]
+            \[ \boxed{dx = \frac{dt}{1+t^2}} \text{ - ВЫУЧИТЬ!} \]
+        \end{enumerate}
+        \underline{Примеры:}
+        \begin{enumerate}
+            \item \begin{gather*}
+                \int \frac{\sin^3 xdx}{\cos^4 x} = \begin{vmatrix}
+                    t = \cos x
+                \end{vmatrix} = - \int \frac{\sin^2x d\cos x}{\cos^4 x} = - \int \frac{(1 - \cos^2x)d\cos x}{\cos^4 x} =\\
+                = -\int\frac{d\cos x}{\cos^4 x} - \int \frac{\cos^2 x d\cos x}{\cos^4 x} = \frac{1}{3\cos^3 x} - \frac{1}{\cos x} + \mathbb{C}
+            \end{gather*}
+            \item \begin{gather*}
+                \int \frac{dx}{4\cos^2x + 3\sin^2x} = \begin{vmatrix}
+                    t = \tg x\\
+                    \sin x = \frac{t}{\sqrt{1 + t^2}}\\
+                    \cos x = \frac{1}{\sqrt{1 + t^2}}\\
+                    dx = \frac{dt}{1 + t^2}
+                \end{vmatrix} = \int \frac{\frac{dt}{1+t^2}}{\frac{4}{1+t^2} + \frac{3t^2}{1 + t^2}} = \int \frac{dt}{3t^2+4} =\\
+                = \frac{1}{\sqrt{3}}\int \frac{d(\sqrt{3}t)}{(\sqrt{3}t)^2 + 4} = \frac{1}{2\sqrt{3}}\arctg \frac{\sqrt{3}\tg x}{2} + \mathbb{C}
+            \end{gather*}
+        \end{enumerate}
+    \end{enumerate}
+    
+    \subsection{Интегрирование иррациональных функций}
+    \begin{enumerate}
+        \item $\int R(x, \sqrt{a^2 - x^2})dx$\\
+        \underline{Замена:} 
+        \[ x = a \sin t \text{ или } x = a \cos t \]
+        Замена $a \sin t$ удобнее:
+        \[ \sqrt{a^2 - x^2} = \sqrt{a^2 - a^2 \sin^2 t} = \sqrt{a^2(1 - \sin^2 t)} = a \cos t \]
+        \[ dx = a \cos t dt \]
+
+        \item $\int R(x, \sqrt{x^2 + a^2})dx$\\
+        \underline{Замена:} 
+        \[ x = a \tg t \text{ или } x = a \ctg t \]
+        Замена $a \tg t$ удобнее:
+        \[ \sqrt{x^2 + a^2} = \sqrt{a^2 tg^2 t + a^2} = \frac{a}{\cos t} \]
+        \[ dx = \frac{a}{\cos^2 t}dt \]
+
+        \item $\int R(x, \sqrt{x^2 - a^2})dx$\\
+        \underline{Замена:}
+        \[ x = \frac{a}{\cos t} \text{ или } x = \frac{a}{\sin t} \]
+        Замена $\frac{a}{\cos t}$ удобнее:
+        \[ \sqrt{x^2 - a^2} = \sqrt{\frac{a^2}{\cos^2 t} - a^2} = a \tg t \]
+        \[ dx = \frac{a \sin t}{\cos^2 t}dt \]
+        \underline{Пример:}
+        \begin{gather*}
+            \int \frac{\sqrt{1 - x^2}dx}{x} = \begin{vmatrix}
+                x = \sin t\\
+                t = \arcsin x\\
+                dx = \cos t dt
+            \end{vmatrix} = \int \frac{\cos^2 t}{\sin t}dt = \int \frac{1 - \sin^2 t}{\sin t}dt = \int \frac{dt}{\sin t} - \int \sin t dt =\\
+            = \ln \left| \tg \frac{t}{2} \right| + \cos t + \mathbb{C} = \ln \left| \tg \frac{\arcsin x}{2} \right| + \cos (\arcsin x) + \mathbb{C}
+        \end{gather*}
+
+        \item \[ I = \int R\left( x, \left(\frac{ax+b}{cx+d}\right)^{r_1}, \dots, \left( \frac{ax+b}{cx+d} \right)^{r_n} \right)dx \boxed{=}\]
+        $r_1, \dots, r_n$ - рац. числа.
+        \[ r_1 = \frac{p_1}{m},\, r_2 = \frac{p_2}{m}, \dots, r_n = \frac{p_n}{m} \]
+        $m$ - общий знаменатель дробей $r$.\\
+        \underline{Замена:}
+        \[ \boxed{\frac{ax + b}{cx + d} = t^m} \]
+        \[ x = \frac{t^m * d - b}{a - ct^m} = p(t) \]
+        \[ dx = p'(t)dt \]
+        \[ \boxed{=} \int R (p(t), (t^m)^{\frac{p_1}{m}}, \dots, (t^m)^{\frac{p_n}{m}})p'(t)dt = \underbrace{\int R_1(t)dt}_{\text{дробно рац. ф-ия}} \]
+        \underline{Частный случай:}
+        \[ I = \int R(x, (ax+b)^{r_1}, \dots, (ax+b)^{r_n})dx \to ax+b = t^m \]
+        \[ I = \int R(x, x^{r_1}, \dots, x^{r_n} ) \to x = t^m \]
+        \underline{Пример:}
+        \begin{gather*}
+            \int \frac{xdx}{\sqrt[3]{1+x} - \sqrt{1 + x}} = \begin{vmatrix}
+                \frac{1}{3} : \frac{1}{2} \to 6\\
+                t = \sqrt[6]{1 + x}\\
+                1 + x = t^6\\
+                x = t^6 - 1\\
+                dx = 6t^5dt
+            \end{vmatrix} = \int \frac{(t^6 - 1)6t^5dt}{t^2 - t^3} = -6 \int \frac{(t^6 - 1)t^3}{t-1}dt =\\
+            = -6 \int t^3(t^5 + t^4 + t^2 + t + 1)dt = \dots \text{(дальше разбивать на сумму интегралов и всё по старому)}
+        \end{gather*}
+
+        \item Интегралы от дифференциального бинома
+        \[ \int (a + bx^n)^p x^m dx \]
+        \[ a,b \in R; m,n,p \in Q \]
+        Интегрируются только в трёх случаях:
+        \begin{enumerate}
+            \item $p$ - целое. \underline{Замена:} $x = t^s$, где $s$ - общий знаменатель дробей $m$ и $n$.
+            \item $p$ - дробь, $\frac{m+1}{n}$ - целое. \underline{Замена:} $a + bx^n = t^s$, где $s$ - знаменатель дроби $p$.
+            \item $p$ - дробь, $\frac{m+1}{n}$ - дробь, $p + \frac{m+1}{n}$ - целое. \underline{Замена:} $ax^{-n} + b = t^s$, где $s$ - знаменатель дроби $p$.
+        \end{enumerate}
+        \underline{Пример:}
+        \begin{gather*}
+            \int \frac{\sqrt[3]{(1+2x^3)^2}dx}{x^6} = \int (1 - 2x^3)^{\frac{2}{3}}x^{-6}dx \boxed{=}\\
+            p = \frac{2}{3}\, n = 3\, m = 6\\
+            \boxed{=} \begin{vmatrix}
+                x^{-3} + 2 = t^3\\
+                -3x^{-4}dx = 3t^2dt\\
+                x^{-4}dx = -t^2dt
+            \end{vmatrix} = \int [x^3(x^{-3}+2)]^{\frac{2}{3}}x^{-6}dx = \int x^2(x^{-3}+2)^\frac{2}{3}x^{-6}dx = \int (x^{-3} + 2)^{\frac{2}{3}}x^{-4}dx =\\
+            = \int (t^3)^\frac{2}{3} - t^2dt = -\int t^4dt = -\frac{t^5}{5} + \mathbb{C} = \begin{vmatrix}
+                x^{-3} = t^3-2\\
+                t^3 = x^{-3} + 2\\
+                t = (x^{-3}+2)^{\frac{1}{3}}
+            \end{vmatrix} = -\frac{\sqrt[3]{(x^{-3}+2)^2}(x^{-3}+2)}{5}
+        \end{gather*}
+
+        \item Интеграл вида
+        \[ \int R (x, \sqrt{ax^2 + bx + c})dx \]
+        \underline{\textbf{Подстановки Эйлера:}}
+        \begin{enumerate}
+            \item I подстановка Эйлера (при $a > 0$)
+            \[ \sqrt{ax^2 + bx + c} = t \pm x\sqrt{a} \]
+            \[ \cancel{ax^2} + bx + c = t^2 \pm 2tx\sqrt{a} + \cancel{ax^2} \Rightarrow x, dx \]
+            \item II подстановка Эйлера (при $c > 0$)
+            \[ \sqrt{ax^2 + bx + c} = tx \pm \sqrt{c} \]
+            \[ ax^2 + bx + \cancel{c} = t^2x^2 \pm 2tx\sqrt{c} + \cancel{c} \]
+            \[ ax+b = t^2x \pm 2t\sqrt{c} \Rightarrow x, dx \]
+            \item III подстановка Эйлера (при $ax^2 + bx + c = 0 \Rightarrow \exists x_1, x_2 \in R$)
+            \[ \sqrt{\frac{a(x-x_1)}{x-x_2}} = t \sqrt{ax^2 + bx + c} = \sqrt{a(x-x_1)(x-x_2)} = \sqrt{\frac{a(x-x_1)(x-x_2)^2}{x-x_2}} = t(x-x_2) \]
+            \[ \frac{a(x-x_1)}{x-x_2} = t^2 \Rightarrow x, dx \]
+        \end{enumerate}
+        \underline{Пример:}
+        \begin{gather*}
+            \int \frac{dx}{x + \sqrt{x^2+x+1}} = \begin{vmatrix}
+                \sqrt{x^2 + x + 1} = t - x & dx = \frac{2t(2t+1)-2(t^2-1)}{(2t+1)^2} \\
+                x^2 + x + 1 = t^2 - 2tx + x^2 & dx = \frac{2t^2 + 2t + 2}{(2t+1)^2}dt\\
+                x(1 + 2t) = t^2 - 1\\
+                x = \frac{t^2 - 1}{2t + 1}
+            \end{vmatrix} = \int \frac{2t^2 + 2t + 2}{(2t+1)^2t}dt \boxed{=}\\
+            \frac{2t^2 + 2t + 2}{(2t+1)^2t} = \frac{A}{2t+1} + \frac{B}{(2t+1)^2} + \frac{C}{t} = \frac{2At^2 + At + Bt + 4t^2C + 4Ct + C}{(2t+1)^2t}\\
+        \end{gather*}
+        \begin{align*}
+            t^2 :\, &2A + 4C = 2\\
+            t^1 :\, &A + B + 4C = 2\\
+            t^0 :\, &C = 2
+        \end{align*}
+        \begin{gather*}
+            A = -3\, B = -3\, C = 2\\
+            \boxed{=} \int \frac{-3dt}{2t+1} - \int \frac{3dt}{(2t+1)^2}+2 \int \frac{dt}{t} = -3 \int \frac{dt}{2t+1} - 3 \int \frac{dt}{(2t+1)^2} + 2 \int \frac{dt}{t} =\\
+            = -\frac{3}{2}\int \frac{d(2t+1)}{2t+1} - \frac{3}{2}\int \frac{d(2t+1)}{(2t+1)^2} + 2\int\frac{dt}{t} = -\frac{3}{2}\ln |2t+1| + \frac{3}{2}\frac{1}{2t+1} + 2 \ln |t| + \mathbb{C} =\\
+            = -\frac{3}{2} \ln |2\sqrt{x^2+x+1}+2x+1| + \frac{3}{2}\frac{1}{2\sqrt{x^2+x+1}+2x+1} + 2 \ln |\sqrt{x^2+x+1}+x| + \mathbb{C}
+        \end{gather*}
+
+        \item Интегралы вида
+        \[ \int \frac{dx}{(x-\alpha)\sqrt{ax^2 + bx + c}} \]
+        \underline{Замена:} 
+        \[ \boxed{t = \frac{1}{x-\alpha}} \]
+        \underline{Пример:}
+        \[ \int \frac{dx}{(x-1)\sqrt{-x^2+3x-2}} = \begin{vmatrix}
+            t = \frac{1}{x-1}\\
+            x - 1 = \frac{1}{t}\\
+            x = \frac{1}{t} + 1\\
+            dx = -\frac{1}{t^2}dt
+        \end{vmatrix} = \int \frac{-\frac{1}{t^2}dt}{\frac{1}{t}\sqrt{-\left( \frac{1}{t} + 1 \right)^2 + \frac{3}{t} + 3 - 2}} \]
+    \end{enumerate}
+
+    \section{Определённые интегралы}
+    \subsection{Задачи, приводящие к определённым интегралам}
+    \begin{itemize}
+        \item Площадь криволинейной трапеции.
+        \begin{adjustwidth}{1.5em}{1.5em}
+            \includegraphics{6.1.1.png}\\
+            Пусть $f(x) \ge 0\, \forall x \in [a;b]$
+            \begin{enumerate}
+                \item Произведём разбиение $[a;b]\, R$
+                \[ a = x_0 < x_1 < \dots < x_n = b \]
+                \item В каждом элементарном отрезка $[x_i; x_{i+1}]$ произвольным образом выберем точку $\xi_i$.
+                \item Вычислим $f(\xi_i)$
+                \item Вычислим $f(\xi_i)\Delta x_i$
+                \item Вычислим \[ \sigma_R = \sum_{i=0}^{n}f(\xi_i)\Delta x_i \]
+                \item Обозначим $\lambda_R$ - диаметр разбиения: $\lambda_R = \underset{i}{max}[x_i; x_{i+1}]$\\
+                Пусть $\lambda_R \to 0$. Вычислим $\lim_{n\to\infty}\sigma_R = S$.
+            \end{enumerate}
+        \end{adjustwidth}
+        \item Вычисление массы стержня.
+    \end{itemize}
+    \subsection{Определение определённого интеграла}
+    Пусть на $[a;b]$ задана функция $f(x)$.
+    \begin{enumerate}
+        \item Произведём разбиение отрезка $[a;b]$ \[ a = x_0 < x_1 < \dots < x_n = b\,\,\,\, R \]
+        \item В каждом экзепляре $[x_i; x_{i+1}]$ произвольным образом выберем точку $\xi_i$ ($\lambda_R = max[x_i; x_{i+1}]$).
+        \item Вычислим $f(\xi_i)\Delta x_i$.
+        \item Составим $\sigma_R = \sum_{i=0}^{n}f(\xi)\Delta x_i$.
+    \end{enumerate}
+    Если существует \underline{конечный} предел интегральной суммы $\sigma_R$ при $\lambda_R \to 0$, не зависящий от способа разбиения $[a; b]$ и выбора точки $\xi_i$, то он называется \textbf{определённым интегралом} от функции $f(x)$ на $[a;b]$.
+    \[ \lim_{x_R \to 0}\sigma_R = \int_{a}^{b}f(x)dx \]
+    \subsubsection*{Определение определённого интеграла на языке "$\epsilon-\delta$"}
+    Число $I$ называется определённым интегралом от функции $f(x)$ на $[a;b]$, если
+    \[ \forall \epsilon > 0\, \exists \delta = \delta(\epsilon) > 0 : \forall \lambda_R < \delta \implies |I-\sigma_R| < \epsilon \]
+
+
+
+    \section{Функции нескольких переменных}
+    \subsection{Основные понятия}
+    Рассмотрим упорядоченное множество $E$ пар чисел $(x; y)$\\
+    Пары $(x_1; y_1)$ и $(x_2; y_2)$ равны $\Leftrightarrow$ $x_1 = x_2, y_1 = y_2$.\par\noindent
+    Пусть каждой паре $(x; y) \in E$ по некоторому закону ставится в соответствие единственное число $z$. Тогда говорят, что на $E$ определена функция $z = f(x; y)$.\\
+    \underline{Примеры:}
+    \begin{center}
+        \includegraphics{7.1.1.png}
+    \end{center}
+    Рассмотрим множество упорядоченных систем
+    \[ (x_1, x_2, \dots, x_n), n \in N \]
+    Элементы этого множества можно рассматривать как точку $n$-мерного пространства $R^n$, а можно как $n$-мерные векторы.\\
+    В первом случае для них вводится понятие расстояния, во втором случае - соответствующие векторные операции.\par\noindent
+    \textbf{В случае вектора:}
+    \begin{align*}
+        \text{Пусть }&\overline{x} (x_1, \dots, x_n)\\
+        &\overline{y}(y_1,\dots,y_n)
+    \end{align*}
+    \begin{gather*}
+        \lambda\overline{x} + \mu \overline{y} = (\lambda x_1 + \mu y_1; \lambda x_2 + \mu y_2; \dots; \lambda x_n + \mu y_n)\\
+        \overline{x}\overline{y} = x_1y_1 + \dots + x_ny_n
+    \end{gather*}
+    Множество всех упорядоченных систем $\overline{x} = (x_1, \dots, x_n)$, для которых определены линейная комбинация и скалярное произведение двух элементов называется $n$-мерным арифметическим Евклидовым пространством.\par\noindent
+    \textbf{В случае точки:}
+    \begin{gather*}
+        \rho (x,y) \text{ - расстояние между точками}\\
+        \rho (x,y) = |x - y| = \sqrt{ \sum_{i = 1}^{n} (x_i - y_i)^2 }
+    \end{gather*}
+    Множество точек $x = (x_1, \dots, x_n)$, для которых выполняется неравенство $\rho (x, x^0) < \varepsilon$, называется $\varepsilon$-окрестностью точки $x^0$.\\
+    Точки множества называется внутренними точками, если $\exists$ $\varepsilon$-окрестность, целиком содержащаяся в этом множестве.\\
+    Точки множества называется граничными точками, если $\forall$ её $\varepsilon$-окрестность содержит как внутренние, так и внешние точки.\\
+    Точки множества называется внешними точками, если $\exists$ $\varepsilon$-окрестность, не содержащая ни одной точки множества.\par\noindent
+    Пусть в $R^n$
+    \begin{center}
+        \includegraphics{7.1.2.png}
+    \end{center}
+    Т.е. в пространстве $R^n$ задана последовательность $\{x^k\}$.\\
+    Точка $x^0 = (x^0_1, x^0_2, x^0_3, \dots, x^0_n)$ называется пределом последовательности $\{x^k\}$, если $\lim_{k\to\infty} \rho(x^k, x^0) = 0$\\
+    Обозначение: $\lim_{k\to\infty}x^k=x^0$\\
+    Или: Точка $x^0 = (x^0_1, x^0_2, x^0_3, \dots, x^0_n)$ называется пределом последовательности $\{x^k\}$, если $\forall \varepsilon > 0$ $\exists \text{ } n_0 \text{ } \big| \text{ } \forall n > n_0 : \rho(x^n, x^0) < \varepsilon$\\
+    Определение $\lim_{k\to\infty}x^k=x^0$ эквивалентно $n$ одномерным пределам.
+    \[ \lim_{k\to\infty}x^k_1 = x^0_1; \lim_{k\to\infty}x^k_2 = x^0_2; \dots; \lim_{k\to\infty}x^k_n = x^0_n \]
+
+    \subsection{Предел функций нескольких переменных в точке}
+    \noindent Пусть функция $f(x_1, \dots, x_n)$ определена в $u(x^0)$, быть может за исключением самой точки $x^0$.\\
+    \textbf{По Гейне:} точка $a$ (одномерное число) называется пределом функции $f$ в точке $x^0$ ($f(x_1, \dots, x_n)$), если $\forall$ последовательности $\{x^k\} : \lim_{k\to\infty}x^k=x^0$, числовая последовательность $\{ f(x^k) \}$ (одномерная) имеет своим пределом точку $a$ ($\lim_{k\to x^0}f(x)=a$).\par\noindent
+    \textbf{По Коши:} точка $a$ называется пределом функции $f(x_1, \dots, x_n)$ в точке $x^0$, если
+    \[ \forall \varepsilon > 0 \text{ } \exists \text{ } \delta = \delta(\varepsilon) > 0 : \rho(x, x^0) < \delta \implies |f(x_1, \dots, x_n) - a| < \varepsilon \]
+    Рассмотрим функцию $f(x,y)$, заданную в окрестности точки $(x_0; y_0)$
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Пусть $\overline{\omega} (\omega_x, \omega_y)$ - единичный вектор.\\
+        $\frac{x - x_0}{\omega_x} = \frac{y - y_0}{\omega_y}$ - уравнение прямой, проходящей через точку $(x_0; y_0)$ с направляющим вектором $\overline{\omega}$.
+        \[ \begin{cases}
+            x = \omega_xt + x_0\\
+            y = \omega_yt + y_0
+        \end{cases}\text{ - параметрическое уравнение прямой} \]
+        Пусть $t \ge 0$. Получим луч, выходящий из точки $(x_0; y_0)$ в направлении $\overline{\omega}$.
+        \begin{center}
+            \includegraphics{7.2.1.png}
+        \end{center}
+        Рассмотрим $\underbrace{f(x; y)}_{\text{ф. 2-х перем. x, y}} = \underbrace{f(x_0+\omega_xt; y_0+\omega_yt)}_{\text{ф. 1 перем. t}}$.
+    \end{adjustwidth}
+    $\lim_{t \to 0} f(x_0+\omega_xt; y_0+\omega_yt)$, если он $\exists$, называется пределом функции $f(x, y)$ в точке $(x_0; y_0)$ по направлению $\overline{\omega}$.\\
+    \underline{Пример:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Рассмотрим $f(x,y) = \frac{x^2y}{x^4 + y^2}$; $f(x,y)$ определена $\forall x, y \in R$, кроме точки $(0, 0)$.
+        \[ \lim_{x \to 0\,y \to 0} \frac{x^2y}{x^4 + y^2} = \left[ \frac{0}{0} \right] = \begin{vmatrix}
+            y = kx\\
+            x \to 0 \Rightarrow y \to 0
+        \end{vmatrix} = \lim_{x\to 0} \frac{kx^3}{x^4+k^2x^2} = \lim_{x \to 0}\frac{kx}{x^2+k^2} = 0 \]
+        Проверим, может ли быть несовпадение пределов при другом значении $y$.
+        \[ \lim_{x \to 0\,y \to 0} \frac{x^2y}{x^4 + y^2} = \begin{vmatrix}
+            y = x^2\\
+            x \to 0 \Rightarrow y \to 0
+        \end{vmatrix} = \lim_{x \to 0}\frac{x^4}{x^4+x^4} = \frac{1}{2} \]
+        Пределы не совпали $\Rightarrow$ предел $\nexists$.
+    \end{adjustwidth}
+    Определение:
+    \[\begin{matrix}
+        \lim_{x \to x_0\, y \to y_0}f(x;y)=\infty & \forall M > 0\, \exists\, \delta = \delta(M): \rho(\underset{M(x,y)}{M}, \underset{M_0(x_0, y_0)}{M_0}) < \delta \Rightarrow |f(x;y)| > M\\
+        \lim_{x\to\infty\, y\to\infty}f(x,y) = a & \forall \varepsilon > 0\, \exists\, K = K(\varepsilon): |x| > K, |y| > K \Rightarrow |f(x,y) - a| < \varepsilon\\
+        \lim_{x\to-\infty\, y\to y_0}f(x,y) = -\infty & \forall M > 0\, \exists\, \delta = \delta(M): x < -\frac{1}{\delta}, |y-y_0|<\delta \Rightarrow f(x,y) < -M
+    \end{matrix}\]
+
+    \subsection{Непрерывность функций нескольких переменных.}
+    Функция $f(x_1, \dots, x_n)$ называется непрерывной в точке $x^0 = (x^0_1, x^0_2, \dots, x^0_n)$, если она определена в некоторой окрестности точки $x^0$, в том числе и в самой точке $x^0$ и $\lim_{x \to x_0} f(x) = f(x^0)$ при $x = (x_1, \dots, x_n)$, $x^0 = (x^0_1, \dots, x^0_n)$.\par\noindent
+    \textbf{В эквивалентной форме:}
+    \begin{enumerate}
+        \item \[ \lim_{\Delta x_i \to 0} f(x^0_1 + \Delta x_1; x^0_2 + \Delta x_2; \dots; x^0_n + \Delta x_n) = f(x^0_1; x^0_2; \dots; x^0_n) \]
+        \item Пусть $\Delta f = f(x_1 + \Delta x_1; x_2 + \Delta x_2; \dots; x_n + \Delta x_n) - f(x_1; x_2; \dots; x_n)$ - приращение $f$.\\
+        $f(x_1; \dots; x_n)$ непрерывна в точке $x^0$, если $\lim_{\Delta x_i \to 0}\Delta f = 0$.
+    \end{enumerate}
+    \underline{Замечание:} сумма, разность, произведение и частное непрерывных функций в точке так же являются непрерывной функцией в точке.\par\noindent
+    \underline{Замечание:} функции
+    \[ \begin{cases}
+        x_1 = \varphi_1(t)\\
+        x_2 = \varphi_2(t)\\
+        \vdots\\
+        x_n = \varphi_n(t)
+    \end{cases} \]
+    $a \le t \le b$, непрерывные на $[a;b]$, определяют непрерывную кривую в $R^n$, соединяющую точки $x^1 = (\varphi_1(a); \varphi_2(a); \dots; \varphi_n(a))$ и $x^2 = (\varphi_1(b); \varphi_2(b); \dots; \varphi_n(b))$, где $t$ - параметр кривой.\\
+    Множество $G$ называется связным, если $\forall$ его две точки можно соединить непрерывной кривой, целиком лежащей в $G$.
+    
+    \subsection{Частные производные функций нескольких переменных.}
+    \[ f'(x) = \frac{df}{dx} = \lim_{\Delta x \to 0}\frac{f(x+\Delta x) - f(x)}{\Delta x} \]
+    Пусть функция $f(x_1, \dots, x_n)$ определена в некоторой окрестности точки $x^0 = (x^0_1, x^0_2, \dots, x^0_n)$\\
+    $\Delta x_k f = f(x_1, x_2, \dots, x_k + \Delta x_k, \dots, x_n) - f(x_1, x_2, \dots, x_k, \dots, x_n)$ - частное приращение функции по переменной $x_k$.
+    \[ \lim_{\Delta x_k \to 0} \frac{\Delta x_k f}{\Delta x_k} = \frac{\partial f}{\partial x_k} = f'_{x_k} \]
+    Т.е. частная производная по переменной $x_k$ - это обычная производная по этой переменной при условии, что все остальные фиксированные.\\
+    \underline{Пример:}
+    \[ f(x,y) = x^y \]
+    \[ \frac{\partial f}{\partial x} = yx^{y-1} \]
+    \[ \frac{\partial f}{\partial y} = x^y \ln x \]
+    \underline{Замечание (\textbf{!!!}):} из существования у функции всех частных производных \textbf{НЕ} следует непрерывность этой функции в рассматриваемой точке (в отличие от функции одной переменной).
+    \begin{center}
+        \includegraphics{7.4.1.png}
+    \end{center}
+    \begin{gather*}
+        f(x, y) = \begin{cases}
+            0, xy = 0\\
+            1, xy \ne 0
+        \end{cases}\\
+        \frac{\partial f}{\partial x} \Big|_{(0; 0)} = \frac{\partial f}{\partial y} \Big|_{(0; 0)} = 0\\
+        \text{Но } f \text{ не является непрерывной в точке } (0; 0)\\
+        \lim_{x\to 0\, y\to 0}f(x,y) = | y = x | = 1 \ne f(0;0) = 0
+    \end{gather*}
+
+    \subsection{Дифференциуемость функций нескольких переменных.}\noindent
+    Пусть функция $z = f(x;y)$ определена в некоторой окрестности точки $M_0 = u(M_0, \delta)$.\\
+    Пусть точка $M (x; y) \in u(M_0; \delta)$.
+    \begin{center}
+        \includegraphics{7.5.1.png}
+    \end{center}
+    Функция $z = f(x;y)$ называется дифференциуемой в точке $M_0 (x_0; y_0)$, если существуют конечные $A$ и $B$ такие, что приращение $\Delta z$ в окрестности точки $M_0$ представимо в виде
+    \[ \Delta z = A \Delta x + B \Delta y + o(\rho), \rho \to 0, \rho = \sqrt{\Delta x^2 + \Delta y^2} \]
+    \underline{Замечание:} рассмотрим $\varepsilon = \varepsilon (\Delta x; \Delta y): \lim_{\rho \to 0}\varepsilon = 0$. Тогда $o(\rho) = \underset{\text{б. малое}}{\varepsilon(\Delta x; \Delta y)} * \underset{\text{б. малое}}{\rho}$. Тогда:
+    \[ \Delta z = A \Delta x + B \Delta y + \varepsilon (\Delta x; \Delta y) * \rho \]
+    Если $z = f(x; y)$ дифференциуема в точке $(x_0; y_0)$, то линейная часть приращения $\Delta z = A \Delta x + B \Delta y$ называется дифференциалом функции $z$ в точке $(x_0; y_0)$.
+    \begin{gather*}
+        \Delta x = dx, \Delta y = dy\\
+        \Delta z = Adx + Bdy
+    \end{gather*}
+    \subsubsection*{Теорема 7.5.1}\label{th:7.5.1}
+    Для того, чтобы функция $z = f(x;y)$, заданная в $u(M_0; \delta)$, была дифференциуемой в точке $M_0$ $\Leftrightarrow$ чтобы существовали: 
+    \[\varepsilon_1 = \varepsilon_1(\Delta x; \Delta y)\]
+    \begin{center}
+        и
+    \end{center}
+    \[\varepsilon_2 = \varepsilon_2 (\Delta x; \Delta y)\] 
+    \begin{center}
+        такие, что
+    \end{center}
+    \[\lim_{\rho \to 0}\varepsilon_1 = \lim_{\rho \to 0}\varepsilon_2 = 0\]
+    \begin{center}
+        и что $\Delta z$ в $u(M_0; \delta)$ имело бы вид
+    \end{center}
+    \[ \Delta z = A \Delta x + B \Delta y + \varepsilon_1 (\Delta x; \Delta y)\Delta x + \varepsilon_2 (\Delta x; \Delta y)\Delta y \]
+    \noindent\underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        \textbf{Докажем необходимость ($\Rightarrow$)}\par\noindent
+        Пусть $z = f(x; y)$ дифференциуема в точке $M_0$. Тогда по определению:
+        \[ \Delta z = A \Delta x + B \Delta y + \varepsilon (\Delta x; \Delta y)\rho \]
+        Рассмотрим 
+        \[ \varepsilon_\rho = \varepsilon \sqrt{\Delta x^2 + \Delta y^2} = \frac{\varepsilon (\Delta x^2 + \Delta y^2)}{\sqrt{\Delta x^2 + \Delta y^2}} = \left( \frac{\varepsilon \Delta x}{\sqrt{\Delta x^2 + \Delta y^2}} \right)\Delta x + \left( \frac{\varepsilon \Delta y}{\sqrt{\Delta x^2 + \Delta y^2}} \right)\Delta y \]
+        Положим
+        \[ \varepsilon_1 (\Delta x; \Delta y) = \left( \frac{\varepsilon \Delta x}{\sqrt{\Delta x^2 + \Delta y^2}} \right) \]
+        \[ \varepsilon_2 (\Delta x; \Delta y) = \left( \frac{\varepsilon \Delta y}{\sqrt{\Delta x^2 + \Delta y^2}} \right) \]
+        Пусть $\varepsilon_1 (0; 0) = \varepsilon_2 (0; 0) = 0$ (доопределили в точке $(0; 0)$).\\
+        Тогда $\varepsilon_\rho = \varepsilon_1 \Delta x + \varepsilon_2 \Delta y$.
+        \[ \left| \frac{\Delta x}{\rho} \right| \le 1\, \left| \frac{\Delta y}{\rho} \right| \le 1\, \rho \ne 0 \]
+        \[ | \varepsilon_1 | = \left| \frac{\varepsilon \Delta x}{\rho} \right| \le \underset{\to 0\, \rho \to 0}{|\varepsilon|} \]
+        \[ | \varepsilon_2 | = \left| \frac{\varepsilon \Delta y}{\rho} \right| \le \underset{\to 0\, \rho \to 0}{|\varepsilon|} \]
+        \[ \rho \ne 0 \]
+        При $\rho = 0$ $\varepsilon = \varepsilon_1 = \varepsilon_2$.\\
+        Тогда $\lim_{\rho \to 0}\varepsilon_1 = 0$ и $\lim_{\rho \to 0}\varepsilon_2 = 0$.\par\noindent
+
+        \textbf{Докажем достаточность ($\Leftarrow$)}\par\noindent
+        Пусть 
+        \[ \Delta z = A \Delta x + B \Delta y + \varepsilon_1 \Delta x + \varepsilon_2 \Delta y \]
+        Рассмотрим 
+        \[ \varepsilon_1 \Delta x + \varepsilon_2 \Delta y = \left( \frac{\varepsilon_1 \Delta x}{\rho} + \frac{\varepsilon_2 \Delta y}{\rho} \right) \rho, \rho \ne 0 \]
+        Пусть
+        \[ \varepsilon(\Delta x; \Delta y) = \begin{cases}
+            \frac{\varepsilon_1 \Delta x}{\rho} + \frac{\varepsilon_2 \Delta y}{\rho}, \rho \ne 0\\
+            0, \rho = 0
+        \end{cases} \]
+        Тогда
+        \[ \varepsilon_1 \Delta x + \varepsilon_2 \Delta y = \varepsilon_\rho\, \forall \rho \]
+        Рассмотрим
+        \[ |\varepsilon| = \left| \varepsilon_1 \frac{\Delta x}{\rho} + \varepsilon_2 \frac{\delta y}{\rho} \right| \le |\varepsilon_1| \underbrace{\frac{|\Delta x|}{\rho}}_{= 1} + |\varepsilon_2| \underbrace{\frac{|\Delta y|}{\rho}}_{= 1} \le |\varepsilon_1| + |\varepsilon_2| \]
+        \[ \lim_{\rho \to 0}\varepsilon = 0 \]
+        То есть
+        \[ \Delta z = A \Delta x + B \Delta y + \varepsilon (\Delta x; \Delta y)\rho \]
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+    \subsubsection*{Теорема 7.5.2}\label{th:7.5.2}
+    Если функция дифференциуема в некоторой точке, то она непрерывна в этой точке.\par\noindent
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Так как функция дифференциуема в точке $M_0$, то по определению:
+        \[ \Delta z = A \Delta x + B \Delta y + \varepsilon_1 \Delta x + \varepsilon_2 \Delta y \]
+        \[ \lim_{\rho \to 0} \Delta z = 0 \]
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+    \subsubsection*{Теорема 7.5.3}\label{th:7.5.3}
+    Если функция $z = f(x; y)$ дифференциуема в точке $(x_0; y_0)$, то в этой точке $\exists$ частные производные по $x$ и по $y$:
+    \[ \frac{\partial f}{\partial x} \Big|_{M_0} = A \]
+    \[ \frac{\partial f}{\partial y} \Big|_{M_0} = B \]
+    Тогда 
+    \[ dz = A\Delta x + B\Delta y = \frac{\partial f}{\partial x} \Big|_{M_0}dx + \frac{\partial f}{\partial y} \Big|_{M_0}dy \]
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Т.к. $z = f(x;y)$ дифференциуема в точке $M_0$, то по определению:
+        \[ \Delta z = A \Delta x + B \Delta y + \varepsilon_1 \Delta x + \varepsilon_2 \Delta y \]
+        Пусть $\Delta y = 0$. Тогда 
+        \[ \Delta_x z = A \Delta x + \varepsilon_1 \Delta x \]
+        \[ \frac{\Delta_x z}{\Delta x} = A + \varepsilon_1 \]
+        \[ \lim_{\Delta x \to 0} \frac{\Delta_x z}{\Delta x} = \lim_{\Delta x \to 0}(A + \varepsilon_1) \]
+        \[ \frac{\partial z}{\partial x} \Big|_{M_0} = A \]
+        Аналогично
+        \[ \frac{\partial z}{\partial y} \Big|_{M_0} = B \]
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+    \underline{Замечание:} функция, имеющая в некоторой точке частные производные, может быть недифференцируемой функцией в этой точке, т.к. дифференциуемая функция обязана быть непрерывной, а есть случаи, когда функция имеет конечные частные производные, но не является непрерывной.
+    \subsubsection*{Теорема 7.5.4 (достаточное условие дифференциуемости)}\label{th:7.5.4}
+    Если функция имеет в окрестности точки частные производные и они \underline{непрерывны} в этой точке, то функция дифференциуема в этой точке.\par\noindent
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Пусть $z = f(x;y)$ задана в $u(M_0; \delta)$, имеет частную производную $\frac{\partial f}{\partial x} \Big|_{M_0}$ и $\frac{\partial f}{\partial y} \Big|_{M_0}$, $\frac{\partial f}{\partial x}$ и $\frac{\partial f}{\partial y}$ непрерывны в точке $M_0$.\\
+        Рассмотрим
+        \[ \Delta z = f(x_0 + \Delta x; y_0 + \Delta y) - f(x_0; y_0) = [ f(x_0 + \Delta x; y_0 + \Delta y) - f(x_0; y_0 + \Delta y) ] + [f(x_0; y_0 + \Delta y) - f(x_0; y_0)] \]
+        По \hyperref[th:4.12.4]{теореме Лагранжа}:
+        \begin{gather*}
+            f(b) - f(a) = f'(\xi)(b-a), \xi \in (a, b)\\
+            f(b) - f(a) = f'(a + \theta(b-a))(b-a), 0 < \theta < 1\\
+            f(x + \Delta x) - f(x) = f'(x + \theta \Delta x) \Delta x
+        \end{gather*}
+        Тогда
+        \[ \Delta z = f'_x (x_0 + \theta_1 \Delta x; y_0 + \Delta y)\Delta x + f'_y(x_0; y_0 + \theta_2 \Delta y)\Delta y\,\,\,\,\, (*) \]
+        Т.к. частные производные $f'_x$ и $f'_y$ непрерывны в точке $(x_0; y_0)$, то
+        \[ \lim_{\rho \to 0} f'_x(x_0 + \theta_1 \Delta x; y_0 + \Delta y) = f'_x(x_0; y_0) \]
+        \[ \lim_{\rho \to 0} f'_y(x_0; y_0 + \theta_2 \Delta y) = f'_y(x_0; y_0) \]
+        \underline{Замечание:}
+        \[ \lim_{n\to\infty} x_n = a \]
+        \[ \lim_{x \to x_0} f(x) = a \]
+        \[ x_n = a + \alpha_n, \{ \alpha_n \}\text{ - беск. малая} \]
+        \[ \forall x \in u(x_0)\, f(x) = a + \varepsilon(x), \lim_{x\to x_0} \varepsilon(x) = 0 \]
+        Тогда
+        \[ \begin{vmatrix}
+            f'_x(x_0 + \theta_1 \Delta x; y_0 + \Delta y) = f'_x (x_0; y_0) + \varepsilon_1 (\Delta x; \Delta y); \lim_{\rho \to 0} \varepsilon_1(\Delta x; \Delta y) = 0\\
+            f'_y(x_0; y_0 + \theta_2 \Delta y) = f'_y (x_0; y_0) + \varepsilon_2 (\Delta x; \Delta y); \lim_{\rho \to 0} \varepsilon_2(\Delta x; \Delta y) = 0
+        \end{vmatrix} \,\,\,\,\, (**) \]
+        Подставим $(**)$ в $(*)$. Тогда
+        \[ \Delta z = f'_x(x_0; y_0)\Delta x + f'_y(x_0; y_0)\Delta y + \varepsilon_1\Delta x + \varepsilon_2 \Delta y \]
+        Т.е. по определению функция дифференциуема в точке $(x_0; y_0)$.
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+
+    \subsection{Дифференциуемость сложной функции.}
+    \subsubsection*{Теорема 7.6.1 (о производной сложной функции)}\label{th:7.6.1}
+    Если $x = x(t)$, $y = y(t)$ дифференциуемы в точке $t_0$, а функция $z = f(x;y)$ дифференциуема в точке $(x_0; y_0)$, где $x_0 = x(t_0)$, $y_0 = y(t_0)$, тогда сложная функция $f(x(t), y(t))$ дифференциуема в точке $t_0$ и 
+    \[ \frac{df}{dt} = \frac{\partial f}{\partial x} * \frac{dx}{dt} + \frac{\partial f}{\partial y} * \frac{dy}{dt} \]
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Так как $f(x;y)$ дифференциуема в точке $(x_0; y_0)$, то по определению:
+        \[ \Delta z = \frac{\partial z}{\partial x} \Delta x + \frac{\partial z}{\partial y} \Delta y + \varepsilon_1 \Delta x + \varepsilon_2 \Delta y \,\,\,\,\, (*) \]
+        \[ \lim_{\rho \to 0} \varepsilon_1 = \lim_{\rho \to 0} \varepsilon_2 = 0 \]
+        Так как $x(t), y(t)$ дифференциуемы в точке $t_0 \Rightarrow$ они непрерывны в точке $t_0 \Rightarrow$ т.е. при $\Delta t \to 0 \Rightarrow \Delta x, \Delta y \to 0 \Rightarrow \Delta t \to 0 \Rightarrow \rho \to 0$.\\
+        То есть $\lim_{\rho \to 0} \varepsilon_1 = \lim_{\rho \to 0}\varepsilon_2 = \lim_{\Delta t \to 0} \varepsilon_1 = \lim_{\Delta \to 0}\varepsilon_2 = 0$.\\
+        Разделим (*) на $\Delta t$:
+        \[ \frac{\Delta z}{\Delta t} = \frac{\partial f}{\partial x} * \frac{dx}{dt} + \frac{\partial f}{\partial y} * \frac{dy}{dt} + \varepsilon_1 \frac{\Delta x}{\Delta t} + \varepsilon_2 \frac{\Delta y}{\Delta t} \]
+        \[ \lim_{\Delta t \to 0} \frac{\Delta z}{\Delta t} = \frac{dz}{dt} = \frac{\partial f}{\partial x} * \frac{dx}{dt} + \frac{\partial f}{\partial y} * \frac{dy}{dt} \]
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+    \underline{Замечание:} пусть $f = f(x_1, \dots, x_n)$
+    \begin{gather*}
+        x_1 = x_1(t_1, \dots, t_m)\\
+        x_2 = x_2(t_1, \dots, t_m)\\
+        \vdots\\
+        x_n = x_n(t_1, \dots, t_m)\\
+    \end{gather*}
+    \[ \frac{\partial f}{\partial t_j} = \frac{\partial f}{\partial x_1} * \frac{\partial x_1}{\partial t_j} + \frac{\partial f}{\partial x_2} * \frac{\partial x_2}{\partial t_j} + \dots + \frac{\partial f}{\partial x_n} * \frac{\partial x_n}{\partial t_j} = \sum_{i=1}^{n} \frac{\partial f}{\partial x_i} * \frac{\partial x_i}{\partial t_j} = \frac{\partial f}{\partial t_j} \]
+
+    \subsection{Инвариантность формы записи первого дифференциала.}
+    Если функции $x_i = x_i(t_1, \dots, t_m)$ ($i = \overline{1,n}$) непрерывны в точке $(t^0_1, \dots, t^0_m)$, а функция $y = f(x_1, \dots, x_n)$ имеет непрерывные частные производные в точке $x^0 = (x^0_1, \dots, x^0_n)$, где $x^0_i = x^0_i(t)$ ($i = \overline{1,n}$), тогда запись первого дифференциала обладает свойством инвариантности относительно независимых и зависимых переменных.
+    \[ dy = \frac{\partial f}{\partial x_1}dx_1 + \frac{\partial f}{\partial x_2}dx_2 + \dots + \frac{\partial f}{\partial x_n}dx_n = \sum_{i=1}^{n}\frac{\partial f}{\partial x_i}dx_i \]
+    \[ dx_i = \frac{\partial x_i}{\partial t_1}dt_1 + \frac{\partial x_i}{\partial t_2}dt_2 + \dots + \frac{\partial x_i}{\partial t_m}dt_m = \sum_{j=1}^{m} \frac{\partial x_i}{\partial t_j}dt_j \]
+
+    \subsection{Геометрический смысл частных производных и дифференциалов.}
+    Рассмотрим $z = f(x; y)$. Пусть $z$ в точке $(x_0; y_0)$ имеет частную производную.
+    \[ \frac{\partial f}{\partial x} \Big|_{(x_0; y_0)} = \frac{df(x; y_0)}{dx} \Big|_{x = x_0} = \tg \alpha \]
+    \[ \alpha{ - угол наклона касательной к графику функции } z = f(x; y) \]
+    \[ \left(\text{к кривой} \begin{cases}
+        z = f(x; y)\\
+        y = y_0
+    \end{cases} \text{в точке } (x_0; y_0)\right) \]
+    \begin{center}
+        \includegraphics{7.8.1.png}
+    \end{center}
+    Пусть $z = f(x;y)$ дифференциуема в точке $(x_0; y_0)$.
+    \[ \Delta z = \frac{\partial f}{\partial x} \Big|_{(x_0; y_0)} \Delta x + \frac{\partial f}{\partial y} \Big|_{(x_0; y_0)} \Delta y + o(\rho), \rho \to 0 \]
+    \[ \Delta z = z - z_0 \]
+    \[ \Delta y = y - y_0 \]
+    \[ \Delta x = x - x_0 \]
+    \[ z = z_0 + \frac{\partial f}{\partial x} \Big|_{(x_0; y_0)} (x-x_0) + \frac{\partial f}{\partial y} \Big|_{(x_0; y_0)} (y-y_0) + o(\rho) \,\,\,\,\, (1) \]
+    Плоскость, определяемая уравнением
+    \[ z = z_0 + \frac{\partial f}{\partial x} \Big|_{(x_0; y_0)} (x-x_0) + \frac{\partial f}{\partial y} \Big|_{(x_0; y_0)} (y-y_0) \,\,\,\,\, (2) \]
+    называется касательной плоскостью к графику функции $z = f(x;y)$ в точке $(x_0; y_0)$.\\
+    Обозначим в $(2)$ $z = z_{\text{кас}}$\\
+    Тогда из $(1)$ и $(2)$ следует, что $z - z_{\text{кас}} = o(\rho), \rho \to 0$.
+    \begin{center}
+        \includegraphics{7.8.2.png}
+    \end{center}
+    Рассмотрим $(2)$:
+    \[ 1 * z_{\text{кас}} = z + \underbrace{\frac{\partial f}{\partial x} \Big|_{(x_0; y_0)} (x-x_0) + \frac{\partial f}{\partial y} \Big|_{(x_0; y_0)} (y-y_0)} \]
+    \[ z_{\text{кас}} = z_0 + df \Big|_{(x_0; y_0)} \]
+    \[ df \Big|_{x_0; y_0} = z_{\text{кас}} - z_0 \]
+    \[ \bar{n} \left(\frac{\partial f}{\partial x} \Big|_{(x_0; y_0)} (x-x_0); \frac{\partial f}{\partial y} \Big|_{(x_0; y_0)} (y-y_0); -1\right) \]
+    Прямая вида
+    \[ \frac{x - x_0}{\left( \frac{\partial f}{\partial x} \right) \Big|_{(x_0; y_0)}} = \frac{y - y_0}{\left( \frac{\partial f}{\partial y} \right) \Big|_{(x_0; y_0)}} = \frac{z - z_0}{-1} \]
+    называется нормалью к поверхности $z = f(x; y)$ в точке $(x_0; y_0)$.\par\noindent
+    \underline{Замечание:} если поверхность задана неявно $F(x,y,z) = 0$:
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Уравнение касательной плоскости: 
+        \[ \frac{\partial F}{\partial x} \Big|_{(x_0; y_0; z_0)} (x-x_0) + \frac{\partial F}{\partial y} \Big|_{(x_0; y_0; z_0)} (y-y_0) + \frac{\partial F}{\partial z} \Big|_{(x_0; y_0; z_0)} (z-z_0) = 0 \]
+        Уравнение нормали:
+        \[ \frac{x - x_0}{\left( \frac{\partial F}{\partial x} \right) \Big|_{M_0}} = \frac{y - y_0}{\left( \frac{\partial F}{\partial y} \right) \Big|_{M_0}} = \frac{z - z_0}{\left( \frac{\partial F}{\partial z} \right) \Big|_{M_0}} \]
+    \end{adjustwidth}
+    \subsubsection*{Частные дифференциалы}
+    Если частное приращение функции $z = f(x;y)$ и $\Delta_x f$ можно представить в виде $\Delta_x f = A \Delta x + \varepsilon$, то $A \Delta x$ называются частным дифференциалом функции $f(x;y)$ в точке 
+    \[ d_x f = A\Delta x = Adx = \frac{\partial f}{\partial x} \Big|_{M_0}dx \]
+    Аналогично
+    \[ d_y f = \frac{\partial f}{\partial y} \Big|_{M_0}dy \]
+    Рассмотрим $z = f(x;y)$
+    \[ dz = \frac{\partial f}{\partial x} \Big|_{M_0}dx + \frac{\partial f}{\partial y} \Big|_{M_0}dy = d_x f \Big|_{M_0} + d_y f \Big|_{M_0} \]
+    $dz$ - полный дифференциал.
+
+    \subsection{Применение дифференциалов в приближённых вычислениях.}\noindent
+    Рассмотрим $f = f(x; y; z)$.\\
+    Пусть $f$ дифференциуема в точке $M_0 (x_0; y_0; z_0)$.\\
+    Тогда 
+    \[ \Delta f = \frac{\partial f}{\partial x} \Big|_{M_0}dx + \frac{\partial f}{\partial y} \Big|_{M_0}dy + \frac{\partial f}{\partial z} \Big|_{M_0}dz + o(\rho), \rho \to 0\]
+    \[ \Delta f = df \Big|_{M_0} + \cancel{o(\rho)}, \rho \to 0 \]
+    \[ \underbrace{\Delta f}_{f - f_0} \approx df \Big|_{M_0} \]
+    \[ \boxed{ f(x; y; z) \approx f(x_0; y_0; z_0) + \frac{\partial f}{\partial x} \Big|_{M_0}dx + \frac{\partial f}{\partial y} \Big|_{M_0}dy + \frac{\partial f}{\partial z} \Big|_{M_0}dz  } \]
+    \underline{Пример:} вычислить приближённо.
+    \begin{adjustwidth}{1.5em}{1.5em}
+        \[ \frac{1.03^2}{\sqrt[3]{0.98} * \sqrt[4]{1.05}} = ? \]
+        Рассмотрим 
+        \[ f(x; y; z) = \frac{x^2}{\sqrt[3]{y} * \sqrt[4]{z}} \]
+        \begin{gather*}
+            x = 1.03 = x_0 + \Delta x = 1 + 0.03\\
+            y = 0.98 = y_0 + \Delta y = 1 - 0.02\\
+            z = 1.05 = z_0 + \Delta z = 1 + 0.05
+        \end{gather*}
+        \[ (x_0; y_0; z_0) = (1; 1; 1) \]
+        \[ \Delta x = 0.03\,\, \Delta y = -0.02\,\, \Delta z = 0.05 \]
+        \[ f(x_0; y_0; z_0) = 1 \]
+        \begin{align*}
+            \frac{\partial f}{\partial x} &= \frac{2x}{\sqrt[3]{y} * \sqrt[4]{z}} & \frac{\partial f}{\partial x} \Big|_{M_0} &= 2\\
+            \frac{\partial f}{\partial y} &= \frac{x^2}{\sqrt[4]{z}}\frac{(-\frac{1}{3})}{\sqrt[3]{y^4}} & \frac{\partial f}{\partial y} \Big|_{M_0} &= -\frac{1}{3}\\
+            \frac{\partial f}{\partial z} &= \frac{x^2}{\sqrt[3]{y}}\frac{(-\frac{1}{4})}{\sqrt[4]{z^5}} & \frac{\partial f}{\partial z} \Big|_{M_0} &= -\frac{1}{4}\\
+        \end{align*}
+        \[ \frac{1.03^2}{\sqrt[3]{0.98} * \sqrt[4]{1.05}} \approx 1 + 2 * 0.03 - \frac{1}{3} * (-0.02) - \frac{1}{4} * 0.05 \approx 1.0482 \]
+    \end{adjustwidth}
+
+    \subsection{Производная по направлению функции в точке. Градиент функции в точке.}\noindent
+    Рассмотрим функцию $f = f(x; y; z)$.\\
+    Пусть она определена в окрестности точки $(x_0; y_0; z_0)$ и пусть задан произвольный вектор $\overline{l} \ne 0$.\\
+    Пусть $\overline{l_0} = \frac{\overline{l}}{|\overline{l}|} = \underset{\text{направленные косинусы}}{\left( \overline{\cos \alpha; \cos \beta; \cos \gamma} \right)}$
+    \begin{center}
+        \includegraphics{7.10.1.png}
+    \end{center}
+    Запишем уравнение луча, выходящего из точки $(x_0; y_0; z_0)$ в направлении вектора $l$:
+    \[ \frac{x - x_0}{\cos \alpha} = \frac{y - y_0}{\cos \beta} = \frac{z - z_0}{\cos \gamma} = t \]
+    \[ \begin{cases}
+        x = x_0 + t\cos \alpha\\
+        y = y_0 + t\cos \beta\\
+        z = z_0 + t\cos \gamma
+    \end{cases}\,\,\,\,\, t \ge 0 \]
+    \underline{Замечание:}
+    \[ \sqrt{\cos^2 \alpha + \cos^2 \beta + \cos^2 \gamma} = 1\text{, т.к. } |\overline{l_0}| = 1 \]
+    \[ \cos^2 \alpha + \cos^2 \beta + \cos^2 \gamma = 1\]
+    \[ \sqrt{\frac{(x - x_0)^2}{t^2} = \frac{(y - y_0)^2}{t^2} = \frac{(z - z_0)^2}{t^2}} = 1 \]
+    \[ \sqrt{(x - x_0)^2 = (y - y_0)^2 = (z - z_0)^2} = t\text{ - расстояние от точки } (x_0; y_0; z_0) \text{ до } (x; y; z) \]
+    Рассмотрим $f(x;y;z)$ на построенном луче.\\
+    Получится функция $f(x_0 + t\cos \alpha; y_0 + t \cos \beta; z_0 + t \cos \gamma)$.\par\noindent
+    Производная сложной функции $f$ по переменной $t$ в точке $t = 0$ называется производной функции $f$ в точке $(x_0; y_0; z_0)$ по направлению $l$.
+    \[ \frac{\partial f}{\partial l} \Big|_{(x_0; y_0; z_0)} = \frac{df}{dt}\Big|_{t_0} \]
+    \begin{center}
+        или
+        \end{center}
+    \[ \frac{\partial f}{\partial l} \Big|_{(x_0; y_0; z_0)} = \lim_{t \to 0}\frac{f(M) - f(M_0)}{t} \]
+    Вычислим
+    \begin{gather*}
+        \frac{d}{dt}f(\underbrace{x_0 + \cos \alpha t}_x; \underbrace{y_0 + \cos \beta t}_y; \underbrace{z_0 + \cos \gamma t}_z) = \frac{\partial f}{\partial x} \frac{dx}{dt} + \frac{\partial f}{\partial y} \frac{dy}{dt} + \frac{\partial f}{\partial z} \frac{dz}{dt} =\\
+        = \frac{\partial f}{\partial x} \cos \alpha + \frac{\partial f}{\partial y} \cos \beta + \frac{\partial f}{\partial z} \cos \gamma = \left( \overline{\frac{\partial f}{\partial x}; \frac{\partial f}{\partial y}; \frac{\partial f}{\partial z}} \right)\left( \overline{\cos \alpha; \cos \beta; \cos \gamma} \right) \boxed{=}
+    \end{gather*}
+    Вектор с координатами 
+    \[ \left( \overline{\frac{\partial f}{\partial x}; \frac{\partial f}{\partial y}; \frac{\partial f}{\partial z}} \right) \]
+    вычисленный в точке $(x_0; y_0; z_0)$, называется \textbf{градиентом} функции $f(x; y; z)$ в точке $(x_0; y_0; z_0)$.\\
+    Обозначение: $\overline{\text{grad}f} \Big|_{M_0}$.\par\noindent
+    $\overline{\nabla}$ - оператор Набла.
+    \[ \overline{\nabla} = \left( \overline{ \frac{\partial \sqcup}{\partial x}; \frac{\partial \sqcup}{\partial y}; \frac{\partial \sqcup}{\partial z} } \right) \]
+    *вместо $\sqcup$ подставляем функцию (например, $f$), относительно которой применяем оператор Набла.
+    \[ \overline{\nabla} f = \overline{\text{grad}f}\text{,} \]
+    \[ \boxed{=} \, \boxed{ \overline{\text{grad}f}\Big|_{M_0} * \overline{l_0} = \frac{\partial f}{\partial l}\Big|_{M_0} } \]
+    \[ \overline{a}\overline{b} = |\overline{a}||\overline{b}|\cos(\underbrace{\overline{a}, \overline{b}}_{\varphi}) = \text{пр}_{\overline{b}} \overline{a} * |\overline{b}| \]
+    \begin{center}
+        \includegraphics{7.10.2.png}
+    \end{center}
+    \[ \boxed{ \frac{\partial f}{\partial l} \Big|_{M_0} = \text{пр}_{\overline{l_0}}\overline{\text{grad}f}\Big|_{M_0} } \]
+    \[ \frac{\partial f}{\partial l}\Big|_{M_0} = \overline{\text{grad}f}\Big|_{M_0} * \overline{l_0} = |\overline{\text{grad}f}|\Big|_{M_0} * |\underset{=1}{\overline{l_0}}| * \cos \varphi \Rightarrow \frac{\partial f}{\partial l} \to \max \Leftrightarrow \varphi = 0 \]
+    Наибольшее значение $\frac{\partial f}{\partial l}\Big|_{M_0}$ будет иметь в направлении градиента в этой точке.\par\noindent
+    \underline{Замечание:} Если $\overline{\nabla} f\Big|_{M_0} = \overline{0}$, то это значит, что производные функции по всем направлениям в этой точке равны $0$.
+
+    \subsection{Линии и поверхности уровня}\noindent
+    Рассмотрим $z = f(x;y)$.\\
+    Линия вида $f(x;y) = \mathbb{C}$ называется \textbf{линией уровня от функции} $Z$.
+    \begin{center}
+        \includegraphics{7.11.1.png}
+    \end{center}
+    \[ \frac{x-x_0}{\frac{\partial f}{\partial x}} = \frac{y-y_0}{\frac{\partial f}{\partial y}} \]
+    Вектор градиента функции в точке $M_0$ направлен перпендикулярно линии уровня.\\
+    Рассмотрим $f = f(x;y;z)$.\\
+    Поверхность вида $f(x;y;z) = \mathbb{C}$ называется \textbf{поверхностью уровня функции} $f$.\\
+    Вектор $\overline{\text{grad}f \Big|_{M_0}}$ направлен по нормали к этой поверхности.
+
+    \subsection{Частные производные и дифференциалы высших порядков}\noindent
+    Рассмотрим $f = f(x;y)$. Имеем $\frac{\partial f}{\partial x}$; $\frac{\partial f}{\partial y}$.\\
+    $\frac{\partial f}{\partial x}$ является функцией от $x$ и $y$: 
+    \[ \frac{\partial f}{\partial x} = \frac{\partial f}{\partial x} (x; y) \]
+    \[ \frac{\partial f}{\partial y} = \frac{\partial f}{\partial y} (x; y) \]
+    Поэтому они тоже имеют частные производные.
+    \begin{align*}
+        f_{xx}'' &= (f'_x)'_x = \frac{\partial }{\partial x} \left( \frac{\partial f}{\partial x} \right) = \frac{\partial^2 f}{\partial x^2}; & f_{yy}'' &= (f'_y)'_y = \frac{\partial }{\partial y} \left( \frac{\partial f}{\partial y} \right) = \frac{\partial^2 f}{\partial y^2}\\
+        f_{xy}'' &= (f'_x)'_y = \frac{\partial }{\partial y} \left( \frac{\partial f}{\partial x} \right) = \frac{\partial^2 f}{\partial y \partial x}; & f_{yx}'' &= (f'_y)'_x = \frac{\partial }{\partial x} \left( \frac{\partial f}{\partial y} \right) = \frac{\partial^2 f}{\partial x \partial y}
+    \end{align*} 
+    Аналогично определяются производные более высокого порядка.
+    \[ \frac{\partial^5 f}{\partial x^5}; \frac{\partial^5 f}{\partial x^2 \partial y^3}; \frac{\partial^5 f}{\partial x \partial y \partial x \partial y \partial x}; \frac{\partial^2 f}{\partial x \partial y} \overset{?}{=} \frac{\partial^2 f}{\partial y \partial x} \]
+    \subsubsection*{Теорема 7.12.1 (Шварца)}\label{th:7.12.1}
+    Если функция определена вместе со своими частными производныи $f'_x; f'_y; f_{xy}''; f_{yx}''$ в некоторой окрестности точки $(x_0; y_0)$ и \underline{$f_{xy}''; f_{yx}''$ непрерывны} в этой точке, то:
+    \[ \frac{\partial^2 f}{\partial x \partial y} \Big|_{(x_0; y_0)} = \frac{\partial^2 f}{\partial y \partial x} \Big|_{(x_0; y_0)} \]
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Рассмотрим повторные приращения:
+        \[ \Delta_{xy} f = \Delta x (\Delta y f) = \Delta x [ f(x_0; y_0 + \Delta y) - f(x_0; y_0) ] = [ f(x_0 + \Delta x; y_0 + \Delta y) - f(x_0 + \Delta x; y_0) ] - [ f(x_0; y_0 + \Delta y) - f(x_0; y_0) ] \]
+        \[ \Delta_{yx} f = \Delta y (\Delta x f) = \Delta y [ f(x_0 + \Delta x; y_0) - f(x_0; y_0) ] = [ f(x_0 + \Delta x; y_0 + \Delta y) - f(x_0; y_0 + \Delta y) ] - [ f(x_0 + \Delta x; y_0) - f(x_0; y_0) ] \]
+        \[ \Delta_{xy}f = \Delta_{yx}f \]
+        Обозначим
+        \[ \varphi(x) = f(x, y_0 + \Delta y) - f(x; y_0) \]
+        \[ \varphi'(x) = f'(x; y_0 + \Delta y) - f'(x;y_0) \]
+        Тогда
+        \begin{gather*}
+            \Delta_{xy}f = \varphi (x_0 + \Delta x) - \varphi(x_0) \underset{\hyperref[th:4.12.4]{Th. Лагранжа}}{=} \varphi'(\xi)\Delta x = \varphi'(x_0 + \theta_1 \Delta x)\Delta x =\\
+            = [ f'_x(x_0 + \theta_1 \Delta x; y_0 + \Delta y) - f'_x(x_0 + \theta_1 \Delta x; y_0) ] \Delta x \underset{\hyperref[th:4.12.4]{Th. Лагранжа}}{=}\\
+            = f_{xy}''(x_0 + \theta_1 \Delta x; y_0 + \theta_2 \Delta y)\Delta x \Delta y
+        \end{gather*}
+        Аналогично 
+        \[ \Delta_{yx}f = f_{yx}''(x_0 + \theta_3 \Delta x; y_0 + \theta_4 \Delta y)\Delta x \Delta y \]
+        Т.к. $\Delta_{xy}f = \Delta_{yx}f$, то
+        \[ f_{xy}''(x_0 + \theta_1 \Delta x; y_0 + \theta_2 \Delta y)\Delta x \Delta y = f_{yx}''(x_0 + \theta_3 \Delta x; y_0 + \theta_4 \Delta y)\Delta x \Delta y \]
+        Т.к. $f_{xy}''; f_{yx}''$ непрерывны в точке $(x_0; y_0)$, то
+        \[ \left.\begin{aligned}
+            \lim_{\substack{\Delta x \to 0 \\ \Delta y \to 0}} f_{xy}'' (x_0 + \theta_1 \Delta x; y_0 + \theta_2 \Delta y) = f_{xy}'' (x_0; y_0)\\
+            \lim_{\substack{\Delta x \to 0 \\ \Delta y \to 0}} f_{yx}'' (x_0 + \theta_3 \Delta x; y_0 + \theta_4 \Delta y) = f_{yx}'' (x_0; y_0)
+        \end{aligned}\right\rbrace \Rightarrow f_{xy}'' (x_0; y_0) = f_{yx}''(x_0; y_0) \]
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+    \textbf{Следствие:} в случае выполнения условий теоремы Шварца следует независимость результата дифференцирования от порядка переменных для функций любого числа переменных.
+    \[ f_{xyz}''' = (f'_x)_{yz}'' = (f'_x)_{zy}'' = (f''_{xz})'_y = (f''_{zx})'_y = (f'_z)''_{xy} = (f'_z)''_{yx} \]
+    \[ f_{xyz}''' = f_{zyx}''' \]
+    \subsubsection*{Дифференциалы высших порядков}
+    Рассмотрим $f = f(x_1; \dots; x_n)$.
+    \[ df = \frac{\partial f}{\partial x_1}dx_1 + \frac{\partial f}{\partial x_2}dx_2 + \dots + \frac{\partial f}{\partial x_n}dx_n = \sum_{i=1}^{n}\frac{\partial f}{\partial x_i}dx_i \]
+    \underline{Замечание:} в общем случае $df$ - функция $2n$ переменных $(x_1\, \dots\, x_n; dx_1\, \dots\, dx_n)$.\par\noindent
+    Найдём второй дифференциал, рассматривая $df$ только как функцию $x_1\, \dots\, x_n$ (при фиксированных $dx_1\, \dots\, dx_n$).\\
+    Обозначим дифференциал при повторном дифференцировании $\delta$:
+    \[ \delta(df) = \sum_{i=1}^{n}\left[ \delta(\frac{\partial f}{\partial x_i}) \right] = \sum_{i=1}^{n} ( \sum_{j=1}^{n} \frac{\partial^2 f}{\partial x_j \partial x_i} \delta x_j )dx_i = \underbrace{\sum_{i=1}^{n} \sum_{j=1}^{n} \frac{\partial^2 f}{\partial x_j \partial x_i} dx_i \delta x_j}_{\substack{\text{билинейная форма} \\ \text{относительно переменных} \\ dx_1\, \dots\, dx_n;\,\, \delta x_1\, \dots\, \delta x_n}} \]
+    Соответствующая билинейной форме квадратичная форма $(dx_1 = \delta x_1; dx_2 = \delta x_2; \dots; dx_n = \delta x_n)$ называется \textbf{вторым дифференициалом функции} $f$.
+    \[ d^2 f = \delta (df) \Big|_{dx_i = \delta x_i} \]
+    \[ d^2 f = \sum_{i=1}^{n} \sum_{j=1}^{n} \frac{\partial^2 f}{\partial x_i \partial x_j} dx_i dx_j \]
+    Аналогично определяются дифференциалы более высокого порядка:
+    \[ d^k f = \delta(d^{k-1}f)\Big|_{dx_i = \delta x_i} \]
+    $y = f(x)$\\
+    $dy = f'(x)dx$\\
+    Рассмотрим $f = f(x_1\, \dots\, x_n)$:
+    \[ d^k f = \left( \frac{\partial}{\partial x_1} dx_1 + \frac{\partial}{\partial x_2} dx_2 + \dots + \frac{\partial}{\partial x_n} dx_n \right)^{(k)}f \]
+    $(k)$ - символическая степень.\par\noindent
+    Рассмотрим $f = f(x;y)$:
+    \begin{gather*}
+            d^2 f=\left(\frac{\partial}{\partial x} d x+\frac{\partial}{\partial y} d y\right)^{(2)} f=\left(\frac{\partial^2}{\partial x^2} d x^2+2 \frac{\partial^2}{\partial x \partial y} d x d y+\frac{\partial^2}{\partial y^2} d y^2\right) f= \\
+            = \frac{\partial^2 f}{\partial x^2} d x^2+2 \frac{\partial^2 f}{\partial x \partial y} d x d y+\frac{\partial^2 f}{\partial y^2} d y^2 \\
+            d^3 f=\left(\frac{\partial}{\partial x} d x+\frac{\partial}{\partial y} d y\right)^{(3)} f=\frac{\partial^3 f}{\partial x^3} d x^3+3 \frac{\partial^3 f}{\partial x^2 \partial y} d x^2 d y+3 \frac{\partial^3 f}{\partial x \partial y^2} d x d y^2+\frac{\partial^3 f}{\partial y^3} d y^3
+    \end{gather*}
+    Рассмотрим $g = g(x; y; z)$:
+    \begin{gather*}
+        d^2 g=\left(\frac{\partial}{\partial x} d x+\frac{\partial}{\partial y} d y+\frac{\partial}{\partial z} d z\right)^2 g=\frac{\partial^2 g}{\partial x^2} d x^2+\frac{\partial^2 g}{\partial y^2} d y^2+\frac{\partial^2 g}{\partial z^2} d z^2+ \\
+        +2 \frac{\partial^2 g}{\partial x \partial y} d x d y+2 \frac{\partial^2 g}{\partial x \partial z} d x d z+2 \frac{\partial^2 g}{\partial y \partial z} d y d z
+    \end{gather*}
+    Рассмотрим $f = f(x_1\, \dots\, x_n)$. Пусть $x_i = x_i(t_1\, \dots\, t_k)$ - зависимые переменные.
+    \begin{gather*}
+        d^2 f=\delta(d f) \Big|_{\delta x_i=d x_i}=\delta\left(\sum_{i=1}^n \frac{\partial f}{\partial x_i} d x_i\right)=\begin{vmatrix}d(u v)=u d v+v d u\\\\\end{vmatrix} \boxed{=} \\
+        \boxed{=} \sum_{i=1}^n \frac{\partial f}{\partial x_i}\left(\delta d x_i\right)+\sum_{i=1}^n \delta\left(\frac{\partial f}{\partial x_i}\right) d x_i=\sum_{i=1}^n \frac{\partial f}{\partial x_i} d^2 x_i+\sum_{i=1}^n \sum_{i=j}^n \frac{\partial^2 f}{\partial x_j \partial x_i} d x_i d x_j
+    \end{gather*}
+    В случае зависимости переменных $x_i$ первая сумма $\ne 0$, т.е. второй дифференциал не обладает свойством инвариантности формы записи относительно переменных.
+
+    \subsection{Формула Тейлора для функции двух переменных}
+    \subsubsection*{Теорема 7.13.1}\label{th:7.13.1}
+    Пусть $f = f(x;y)$ непрерывна вместе со своими частными производными до $(n+1)$ порядка в окрестности точки $(x_0; y_0)$. Тогда $\forall\, \Delta x; \Delta y : \rho = \sqrt{\Delta x^2 + \Delta y^2} < \delta$ справедлива формула:
+    \[ f(\underbrace{x_0 + \Delta x}_{x}; \underbrace{y_0 + \Delta y}_{y}) = \underbrace{ \sum_{k=0}^{n} \frac{d^k f \Big|_{(x_0; y_0)}}{k!} }_{\text{многочлен Тейлора}} + \underbrace{ \frac{d^{n+1} f \Big|_{(x_0 + \theta_1 \Delta x; y_0 + \theta_2 \Delta y)}}{(n+1)!} }_{\text{остаточный член в форме Лагранжа}} \]
+    \begin{center}
+        или
+    \end{center}
+    \[ f(x_0 + \Delta x; y_0 + \Delta y) = \sum_{k=0}^{n} \frac{1}{k!}\left( \frac{\partial }{\partial x}\Delta x + \frac{\partial }{\partial y}\Delta y \right)^{(k)} f \Big|_{(x_0; y_0)} + \underbrace{o(\rho^n)}_{\text{ост. член в форме Пеано}} \]
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Рассмотрим $F(t)$. Пусть $F(t)$ $(n + 1)$ раз дифференциуема в точке $t_0$. Тогда:
+        \[ F(t) = F(t_0) + \frac{F'(t_0)}{1!}(t-t_0) + \frac{F''(t_0)}{2!}(t-t_0)^2 + \dots + \frac{F^{(n)}(t_0)}{n!}(t-t_0)^n + \frac{F^{(n+1)}(\xi)}{(n+1)!}(t-t_0)^{n+1} \]
+        \[ \underbrace{F(t) - F(t_0)}_{\Delta F} = \frac{1}{1!}dF\Big|_{t=t_0} + \frac{1}{2!}d^2F\Big|_{t=t_0} + \dots + \frac{1}{n!}d^nF\Big|_{t=t_0} + \frac{1}{(n+1)!}d^{n+1}F\Big|_{t=\xi} \]
+        Рассмотрим $f = f(x; y)$. Пусть $M_0(x_0; y_0)$, $M(x; y) = M(x_0 + \Delta x; y_0 + \Delta y)$.\\
+        Запишем уравнение отрезка $M_0M$ в параметрическом виде:
+        \[ \frac{x - x_0}{x_1 - x_0} = \frac{y - y_0}{y_1 - y_0} \]
+        \[ \frac{x - x_0}{\Delta x} = \frac{y - y_0}{\Delta y} = t \]
+        Рассмотрим $f = f(x; y)$ вдоль отрезка $M_0M$:
+        \[ f = f(x_0 + t \Delta x; y_0 + t \Delta y) \text{ - функция одной переменной} \]
+        А для неё справедлива формула Тейлора ($t_0 = 0$).
+        \[ \begin{cases}
+            x = x_0 + t \Delta x\\
+            y = y_0 + t \Delta y
+        \end{cases}\,\,\, t \in [0; 1] \]
+        \[ F(t) = F(0) + F'(0)t + \dots + \frac{1}{n!}F^{(n)}(0)t^n + \frac{1}{(n+1)!}F^{(n+1)}(\xi)t^{n+1} \]
+        Рассмотрим
+        \[ \Delta f = f(x_0 + \Delta x; y_0 + \Delta y) - f(x_0; y_0) = \overset{\xi \in (0; 1)}{F(1) - F(0)} \]
+        \[ \Delta f = F(1) - F(0) = F'(0) + \frac{F''(0)}{2!} + \dots + \frac{F^{(n)}(0)}{n!} + \frac{F^{(n+1)}(\xi)}{(n+1)!} \]
+        Найдём $F'(0)$:
+        \[ F(t) = f(\underbrace{x_0 + t\Delta x}_{x}; \underbrace{y_0 + t\Delta y}_{y}) \]
+        \begin{gather*}
+            F'(t)=\frac{\partial f}{\partial x} \frac{d x}{d t}+\frac{\partial f}{\partial y} \frac{d y}{d t}=\frac{\partial f}{\partial x} \Delta x+\frac{\partial f}{\partial y} \Delta y=d f \quad F'(0)=d f \Big|_{(x_0, y_0)} \\
+            F''(t)=\left(\frac{\partial f}{\partial x} \Delta x+\frac{\partial f}{\partial y} \Delta y\right)'_t =\left(\frac{\partial f}{\partial x}\right)'_t \Delta x+\left(\frac{\partial f}{\partial y}\right)'_t \Delta y= \\
+            =\begin{vmatrix}
+                \frac{\partial f}{\partial x}=\frac{\partial f}{\partial x}\left(x_0+t\Delta x, y_0+t \Delta y\right)\\
+                \frac{\partial f}{\partial y}=\frac{\partial f}{\partial y}\left(x_0+t \Delta x, y_0+t \Delta y\right)
+            \end{vmatrix} =\left[\frac{\partial^2 f}{\partial x^2} \Delta x+\frac{\partial^2 f}{\partial y \partial x} \Delta y\right] \Delta x+\left[\frac{\partial^2 f}{\partial x \partial y} \Delta x+\frac{\partial^2 f}{\partial y^2} \Delta y\right] \Delta y \boxed{=}  \\
+            \boxed{=} \frac{\partial^2 f}{\partial x^2} \Delta x^2+2 \frac{\partial^2 f}{\partial x \partial y} \Delta x \Delta y+\frac{\partial^2 f}{\partial y^2} \Delta y^2=d^2 f \Rightarrow F^{\prime \prime}(0)=d^2 f \Big|_{(x_0, y_0)}
+        \end{gather*}
+        и т.д.
+        \[ F^{(n)}(0) = d^n f \Big|_{(x_0; y_0)} \]
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+
+    \subsection{Экстремум функции нескольких переменных}
+    Рассмотрим $f = f(x_1\, \dots\, x_n)$. Пусть она определена в окрестности точки $(x^0_1\, \dots\, x^0_n)$.\\
+    Точка $x^0$ называется \textbf{точкой локального максимума (минимума)}, если существует окрестность этой точки:
+    \begin{align*} 
+        \forall x = (x_1\, \dots\, x_n) \in \text{ окрестности } \quad &f(x) \le f(x^0) \\
+        &(f(x) \ge f(x^0))
+    \end{align*}
+    \underline{Замечание:} если неравенство строгое, то точка $x^0$ называется точкой \textbf{строгого} локального максимума (минимума).\par\noindent
+    Точки локального максимума и минимума функции называются \textbf{точками экстремума} функции.\\
+    Точка $x^0$ называется точкой локального максимума (минимума), если существует окрестность этой точки такая, что $\Delta f = f(x) - f(x^0)$ не меняет знак.\\
+    $\Delta f \ge 0$ - точка локального минимума.\\
+    $\Delta f \le 0$ - точка локального максимума.
+    \subsubsection*{Теорема 7.14.1 (необходимое условие экстремума)}\label{th:7.14.1}
+    Если функция определена в окрестности точки экстремума $x^0$ и если в этой окрестности существует частная производная первого порядка $\frac{\partial f}{\partial x_i}\,(i = \overline{1;n})$, то все они равны нулю в этой точке.\par\noindent
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Пусть $i = 1$. Докажем, что $\frac{\partial f}{\partial x_1} \Big|_{x^0} = 0$.\\
+        Зафиксируем координаты: $x_2 = x^0_2; x_3 = x^0_3; \dots; x_n = x^0_n$.\\
+        Тогда $f = f(x_1, x^0_2, x^0_3, \dots, x^0_n)$ - функция одной переменной.\\
+        Так как по условию точка $x^0 = (x^0_1, x^0_2, \dots, x^0_n)$ - точка локального экстремума функции $f(x_1\, \dots\, x_n)$, то точка $x^0_1$ - точка локального экстремума функции $f(x_1, x^0_2, \dots, x^0_n)$.\\
+        Тогда по \hyperref[th:4.12.1]{теореме Ферма}:
+        \[ \frac{df(x_1, x^0_2, \dots, x^0_n)}{dx_1} \Big|_{x_1 = x^0_1} = \frac{\partial f(x_1\, \dots\, x_n)}{\partial x_1} \Big|_{(x^0_1\, \dots\, x^0_n)} = 0 \]
+        Аналогично можно доказать, что все остальные частные производные тоже равны нулю в точке $(x^0_1\, \dots\, x^0_n)$.
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+    Точки, в которых все $\frac{\partial f}{\partial x_i} = 0 \quad i = \overline{1,n}$ называются \textbf{стационарными} точками функции $f$.\\
+    Точки, в которых все частные производные равны нулю или не существуют, называются \textbf{критическими} точками функции $f$.\par\noindent
+    \underline{Замечание:} пусть точка $x^0 = (x^0_1\, \dots\, x^0_n)$ - стационарная точка. Тогда
+    \[ df \Big|_{x^0} = 0 \]
+    \[ \overline{\text{grad}f} \Big|_{x^0} = \overline{0} \]
+    \underline{Замечание:} условие равенства нулю всех частных производных в точке является необходимым условием, но не является достаточным.\\
+    \underline{Пример:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        \begin{gather*}
+            f = x^2 y\\
+            \left.\begin{aligned}
+                \frac{\partial f}{\partial x} = 2xy &= 0\\
+                x^2 &= 0
+            \end{aligned}\right\rbrace \Rightarrow \text{ точка } (0; 0) \text{ - стац. (одна из)}\\
+            \frac{\partial f}{\partial y} = x^2 = 0
+        \end{gather*}
+        Рассмотрим $\Delta f$ в окрестности точки $(0; 0)$:
+        \[ \Delta f = f(x) - f(x^0) = f(x_0 + \Delta x, y_0 + \Delta y) - f(\underset{= 0}{x_0};y_0) = (x_0 + \Delta x)^2 (y_0 + \Delta y) - x^2_0 y_0 = \boxed{\Delta x^2 \Delta y} \]
+        Приращение $\Delta f$ в окрестности точки $(0; 0)$ имеет разные знаки $\Rightarrow$ точка $(0; 0)$ не является точкой экстремума.
+    \end{adjustwidth}
+
+    \subsection{Достаточные условия локального экстремума}
+    Рассмотрим
+    \begin{gather*}
+        d^2 f \Big|_{x^0} = \sum_{i=1}^{n}\sum_{j=1}^{n} \frac{\partial^2 f}{\partial x_i \partial x_j} \Big|_{x^0} dx_i dx_j = \quad (x^0 \text{ - стац. точка})\\
+        \sum_{i=1}^{n}\sum_{j=1}^{n}a_{ij}(x_i - x^0_i)(x_j - x^0_j) \text{ - квадратичная форма}
+    \end{gather*}
+    Рассмотрим $\Phi (h) = \Phi (h_1\, \dots\, h_n)$ - квадратичная форма.\\
+    Если для любого набора $(h_1\, \dots\, h_n)$ $\Phi(h) > 0$, то квадратичная форма называется \textbf{положительно определённой}.\\
+    Если для любого набора $(h_1\, \dots\, h_n)$ $\Phi(h) < 0$, то квадратичная форма называется \textbf{отрицательно определённой}.\\
+    Рассмотрим $f = f(x_1\, \dots\, x_n)$:
+    \[ d^2 f \Big|_{x^0} = \sum_{i=1}^{n}\sum_{j=1}^{n} \frac{\partial^2 f}{\partial x_i \partial x_j} \Big|_{x^0} dx_i dx_j = \sum_{i=1}^{n}\sum_{j=1}^{n}a_{ij}h_ih_j = \Phi(h_1\, \dots\, h_n) \]
+    Если для любого набора $(h_1\, \dots\, h_n)$ $\Phi(h_1\, \dots\, h_n) > 0$, то квадратичная форма называется \textbf{положительно определённой}.\\
+    Если для любого набора $(h_1\, \dots\, h_n)$ $\Phi(h_1\, \dots\, h_n) < 0$, то квадратичная форма называется \textbf{отрицательно определённой}.\\
+    Если $\Phi(h_1\, \dots\, h_n)$ принимает как положительные значений, так и отрицательные, то квадратичная форма называется \textbf{знакопеременной}.\\
+    Если для любого набора $(h_1\, \dots\, h_n)$ $\Phi(h_1\, \dots\, h_n) \underset{(\le 0)}{\ge 0}$, то квадратичная форма называется \textbf{квазизнакоопределённой}.\\
+    Если $\Phi(h_1\, \dots\, h_n)$ принимает как положительные значений, так и отрицательные, так и нулевые значения, то квадратичная форма называется \textbf{квазизнакопеременной}.
+    \subsubsection*{Теорема 7.15.1 (достаточные условия экстремума)}\label{th:7.15.1}
+    Пусть $f = f(x_1\, \dots\, x_n)$ дважды непрерывно дифференциуема в окрестности критической точки $x^0 = (x^0_1; x^0_2; \dots; x^0_n)$. Тогда, если:
+    \begin{enumerate}
+        \item $d^2f \Big|_{x^0}$ является положительно определённой квадратичной формой, тогда $x^0$ - точка минимума.
+        \item $d^2f \Big|_{x^0}$ является отрицательно определённой квадратичной формой, тогда $x^0$ - точка максимума.
+        \item $d^2f \Big|_{x^0}$ является знакопеременной или квазизнакопеременной, тогда $x^0$ - не является точкой экстремума.
+        \item $d^2f \Big|_{x^0}$ является квазизнакоопределённой, тогда необходимо провести дополнительное исследование на экстремум (по определению точки экстремума).
+    \end{enumerate}
+    Для определения знакоопределённости квадратичной формы используется \textbf{критерий Сильвестра}:
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Обозначим: 
+        \[ \frac{\partial^2 f}{\partial x_i \partial x_j} \Big|_{x^0} = a_{ij} \quad x^0 \text{ - стац. точка.} \]
+        Составляем матрицу квадратичной формы второго дифференциала:
+        \[
+            \begin{pmatrix}
+                a_{11} & a_{12} & \dots & a_{1n} \\
+                a_{21} & a_{22} & \dots & a_{2n} \\
+                \dots & \dots & \dots & \dots \\
+                a_{n1} & a_{n2} & \dots & a_{nn} \\
+            \end{pmatrix} 
+        \]
+        \begin{enumerate}
+            \item Положительно определённая квадратичная форма (т. минимума): \[ \begin{pmatrix}
+                + & & & \\
+                & + & & \\
+                & & \dots & \\
+                & & & + \\
+            \end{pmatrix} \]
+            \item Отрицательно определённая квадратичная форма (т. максимума): \[ \begin{pmatrix}
+                \overset{\text{обяз.}}{-} & & & & & \\
+                & + & & & & \\
+                & & - & & & \\
+                & & & + & & \\
+                & & & & - & \\
+                & & & & & \dots \\
+            \end{pmatrix} \]
+            \item Знакопеременная квадратичная форма (экстремума нет): \[ \underset{\text{произвольное чередование + и -}}{\begin{pmatrix}
+                + & & & & & & \\
+                & + & & & & & \\
+                & & - & & & & \\
+                & & & - & & & \\
+                & & & & + & & \\
+                & & & & & - & \\
+                & & & & & & \dots \\
+            \end{pmatrix}} \]
+            \item Квазиположительноопределённая квадратичная форма (требуется доп. исследование $\Rightarrow$ точка минимума или экстремума нет): \[ \begin{pmatrix}
+                + & & & & & \\
+                & + & & & & \\
+                & & 0 & & & \\
+                & & & + & & \\
+                & & & & 0 & \\
+                & & & & & \dots \\
+            \end{pmatrix} \]
+            \item Квазиотрицательноопределённая квадратичная форма (требуется доп. исследование $\Rightarrow$ точка максимума или экстремума нет): \[ \begin{pmatrix}
+                - & & & & & & & & \\
+                & + & & & & & & & \\
+                & & 0 & & & & & & \\
+                & & & 0 & & & & & \\
+                & & & & - & & & & \\
+                & & & & & + & & & \\
+                & & & & & & 0 & & \\
+                & & & & & & & + & \\
+                & & & & & & & & \dots \\
+            \end{pmatrix} \]
+            \item Квазизнакопеременная квадратичная форма (экстремума нет): \[ \begin{pmatrix}
+                + & & & & & & & & \\
+                & - & & & & & & & \\
+                & & - & & & & & & \\
+                & & & 0 & & & & & \\
+                & & & & - & & & & \\
+                & & & & & - & & & \\
+                & & & & & & 0 & & \\
+                & & & & & & & + & \\
+                & & & & & & & & \dots \\
+            \end{pmatrix} \]
+        \end{enumerate}
+    \end{adjustwidth}
+    
+    \subsection{Неявные функции}
+    Если $F(x;y)$ определена на некотором множестве $R_2$ и $\exists$ функция одной переменной, определённой на некотором $R_1$ и $F(x, f(x)) = 0$, то функция $f(x)$ называется \textbf{неявной функцией}, определённой уравнением $F(x;y) = 0$.
+    \[ F(x;\underset{f(x)}{y}) = 0 = (x-x_0)^2 + (y-y_0)^2 \quad (x_0; y_0) \]
+    \[ F(x;\underset{f(x)}{y}) = 0 = x^2 + y^2 + 1 \]
+    \subsubsection*{Теорема 7.16.1 (о существовании неявной функции)}\label{th:7.16.1}
+    Если $F(x;y)$ непрерывна в некоторой окрестности точки $(x_0; y_0)$ и $F(x_0; y_0) = 0$, $F'_y(x_0; y_0) \ne 0$, то $\exists$ $u(x_0)$ и $u(y_0)$ такие, что $\forall x \in u(x_0)$ $\exists$ единственное решение $y \in u(y_0)$ уравнения $F(x;y) = 0$\\
+    Это решение обозначается $y = f(x)$. Оно непрерывно в $u(x_0)$ и $y_0 = f(x_0)$.\\
+    Если дополнительно в окрестности точки $(x_0; y_0)$ $\exists$ непрерывная $F'_x(x; y)$, то функция $y = f(x)$ в точке $x_0$ имеет производную
+    \[ \boxed{ y' = -\frac{F'_x}{F'_y} \Big|_{x_0; y_0} } \]
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Пусть $F(x; y)$ непрерывна в окрестности точки $(x_0; y_0)$.\\
+        По условию $F'_y(x_0; y_0) \ne 0$. Пусть для определённости $F'_y(x_0; y_0) > 0$.\\
+        По условию $F'_y$ непрерывна в точке $(x_0; y_0) \implies F'_y$ непрерывна в некоторой окрестности точки $(x_0; y_0)$ и (по \hyperref[th:3.3.2]{теореме о сохранении знака}) $F'_y > 0$ в этой окрестности точки $(x_0; y_0)$.\\
+        Так как $F'_y > 0 \implies F(x; y)$ возрастает по переменной $y$ на $[y_0 - \varepsilon; y_0 + \varepsilon]$ и $F(x_0; y_0) = 0$ по условию.\\
+        Тогда $F(x_0; y_0 - \varepsilon) < 0$, $F(x_0; y_0 + \varepsilon) > 0$.\\
+        Так как $F(x;y)$ непрерывна в окрестности точки $(x_0; y_0)$, то $\exists\, \delta$ такая, что в $u_\delta(x_0)$ функция $F(x; y)$ сохраняет такой же знак, как и в точке $(x_0; y_0 - \varepsilon)$ и $(x_0; y_0 + \varepsilon)$.\\
+        Таким образом $\forall x \in (x_0 - \delta; x_0 + \delta)$ выполняется
+        \begin{align*}
+            F(x; y_0 - \varepsilon) < 0\\
+            F(x; y_0 + \varepsilon) > 0
+        \end{align*}
+        Зафиксируем произвольное $x \in (x_0 - \delta; x_0 + \delta)$ и рассмотрим $F(x; y)$ функцию только переменной $y$ на $[ y_0 - \varepsilon; y_0 + \varepsilon ]$.\\
+        Эта функция непрерывна, строго возрастает и имеет противоположные знаки на концах отрезка. Тогда по \hyperref[th:3.8.3]{теореме Больцано-Коши (следствие)} $\exists$ значение $y^*$ (единственное) $\in (y_0 - \varepsilon; y_0 + \varepsilon)$ такое, что $F(x; y^*) = 0$.\\
+        Таким образом определена однозначная функция такая, что каждому $x \in (x_0 - \delta; x_0 + \delta)$ соответствует единственное значение $y^* \in (y_0 - \varepsilon; y_0 + \varepsilon)$.\\
+        Обозначим эту функцию $y^* = f(x)$.
+        \[ \forall x \in (x_0 - \delta; x_0 + \delta) \quad F(x; y^*) = F(x; f(x)) = 0 \]
+        Докажем, что $y^* = f(x)$ непрерывна в точке $x_0$: она непрерывна, т.к. 
+        \[ \forall \varepsilon > 0\,\exists\,\delta > 0 : |x - x_0| < \delta \implies |y^* - f(x_0)| < \varepsilon \]
+        Функция $y^* = f(x)$ будет непрерывна $\forall x \in (x_0 - \delta; x_0 + \delta)$.\\
+        Пусть $x^* \in u(x_0; y_0)$. Всегда $\exists$ $u(x^*; y^*) < u(x_0; y_0)$. Тогда
+        \[ \forall \varepsilon_1 > 0\, \exists\, \delta_1 > 0 : |x - x^*| < \delta_1 \implies | f(x) - f(x^*)| < \varepsilon_1 \]
+        Т.е. $y^* = f(x)$ непрерывна в точке $x^* \implies$ она непрерывна $\forall x \in (x_0 - \delta; x_0 + \delta)$.\\
+        Пусть функция $F(x; y)$ в $u(x_0; y_0)$ имеет непрерывную частную производную $F'_x$.\\
+        Тогда по \hyperref[th:7.5.4]{достаточному условию дифференциуемости (Th. 7.5.4)} $F(x; y)$ дифференциуема в точке $(x_0; y_0)$.\\
+        Тогда по определению дифференциуемости функции в точке
+        \[ \Delta F = F'_x \Big|_{(x_0; y_0)} \Delta x + F'_y \Big|_{(x_0; y_0)} \Delta y + \overbrace{\varepsilon_1 \Delta x + \varepsilon_2 \Delta y}^{\text{\hyperref[th:7.5.1]{Th. 7.5.1}}} \]
+        \[ F(\underset{=0}{x_0 + \Delta x}; y_0 + \Delta y) - F(\underset{=0}{x_0}; y_0) = F'_x \Big|_{(x_0; y_0)} \Delta x + F'_y \Big|_{(x_0; y_0)} \Delta y + \varepsilon_1 \Delta x + \varepsilon_2 \Delta y \]
+        \underline{Замечание:} 
+        \[ \begin{aligned}
+            &f(x_0) = y_0\\
+            &f(x_0 + \Delta x) = y_0 + \Delta y
+        \end{aligned} \]
+        Тогда
+        \begin{gather*}
+            F'_x \Big|_{(x_0; y_0)} \Delta x + F'_y \Big|_{(x_0; y_0)} \Delta y + \varepsilon_1 \Delta x + \varepsilon_2 \Delta y = 0 \quad \Big| : \Delta x\\
+            F'_x \Big|_{(x_0; y_0)} + F'_y \Big|_{(x_0; y_0)} \frac{\Delta y}{\Delta x} + \varepsilon_1 + \varepsilon_2 \frac{\Delta y}{\Delta x} = 0\\
+            \frac{\Delta y}{\Delta x} \left( F'_y \Big|_{(x_0; y_0)} + \varepsilon_2 \right) = - \left( F'_x \Big|_{(x_0; y_0)} + \varepsilon_1 \right)\\
+            \frac{\Delta y}{\Delta x} = - \frac{F'_x \Big|_{(x_0; y_0)} + \varepsilon_1}{F'_y \Big|_{(x_0; y_0)} + \varepsilon_2}
+        \end{gather*}
+        \underline{Замечание:} $\rho = \sqrt{\Delta x^2 + \Delta y^2}$
+        Так как функция $y^* = f(x)$ непрерывна в $u(x_0)$, то $\lim_{\Delta x \to 0} \Delta y = 0$.
+        \[
+            \lim_{\Delta x \to 0}\rho = \lim_{\Delta x \to 0} \sqrt{\Delta x^2 + \Delta y^2} = 0
+        \]
+        Рассмотрим
+        \[ \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = \boxed{ - \frac{F'_x}{F'_y} \Big|_{(x_0; y_0)} = y' \Big|_{x^0} } \]
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+    Рассмотрим $F(x; \underset{y(x)}{y}) = 0$
+    \[ \frac{\partial f}{\partial x} + \frac{\partial f}{\partial y} \frac{dy}{dx} = 0 \]
+    \[ y' = - \frac{F'_x}{F'_y} \]
+    \subsubsection*{Теорема 7.16.2}\label{th:7.16.2}
+    Пусть $F(x_1\, \dots\, x_n; y)$ определена в окрестности точки $(x^0_1\, x^0_2\, \dots\, x^0_n; y_0)$ и непрерывна вместе со своей частной производной $F'_y(x^0_1\, \dots\, x^0_n; y_0) \ne 0$ и $F(x^0_1\, x^0_2\, \dots\, x^0_n; y_0) = 0$. Тогда $\exists$ окрестность $u(x^0_1\, x^0_2\, \dots\, x^0_n)$ и $u(y_0)$ такие, что уравнение $F(x_1\, \dots\, x_n; y) = 0$ однозначно разрешимо в этих окрестностях.\\
+    Это решение $y^* = f(x_1\, \dots\, x_n)$ непрерывно в $u(x^0_1\, \dots\, x^0_n)$.\\
+    При дополнительном условии $F'_{x_i}$ непрерывна в точке $(x^0_1\, \dots\, x^0_n; y_0)$, функция $y^* = f(x_1\, \dots\, x_n)$ имеет в точке $(x^0_1\, \dots\, x^0_n)$ частную производную:
+    \[ \frac{\partial f}{\partial x_i} = -\frac{F'_{x_i}}{F'_{y}} \quad i = \overline{1,n} \]
+    Рассмотрим $F(x_1\, \dots\, x_n; y) = 0$.
+    \[ \frac{\partial y}{\partial x_2} = \frac{\partial F}{\partial x_2} * 1 + \frac{\partial F}{\partial y}\frac{\partial y}{\partial x_2} = 0 \]
+    \[ \frac{\partial y}{\partial x_2} = -\frac{F'_{x_2}}{F'_y} \]
+    \subsubsection*{Системы функций, заданных неявно}\noindent
+    Рассмотрим совокупность неявных функций $y_1\, \dots\, y_n$, определяемых системой уравнений
+    \[ \begin{cases}
+        F_1(x_1\, \dots\, x_m; y_1\, \dots\, y_n) = 0\\
+        F_2(x_1\, \dots\, x_m; y_1\, \dots\, y_n) = 0\\
+        \dots\\
+        F_n(x_1\, \dots\, x_m; y_1\, \dots\, y_n) = 0\\
+    \end{cases} \]
+    При определённых условиях эта система разрешима относительно функций
+    \[ \begin{aligned}
+        y_1 &= y_1(x_1\, \dots\, x_m)\\
+        y_2 &= y_2(x_1\, \dots\, x_m)\\
+        \dots\\
+        y_n &= y_n(x_1\, \dots\, x_m)\\
+    \end{aligned} \]
+    Определитель вида
+    \[ 
+        \begin{vmatrix}
+            \frac{\partial F_1}{\partial y_1} & \dots & \frac{\partial F_1}{\partial y_n}\\
+            \frac{\partial F_2}{\partial y_1} & \dots & \frac{\partial F_2}{\partial y_n}\\
+            \dots & \dots & \dots\\
+            \frac{\partial F_n}{\partial y_1} & \dots & \frac{\partial F_n}{\partial y_n}\\
+        \end{vmatrix}
+    \]
+    называется \textbf{определителем Якоби} или \textbf{Якобианом}
+    \subsubsection*{Теорема 7.16.3}\label{th:7.16.3}
+    Если функции $F_i(x_1\, \dots\, x_m; y_1\, \dots\, y_n) \quad i = \overline{1, n}$ имеют непрерывные частные производные в окрестности точки $M_0(x^0_1\, \dots\, x^0_m; y^0_1\, \dots\, y^0_n)$ и $F_i(M_0)=0$ и Якобиан $\frac{D(F_1\, \dots\, F_n)}{D(y_1\, \dots\, y_n)}\Big|_{M_0} \ne 0$, то $\exists$ окрестность $u(x^0_1\, \dots\, x^0_m)$ и $u(y^0_1\, \dots\, y^0_n)$ такие, что система уравнений $F_i(x_1\, \dots\, x_m; y_1\, \dots\, y_n) = 0 \quad i = \overline{1, n}$ однозначно разрешима в окрестности точки $M_0$ относительно переменных $y_1\, \dots\, y_n$, т.е. 
+    \[ y^0_i = f_i(x_1\, \dots\, x_m) \quad i = \overline{1, n} \]
+    Все $y^*_i$ имеют непрерывную частную производную в окрестностях $u(x^0_1\, \dots\, x^0_n)$.
+
+    \subsection{Условный экстремум}
+    Пусть задана функция $F = F(x_1\, \dots\, x_m; y_1\, \dots\, y_n)$\\
+    \underline{Задача:} найти экстремум этой функции, если переменные $x_i, y_j$ связаны между собой уравнениями 
+    \[ \begin{cases}
+        f_1(x_1\, \dots\, x_m; y_1\, \dots\, y_n) = 0\\
+        f_2(x_1\, \dots\, x_m; y_1\, \dots\, y_n) = 0\\
+        \dots\\
+        f_n(x_1\, \dots\, x_m; y_1\, \dots\, y_n) = 0\\
+    \end{cases} \quad \text{\underline{условия связи}} \] 
+    Точка $M_0 (x^0_1\, \dots\, x^0_m; y^0_1\, \dots\, y^0_n)$, \underline{удовлетворяющая условиям связи}, называется точкой \textbf{условного максимума (минимума)}, если $\exists$ окрестность точки $M_0$ такая, что 
+    \[ \forall (x_1\, \dots\, x_m; y_1\, \dots\, y_n) \in u(M_0) : \underset{(F(M) \ge F(M_0))}{F(M) \le F(M_0)} \]
+    \underline{Пример:}
+    Рассмотрим $F(x;y) = x^2 + y^2$. Найти экстремум $F$ при условии: $x + y - 1 = 0$.
+    \begin{center}
+        \includegraphics{7.17.1.png}
+    \end{center}
+    1 способ:
+    \begin{gather*}
+        y = 1 - x\\
+        F(x, y(x)) = x^2 + (1 - x)^2 = x^2 + 1 - 2x + x^2 = 2x^2 - 2x + 1\\
+        F' = 4x - 2 = 0
+        x = \frac{1}{2}, y = 1 - x = \frac{1}{2}
+    \end{gather*}
+    Получили точку $\left( \frac{1}{2}; \frac{1}{2} \right)$
+    \begin{center}
+        \includegraphics{7.17.2.png}
+    \end{center}
+    Ответ: точка $\left( \frac{1}{2}; \frac{1}{2} \right)$ - точка условного минимума.\\
+    \underline{В общем виде:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Рассмотрим $F(x_1\, \dots\, x_m; y_1\, \dots\, y_n) = F$\\
+        Рассмотрим $f_i = f_i(x_1\, \dots\, x_m; y_1\, \dots\, y_n) = 0 \quad i = \overline{1, n}$ - условия связи.\\
+        Пусть $\frac{D(f_1\, \dots\, f_n)}{D(y_1\, \dots\, y_n)} \Big|_{M_0} \ne 0$. Тогда по \hyperref[th:7.16.3]{теореме 7.16.3} система условий связи разрешима в окрестности точки $M_0$.
+        \[ y_i = \varphi (x_1\, \dots\, x_m) \quad i = \overline{1, n} \]
+        Все $y_i$ имеют непрерывную частную производную в точке $(x^0_1\, \dots\, x^0_n)$.\\
+        Подставляя все $y_i$ в $F$, получим функцию переменных $x_1\, \dots\, x_n$.
+        \[ F(x_1\, \dots\, x_m; y_1\, \dots\, y_n) = \Phi (x_1\, \dots\, x_m; y_1(x_1\, \dots\, x_m)\, \dots\, y_n(x_1\, \dots\, x_m)) = \Phi (x_1\, \dots\, x_m) \]
+        Если $F$ достигает условного экстремума в точке $M_0 (x^0_1\, \dots\, x^0_m; y^0_1\, \dots\, y^0_n)$, то $\Phi$ достигает обычного экстремума в точке $P_0(x^0_1\, \dots\, x^0_m)$.\\
+        Сложность - в разрешении системы условий связи.
+    \end{adjustwidth}
+
+    \subsection{Метод неопределённых множителей Лагранжа}
+    Рассмотрим $F = F(x_1\, \dots\, x_m; y_1\, \dots\, y_n) \quad (1)$.
+    \[ \begin{cases}
+        f_1(x_1\, \dots\, x_m; y_1\, \dots\, y_n) = 0\\
+        \dots\\
+        f_n(x_1\, \dots\, x_m; y_1\, \dots\, y_n) = 0\\
+    \end{cases} \quad (2) \]
+    Пусть $M_0 (x^0_1\, \dots\, x^0_m; y^0_1\, \dots\, y^0_n)$ - точка условного экстремума.\\
+    Тогда по необходимому условию жкстремума:
+    \[ 
+        \begin{cases}
+            \frac{\partial f_1}{\partial x_1}dx_1 + \frac{\partial f_1}{\partial x_2}dx_2 + \dots + \frac{\partial f_1}{\partial x_n}dx_m + \frac{\partial f_1}{\partial y_1}dy_1 + \dots + \frac{\partial f_1}{\partial y_n}dy_n = 0\\
+            \dots\\
+            \frac{\partial f_n}{\partial x_1}dx_1 + \frac{\partial f_n}{\partial x_2}dx_2 + \dots + \frac{\partial f_n}{\partial x_n}dx_m + \frac{\partial f_n}{\partial y_1}dy_1 + \dots + \frac{\partial f_n}{\partial y_n}dy_n = 0\\
+        \end{cases} \quad (3)
+    \]
+    Получили систему $n$ уравнений $(n + m)$ неизвестных.\\
+    По \hyperref[th:7.16.3]{теореме 7.16.3}:
+    \[ \frac{D(f_1\, \dots\, f_n)}{D(y_1\, \dots\, y_n)} \ne 0 \implies \text{rang}(3) = n \]
+    Тогда векторы $\overline{\text{grad}}f_1\, \dots\, \overline{\text{grad}}f_n$ являются линейно независимыми.\\
+    Значит её можно выбрать в качестве базиса.\\
+    Рассмотрим $(1)$. Т.к. $M_0$ - точка условного экстремума:
+    \[ dF = 0 \implies \frac{\partial F}{\partial x_1}dx_1 + \frac{\partial F}{\partial x_2}dx_2 + \dots + \frac{\partial F}{\partial x_m}dx_m + \frac{\partial F}{\partial y_1}dy_1 + \dots + \frac{\partial F}{\partial y_n}dy_n = 0 \]
+    Значит 
+    \[ -\overline{\text{grad}}F = \lambda_1 \overline{\text{grad}}f_1 + \dots + \lambda_n \overline{\text{grad}}f_n \]
+    \[ \overline{\text{grad}(F + \lambda_1 f_1 + \lambda_2 f_2 + \dots + \lambda_n f_n)} = 0 \]
+    Функция $L = F + \lambda_1 f_1 + \lambda_2 f_2 + \dots + \lambda_n f_n$ называется \textbf{функцией Лагранжа}.\\
+    $\lambda_1\, \dots\, \lambda_n$ - множители Лагранжа.\\
+    Составим систему:
+    \[ \begin{cases}
+        \frac{\partial L}{\partial x_1} = \frac{\partial F}{\partial x_1} + \lambda_1 \frac{\partial f_1}{\partial x_1} + \dots + \lambda_n \frac{\partial f_n}{\partial x_1} = 0\\
+        \dots\\
+        \frac{\partial L}{\partial x_m} = \frac{\partial F}{\partial x_m} + \lambda_1 \frac{\partial f_1}{\partial x_m} + \dots + \lambda_n \frac{\partial f_n}{\partial x_m} = 0\\
+        \frac{\partial L}{\partial y_1} = \frac{\partial F}{\partial y_1} + \lambda_1 \frac{\partial f_1}{\partial y_1} + \dots + \lambda_n \frac{\partial f_n}{\partial y_1} = 0\\
+        \dots\\
+        \frac{\partial L}{\partial y_n} = \frac{\partial F}{\partial y_n} + \lambda_1 \frac{\partial f_1}{\partial y_n} + \dots + \lambda_n \frac{\partial f_n}{\partial y_n} = 0\\
+    \end{cases} \]
+    Уравнений: $n + m$.\\
+    \underline{Неизвестные:} $x_1\, \dots\, x_m, y_1\, \dots\, y_n, \lambda_1\, \dots\, \lambda_n \quad m + 2n$.\\
+    Добавляем к этой системе уравнения связи
+    \[ \begin{cases}
+        f_1(x_1\, \dots\, x_m; y_1\, \dots\, y_n) = 0\\
+        \dots\\
+        f_n(x_1\, \dots\, x_m; y_1\, \dots\, y_n) = 0\\
+    \end{cases} \]
+    Получим $2n+m$ уравнений с $2n+m$ неизвестных.\\
+    Для каждого набора $\lambda_1\, \dots\, \lambda_n$ будет найдена стационарная точка $(x^0_1\, \dots\, x^0_m; y^0_1\, \dots\, y^0_n)$.\\
+    Применяя критерий Сильвестра при выполнении условий связи к функции Лагранжа, можно определить характер стационарной точки.\par\noindent
+    \underline{Пример:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Рассмотрим $F = x + y + z$.\\
+        Условие связи: $xy + yz + xz = 3$.\\
+        Найти условный экстремум.
+        Решение: составим функцию Лагранжа.
+        \[ L = x + y + z + \lambda (xy + yz + xz - 3) \]
+        Составим систему
+        \[ \left\lbrace\begin{aligned}
+            \frac{\partial L}{\partial x} &= 1 + \lambda (y + z) = 0 & x &= y = z = -\frac{1}{2\lambda}\\
+            \frac{\partial L}{\partial y} &= 1 + \lambda (x + z) = 0 & \lambda &= \pm\frac{1}{2}\\
+            \frac{\partial L}{\partial z} &= 1 + \lambda (y + x) = 0 & \lambda_1 &=-\frac{1}{2}: \quad A(1; 1; 1)\\
+            xy &+ yz + xz - 3 = 0 & \lambda_2 &= \frac{1}{2}: \quad B(-1; -1; -1)
+        \end{aligned}\right. \]
+        \begin{align}
+            \frac{\partial^2 L}{\partial x^2} &= 0 & \frac{\partial^2 L}{\partial y^2} &= 0 & \frac{\partial^2 L}{\partial z^2} &= 0\\
+            \frac{\partial^2 L}{\partial x \partial y} &= \lambda & \frac{\partial^2 L}{\partial x \partial z} &= \lambda & \frac{\partial^2 L}{\partial y \partial z} &= \lambda
+        \end{align}
+        \[ d^2 L = \left( \frac{\partial}{\partial x}dx + \frac{\partial}{\partial y}dy + \frac{\partial}{\partial z}dz \right)^{(2)}L = 2\lambda dx dy + 2\lambda dy dz + 2 \lambda dx dz \boxed{=} \]
+        \[ xy + yz + xz - 3 = 0 \]
+        \[ df = 0 \quad \frac{\partial f}{\partial x}dx + \frac{\partial f}{\partial y}dy + \frac{\partial f}{\partial z}dz = 0 \]
+        \[ (y+z)dx + (x+z)dy + (x+y)dz = 0 \]
+        В точках $A$ и $B$:
+        \[ dx + dy + dz = 0 \]
+        \[ dz = -(dx + dy) \]
+        \[ \boxed{=} 2\lambda dxdy - 2\lambda dy(dx + dy) - 2\lambda dx(dx + dy) = -2 \lambda (dx^2 + dy^2 + dxdy) \]
+        \[ \text{Точка }A \quad \begin{pmatrix}
+            -2\lambda & -\lambda \\
+            -\lambda & -2\lambda
+        \end{pmatrix} = \begin{pmatrix}
+            1 & \frac{1}{2}\\
+            \frac{1}{2} & 1
+        \end{pmatrix} = \boxed{ + } \implies \text{ точка } A \text{ - т. условного минимума.} \]
+        \[ \text{Точка }B \quad \begin{pmatrix}
+            -1 & -\frac{1}{2}\\
+            -\frac{1}{2} & -1
+        \end{pmatrix} = \boxed{ - } \implies \text{ точка } B \text{ - т. условного максимума.} \]
+        \[ d^2 L > 0 \text{ для точки }A \]
+        \[ d^2 L < 0 \text{ для точки }B \]
+    \end{adjustwidth}
+
 \end{document}

@@ -134,5 +134,39 @@
 			"\\forall \\varepsilon > 0 \\text{ } \\exists \\text{ } N = N(\\varepsilon) \\text{ } \\big| \\text{ } \\forall n > N \\text{ } |x_{n} - a| < \\varepsilon"
 		],
 		"description": "stuff for mat"
+	},
+	"img":{
+	  "scope": "tex,latex",
+	  "prefix": "img",
+	  "body": [
+		"\\begin{center}",
+		"\t\\includegraphics{$0}",
+		"\\end{center}"
+	  ],
+	  "description": "stuff for mat"
+	},
+	"diff_fnp": {
+		"scope": "tex,latex",
+		"prefix": "diff_fnp",
+		"body": [
+			"\\Delta z = A \\Delta x + B \\Delta y + \\varepsilon_1 \\Delta x + \\varepsilon_2 \\Delta y"
+		],
+		"description": "stuff for mat"
+	},
+	"op_nobla": {
+		"scope": "tex,latex",
+		"prefix": "nabla_op",
+		"body": [
+			"\\overline{\\nabla}"
+		],
+		"description": "stuff for mat"
+	},
+	"partproiz": {
+		"scope": "tex,latex",
+		"prefix": "partproiz",
+		"body": [
+			"\\frac{\\partial f}{\\partial $1}$0"
+		],
+		"description": "stuff for mat"
 	}
 }
