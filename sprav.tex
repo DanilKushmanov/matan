@@ -905,7 +905,7 @@
     Таких подпоследовательностей можно извлечь бесконечно много из искомой последовательности.\par\noindent
     \underline{Утверждение:} если $\{x_n\}$ сходится, то все $\{x_{n_{k}}\}$ будут сходится и $\lim_{k\to\infty} x_{n_{k}} = \lim_{n\to\infty} x_n, \forall k \in N$.\\
     \underline{Утверждение:} если $\{x_n\}$ беск. большая, т.е. $\lim_{n\to\infty}x_n = \pm \infty$, то все $\{x_{n_{k}}\}$ будут являться беск. большими.\\
-    \underline{Утверждение:} если $\{x_n\}$ неограничена, то из неё можно извлечь беск. большую.\\
+    \underline{Утверждение:} если $\{x_n\}$ неограниченна, то из неё можно извлечь беск. большую.\\
     \underline{Вопрос:} если $\{x_n\}$ ограничена...\\
     
     \subsubsection*{Теорема 2.8.1 (Больцано-Вейерштрасса)}\label{th:2.8.1}
@@ -957,7 +957,7 @@
         \item $\exists$ подпоследовательность $\{x_{n_{k}}\}$ такая, что $\lim_{k\to\infty}x_{n_{k}} = M$.
         \item $\forall \{x_{n_{k}}\} \lim_{k\to\infty} x_{n_{k}} \le M$.\\
         Обозначение: $M = \overline{\lim}_{k\to\infty}x_n$.\\
-        \underline{Замечание}: если $\{x_n\}$ неограничена сверху, то $\overline{\lim}_{k\to\infty}x_n = \infty$.\\
+        \underline{Замечание}: если $\{x_n\}$ неограниченна сверху, то $\overline{\lim}_{k\to\infty}x_n = \infty$.\\
         \underline{Замечание}: если $\{x_n\}$ сходящаяся и $\lim_{n\to\infty} x_n = M$, то $\overline{\lim}_{k\to\infty}x_n = M$.
     \end{enumerate}
     \subsubsection*{Разница между обычным пределом (единственным) и верхним пределом}
@@ -968,7 +968,7 @@
         \item $\exists$ подпоследовательность $\{x_{n_{k}}\} \Big| \lim_{k\to\infty}x_{n_{k}} = m$.
         \item $\forall$ сходящейся $\{x_{n_{k}}\} \lim_{k\to\infty} x_{n_{k}} \ge m$.\\
         Обозначение: $m = \underline{\lim}_{k\to\infty}x_n$.\\
-        \underline{Замечание}: если $\{x_n\}$ неограничена сверху, то $\underline{\lim}_{k\to\infty}x_n = -\infty$.\\
+        \underline{Замечание}: если $\{x_n\}$ неограниченна сверху, то $\underline{\lim}_{k\to\infty}x_n = -\infty$.\\
         \underline{Замечание}: если $\{x_n\}$ сходящаяся и $\lim_{n\to\infty} x_n = m$, то $\underline{\lim}_{k\to\infty}x_n = m$.
     \end{enumerate}
     \subsubsection*{Разница между обычным пределом (единственным) и нижним пределом}
@@ -1506,7 +1506,7 @@
                 \vdots
             \end{gather*}
         В результате получили посл-ть $\posl{x}{n}$. Она ограничена ($\forall n$ $x_n \in [a; b]$).\\
-        По \hyperref[th:2.8.1]{теореме Больцано-Вейерштрасса (2.8.1)} из неё можно извлечь сходяющуся подпосл-ть $x_{n_k}$.\\
+        По \hyperref[th:2.8.1]{теореме Больцано-Вейерштрасса (2.8.1)} из неё можно извлечь сходящуюся подпосл-ть $x_{n_k}$.\\
         Пусть $\lim_{k\to\infty}x_{n_k} = \alpha$.\\
         Т.к. $f(x)$ непрерывна на $[a; b]$, то по определению $\lim_{x\to x_0} f(x) = f(x_0)$.\\
         В нашем случае $\lim_{k\to\infty} f(x_{n_k}) = f(\lim_{k\to\infty}x_{n_{k}}) = f(\alpha)$ - конечное число (в силу непрерывности).\\
@@ -1550,7 +1550,7 @@
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
         Для доказательства надо найти точку $\xi$, $f(\xi) = p$.\\
-        Разобъём отрезок $[a; b]$ на 2 равных отрезка точкой $\frac{a + b}{2}$\\
+        Разобьём отрезок $[a; b]$ на 2 равных отрезка точкой $\frac{a + b}{2}$\\
         Варианты:
         \begin{enumerate}
             \item $f(\frac{a+b}{2}) = p \implies \xi = \frac{a+b}{2}$. \textbf{Ч.т.д.}
@@ -2062,11 +2062,11 @@
     Геометрический смысл дифференциала: это есть приращение ординаты касательной, проведённой к графику функции в точке $x_0$.\par\noindent
     \underline{Замечание:} для функции $y = kx+b$ $dy = \Delta y$ для любых $x$.\\
     \underline{Замечание:} $dy = f'(x)\Big|_{x=x_0} \times dx \implies f'(x)\Big|_{x=x_0} = \frac{dy}{dx}$
-    \subsubsection*{Физический смысл диффернциала}
+    \subsubsection*{Физический смысл дифференциала}
     \[V_{\text{мгнов}}=S'(t)\Big|_{t=t_0}=\frac{dS}{dt}\]
     \[ dS = S'(t)\Big|_{t=t_0} \times dt = S'(t)\Big|_{t=t_0} \times \Delta t \]
     Дифференциал $dS$ равен пути, который прошла бы рассматриваемая точка за время $\Delta t$, начиная с момента времени $t=t_0$, если бы на этом участке пути скорость была бы постоянной и равной $S'(t)\Big|_{t=t_0}$
-    \subsubsection*{Свойства дифферинциалов}
+    \subsubsection*{Свойства дифференциалов}
     \begin{enumerate}
         \item $d(u \pm V)=du \pm dv$
         \item $d(uv)=udv+vdu$
@@ -2080,7 +2080,7 @@
             \textbf{Ч.т.д.}
         \end{center}
     \end{adjustwidth}
-    \subsection{Примемение дифференциала в приближённых вычислениях. Дифференциал сложной функции}
+    \subsection{Применение дифференциала в приближённых вычислениях. Дифференциал сложной функции}
     \noindent Если $f(x)$ дифференцируема в точке $x_0$
     \begin{adjustwidth}{1.5em}{1.5em}
         $\Delta y=dy+o(dx)$\\
@@ -2170,7 +2170,7 @@
     \subsubsection*{Дифференциалы высших порядков}
     \[ y = f(x) \]
     \[ dy = f'(x)dx \]
-    Пусть функция $f'(x)$ также дифференциуема в точке $x_0$ и \textbf{величина} $dx$ \textbf{имеет одно и то же фиксированное значение} для $\forall x \in u(x_0)$.\\
+    Пусть функция $f'(x)$ также дифференцируема в точке $x_0$ и \textbf{величина} $dx$ \textbf{имеет одно и то же фиксированное значение} для $\forall x \in u(x_0)$.\\
     Рассмотрим \[ d^2f(x) = d(df(x)) = d(f'(x)dx) = (f'(x)dx)'_x dx = f''(x)dxdx = f''(x)dx^2 \] 
     \[ dx^2 = (dx)^2 \text{ } (\text{дэ икс дважды}) \]
     \[ y'' = \frac{d^2y}{dx^2} \]
@@ -2191,7 +2191,7 @@
     \end{adjustwidth}
 
     \subsection{Дифференциальные теоремы о среднем}\noindent
-    Точка $x = c$ называется точкой \textbf{локального максимума} (\textbf{минимума}) функкции $y = f(x)$, если $\exists\,u_\delta(c) : (c - \delta; c + \delta) : $\\
+    Точка $x = c$ называется точкой \textbf{локального максимума} (\textbf{минимума}) функции $y = f(x)$, если $\exists\,u_\delta(c) : (c - \delta; c + \delta) : $\\
     \[ f(c) \ge f(x) \text{ } \forall x \in (c - \delta; c + \delta) \]
     \[ \left( f(c) \le f(x) \text{ } \forall x \in (c - \delta; c + \delta) \right) \]
     Точка локального максимума (минимума) функции называется точкой \textbf{локального экстремума}.
@@ -2216,7 +2216,7 @@
     \underline{Замечание:} точка, в которой функция достигает экстремальное значение, является внутренней точкой интервала.
 
     \subsubsection*{Теорема 4.12.2 (Ролля)}\label{th:4.12.2}
-    Если $f(x)$ непрерывна на $[a; b]$, дифференциуема на $(a; b)$ и $f(a) = f(b)$. Тогда на $(a;b)$ $\exists$ по крайней мере одна точка $\xi \in (a; b) : f'(\xi) = 0$\par\noindent
+    Если $f(x)$ непрерывна на $[a; b]$, дифференцируема на $(a; b)$ и $f(a) = f(b)$. Тогда на $(a;b)$ $\exists$ по крайней мере одна точка $\xi \in (a; b) : f'(\xi) = 0$\par\noindent
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
         \begin{enumerate}
@@ -2225,7 +2225,7 @@
             Причём обе точки $x_1$ и $x_2$ не могут быть концами $[a;b]$ одновременно, т.к. $\underset{x\in [a;b]}{max f(x)} = \underset{x\in [a;b]}{min f(x)} = f(a) = f(b)$ по условию.\\
             Тогда $f(x)$ была бы константой, а это не так.\\
             Т.е. одна из $x_1, x_2 \in (a;b)$. Обозначим её $\xi$.\\
-            По условию $f(x)$ дифференциуема на $(a;b) \overset{\hyperref[th:4.9.1]{\text{Th 4.9.1}}}{\implies} \exists$ конечная $f'(\xi)$.\\
+            По условию $f(x)$ дифференцируема на $(a;b) \overset{\hyperref[th:4.9.1]{\text{Th 4.9.1}}}{\implies} \exists$ конечная $f'(\xi)$.\\
             А т.к. в этой точке функция принимает наибольшее или наименьшее значение $\implies f'(\xi) = 0$.
         \end{enumerate}
         \begin{center}
@@ -2239,14 +2239,14 @@
     \end{center}
 
     \subsubsection*{Теорема 4.12.3 (теорема Коши)}\label{th:4.12.3}
-    Если функции $f(x)$ и $g(x)$ непрерывны на $[a;b]$, дифференциуемы на $(a;b)$, $g'(x) \ne 0 \,\,\, \forall x \in (a;b)$. Тогда $\exists$ точка $\xi \in (a;b)$ такая, что:
+    Если функции $f(x)$ и $g(x)$ непрерывны на $[a;b]$, дифференцируемы на $(a;b)$, $g'(x) \ne 0 \,\,\, \forall x \in (a;b)$. Тогда $\exists$ точка $\xi \in (a;b)$ такая, что:
     \[ \frac{f(b) - f(a)}{g(b) - g(a)} = \frac{f'(\xi)}{g'(\xi)} \]
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
         \underline{Замечание:} $g(b) \ne g(a)$, т.к., если бы это было так, то $g(x)$ удовлетворяла бы условию \hyperref[th:4.12.2]{теоремы Ролля (4.12.2)} $\implies \exists$ точка $\xi \in (a;b) : g'(\xi) = 0$, а это не так.\par\noindent
         Составим вспомогательную функцию
         \[ F(x) = f(x) - f(a) - \frac{f(b) - f(a)}{g(b) - g(a)} \times (g(x) - g(a)) \]
-        Т.к. $f(x), g(x)$ непрерывны на $[a;b]$ и дифференциуемы на $(a;b) \implies F(x)$ непрерывна на $[a;b]$ и дифференциуема на $(a;b)$\\
+        Т.к. $f(x), g(x)$ непрерывны на $[a;b]$ и дифференцируемы на $(a;b) \implies F(x)$ непрерывна на $[a;b]$ и дифференцируема на $(a;b)$\\
         $F(a) = 0; F(b) = 0$\\
         Т.е. $F(x)$ удовлетворяет условию \hyperref[th:4.12.2]{теоремы Ролля (4.12.2)} $\implies \exists$ точка $\xi \in (a;b) : F'(\xi) = 0$.\\
         Тогда:
@@ -2260,7 +2260,7 @@
     \end{adjustwidth}
     
     \subsubsection*{Теорема 4.12.4 (теорема Лагранжа)}\label{th:4.12.4}
-    Если $f(x)$ непрерывна на $[a;b]$ и дифференциуема на $(a;b)$, тогда $\exists$ точка $\xi \in (a; b)$: 
+    Если $f(x)$ непрерывна на $[a;b]$ и дифференцируема на $(a;b)$, тогда $\exists$ точка $\xi \in (a; b)$: 
     \[ \boxed{f(b) - f(a) = f'(\xi)(b-a)} \]
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
@@ -2282,11 +2282,11 @@
     Все три формулы называются \textbf{формулами конечных приращений Лагранжа}.
     
     \subsubsection*{Теорема 4.12.5}\label{th:4.12.5}
-    Если $f(x)$ непрерывна на $[a;b]$, дифференциуема на $(a;b)$ и $\forall x \in (a;b)$ $f'(x) = 0 \implies f(x)$ постоянная на этом отрезке.\par\noindent
+    Если $f(x)$ непрерывна на $[a;b]$, дифференцируема на $(a;b)$ и $\forall x \in (a;b)$ $f'(x) = 0 \implies f(x)$ постоянная на этом отрезке.\par\noindent
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
         Выберем произвольно $x_1, x_2 \in [a; b]$. Пусть для определённости $x_1 < x_2$.\\
-        Тогда $f(x)$ непрерывна $[x_1;x_2] \subset [a;b]$ и дифферецируема $(x_1; x_2) \subset (a; b)$.\\
+        Тогда $f(x)$ непрерывна $[x_1;x_2] \subset [a;b]$ и дифференцируема $(x_1; x_2) \subset (a; b)$.\\
         Тогда по \hyperref[th:4.12.4]{теореме Лагранжа (4.12.4)} $f(x_2) - f(x_1) = f'(\xi)(x_2-x_1), x_1 < \xi < x_2$.\\
         По условию $f'(x) = 0$ $\forall x \in (a; b) \implies f'(\xi) = 0$, т.к. точка $\xi \in (x_1; x_2) \subset (a; b) \implies f(x_1) = f(x_2)$, а т.к. $x_1, x_2$ - произвольные и $\in [a; b]$, то $f(x) = const$ $\forall x \in [a;b]$.
         \begin{center}
@@ -2315,7 +2315,7 @@
 
     \subsubsection*{Теорема 4.13.2}\label{th:4.13.2}
     \noindent Если: \begin{enumerate}
-        \item Функции $f$ и $g$ дифференциуемы на $(a;b)$
+        \item Функции $f$ и $g$ дифференцируемы на $(a;b)$
         \item $g'(x) \ne 0$ $\forall x \in (a;b)$
         \item $\lim_{x\to a} f(x) = \lim_{x\to a}g(x) = 0$
         \item $\exists$ конечный или бесконечный $\lim_{x\to a} \frac{f'(x)}{g'(x)}$
@@ -2323,7 +2323,7 @@
     Тогда $\exists \lim_{x\to a}\frac{f(x)}{g(x)} = \lim_{x\to a}\frac{f'(x)}{g'(x)}$\par\noindent
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
-        Т.к. по пункту 1 $f(x)$ и $g(x)$ дифференциуемы на $(a;b) \underset{\hyperref[th:4.1.1]{\text{Th 4.1.1}}}{\overset{\hyperref[th:4.9.1]{\text{Th 4.9.1}}}{\implies}}$ они непрерывны на $(a; b)$.\\
+        Т.к. по пункту 1 $f(x)$ и $g(x)$ дифференцируемы на $(a;b) \underset{\hyperref[th:4.1.1]{\text{Th 4.1.1}}}{\overset{\hyperref[th:4.9.1]{\text{Th 4.9.1}}}{\implies}}$ они непрерывны на $(a; b)$.\\
         Доопределим эти функции в точке $x = a$: $f(a) = g(a) = 0$.\\
         Тогда $\forall x \in (a; b)$ на $[a; x]$ $f(x)$ и $g(x)$ будут удовлетворять условию \hyperref[th:4.12.3]{теоремы Коши (4.12.3)}, т.е. $\exists$ точка $\xi = \xi(x)$ и $\frac{f(x)}{g(x)} = \frac{f(x) - f(a)}{g(x) - g(a)} \overset{\hyperref[th:4.12.3]{\text{Th 4.12.3}}}{=} \frac{f'(\xi)}{g'(\xi)}$
         \[ \boxed{\lim_{x \to a}\frac{f(x)}{g(x)}} = \lim_{x\to a}\frac{f'(\xi)}{g'(\xi)} = \begin{vmatrix}
@@ -2341,7 +2341,7 @@
 
     \subsubsection*{Теорема 4.13.3}\label{th:4.13.3}
     \noindent Если: \begin{enumerate}
-        \item Функции $f$ и $g$ дифференциуемы на $(a;b)$
+        \item Функции $f$ и $g$ дифференцируемы на $(a;b)$
         \item $g'(x) \ne 0$ $\forall x \in (a;b)$
         \item $\lim_{x\to a} f(x) = \lim_{x\to a}g(x) = \infty$
         \item $\exists$ конечный или бесконечный $\lim_{x\to a} \frac{f'(x)}{g'(x)}$
