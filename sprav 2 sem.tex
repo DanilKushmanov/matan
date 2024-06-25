@@ -11,7 +11,7 @@
 \usepackage{changepage}
 \usepackage{hyperref}
 \usepackage{cancel}
-\usepackage{adjustbox}
+\usepackage[export]{adjustbox}
 \graphicspath{{./images/}}
 \setmainlanguage{russian}
 \setotherlanguage{english}
@@ -1224,17 +1224,74 @@
         \end{vmatrix} = \boxed{\int_{\alpha}^{\beta}y(t)x'(t)dt=S} \]
         \item Вычисление площади криволинейной трапеции в полярной системе координат. \\
         Полярная система координат:
+        \begin{gather*}
+            \varphi \in [0; 2\pi]\\
+            r \in [0; +\infty)
+        \end{gather*}
+        \fbox{
+            \begin{gather*}
+                x = r\cos \varphi\\
+                y = r\sin \varphi
+            \end{gather*}
+        }
         \begin{center}
-            \includegraphics[max size={\linewidth}{100em}]{6.9.4.png}\\
+            \includegraphics[max size={\linewidth}{7cm}]{6.9.4.png}
         \end{center}
+        \[ y = kx \]
+        \begin{center}
+            \includegraphics[max size={\linewidth}{7cm}]{6.9.5.png}
+        \end{center}
+        \[ r = a\varphi \;\;\; \varphi \in [0; 2\pi] \]
+        \begin{center}
+            \includegraphics[max size={\linewidth}{7cm}]{6.9.6.png}
+        \end{center}
+        \fbox{
+            \begin{gather*}
+                r = \sqrt{x^2 + y^2}\\
+                \tg \varphi = \frac{y}{x}\\
+                \varphi = \arctg \frac{y}{x}, \;\;\; (x, y) \in \text{ I, IV четв.}\\
+                \varphi = \arctg \frac{y}{x} + \pi, \;\;\; (x, y) \in \text{ II, III четв.}\\
+            \end{gather*}
+        }
         Некоторые кривые в полярной системе координат:
+        \begin{enumerate}
+            \item $r = 3\varphi$
+            \begin{center}
+                \includegraphics[max size={\linewidth}{7cm}]{6.9.7.png}\\
+            \end{center}
+            \item $r = 2 \sin \varphi$
+            \begin{gather*}
+                r \geq 0\\
+                2 \sin \varphi \geq 0\\
+                0 \leq \varphi \leq \pi \text{ - "+"}\\
+                \pi \leq \varphi \leq 2\pi \text{ - "-"}
+            \end{gather*}
+            \begin{center}
+                \includegraphics[max size={\linewidth}{7cm}]{6.9.8.png}
+            \end{center}
+            \item $r = 2 \cos 2\varphi$
+            \begin{gather*}
+                r \geq 0 \implies \cos 2 \varphi \geq 0\\
+                -\frac{\pi}{2} \leq 2 \varphi \leq \frac{\pi}{2}\\
+                -\frac{\pi}{4} \leq \varphi \leq \frac{\pi}{4}
+            \end{gather*}
+            \begin{center}
+                \includegraphics[max size={\linewidth}{7cm}]{6.9.9.png}
+            \end{center}
+            \item $r = 1 + \cos \varphi$ - кардиоида
+            \begin{gather*}
+                r \geq 0 \implies 1 + \cos \varphi \geq 0\\
+                \cos \varphi \geq -1\\
+                \varphi \in [0; 2\pi]
+            \end{gather*}
+            \begin{center}
+                \includegraphics[max size={\linewidth}{7cm}]{6.9.10.png}
+            \end{center}
+        \end{enumerate}
+        Как записать прямую в полярной системе координат?
         \begin{center}
-            \includegraphics[max size={\linewidth}{7cm}]{6.9.5.png}\\
+            \includegraphics[max size={\linewidth}{7cm}]{6.9.11.png}
         \end{center}
-        \begin{center}
-            \includegraphics[max size={\linewidth}{100em}]{6.9.6.png}\\
-        \end{center}
-        \underline{Пример:} как записать прямую в полярной системе координат?
         \begin{adjustwidth}{1.5em}{1.5em}
             \[ y = x + 1 \]
             \[ r \sin \varphi = r \cos \varphi + 1 \]
@@ -1244,7 +1301,7 @@
         \underline{Площадь криволинейной трапеции в полярной системе координат:}\\
         Найти площадь криволинейной сектора, ограниченного дугой $r=r(\varphi)$ и двумя полярными радиусами $\varphi = \alpha$ и $\varphi = \beta$
         \begin{center}
-            \includegraphics[max size={\linewidth}{7cm}]{6.9.7.png}
+            \includegraphics[max size={\linewidth}{7cm}]{6.9.12.png}
         \end{center}
         $R: \alpha=\varphi_0<\varphi_1<\dots<\varphi_n=\beta$\\
         В каждом элементарном секторе выберем произвольно $\varphi=\xi_i$.\\
@@ -1265,13 +1322,13 @@
         z=z(t)
     \end{cases} \;\;\;\;\; a\leq t \leq b \]
     \indent где $x(t)$, $y(t)$, $z(t)$ непрерывны определяют в пространстве \textbf{непрерывную кривую} $Г$.\\
-    Если функции $x(t)$, $y(t)$, $z(t)$ не только непрерывны, но и имеют непрерывные $x'(t)$, $y'(t)$, $z'(t)$, одновременно не образующиеся в ноль $\forall t \in [a;b] \;\;\; (x'(t)^2 + y'(t)^2 + z'(t)^2 \ne 0), $ то кривая называется \textbf{гладкой}.
+    Если функции $x(t)$, $y(t)$, $z(t)$ не только непрерывны, но и имеют непрерывные $x'(t)$, $y'(t)$, $z'(t)$, одновременно не образующиеся в ноль $\forall t \in [a;b] \;\;\; (x'(t)^2 + y'(t)^2 + z'(t)^2 \ne 0),$ то кривая называется \textbf{гладкой}.
     \begin{center}
         \includegraphics[max size={\linewidth}{7cm}]{6.10.1.png}
     \end{center}
     $ R: a=x_0<x_1<\dots<x_n=b $\\
     Каждой точке $x_i$ на кривой соответствует точке $M_i$. Соединим все соседние точки ломаными $M_iM_{i+1}$.
-    \[ \left|Г}n\right|=\sum_{i=0}^{n-1}\left|M_iM_{i+1}\right| \]
+    \[ \left|Г_n\right|=\sum_{i=0}^{n-1}\left|M_iM_{i+1}\right| \]
     Если $\exists$ конечный предел $\lim_{\lambda_R \to 0} \left|Г_n\right|$, то он называется \textbf{длиной} кривой $y=f(x)$ на $[a; b]$\\
     Или: \textbf{длина} кривой - точная верхняя грань $\left|Г_n\right| \;\;\; l=\sup\left|Г_n\right|$\\
     Если $l$ - конечное, то кривая называется \textbf{спрямляемой}.\\
@@ -1504,6 +1561,9 @@
     Пусть $f(x)$ непрерывна $\forall x \in [a;b]/c \;\;\; a \leq c \leq b$\\
     Тогда: 
     \[ \int_{a}^{b}f(x)dx=\int_{a}^{c} f(x)dx+\int_{c}^{b} f(x)dx=\lim_{\varepsilon \to 0}\int_{a}^{c-\varepsilon}f(x)dx+\lim_{\varepsilon \to 0}\int_{c+\varepsilon}^{b}f(x)dx \]
+    \begin{center}
+        \includegraphics[max size={\linewidth}{7cm}]{6.15.1.png}
+    \end{center}
     Если оба предела $\exists$, то интеграл сходится.\\
     Если хотя бы один $\nexists$ или $\pm \infty$, то расходится.\\
     \underline{Замечание:} точка $c$ может быть $c=a$ или $c=b$.\\
