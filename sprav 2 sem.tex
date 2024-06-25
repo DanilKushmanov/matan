@@ -738,13 +738,13 @@
         $I_* \leq I^* \;\; \forall R$\\
         $\underline{S_R} \leq I_* \leq I^* \leq \overline{S_R}$
         \item \subsubsection*{Теорема 6.4.1 (о существовании интеграла)}\label{th:6.4.1}
-        Для того, чтобы определённый интеграл, ограниченный функции $f(x)$ существовал $\Longleftrightarrow$ $\lim_{\lambda_R \to 0} (\overline{S_r}- \underline{S_r})=0$,
-        т.е. $\lim_{\lambda_R \to 0}\sum_{i=0}^{n-1} \omega_i \Delta x_i$ \par\noindent
+        Для того, чтобы определённый интеграл, ограниченный функции $f(x)$ существовал $\Longleftrightarrow$\\
+        $\lim_{\lambda_R \to 0} (\overline{S_r}- \underline{S_r})=0$, т.е. $\lim_{\lambda_R \to 0}\sum_{i=0}^{n-1} \omega_i \Delta x_i$ \par\noindent
         \underline{Доказательство:}
         \begin{adjustwidth}{1.5em}{1.5em}
             \textbf{Докажем необходимость ($\Rightarrow$)}\\
             Пусть определённый интеграл от ограниченной функции $f(x)$ $\exists$ на $[a;b]$\\
-            Тогда:
+            Тогда
             \[ \lim_{\lambda_R \to 0} \sigma_R = I\]
             Т.е. 
             \[ \forall \varepsilon > 0\,\exists\,\delta > 0: \lambda_R < \delta \Rightarrow |\sigma_R - I| < \varepsilon \]
@@ -773,7 +773,7 @@
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
         Если $f(x)$ непрерывна на $[a; b]$, то она равномерно непрерывна на нём.\\
-        Тогда:
+        Тогда
         \[\forall\varepsilon>0\,\exists\,\delta>0:\forall x',x'' \in [a;b]: |x'-x''|<\delta \Rightarrow |f(x')-f(x'')|<\varepsilon\]
         Произведём разбиение $R: \lambda_R < \delta$\\
         Тогда 
@@ -1078,7 +1078,7 @@
                 Предположим противное: пусть на $(a;b)$ $\nexists$ точка $\xi$ такая, что $f(\xi)=\mu=M$.\\
                 Тогда своего наибольшего значения $f(x)$ достигает в какой-либо точке или $x=a$, или $x=b$.\\
                 Рассмотрим $[a+\varepsilon; b-\varepsilon]$: $f(x)$ непрерывна на нём $\implies$ по 2-ой теореме Вейерштрасса (3.8.2) $\exists$ точка $x_0$, в которой $f(x)$ достигает своего наибольшего значения.\\
-                Тогда: 
+                Тогда 
                 \[ M-f(x_0)=\underset{x \in [a+\varepsilon; b-\varepsilon]}{\min(M - f(x))} \]
                 Т.к. $\mu=M$, то по \hyperref[th:6.7.2]{интегральной теореме о среднем (6.7.2)}: 
                 \[ \int_{a}^{b} f(x)g(x)dx=M\int_{a}^{b}g(x)dx \implies \overbrace{\int_{a}^{b}(M-f(x))g(x)dx=0} \]
@@ -1117,10 +1117,10 @@
     \end{adjustwidth}
     \underline{Замечание:} рассмотрим
     \begin{align*}
-        \int_{a}^{b} f(x)dx&=\int_{a}^{b}f(t)dt & &\\
-        \int_{a}^{b} f(t)dt&=\int_{a}^{x}f(t)dt+\int_{x}^{b} f(t)dt & x &\in (a;b)\\
-        \int_{a}^{b} f(t) dt &= F(x)+G(x) & G'(x)&=-F'(x)\\
-        0&=F'(x)+G'(x) & G'(x_0)&=-F'(x_0)=-f(x_0)
+        &\int_{a}^{b} f(x)dx=\int_{a}^{b}f(t)dt & &\\
+        &\int_{a}^{b} f(t)dt=\int_{a}^{x}f(t)dt+\int_{x}^{b} f(t)dt & &x \in (a;b)\\
+        &\int_{a}^{b} f(t) dt = F(x)+G(x) & &G'(x)=-F'(x)\\
+        &0=F'(x)+G'(x) & &G'(x_0)=-F'(x_0)=-f(x_0)
     \end{align*}
 
     \subsection{Существование первообразных для непрерывных функций. Основные правила интегрирования.}
@@ -1312,7 +1312,7 @@
         \[ S_i=\frac{1}{2} r^2(\xi_i) \Delta \varphi_i \]
         Составим $\sigma_R$:
         \[ \sigma_R = \sum_{i=0}^{n-1} \frac{1}{2} r^2(\xi_i) \Delta \varphi_i \]
-        Тогда: 
+        Тогда 
         \[ S=\lim_{\lambda_R \to 0}\sigma_R = \boxed{ \int_{a}^{b}\frac{1}{2} r^2(\xi_i) \Delta \varphi_i=S }\]
     \end{enumerate}
 
@@ -1323,16 +1323,16 @@
         y=y(t)\\
         z=z(t)
     \end{cases} \;\;\;\;\; a\leq t \leq b \]
-    \indent где $x(t)$, $y(t)$, $z(t)$ непрерывны определяют в пространстве \textbf{непрерывную кривую} $Г$.\\
+    \indent где $x(t)$, $y(t)$, $z(t)$ непрерывны определяют в пространстве \textbf{непрерывную кривую} $\Gamma$.\\
     Если функции $x(t)$, $y(t)$, $z(t)$ не только непрерывны, но и имеют непрерывные $x'(t)$, $y'(t)$, $z'(t)$, одновременно не образующиеся в ноль $\forall t \in [a;b] \;\;\; (x'(t)^2 + y'(t)^2 + z'(t)^2 \ne 0),$ то кривая называется \textbf{гладкой}.
     \begin{center}
         \includegraphics[max size={15cm}{10cm}]{6.10.1.png}
     \end{center}
     $ R: a=x_0<x_1<\dots<x_n=b $\\
     Каждой точке $x_i$ на кривой соответствует точке $M_i$. Соединим все соседние точки ломаными $M_iM_{i+1}$.
-    \[ \left|Г_n\right|=\sum_{i=0}^{n-1}\left|M_iM_{i+1}\right| \]
-    Если $\exists$ конечный предел $\lim_{\lambda_R \to 0} \left|Г_n\right|$, то он называется \textbf{длиной} кривой $y=f(x)$ на $[a; b]$\\
-    Или: \textbf{длина} кривой - точная верхняя грань $\left|Г_n\right| \;\;\; l=\sup\left|Г_n\right|$\\
+    \[ \left|\Gamma_n\right|=\sum_{i=0}^{n-1}\left|M_iM_{i+1}\right| \]
+    Если $\exists$ конечный предел $\lim_{\lambda_R \to 0} \left|\Gamma_n\right|$, то он называется \textbf{длиной} кривой $y=f(x)$ на $[a; b]$\\
+    Или: \textbf{длина} кривой - точная верхняя грань $\left|\Gamma_n\right| \;\;\; l=\sup\left|\Gamma_n\right|$\\
     Если $l$ - конечное, то кривая называется \textbf{спрямляемой}.\\
     Найдем $\left|M_iM_{i+1}\right|$:\\
     \begin{center}
@@ -1561,7 +1561,7 @@
 
     \subsection{Несобственные интегралы 2-го рода}\noindent
     Пусть $f(x)$ непрерывна $\forall x \in [a;b]/c \;\;\; a \leq c \leq b$\\
-    Тогда: 
+    Тогда 
     \[ \int_{a}^{b}f(x)dx=\int_{a}^{c} f(x)dx+\int_{c}^{b} f(x)dx=\lim_{\varepsilon \to 0}\int_{a}^{c-\varepsilon}f(x)dx+\lim_{\varepsilon \to 0}\int_{c+\varepsilon}^{b}f(x)dx \]
     \begin{center}
         \includegraphics[max size={15cm}{10cm}]{6.15.1.png}
@@ -1669,7 +1669,7 @@
     \end{adjustwidth}
     \subsubsection*{Теорема 6.17.1 (1-й признак сравнения несобственных интегралов)}\label{th:6.17.1}\noindent
     Пусть $0\leq g(x) \leq f(x) \;\;\; x\in [a;b)$\\
-    Тогда:
+    Тогда
     \begin{enumerate}
         \item Если $\int_{a}^{b}f(x)dx$ сх. $\implies \int_{a}^{b}g(x)dx$ сх.
         \item Если $\int_{a}^{b}g(x)dx$ расх. $\implies \int_{a}^{b}f(x)dx$ расх.
@@ -1973,7 +1973,7 @@
     \end{center}
     Функция $z = f(x;y)$ называется \textbf{дифференцируемой} в точке $M_0 (x_0; y_0)$, если существуют конечные $A$ и $B$ такие, что приращение $\Delta z$ в окрестности точки $M_0$ представимо в виде
     \[ \Delta z = A \Delta x + B \Delta y + o(\rho), \rho \to 0, \rho = \sqrt{\Delta x^2 + \Delta y^2} \]
-    \underline{Замечание:} рассмотрим $\varepsilon = \varepsilon (\Delta x; \Delta y): \lim_{\rho \to 0}\varepsilon = 0$. Тогда $o(\rho) = \underset{\text{б. малое}}{\varepsilon(\Delta x; \Delta y)} \times \underset{\text{б. малое}}{\rho}$. Тогда:
+    \underline{Замечание:} рассмотрим $\varepsilon = \varepsilon (\Delta x; \Delta y): \lim_{\rho \to 0}\varepsilon = 0$. Тогда $o(\rho) = \underset{\text{б. малое}}{\varepsilon(\Delta x; \Delta y)} \times \underset{\text{б. малое}}{\rho}$. Тогда
     \[ \Delta z = A \Delta x + B \Delta y + \varepsilon (\Delta x; \Delta y) \times \rho \]
     Если $z = f(x; y)$ дифференцируема в точке $(x_0; y_0)$, то линейная часть приращения $\Delta z = A \Delta x + B \Delta y$ называется \textbf{дифференциалом} функции $z$ в точке $(x_0; y_0)$.
     \begin{gather*}
@@ -2370,7 +2370,7 @@
     \[ f(x_0 + \Delta x; y_0 + \Delta y) = \sum_{k=0}^{n} \frac{1}{k!}\left( \frac{\partial }{\partial x}\Delta x + \frac{\partial }{\partial y}\Delta y \right)^{(k)} f \Big|_{(x_0; y_0)} + \underbrace{o(\rho^n)}_{\text{ост. член в форме Пеано}} \]
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
-        Рассмотрим $F(t)$. Пусть $F(t)$ $(n + 1)$ раз дифференцируема в точке $t_0$. Тогда:
+        Рассмотрим $F(t)$. Пусть $F(t)$ $(n + 1)$ раз дифференцируема в точке $t_0$. Тогда
         \[ F(t) = F(t_0) + \frac{F'(t_0)}{1!}(t-t_0) + \frac{F''(t_0)}{2!}(t-t_0)^2 + \dots + \frac{F^{(n)}(t_0)}{n!}(t-t_0)^n + \frac{F^{(n+1)}(\xi)}{(n+1)!}(t-t_0)^{n+1} \]
         \[ \underbrace{F(t) - F(t_0)}_{\Delta F} = \frac{1}{1!}dF\Big|_{t=t_0} + \frac{1}{2!}d^2F\Big|_{t=t_0} + \dots + \frac{1}{n!}d^nF\Big|_{t=t_0} + \frac{1}{(n+1)!}d^{n+1}F\Big|_{t=\xi} \]
         Рассмотрим $f = f(x; y)$. Пусть $M_0(x_0; y_0)$, $M(x; y) = M(x_0 + \Delta x; y_0 + \Delta y)$.\\

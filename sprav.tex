@@ -345,7 +345,7 @@
         \end{center}    
     \end{adjustwidth}
 
-    \textbf{Лемма 2:} $\forall a,b \in R$ $\exists$ $\alpha \in Q$ $|$ $a < \alpha < b$\par\noindent
+    \noindent \textbf{Лемма 2:} $\forall a,b \in R$ $\exists$ $\alpha \in Q$ $|$ $a < \alpha < b$\par\noindent
     \underline{Замечание:} таких $\alpha$ бесконечно много.\par\noindent
     \underline{Доказательство:} 
     \begin{adjustwidth}{1.5em}{1.5em}
@@ -363,7 +363,7 @@
         \end{center}
     \end{adjustwidth}
 
-    \textbf{Лемма 3:} пусть $a,b \in R$. Если $\forall \varepsilon > 0, \varepsilon \in Q$ $|$ $\exists$ $\gamma_{1}, \gamma_{2} \in Q$ $|$ $\gamma_{1} \le a \le \gamma_{2}$ и $\gamma_{1} \le b \le \gamma_{2}$ и $\gamma_{1} - \gamma_{2} < \varepsilon$, то $a = b$.\par\noindent
+    \noindent \textbf{Лемма 3:} пусть $a,b \in R$. Если $\forall \varepsilon > 0, \varepsilon \in Q$ $|$ $\exists$ $\gamma_{1}, \gamma_{2} \in Q$ $|$ $\gamma_{1} \le a \le \gamma_{2}$ и $\gamma_{1} \le b \le \gamma_{2}$ и $\gamma_{1} - \gamma_{2} < \varepsilon$, то $a = b$.\par\noindent
     \underline{Доказательство:} 
     \begin{adjustwidth}{1.5em}{1.5em}
         Предположим противное.\\
@@ -1013,7 +1013,7 @@
             x_{n_0 + 1} - \varepsilon < x_n <  x_{n_0 + 1} + \varepsilon
         \end{gather*}
         Обозначим $d = max\{|x_1|, |x_2|, \dots, |x_{n_0}|, |x_{n_0+1} + \varepsilon|\}$.\\
-        Тогда:
+        Тогда
         \[ \forall n \in N \Rightarrow -d \le x_n \le d \]
         Т.е. $\posl{x}{n}$ ограничена.
         \begin{center}
@@ -1625,9 +1625,9 @@
         $\lim_{k\to\infty}x_{n_k}' = \lim_{k\to\infty}x_{n_k}'' = x_0$\\
         Т.к. $f(x)$ непрерывна на $[a; b]$, то она непрерывна в точке $x_0 \in [a;b]$\\
         Значит $\lim_{k\to\infty}f(x'_{n_k}) = \lim_{k\to\infty}f(x''_{n_k}) = f(x_0)$\\
-        Рассмотрим $|f(x') - f(x'')| \ge \varepsilon \,\,\,\, \circledast$
+        Рассмотрим $|f(x') - f(x'')| \ge \varepsilon \,\,\,\, (*)$
         \begin{adjustwidth}{1.5em}{1.5em}
-            Перейдем в $\circledast$ к пределу при $k \to \infty$
+            Перейдем в $(*)$ к пределу при $k \to \infty$
             \[ \varepsilon \le | \lim_{k\to\infty}f(x'_{n_k}) - \lim_{k\to\infty}f(x''_{n_k})| = |f(x_0) - f(x_0)| = 0 \]
             Получили противоречие, т.к. $\varepsilon > 0 \implies f(x)$ - непрерывна.
         \end{adjustwidth}
@@ -2006,7 +2006,7 @@
     Тогда $\Delta y = dy+o(\Delta x)$\par\noindent
     \underline{Замечание:} $o(\Delta x)=o(A\Delta x)=o(dy)$
     \begin{adjustwidth}{1.5em}{1.5em}
-        Тогда:
+        Тогда
         \[\Delta y = dy + o(dy)\,\,\,\,\Big| : dy\]
         \[\frac{\Delta y}{dy}=1+\frac{o(dy)}{dy}\]
         \[\lim_{\Delta x \to 0}{\frac{\Delta y}{dy}}=1\]
@@ -2249,7 +2249,7 @@
         Т.к. $f(x), g(x)$ непрерывны на $[a;b]$ и дифференцируемы на $(a;b) \implies F(x)$ непрерывна на $[a;b]$ и дифференцируема на $(a;b)$\\
         $F(a) = 0; F(b) = 0$\\
         Т.е. $F(x)$ удовлетворяет условию \hyperref[th:4.12.2]{теоремы Ролля (4.12.2)} $\implies \exists$ точка $\xi \in (a;b) : F'(\xi) = 0$.\\
-        Тогда:
+        Тогда
         \[ F'(x) = f'(x) - \frac{f(b) - f(a)}{g(b) - g(a)} \times g'(x) \]
         \[ F'(\xi) = 0 \implies f'(\xi) - \frac{f(b) - f(a)}{g(b) - g(a)} \times g'(\xi) = 0 \]
         \[ \frac{f(b) - f(a)}{g(b) - g(a)} \times g'(\xi) = f'(\xi) \,\,\,\, \Big| \times g'(\xi) \ne 0 \]
@@ -2273,11 +2273,11 @@
     \[ \frac{f(b) - f(a)}{b-a} = \tg \angle A = f'(\xi) \]
     $\exists$ точка $\xi \in (a;b)$ : касательная к графику функции в этой точке $\parallel$-на хорде $AB$\par\noindent
     \underline{Замечание:} промежуточное значение $\xi$ можно записать в виде $\xi = a + \theta(b-a), 0 < \theta < 1$\\
-    Тогда:
+    Тогда
     \[ \boxed{ f(b) - f(a) = f'(a + \theta (b-a)) \times (b-a) } \]
     Пусть $(b-a) = \Delta x$:\\
     \[f(b) - f(a) = f(x+\Delta x) - f(x)\]
-    Тогда:
+    Тогда
     \[ \boxed{ f(x+\Delta x) - f(x) = f'(x+\theta \Delta x) \Delta x } \]
     Все три формулы называются \textbf{формулами конечных приращений Лагранжа}.
     
@@ -2422,7 +2422,7 @@
             \boxed{ \frac{r_n(x)}{\varphi(x)} } = \frac{r_n(x) - r_n(x_0)}{\varphi(x) - \varphi(x_0)} = \underset{x_1 \in (x_0; x) \text{ или } (x; x_0)}{\frac{r'_n(x_1)}{\varphi'(x_1)}} = \frac{r'_n(x_1) - r'_n(x_0)}{\varphi'(x_1) - \varphi'(x_0)} = \underset{x_2 \in (x_0; x_1) \text{ или } (x_1; x_0)}{\frac{r''_n(x_2)}{\varphi''(x_2)}} =\\
             = \dots = \frac{r^{(n)}_n(x_n)}{\varphi^{(n)}(x_n)} = \frac{r^{(n)}(x_n) - r^{(n)}_n(x_0)}{\varphi^{(n)}(x_n)-\varphi^{(n)}(x_0)} = \underset{\xi \in (x_0;x_n) \text{ или } (x_n; x_0)}{\boxed{\frac{r^{(n+1)}_n(\xi)}{\varphi^{(n+1)}(\xi)}}}
         \end{gather*}
-        Тогда: \[ r_n(x) = \frac{\varphi(x) \times r^{(n+1)}_n(\xi)}{\varphi^{(n+1)}(\xi)}; \varphi(x) = (x-x_0)^{(n+1)} \]
+        Тогда \[ r_n(x) = \frac{\varphi(x) \times r^{(n+1)}_n(\xi)}{\varphi^{(n+1)}(\xi)}; \varphi(x) = (x-x_0)^{(n+1)} \]
         \begin{align*}
             r^{(n+1)}_n (x) &= f^{(n+1)}(x) - Q^{(n+1)}_n(x)\\
             r^{(n+1)}_n (\xi) &= f^{(n+1)}(\xi)\\
@@ -2526,7 +2526,7 @@
     \begin{center}
         \includegraphics[max size={15cm}{10cm}]{4.16.1}
     \end{center}
-    \underline{Замечание:} если функция непрерывна на $(a;b)$ и имеет во всех его точках, кроме, может быть \underline{конечного числа} неотрицательную (положительную) производную, то функция неубывающая (возрастающая) на $(a;b)$.
+    \underline{Замечание:} если функция непрерывна на $(a;b)$ и имеет во всех его точках, кроме, может быть \underline{конечного}\underline{ числа} неотрицательную (положительную) производную, то функция неубывающая (возрастающая) на $(a;b)$.
 
     \subsection{Необходимое и достаточное условие экстремума}
     \subsubsection*{Теорема 4.17.1 (необходимое условие экстремума)}\label{th:4.17.1}
@@ -2709,7 +2709,7 @@
         Пусть $f(x)$ имеет конечную асимптоту при $x \to +\infty$.\\
         Тогда по определению:
         \[ \lim_{x\to +\infty} [ f(x) - (kx+b) ] = 0 \]
-        Тогда:
+        Тогда
         \[ f(x) - (kx+b) = 0 + \alpha(x); \;\;\; \lim_{x \to +\infty} \alpha(x) = 0 \]
         \[ \lim_{x \to +\infty}\frac{f(x)}{x} = \lim_{x\to +\infty} (k + \frac{b}{x} + \frac{\alpha(x)}{x}) = k \]
         \[ \lim_{x \to +\infty} (f(x) - kx) = \lim_{x \to +\infty}(b + \alpha(x)) = b \]\noindent
