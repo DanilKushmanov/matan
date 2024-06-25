@@ -591,7 +591,7 @@
     \subsection{Задачи приводящие к понятию определённого интеграла.}
     \subsubsection{Площадь криволинейной трапеции} 
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{6.1.1.png}
+        \includegraphics[max size={15cm}{10cm}]{6.1.1.png}
     \end{center}
     \indent Пусть $f(x)\geq 0$\\
     \begin{enumerate}
@@ -609,7 +609,7 @@
     
     \subsubsection{Вычисление массы неоднородного тонкого стержня}
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{6.2.1}
+        \includegraphics[max size={15cm}{10cm}]{6.2.1}
     \end{center}\noindent
     $\rho(\xi_i)$. Пусть $\rho = const = \rho (\xi_i)\;\;\forall x \in [x_i;x_{i+1}]$\\
     $m_i=\rho(\xi_i) \Delta x_i$\\
@@ -619,7 +619,7 @@
     Пусть на $[a;b]$ задана функция $f(x)$\\
     \begin{enumerate}
         \item Произведём разбиение отрезка $[a;b]$ - R.\\
-        $R \;\; a=x_0<x_1<\dots<x_n=b$. Пусть $\lambda_r = \underset{i}{max}[x_i;x_{i+1}]$ - диаметр разбиения.
+        $R: a=x_0<x_1<\dots<x_n=b$. Пусть $\lambda_r = \underset{i}{max}[x_i;x_{i+1}]$ - диаметр разбиения.
         \item В каждом элементарном [$x_i;x_{i+1}$] произвольным образом выберем $\xi_i$.
         \item Вычислим $f(\xi_i)\Delta x_i$.
         \item Составим $\sigma_R=\sum_{i=0}^{n-1} f(\xi_i) \Delta x_i$ - интегральная сумма.
@@ -680,10 +680,10 @@
 
     \subsection{Суммы Дарбу}
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{6.4.1.png}
+        \includegraphics[max size={15cm}{10cm}]{6.4.1.png}
     \end{center}\noindent
     Пусть $f(x)$ задана на $[a;b]$ и ограничена на нём.\\
-    $R\;\; a=x_0<x_1<\dots<x_n=b$\\
+    $R: a=x_0<x_1<\dots<x_n=b$\\
     Пусть $m_i = \underset{x \in [x_i;x_{i+1}]}{\inf f(x)}$, $M_i = \underset{x \in [x_i;x_{i+1}]}{\sup f(x)}$.\\
     Составим $\sigma_R$:
     \[ \sigma_R = \sum_{i=0}^{n-1} f(\xi_i) \Delta x_i \]
@@ -757,13 +757,14 @@
             Т. е. $\lim_{\lambda_R \to 0} \overline{S_R} = \lim_{\lambda_R \to 0} \underline{S_R}$\\
             $\{\overline{S_R}\}$ невозрастающая, ограниченная снизу, т.е. $\lim_{\lambda_R} \overline{S_R} = I^*$\\
             Аналогично $\lim_{\lambda_R} \underline{S_R} = I_*$. Тогда $I^* = I_* = I$.\\
-            \includegraphics[max size={\linewidth}{7cm}]{6.4.2.png}
+            \begin{center}
+                \includegraphics[scale=0.5]{6.4.2.png}
+            \end{center}
             \begin{center}
                 \textbf{Ч.т.д.}
             \end{center}
         \end{adjustwidth}
     \end{enumerate}
-    %параграф 5 дописать надо%
     \subsection{Достаточное условия интегрируемости функций}
     \subsubsection*{Теорема 6.5.1}\label{th:6.5.1}
     Функция, непрерывная на отрезке, интегрируема на нём.\par\noindent
@@ -783,7 +784,7 @@
         \end{gather*}
         $\fbox{=} \underset{x',x'' \in \Delta x}{\sup}|f(x')=f(x'')|<\varepsilon$\\
         \begin{center}
-            \includegraphics[max size={\linewidth}{7cm}]{6.5.1.png}\\
+            \includegraphics[max size={15cm}{10cm}]{6.5.1.png}\\
         \end{center}
         Рассмотрим 
         \[ \sum_{i=0}^{n-1} \omega_i \Delta x_i < \varepsilon \sum_{i=0}^{n-1} \Delta x_i = \varepsilon (b-a) \]
@@ -817,7 +818,7 @@
     Монотонные функции могут быть разрывными.\\
     Т.е. по \hyperref[th:6.5.2]{теореме 6.5.2} $\exists$ разрывные интегрируемые функции.
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{6.5.2.png}
+        \includegraphics[max size={15cm}{10cm}]{6.5.2.png}
     \end{center}
 
     \subsection{Свойства интегрируемых функций}
@@ -832,7 +833,7 @@
         \begin{adjustwidth}{1.5em}{1.5em}
             а)
             \begin{center}
-                \includegraphics[max size={\linewidth}{7cm}]{6.6.1.png}\\
+                \includegraphics[max size={15cm}{10cm}]{6.6.1.png}\\
             \end{center}
             Произведем разбиение $R$ $[a;b]$\\
             $R$: $a=x_0<x_1<\dots<x_m=c<\dots<x_n=b$\\
@@ -859,7 +860,7 @@
             Пусть 
             \[ R: a=x_0<x_1<\dots<\underset{x_m < c < x_{m+1}}{x_m<x_{m+1}}< \dots <x_n=b \]
             \begin{center}
-                \includegraphics[max size={\linewidth}{7cm}]{6.6.2.png}
+                \includegraphics[max size={15cm}{10cm}]{6.6.2.png}
             \end{center}
             \[ \sigma_{R'}=\sigma_R-f(\xi_m)(x_{m+1}-x_m)+f(\xi_m')(c-x_m)+f(\xi_m'')(x_{m+1}-c) \implies \sigma_R=\sigma_{R'}+A\]
             Рассмотрим
@@ -874,6 +875,7 @@
                 = \lim_{\lambda_R \to 0}\sigma_{R'} +\lim_{\lambda_R \to 0}A=I
             \end{gather*}
             \begin{center}
+                б)
                 \textbf{Ч.т.д.}
             \end{center}
         \end{adjustwidth}
@@ -883,7 +885,7 @@
         Т.е. $f(x)$ кусочно-непрерывна, если $\exists$ $R$ такое, что $\forall$ точек $x_k \;\;\; k=\overline{0,n-1}$ $\exists$ конечные пределы $\lim_{x \to x_k+0} f(x)$, $\lim_{x\to x_k-0}f(x)$
         В точке $x_k$ $f(x)$ может быть определена, или нет.\\
         \begin{center}
-            \includegraphics[max size={\linewidth}{7cm}]{6.6.3.png}\\
+            \includegraphics[max size={15cm}{10cm}]{6.6.3.png}\\
             \begin{math}
                 f_k(x)=\begin{cases}
                     f(x_k+0),x=x_k\\
@@ -979,7 +981,7 @@
         \item Непрерывность интегралов:\\
         Функция $F(x) = \int_{a}^{x}f(t)dt$ - функция с \textbf{переменным верхним пределом}.
         \begin{center}
-            \includegraphics[max size={\linewidth}{7cm}]{6.7.1.png}
+            \includegraphics[max size={15cm}{10cm}]{6.7.1.png}
         \end{center}
         Аналогично $G(x) = \int_{x}^{b}f(t)dt$ - функция с \textbf{переменным нижним пределом}.
     \end{enumerate}
@@ -1020,8 +1022,10 @@
     \begin{adjustwidth}{1.5em}{1.5em}
         \begin{gather*}
             m \leq f(x) \leq M\;\;\;\; \Big| \times g(x)\\
-            g(x)\geq 0 : mg(x)\leq f(x)g(x)\leq Mg(x) \implies m \int_{a}^{b} g(x) dx \leq \int_{a}^{b}f(x)g(x)dx \leq M \int_{a}^{b}g(x)dx \;\;\;\; \Big| : \int_{a}^{b} g(x)dx\\
-            g(x)\leq 0 : mg(x)\geq f(x)g(x)\geq Mg(x) \implies m \int_{a}^{b} g(x) dx \geq \int_{a}^{b}f(x)g(x)dx \geq M \int_{a}^{b}g(x)dx \;\;\;\; \Big| : \int_{a}^{b} g(x)dx\\
+            g(x)\geq 0 : mg(x)\leq f(x)g(x)\leq Mg(x) \implies\\
+            \implies m \int_{a}^{b} g(x) dx \leq \int_{a}^{b}f(x)g(x)dx \leq M \int_{a}^{b}g(x)dx \;\;\;\; \Big| : \int_{a}^{b} g(x)dx\\
+            g(x)\leq 0 : mg(x)\geq f(x)g(x)\geq Mg(x) \implies\\
+            \implies m \int_{a}^{b} g(x) dx \geq \int_{a}^{b}f(x)g(x)dx \geq M \int_{a}^{b}g(x)dx \;\;\;\; \Big| : \int_{a}^{b} g(x)dx\\
         \end{gather*}
         Если $\int_{a}^{b} g(x)dx = 0 \implies \int_{a}^{b} f(x)g(x)dx =0$ в обоих случаях и $\mu$ любое. 
         \begin{center}
@@ -1044,7 +1048,7 @@
         \[ \int_{a}^{b} f(x) dx=f(\xi)(b-a) \implies f(\xi)= \boxed{\frac{1}{b-a}\int_{a}^{b}f(x)dx} \text{ - формула среднего значения} \]
         \[ f(\xi)=\frac{\int_{a}^{b} f(x)dx}{b-a} \]
         \begin{center}
-            \includegraphics[max size={\linewidth}{7cm}]{6.7.2.png}
+            \includegraphics[max size={15cm}{10cm}]{6.7.2.png}
         \end{center}
         \underline{Доказательство:}
         \begin{adjustwidth}{1.5em}{1.5em}
@@ -1053,17 +1057,17 @@
             \[ m \le f(x) \le M \]
             \[ \underset{x \in [a; b]}{m = \inf f(x)} \;\;\;\; \underset{x \in [a; b]}{M = \sup f(x)} \]
             И по \hyperref[th:6.7.2]{интегральной теореме о среднем (6.7.2)} $m \leq \mu \leq M$.
-            \begin{enumerate}
-                \item случай:\\
+            \begin{adjustwidth}{1.5em}{1.5em}
+                1-й случай:\\
                 Пусть $m<\mu<M$\\
                 По 2-ой теореме Вейерштрасса (3.8.2) $\exists\,\alpha, \beta \in [a;b]: f(\alpha) = m,f(\beta) = M$\\
                 Тогда по теореме Больцано-Коши (3.8.3) $\exists$ точка $\xi$ такая, что:
                 \[ m < f(\xi) < M \]
                 \[ m < \mu < M \;\;\;\; \mu = f(\xi) \]
                 \begin{center}
-                    \textbf{Ч.т.д.}
+                    1) \textbf{Ч.т.д.}
                 \end{center}
-                \item случай:\\
+                2-й случай:\\
                 $\mu=M \text{ или } \mu=m$\\
                 Пусть для определенности $\mu=M$\\
                 Покажем, что и в этом случае на $(a;b)$ $\exists$ точка $\xi$ такая, что $f(\xi)=\mu=M$.\\
@@ -1078,9 +1082,9 @@
                 \[ \int_{a}^{b}(M-f(x))g(x)dx\geq\int_{a+\varepsilon}^{b-\varepsilon}(M-f(x))g(x)dx \geq (M-f(x_0)) \underbrace{\int_{a+\varepsilon}^{b-\varepsilon} g(x)dx>0}_{>0} \]
                 Получили противоречие $\implies \exists$ точка $\xi \in (a;b)$ такая, что $f(\xi)=M=\mu$.
                 \begin{center}
-                    \textbf{Ч.т.д.}
+                    2) \textbf{Ч.т.д.}
                 \end{center}
-            \end{enumerate}
+            \end{adjustwidth}
         \end{adjustwidth}
     \end{adjustwidth}
     \subsubsection*{Теорема 6.7.3 (дифференцирование интеграла по верхнему пределу)}\label{th:6.7.3}
@@ -1187,7 +1191,7 @@
         \item $f(x)$ задана явно на $[a; b]$\\
         Пусть $f(x) \geq 0$
         \begin{center}
-            \includegraphics[max size={\linewidth}{7cm}]{6.9.1.png} 
+            \includegraphics[max size={15cm}{10cm}]{6.9.1.png} 
         \end{center}
         $R: a=x_0<x_1<\dots<x_n=b$\\
         В каждом $[x_i; x_{i+1}]$ произвольно выберем точку $\xi_i$.\\
@@ -1198,11 +1202,11 @@
         \[ \lim_{\lambda_R \to 0}\sigma_R=\int_{a}^{b} f(x)dx=S \]
         \[ S=S_1+S_2+S_3 \]
         \begin{center}
-            \includegraphics[max size={\linewidth}{7cm}]{6.9.2.png} 
+            \includegraphics[max size={15cm}{10cm}]{6.9.2.png} 
         \end{center}
         \[S=\int_{a}^{b}(\underset{\text{большая}}{f_1(x)} - \underset{\text{меньшая}}{f_2(x)})dx\]
         \begin{center}
-            \includegraphics[max size={\linewidth}{7cm}]{6.9.3.png}
+            \includegraphics[max size={15cm}{10cm}]{6.9.3.png}
         \end{center}
         \item Если функция задана параметрически\\
         \begin{align*}
@@ -1231,15 +1235,15 @@
             \boxed{y = r\sin \varphi}
         \end{gather*}
         \begin{center}
-            \includegraphics[max size={\linewidth}{7cm}]{6.9.4.png}
+            \includegraphics[max size={15cm}{10cm}]{6.9.4.png}
         \end{center}
         \[ y = kx \]
         \begin{center}
-            \includegraphics[max size={\linewidth}{7cm}]{6.9.5.png}
+            \includegraphics[max size={15cm}{10cm}]{6.9.5.png}
         \end{center}
         \[ r = a\varphi \;\;\; \varphi \in [0; 2\pi] \]
         \begin{center}
-            \includegraphics[max size={\linewidth}{7cm}]{6.9.6.png}
+            \includegraphics[max size={15cm}{10cm}]{6.9.6.png}
         \end{center}
         \begin{gather*}
             r = \sqrt{x^2 + y^2}\\
@@ -1251,7 +1255,7 @@
         \begin{enumerate}
             \item $r = 3\varphi$
             \begin{center}
-                \includegraphics[max size={\linewidth}{7cm}]{6.9.7.png}\\
+                \includegraphics[max size={15cm}{10cm}]{6.9.7.png}\\
             \end{center}
             \item $r = 2 \sin \varphi$
             \begin{gather*}
@@ -1261,7 +1265,7 @@
                 \pi \leq \varphi \leq 2\pi \text{ - "-"}
             \end{gather*}
             \begin{center}
-                \includegraphics[max size={\linewidth}{7cm}]{6.9.8.png}
+                \includegraphics[max size={15cm}{10cm}]{6.9.8.png}
             \end{center}
             \item $r = 2 \cos 2\varphi$
             \begin{gather*}
@@ -1270,7 +1274,7 @@
                 -\frac{\pi}{4} \leq \varphi \leq \frac{\pi}{4}
             \end{gather*}
             \begin{center}
-                \includegraphics[max size={\linewidth}{7cm}]{6.9.9.png}
+                \includegraphics[max size={15cm}{10cm}]{6.9.9.png}
             \end{center}
             \item $r = 1 + \cos \varphi$ - кардиоида
             \begin{gather*}
@@ -1279,12 +1283,12 @@
                 \varphi \in [0; 2\pi]
             \end{gather*}
             \begin{center}
-                \includegraphics[max size={\linewidth}{7cm}]{6.9.10.png}
+                \includegraphics[max size={15cm}{10cm}]{6.9.10.png}
             \end{center}
         \end{enumerate}
         Как записать прямую в полярной системе координат?
         \begin{center}
-            \includegraphics[max size={\linewidth}{7cm}]{6.9.11.png}
+            \includegraphics[max size={15cm}{10cm}]{6.9.11.png}
         \end{center}
         \begin{adjustwidth}{1.5em}{1.5em}
             \[ y = x + 1 \]
@@ -1295,7 +1299,7 @@
         \underline{Площадь криволинейной трапеции в полярной системе координат:}\\
         Найти площадь криволинейной сектора, ограниченного дугой $r=r(\varphi)$ и двумя полярными радиусами $\varphi = \alpha$ и $\varphi = \beta$
         \begin{center}
-            \includegraphics[max size={\linewidth}{7cm}]{6.9.12.png}
+            \includegraphics[max size={15cm}{10cm}]{6.9.12.png}
         \end{center}
         $R: \alpha=\varphi_0<\varphi_1<\dots<\varphi_n=\beta$\\
         В каждом элементарном секторе выберем произвольно $\varphi=\xi_i$.\\
@@ -1318,7 +1322,7 @@
     \indent где $x(t)$, $y(t)$, $z(t)$ непрерывны определяют в пространстве \textbf{непрерывную кривую} $Г$.\\
     Если функции $x(t)$, $y(t)$, $z(t)$ не только непрерывны, но и имеют непрерывные $x'(t)$, $y'(t)$, $z'(t)$, одновременно не образующиеся в ноль $\forall t \in [a;b] \;\;\; (x'(t)^2 + y'(t)^2 + z'(t)^2 \ne 0),$ то кривая называется \textbf{гладкой}.
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{6.10.1.png}
+        \includegraphics[max size={15cm}{10cm}]{6.10.1.png}
     \end{center}
     $ R: a=x_0<x_1<\dots<x_n=b $\\
     Каждой точке $x_i$ на кривой соответствует точке $M_i$. Соединим все соседние точки ломаными $M_iM_{i+1}$.
@@ -1328,7 +1332,7 @@
     Если $l$ - конечное, то кривая называется \textbf{спрямляемой}.\\
     Найдем $\left|M_iM_{i+1}\right|$:\\
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{6.10.1.png}
+        \includegraphics[max size={15cm}{10cm}]{6.10.1.png}
     \end{center}
     \begin{gather*}
         |M_iM_{i+1}|=\sqrt{\Delta x_i^2+\Delta y_i^2}=\sqrt{\Delta x_i^2\left(1+\frac{\Delta y_i^2}{\Delta x_i^2}\right)}+\sqrt{1+\frac{\Delta y_i^2}{\Delta x_i^2}} \times \Delta x_i =\\
@@ -1395,7 +1399,7 @@
     \subsection{Вычисление объема тела вращения}
     Пусть задана кривая $y=f(x) \;\;\; a\leq x\leq b$
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{6.11.1.png}
+        \includegraphics[max size={15cm}{10cm}]{6.11.1.png}
     \end{center}
     \[ R:a=x_0<x_1<\dots<x_n=b \]
     В каждом элементарном $[x_i; x_{i+1}]$ произвольно выберем точку $\xi_i$\\
@@ -1434,7 +1438,7 @@
     \subsection{Площадь поверхностей тела вращения}
     Пусть $f(x) \geq 0 \;\;\; \forall x \in [a;b]$\\
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{6.12.1.png}
+        \includegraphics[max size={15cm}{10cm}]{6.12.1.png}
     \end{center}
     \[ R:a=x_0<x_1<x_2<\dots<x_n=b \]
     \[ S_{\text{бок}} = \pi (R + r)l \]
@@ -1478,7 +1482,7 @@
         Пусть точка движется вдоль оси $OX$ под действием переменной силы $F(x)$.\\
         Точка перемещается из $x=a$ в $x=b$.
         \begin{center}
-            \includegraphics[max size={\linewidth}{7cm}]{6.13.1.png}
+            \includegraphics[max size={15cm}{10cm}]{6.13.1.png}
         \end{center}
         \begin{enumerate}
             \item $R: a=x_0<x_1<\dots<x_n=b$
@@ -1490,7 +1494,7 @@
         \item Центр тяжести кривой и её моменты относительно осей\\
         Рассмотрим $f(x) \geq 0$ на $[a;b]$
         \begin{center}
-            \includegraphics[max size={\linewidth}{7cm}]{6.13.2.png}
+            \includegraphics[max size={15cm}{10cm}]{6.13.2.png}
         \end{center}
         $R: a=x_0<x_1<\dots<x_n=b$\\
         Будем рассматривать $M_iM_{i+1}$ - как ломаные, имеющие массу. $\rho =$[кг/м] - линейная плотность.\\
@@ -1516,7 +1520,7 @@
         \end{adjustwidth}
         \item Центр тяжести плоской фигуры и её момент относительно осей:
         \begin{center}
-            \includegraphics[max size={\linewidth}{7cm}]{6.13.3.png}
+            \includegraphics[max size={15cm}{10cm}]{6.13.3.png}
         \end{center}
         Пусть $f(x)\geq 0, g(x)\geq 0 \;\;\; \forall x \in [a;b]$\\
         Пусть $0 \leq g(x) \leq f(x)$\\
@@ -1556,7 +1560,7 @@
     Тогда: 
     \[ \int_{a}^{b}f(x)dx=\int_{a}^{c} f(x)dx+\int_{c}^{b} f(x)dx=\lim_{\varepsilon \to 0}\int_{a}^{c-\varepsilon}f(x)dx+\lim_{\varepsilon \to 0}\int_{c+\varepsilon}^{b}f(x)dx \]
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{6.15.1.png}
+        \includegraphics[max size={15cm}{10cm}]{6.15.1.png}
     \end{center}
     Если оба предела $\exists$, то интеграл сходится.\\
     Если хотя бы один $\nexists$ или $\pm \infty$, то расходится.\\
@@ -1834,7 +1838,7 @@
     Пусть каждой паре $(x; y) \in E$ по некоторому закону ставится в соответствие единственное число $z$. Тогда говорят, что на $E$ определена функция $z = f(x; y)$.\\
     \underline{Примеры:}
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{7.1.1.png}
+        \includegraphics[max size={15cm}{10cm}]{7.1.1.png}
     \end{center}
     Рассмотрим множество упорядоченных систем
     \[ (x_1, x_2, \dots, x_n), n \in N \]
@@ -1861,7 +1865,7 @@
     Точки множества называется внешними точками, если $\exists$ $\varepsilon$-окрестность, не содержащая ни одной точки множества.\par\noindent
     Пусть в $R^n$
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{7.1.2.png}
+        \includegraphics[max size={15cm}{10cm}]{7.1.2.png}
     \end{center}
     Т.е. в пространстве $R^n$ задана последовательность $\{x^k\}$.\\
     Точка $x^0 = (x^0_1, x^0_2, x^0_3, \dots, x^0_n)$ называется пределом последовательности $\{x^k\}$, если $\lim_{k\to\infty} \rho(x^k, x^0) = 0$\\
@@ -1885,7 +1889,7 @@
         \end{cases}\text{ - параметрическое уравнение прямой} \]
         Пусть $t \ge 0$. Получим луч, выходящий из точки $(x_0; y_0)$ в направлении $\overline{\omega}$.
         \begin{center}
-            \includegraphics[max size={\linewidth}{7cm}]{7.2.1.png}
+            \includegraphics[max size={15cm}{10cm}]{7.2.1.png}
         \end{center}
         Рассмотрим $\underbrace{f(x; y)}_{\text{ф. 2-х перем. x, y}} = \underbrace{f(x_0+\omega_xt; y_0+\omega_yt)}_{\text{ф. 1 перем. t}}$.
     \end{adjustwidth}
@@ -1942,7 +1946,7 @@
     \[ \frac{\partial f}{\partial y} = x^y \ln x \]
     \underline{Замечание (\textbf{!!!}):} из существования у функции всех частных производных \textbf{НЕ} следует непрерывность этой функции в рассматриваемой точке (в отличие от функции одной переменной).
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{7.4.1.png}
+        \includegraphics[max size={15cm}{10cm}]{7.4.1.png}
     \end{center}
     \begin{gather*}
         f(x, y) = \begin{cases}
@@ -1958,7 +1962,7 @@
     Пусть функция $z = f(x;y)$ определена в некоторой окрестности точки $M_0 = u(M_0, \delta)$.\\
     Пусть точка $M (x; y) \in u(M_0; \delta)$.
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{7.5.1.png}
+        \includegraphics[max size={15cm}{10cm}]{7.5.1.png}
     \end{center}
     Функция $z = f(x;y)$ называется дифференцируемой в точке $M_0 (x_0; y_0)$, если существуют конечные $A$ и $B$ такие, что приращение $\Delta z$ в окрестности точки $M_0$ представимо в виде
     \[ \Delta z = A \Delta x + B \Delta y + o(\rho), \rho \to 0, \rho = \sqrt{\Delta x^2 + \Delta y^2} \]
@@ -2134,7 +2138,7 @@
         y = y_0
     \end{cases} \text{в точке } (x_0; y_0)\right) \]
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{7.8.1.png}
+        \includegraphics[max size={15cm}{10cm}]{7.8.1.png}
     \end{center}
     Пусть $z = f(x;y)$ дифференцируема в точке $(x_0; y_0)$.
     \[ \Delta z = \frac{\partial f}{\partial x} \Big|_{(x_0; y_0)} \Delta x + \frac{\partial f}{\partial y} \Big|_{(x_0; y_0)} \Delta y + o(\rho), \rho \to 0 \]
@@ -2148,7 +2152,7 @@
     Обозначим в $(2)$ $z = z_{\text{кас}}$\\
     Тогда из $(1)$ и $(2)$ следует, что $z - z_{\text{кас}} = o(\rho), \rho \to 0$.
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{7.8.2.png}
+        \includegraphics[max size={15cm}{10cm}]{7.8.2.png}
     \end{center}
     Рассмотрим $(2)$:
     \[ 1 \times z_{\text{кас}} = z + \underbrace{\frac{\partial f}{\partial x} \Big|_{(x_0; y_0)} (x-x_0) + \frac{\partial f}{\partial y} \Big|_{(x_0; y_0)} (y-y_0)} \]
@@ -2208,7 +2212,7 @@
     Пусть она определена в окрестности точки $(x_0; y_0; z_0)$ и пусть задан произвольный вектор $\overline{l} \ne 0$.\\
     Пусть $\overline{l_0} = \frac{\overline{l}}{|\overline{l}|} = \underset{\text{направленные косинусы}}{\left( \overline{\cos \alpha; \cos \beta; \cos \gamma} \right)}$
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{7.10.1.png}
+        \includegraphics[max size={15cm}{10cm}]{7.10.1.png}
     \end{center}
     Запишем уравнение луча, выходящего из точки $(x_0; y_0; z_0)$ в направлении вектора $l$:
     \[ \frac{x - x_0}{\cos \alpha} = \frac{y - y_0}{\cos \beta} = \frac{z - z_0}{\cos \gamma} = t \]
@@ -2246,7 +2250,7 @@
     \[ \boxed{=} \, \boxed{ \overline{\text{grad}}f\Big|_{M_0} \times \overline{l_0} = \frac{\partial f}{\partial l}\Big|_{M_0} } \]
     \[ \overline{a}\overline{b} = |\overline{a}||\overline{b}|\cos(\underbrace{\overline{a}, \overline{b}}_{\varphi}) = \text{пр}_{\overline{b}} \overline{a} \times |\overline{b}| \]
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{7.10.2.png}
+        \includegraphics[max size={15cm}{10cm}]{7.10.2.png}
     \end{center}
     \[ \boxed{ \frac{\partial f}{\partial l} \Big|_{M_0} = \text{пр}_{\overline{l_0}}\overline{\text{grad}}f\Big|_{M_0} } \]
     \[ \frac{\partial f}{\partial l}\Big|_{M_0} = \overline{\text{grad}}f\Big|_{M_0} \times \overline{l_0} = |\overline{\text{grad}}f|\Big|_{M_0} \times |\underset{=1}{\overline{l_0}}| \times \cos \varphi \Rightarrow \frac{\partial f}{\partial l} \to \max \Longleftrightarrow \varphi = 0 \]
@@ -2257,7 +2261,7 @@
     Рассмотрим $z = f(x;y)$.\\
     Линия вида $f(x;y) = \mathbb{C}$ называется \textbf{линией уровня от функции} $Z$.
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{7.11.1.png}
+        \includegraphics[max size={15cm}{10cm}]{7.11.1.png}
     \end{center}
     \[ \frac{x-x_0}{\frac{\partial f}{\partial x}} = \frac{y-y_0}{\frac{\partial f}{\partial y}} \]
     Вектор градиента функции в точке $M_0$ направлен перпендикулярно линии уровня.\\
@@ -2650,7 +2654,7 @@
     \underline{Пример:}
     Рассмотрим $F(x;y) = x^2 + y^2$. Найти экстремум $F$ при условии: $x + y - 1 = 0$.
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{7.17.1.png}
+        \includegraphics[max size={15cm}{10cm}]{7.17.1.png}
     \end{center}
     1 способ:
     \begin{gather*}
@@ -2661,7 +2665,7 @@
     \end{gather*}
     Получили точку $\left( \frac{1}{2}; \frac{1}{2} \right)$
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{7.17.2.png}
+        \includegraphics[max size={15cm}{10cm}]{7.17.2.png}
     \end{center}
     Ответ: точка $\left( \frac{1}{2}; \frac{1}{2} \right)$ - точка условного минимума.\\
     \underline{В общем виде:}
