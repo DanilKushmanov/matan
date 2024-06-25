@@ -1226,14 +1226,10 @@
         Полярная система координат:
         \begin{gather*}
             \varphi \in [0; 2\pi]\\
-            r \in [0; +\infty)
+            r \in [0; +\infty)\\
+            \boxed{x = r\cos \varphi}\\
+            \boxed{y = r\sin \varphi}
         \end{gather*}
-        \fbox{
-            \begin{gather*}
-                x = r\cos \varphi\\
-                y = r\sin \varphi
-            \end{gather*}
-        }
         \begin{center}
             \includegraphics[max size={\linewidth}{7cm}]{6.9.4.png}
         \end{center}
@@ -1245,14 +1241,12 @@
         \begin{center}
             \includegraphics[max size={\linewidth}{7cm}]{6.9.6.png}
         \end{center}
-        \fbox{
-            \begin{gather*}
-                r = \sqrt{x^2 + y^2}\\
-                \tg \varphi = \frac{y}{x}\\
-                \varphi = \arctg \frac{y}{x}, \;\;\; (x, y) \in \text{ I, IV четв.}\\
-                \varphi = \arctg \frac{y}{x} + \pi, \;\;\; (x, y) \in \text{ II, III четв.}\\
-            \end{gather*}
-        }
+        \begin{gather*}
+            r = \sqrt{x^2 + y^2}\\
+            \tg \varphi = \frac{y}{x}\\
+            \varphi = \arctg \frac{y}{x}, \;\;\; (x, y) \in \text{ I, IV четв.}\\
+            \varphi = \arctg \frac{y}{x} + \pi, \;\;\; (x, y) \in \text{ II, III четв.}\\
+        \end{gather*}
         Некоторые кривые в полярной системе координат:
         \begin{enumerate}
             \item $r = 3\varphi$
@@ -1433,8 +1427,8 @@
     \end{cases} \]
     \begin{gather*}
         x'(\varphi)=r'cos\varphi-rsin\varphi\\
-        \boxed{$V_x=\pi \int_{\alpha}^{\beta} r^2(\varphi)sin^2\varphi (r'(\varphi)cos \varphi -r(\varphi)sin\varphi)d\varphi$}\\
-        \boxed{$V_y=\pi \int_{\alpha_1}^{\beta_1}r^2(\varphi)cos^2\varphi(r'(\varphi)sin\varphi + r(\varphi)cos\varphi)d\varphi$}
+        \boxed{V_x=\pi \int_{\alpha}^{\beta} r^2(\varphi)sin^2\varphi (r'(\varphi)cos \varphi -r(\varphi)sin\varphi)d\varphi}\\
+        \boxed{V_y=\pi \int_{\alpha_1}^{\beta_1}r^2(\varphi)cos^2\varphi(r'(\varphi)sin\varphi + r(\varphi)cos\varphi)d\varphi}
     \end{gather*}
 
     \subsection{Площадь поверхностей тела вращения}
