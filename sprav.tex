@@ -329,7 +329,7 @@
     \subsubsection*{Теорема 1.4.1 (принцип полноты Вейерштрасса)}\label{th:1.4.1}
     $\forall$ непустое ограниченное сверху (снизу) множество $X \subset R$ имеет точную верхнюю (нижнюю) грань.
 
-    \subsection{Арифметические операции над вещественными числами. Свойства вещественных чисел.}
+    \subsection{Арифметические операции над вещественными числами. Свойства вещественных чисел.}\noindent
     \textbf{Лемма 1:} пусть $a \in R$\\
     $\forall \varepsilon > 0, \varepsilon \in Q$ $\exists$ $\alpha, \beta \in Q$ $|$ $\alpha \le a \le \beta,$ причём $\beta - \alpha < \varepsilon$\par\noindent
     \underline{Доказательство:}
@@ -481,7 +481,7 @@
     \begin{adjustwidth}{1.5em}{1.5em}
         Предположим противное. Пусть $\lim_{n\to\infty}x_n = a, \lim_{n\to\infty}x_n = b, a \ne b$, пусть для определённости $a < b$.\\
         Выберем окрестности точки $a$ и $b$ таким образом, чтобы они не пересекались.\\
-        %\includegraphics[max size={\linewidth}{7cm}]{2.2.1}\\
+        %\includegraphics[max size={15cm}{10cm}]{2.2.1}\\
         По условию $\lim_{n\to\infty} x_n = a \implies$ в окрестность точки $a$ попадает $\infty$-ое число элементов $\posl{x}{n}$\\
         Вне этой окрестности находится конечное число элементов $\posl{x}{n}$ $\implies$ в окрестность точки $b$ попадает конечное число элементов $\posl{x}{n}$.\\
         Получили противоречие, т.к. $\lim_{n\to\infty}x_n = b \implies$ в окрестности точки $b$ должно быть $\infty$-ое число элементов $\posl{x}{n}$.\\
@@ -884,7 +884,7 @@
         $S_{2} \subset S_{1}$\\
         $S_{3} \subset S_{2}$\\
         $\vdots$\\$\vdots$\\
-        \includegraphics[max size={\linewidth}{7cm}]{2.7.1}\\
+        \includegraphics[max size={15cm}{10cm}]{2.7.1}\\
         $a_{1} \le a_{2} \le a_{3} \le \dots \le b_{m}, \forall m \in N$\\
         Т.е. $\{a_{n}\}$ неубывающая и ограничена сверху $\implies$ по \underline{\hyperref[th:2.5.1]{теореме 2.5.1}} $\exists \lim_{n\to\infty}a_{n} = \sup\{a_{n}\} = c$\\
         $a_{n} < c < b_{m}, \forall m,n \in N$ ($a_{n} < c$ т.к. $c$ - грань; $c < b_{m}$ т.к. $c = \sup\{a_{n}\}$)\\
@@ -972,7 +972,7 @@
         \underline{Замечание}: если $\{x_n\}$ сходящаяся и $\lim_{n\to\infty} x_n = m$, то $\underline{\lim}_{k\to\infty}x_n = m$.
     \end{enumerate}
     \subsubsection*{Разница между обычным пределом (единственным) и нижним пределом}
-    \includegraphics[max size={\linewidth}{7cm}]{2.9.2.png}\\
+    \includegraphics[max size={15cm}{10cm}]{2.9.2.png}\\
     Правее $M+\varepsilon$ в случае "обычного" предела находятся конечное число элементов $x_n$, а в случае нижнего предела - $\infty$ число элементов $x_n$.\\
     Очевидно, $\underline{\lim}_{n\to\infty}x_n \le \overline{\lim}_{n\to\infty}x_n$.\\
     Для того, чтобы последовательность $\{x_n\}$ имела предел (конечный или $\pm \infty$) $\Longleftrightarrow$ чтобы $\underline{\lim}_{n\to\infty} x_n = \overline{\lim}_{n\to\infty} x_n$.\\
@@ -1065,7 +1065,7 @@
     \underline{Запись:}
     \[ \lim_{x \to x_0}f(x) = a \]
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{3.1.1}
+        \includegraphics[max size={15cm}{10cm}]{3.1.1}
     \end{center}
     \underline{Пример:}
     \begin{adjustwidth}{1.5em}{1.5em}
@@ -1103,7 +1103,7 @@
     \subsubsection*{Определение предела функции в точке по Коши}
     \noindent Число $a$ называется \textbf{пределом функции} $f(x)$ \textbf{в точке} $x_0$, если $f(x)$ определена в окрестности точки $x_0$, быть может за исключением самой точки $x_0$ и, если $\forall \varepsilon > 0$ $\exists$ $\delta = \delta(\varepsilon)$ $:$ $|x - x_0| < \delta \implies |f(x) - a| < \varepsilon$\\
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{3.1.2}
+        \includegraphics[max size={15cm}{10cm}]{3.1.2}
     \end{center}
     Если $x$ находятся в $\delta$-окрестности точки $x_0$, то все значения $f(x)$ располагаются в полосе шириной $2\varepsilon$.
     \subsubsection*{Теорема 3.1.1}\label{th:3.1.1}
@@ -1171,7 +1171,7 @@
     \subsection{Односторонние пределы}
     \noindent Если значение функции $f(x)$ стремится к числу $a$ по мере стремления $x$ к $x_0$ со стороны меньших (больших) значений, то число $a$ называют \textbf{пределом} функции $f(x)$ в точке $x_0$ \textbf{слева} (\textbf{справа})
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{3.2.1}
+        \includegraphics[max size={15cm}{10cm}]{3.2.1}
     \end{center}
     Обозначение:
     \begin{itemize}
@@ -1184,7 +1184,7 @@
             \lim_{x\to 0-0} 2^{\frac{1}{x}} = 0; \lim_{x\to 0+0} 2^{\frac{1}{x}} = \infty
         \]
         \begin{center}
-            \includegraphics[max size={\linewidth}{7cm}]{3.2.2}
+            \includegraphics[max size={15cm}{10cm}]{3.2.2}
         \end{center}
     \end{adjustwidth}
     \underline{Пример 2:}
@@ -1196,7 +1196,7 @@
         \end{cases}
         \]
         \begin{center}
-            \includegraphics[max size={\linewidth}{7cm}]{3.2.3}
+            \includegraphics[max size={15cm}{10cm}]{3.2.3}
         \end{center}
         \[
             \lim_{x\to 0-0} \text{sign } x = -1; \lim_{x\to 0+0} \text{sign } x = 1
@@ -1277,7 +1277,7 @@
         \lim_{x\to 2+0} f(x) = 4
     \end{gather*}
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{3.4.2}
+        \includegraphics[max size={15cm}{10cm}]{3.4.2}
     \end{center}
     $f(x)$ непрерывна $\forall x \in R$, кроме $x=2$, где $f(x)$ терпит разрыв I рода устранений.\par\noindent
     \underline{Замечание:} рассмотрим 
@@ -1291,7 +1291,7 @@
         f(x) = [x] \text{ - целая часть }x, x > 0
     \]
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{3.4.3}
+        \includegraphics[max size={15cm}{10cm}]{3.4.3}
     \end{center}
     \begin{gather*}
         f(x) = 1\\
@@ -1302,7 +1302,7 @@
     \underline{Пример 3:} рассмотрим
     \[ f(x) = \frac{1}{x} \]
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{3.4.4}
+        \includegraphics[max size={15cm}{10cm}]{3.4.4}
     \end{center}
     \begin{gather*}
         f(0) = \nexists\\
@@ -1317,7 +1317,7 @@
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
         \begin{center}
-            \includegraphics[max size={\linewidth}{7cm}]{3.5.1}
+            \includegraphics[max size={15cm}{10cm}]{3.5.1}
         \end{center}
         Рассмотрим в координатной плоскости круг радиуса $R$ с центром в начале координат\\
         \begin{gather*} 
@@ -1393,7 +1393,7 @@
     Обозначение: $f(x) \sim g(x), x \to x_0$\\
     Например, $\sin x \sim x, x \to 0$
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{3.6.1}
+        \includegraphics[max size={15cm}{10cm}]{3.6.1}
     \end{center}
     \underline{Замечание:} если $f_1(x) \sim f_2(x), x \to x_0$, а $g_1(x) \sim g_2(x), x \to x_0$, то
     \[ \lim_{x\to x_0}\frac{f_1(x)}{g_1(x)} = \lim_{x\to x_0}\frac{f_2(x)}{g_2(x)} = \lim_{x\to x_0}\frac{f_2(x)}{g_1(x)} = \lim_{x\to x_0}\frac{f_1(x)}{g_2(x)} \]
@@ -1600,7 +1600,7 @@
             |f(x') - f(x'')| = |x' - x''| < \delta = \varepsilon
         \]
         \begin{center}
-            \includegraphics[max size={\linewidth}{7cm}]{3.9.2.png}
+            \includegraphics[max size={15cm}{10cm}]{3.9.2.png}
         \end{center}
         \item $f(x) = x^2, x \in R$\\
         Пусть $x', x'' \in R : |x' - x''| < \delta$\\
@@ -1671,7 +1671,7 @@
     \underline{Пример:}
     \begin{adjustwidth}{1.5em}{1.5em}
         \begin{center}
-            \includegraphics[max size={\linewidth}{7cm}]{4.1.1.png}
+            \includegraphics[max size={15cm}{10cm}]{4.1.1.png}
         \end{center}
         \[ y' \Big|_{x = 0} \]
         Правая производная
@@ -1691,7 +1691,7 @@
     \underline{Пример:} докажем, что $y = x^2$ имеет производную в точке $x=0$.
     \begin{adjustwidth}{1.5em}{1.5em}
         \begin{center}
-            \includegraphics[max size={\linewidth}{7cm}]{4.1.2.png}
+            \includegraphics[max size={15cm}{10cm}]{4.1.2.png}
         \end{center}
         \begin{gather*}
             \lim_{x \to 0+0}\frac{f(x) - f(x_0)}{\Delta x} = \lim_{x\to 0+0} \frac{x^2 - 0}{x - 0} = 0\\
@@ -1728,7 +1728,7 @@
 
     \subsection{Геометрический смысл производной}
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{4.2.1.png}
+        \includegraphics[max size={15cm}{10cm}]{4.2.1.png}
     \end{center}
     \[ M_0(x_0; f(x_0)) \]
     \[ M(x_0 + \Delta x; f(x_0 + \Delta x)) \]
@@ -1912,7 +1912,7 @@
         \item Гиперболический синус\\
         \[ \sh x = \frac{e^x - e^{-x}}{2} \]
         \begin{center}
-            \includegraphics[max size={\linewidth}{7cm}]{4.7.1.png}\\
+            \includegraphics[max size={15cm}{10cm}]{4.7.1.png}\\
             $D(f) : R$\\
             $E(f) : R$\\
             нечётная, непрерывная, возрастает
@@ -1920,7 +1920,7 @@
         \item Гиперболический косинус\\
         \[ \ch x = \frac{e^x + e^{-x}}{2} \]
         \begin{center}
-            \includegraphics[max size={\linewidth}{7cm}]{4.7.2}\\
+            \includegraphics[max size={15cm}{10cm}]{4.7.2}\\
             $D(f) : R$\\
             $E(f) : [1; +\infty]$\\
             чётная, непрерывная
@@ -1928,7 +1928,7 @@
         \item Гиперболический тангенс\\
         \[ \th x = \frac{\sh x}{\ch x} = \frac{e^x - e^{-x}}{e^x + e^{-x}} \]
         \begin{center}
-            \includegraphics[max size={\linewidth}{7cm}]{4.7.3}\\
+            \includegraphics[max size={15cm}{10cm}]{4.7.3}\\
             $D(f) : R$\\
             $E(f) : (-1; 1)$\\
             нечётная, непрерывная, возрастающая
@@ -1936,7 +1936,7 @@
         \item Гиперболический котангенс\\
         \[ \cth x = \frac{\ch x}{\sh x} = \frac{e^x + e^{-x}}{e^x - e^{-x}} \]
         \begin{center}
-            \includegraphics[max size={\linewidth}{7cm}]{4.7.4}\\
+            \includegraphics[max size={15cm}{10cm}]{4.7.4}\\
             $D(f) : R \backslash 0$\\
             $E(f) : (-\infty; -1) \cup (1; +\infty)$\\
             нечётная, в точке $x = 0$ разрыв II рода
@@ -2041,7 +2041,7 @@
     \underline{Замечание:} таким образом $df\Big|_{x = x_0}=f'(x_0)\Delta x$
     \subsubsection*{Геометрический смысл дифференциала}
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{4.9.1}
+        \includegraphics[max size={15cm}{10cm}]{4.9.1}
     \end{center}
     Рассмотрим функцию $y=f(x)$:
     \begin{gather*}
@@ -2056,7 +2056,7 @@
         |MB|=o(\Delta x)
     \end{gather*}
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{4.9.2}
+        \includegraphics[max size={15cm}{10cm}]{4.9.2}
     \end{center}
     Отсюда для независимой переменной $x$: $\Delta x = dx$\\
     Геометрический смысл дифференциала: это есть приращение ординаты касательной, проведённой к графику функции в точке $x_0$.\par\noindent
@@ -2235,7 +2235,7 @@
 
     \subsubsection*{Геометрический смысл теоремы Ролля}
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{4.12.1}
+        \includegraphics[max size={15cm}{10cm}]{4.12.1}
     \end{center}
 
     \subsubsection*{Теорема 4.12.3 (теорема Коши)}\label{th:4.12.3}
@@ -2265,11 +2265,11 @@
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
         Если в \hyperref[th:4.12.3]{теореме Коши (4.12.3)} принять $g(x) = x \implies$ \textbf{ч.т.д.}\par\noindent
-        \includegraphics[max size={\linewidth}{7cm}]{4.12.2}
+        \includegraphics[max size={15cm}{10cm}]{4.12.2}
     \end{adjustwidth}
 
     \subsubsection*{Геометрический смысл теоремы Лагранжа}
-    \includegraphics[max size={\linewidth}{7cm}]{4.12.3}
+    \includegraphics[max size={15cm}{10cm}]{4.12.3}
     \[ \frac{f(b) - f(a)}{b-a} = \tg \angle A = f'(\xi) \]
     $\exists$ точка $\xi \in (a;b)$ : касательная к графику функции в этой точке $\parallel$-на хорде $AB$\par\noindent
     \underline{Замечание:} промежуточное значение $\xi$ можно записать в виде $\xi = a + \theta(b-a), 0 < \theta < 1$\\
@@ -2308,7 +2308,7 @@
     
     \subsubsection*{Геометрический смысл}
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{4.13.1}
+        \includegraphics[max size={15cm}{10cm}]{4.13.1}
     \end{center}
     \[ \lim_{x\to x_0}\frac{|AB|}{|AO|} = \lim_{x\to x_0}\frac{|AC|}{|AF|} \]
     Предел отношения ординат графиков функции $f$ и $g$ равен пределу отношения касательных к этим функциям в точке $x_0$.
@@ -2524,7 +2524,7 @@
     \underline{Замечание 1:} условие $f'(x) > 0$ является достаточным условием возрастания, но не является необходимым (если $f(x)$ возрастает, то не везде $f'(x) > 0$)\\
     \underline{Пример:} $y = x^3$ возрастает, но $y'(0) = 0$.
     \begin{center}
-        \includegraphics[max size={\linewidth}{7cm}]{4.16.1}
+        \includegraphics[max size={15cm}{10cm}]{4.16.1}
     \end{center}
     \underline{Замечание:} если функция непрерывна на $(a;b)$ и имеет во всех его точках, кроме, может быть \underline{конечного числа} неотрицательную (положительную) производную, то функция неубывающая (возрастающая) на $(a;b)$.
 

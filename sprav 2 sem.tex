@@ -104,7 +104,7 @@
         Пусть $F_1(x)$ и $F_2(x)$ - две первообразные для $f(x)$ на $(a; b)$.\\
         Тогда по определению $F_1'(x) = F_2'(x) = f(x)$.\\
         Пусть $\varphi(x) = F_1(x) - F_2(x), \varphi'(x) = F_1'(x) - F_2'(x) = f(x) - f(x) = 0$.\\
-        Тогда по \hyperref[th:4.12.5]{теореме 4.12.5} $\varphi(x) = const$.\par\noindent
+        Тогда по теореме 4.12.5 $\varphi(x) = const$.\par\noindent
         \textbf{Докажем достаточность ($\Leftarrow$)}\par\noindent
         Пусть
         \begin{gather*}
@@ -579,17 +579,19 @@
         \underline{Замена:} 
         \[ \boxed{t = \frac{1}{x-\alpha}} \]
         \underline{Пример:}
-        \[ \int \frac{dx}{(x-1)\sqrt{-x^2+3x-2}} = \begin{vmatrix}
-            t = \frac{1}{x-1}\\
-            x - 1 = \frac{1}{t}\\
-            x = \frac{1}{t} + 1\\
-            dx = -\frac{1}{t^2}dt
-        \end{vmatrix} = \int \frac{-\frac{1}{t^2}dt}{\frac{1}{t}\sqrt{-\left( \frac{1}{t} + 1 \right)^2 + \frac{3}{t} + 3 - 2}} \]
+        \begin{adjustwidth}{1.5em}{1.5em}
+            \[ \int \frac{dx}{(x-1)\sqrt{-x^2+3x-2}} = \begin{vmatrix}
+                t = \frac{1}{x-1}\\
+                x - 1 = \frac{1}{t}\\
+                x = \frac{1}{t} + 1\\
+                dx = -\frac{1}{t^2}dt
+            \end{vmatrix} = \int \frac{-\frac{1}{t^2}dt}{\frac{1}{t}\sqrt{-\left( \frac{1}{t} + 1 \right)^2 + \frac{3}{t} + 3 - 2}} \]
+        \end{adjustwidth}
     \end{enumerate}
 
     \section{Определенный интеграл. Геометрические и физические приложения определенного интеграла. Несобственные интегралы}
     \subsection{Задачи приводящие к понятию определённого интеграла.}
-    \subsubsection{Площадь криволинейной трапеции} 
+    \subsubsection*{Площадь криволинейной трапеции} 
     \begin{center}
         \includegraphics[max size={15cm}{10cm}]{6.1.1.png}
     \end{center}
@@ -607,7 +609,7 @@
         Вычислим $\lim_{n \to \infty} \sigma_R = S$.
     \end{enumerate}
     
-    \subsubsection{Вычисление массы неоднородного тонкого стержня}
+    \subsubsection*{Вычисление массы неоднородного тонкого стержня}
     \begin{center}
         \includegraphics[max size={15cm}{10cm}]{6.2.1}
     \end{center}\noindent
@@ -736,7 +738,7 @@
         $I_* \leq I^* \;\; \forall R$\\
         $\underline{S_R} \leq I_* \leq I^* \leq \overline{S_R}$
         \item \subsubsection*{Теорема 6.4.1 (о существовании интеграла)}\label{th:6.4.1}
-        Для того, чтобы определённый интеграл, ограниченный функции $f(x)$ существовал $\Longleftrightarrow \lim_{\lambda_R \to 0} (\overline{S_r}- \underline{S_r})=0$,
+        Для того, чтобы определённый интеграл, ограниченный функции $f(x)$ существовал $\Longleftrightarrow$ $\lim_{\lambda_R \to 0} (\overline{S_r}- \underline{S_r})=0$,
         т.е. $\lim_{\lambda_R \to 0}\sum_{i=0}^{n-1} \omega_i \Delta x_i$ \par\noindent
         \underline{Доказательство:}
         \begin{adjustwidth}{1.5em}{1.5em}
@@ -846,8 +848,8 @@
                 \begin{vmatrix}
                     \text{Если } \lambda_R \to 0 \Rightarrow \\
                     \lambda_{R_1} \to 0, \lambda_{R_2} \to 0
-                \end{vmatrix}
-                = \lim_{\lambda_R \to 0}\sigma_{R_1}=\lim_{\lambda_R \to 0}\sigma_{R_2}=
+                \end{vmatrix} =\\
+                = \lim_{\lambda_R \to 0}\sigma_{R_1}=\lim_{\lambda_R \to 0}\sigma_{R_2} =
                 \int_{a}^{c}f(x)dx+\int_{c}^{b}f(x)dx\\
             \end{gather*}
             \begin{center}
@@ -927,8 +929,10 @@
             \underline{Замечание:}\\
             Рассмотрим 
             \begin{gather*}
-                f(x')g(x')-f(x)g(x)=f(x')g(x')-f(x)g(x)-f(x)g(x')+f(x)g(x')=(f(x')-f(x))g(x')+(g(x')-g(x))f(x)\\
-                |f(x')g(x')-f(x)g(x)| \leq |f(x')-f(x)||g(x')|+|g(x')-g(x)||f(x)| \leq A(|f(x')-f(x)|+|g(x')-g(x)|)\\
+                f(x')g(x')-f(x)g(x)=f(x')g(x')-f(x)g(x)-f(x)g(x')+f(x)g(x') =\\
+                = (f(x')-f(x))g(x')+(g(x')-g(x))f(x)\\
+                |f(x')g(x')-f(x)g(x)| \leq |f(x')-f(x)||g(x')|+|g(x')-g(x)||f(x)| \leq\\
+                \leq A(|f(x')-f(x)|+|g(x')-g(x)|)\\
             \end{gather*}
             Введем разбиение $R$ и выберем точку $x$ и $x'$ в одном и том же отрезке разбиения $[x_k;x_{k+1}]$ 
             \[ \omega_k(fg)\leq A(\omega_k(f)+\omega_k(g)) \]
@@ -1312,7 +1316,7 @@
         \[ S=\lim_{\lambda_R \to 0}\sigma_R = \boxed{ \int_{a}^{b}\frac{1}{2} r^2(\xi_i) \Delta \varphi_i=S }\]
     \end{enumerate}
 
-    \subsection{Вычисление длины кривой.}
+    \subsection{Вычисление длины кривой.}\noindent
     Уравнения вида: 
     \[ \begin{cases}
         x=x(t)\\
@@ -1347,7 +1351,7 @@
     \underline{Замечание:} точка $\xi_i$ берётся из теоремы Лагранжа (4.12.4), но можно показать, что $\lim$ будет существовать при произвольном выборе точки $\xi_i$.\\
     Тогда 
     \[ \lim_{\lambda_R \to 0} \sigma_R = \boxed{ l =\int_{a}^{b} \sqrt{1+y'(x)^2}dx } \]
-    \subsubsection*{Длина дуги для функции, заданной параметрически:}
+    \subsubsection*{Длина дуги для функции, заданной параметрически:}\noindent
     Пусть
     \[ \begin{cases}
         x=x(t)\\
@@ -1366,7 +1370,7 @@
         \end{vmatrix}=\int_{\alpha}^{\beta} \sqrt{1+(\frac{y'_t}{x'_t})^2}x'(t)dt =\\
         = \int_{\alpha}^{\beta} \sqrt{\frac{x'(t)^2+y'(t)^2}{x'(t)^2}}x'(t)dt = \boxed{ \int_{\alpha}^{\beta}\sqrt{x'(t)^2+y'(t)^2}dt = l }
     \end{gather*}
-    \subsubsection*{Длина дуги для функции, заданной в полярной системе координат:}
+    \subsubsection*{Длина дуги для функции, заданной в полярной системе координат:}\noindent
     Пусть задана функция в виде
     \begin{align*}
         &r=r(\varphi) & &\alpha \leq \varphi \leq \beta & &r(\varphi)=r
@@ -1396,7 +1400,7 @@
     \[ dl=\sqrt{x'^2+y'^2}dt \]
     \[ dl=\sqrt{r^2+r'^2}d\varphi \]
 
-    \subsection{Вычисление объема тела вращения}
+    \subsection{Вычисление объема тела вращения}\noindent
     Пусть задана кривая $y=f(x) \;\;\; a\leq x\leq b$
     \begin{center}
         \includegraphics[max size={15cm}{10cm}]{6.11.1.png}
@@ -1423,7 +1427,7 @@
         \boxed{\pi \int_{\alpha}^{\beta} y^2(t)x'(t)dt=V_x}\\
         \boxed{V_y=\pi \int_{c}^{d} x^2(y)dy=\pi \int_{\alpha_1}^{\beta_1} x^2(t)y'(t)dt}
     \end{gather*}
-    \subsubsection*{Если кривая задана в полярной системе координат:}
+    \subsubsection*{Если кривая задана в полярной системе координат:}\noindent
     Пусть $r=r(\varphi) \;\;\; \alpha \leq \varphi \leq \beta$
     \[ \begin{cases}
         x=rcos(\varphi)=r(\varphi)cos\varphi\\
@@ -1435,7 +1439,7 @@
         \boxed{V_y=\pi \int_{\alpha_1}^{\beta_1}r^2(\varphi)cos^2\varphi(r'(\varphi)sin\varphi + r(\varphi)cos\varphi)d\varphi}
     \end{gather*}
 
-    \subsection{Площадь поверхностей тела вращения}
+    \subsection{Площадь поверхностей тела вращения}\noindent
     Пусть $f(x) \geq 0 \;\;\; \forall x \in [a;b]$\\
     \begin{center}
         \includegraphics[max size={15cm}{10cm}]{6.12.1.png}
@@ -1450,7 +1454,7 @@
     \[ P_i = \pi(f(x_{i+1}+f(x_i)))\sqrt{1+f'(\xi_i)^2}\Delta x_i \]
     Составим $\sigma_R$:
     \[ \sigma_R = \sum_{i=0}^{n-1}P_i=\sum_{i=0}^{n-1}\pi(f(x_{i+1}+f(x_i)))\sqrt{1+f'(\xi_i)^2 \Delta x_i} \]
-    $\sigma_R$ не является интегральной суммой т.к. её значение зависит от $\overset{\underline{x}}{3}$ точек: $\xi_i$, $x_i$, $x_{i+1}$.
+    $\sigma_R$ не является интегральной суммой т.к. её значение зависит от $3$-х точек: $\xi_i$, $x_i$, $x_{i+1}$.\\
     Рассмотрим 
     \[ \overline{\sigma_R} = \sum_{i=0}^{n-1} \pi(f(\xi_i)+f(\xi_i))\sqrt{1+f'(\xi_i)^2}\Delta x_i=2\pi \sum_{i=0}^{n-1}f(\xi_i)\sqrt{1+f'(\xi_i)^2}\Delta x_i \]
     $\overline{\sigma_R}$ - интегральная сумма.\\
@@ -1458,7 +1462,7 @@
     \[ \forall \delta > 0 \, \exists \, \varepsilon > 0: \lambda_R<\delta \implies |\sigma_R-\overline{\sigma_R}|<\varepsilon \]
     Это значит, что $\lim_{\lambda_R \to 0}\sigma_R=\lim_{\lambda_R \to 0}\overline{\sigma_R}$
     \[ \lim_{\lambda_R \to 0} \sigma_R = \lim_{\lambda_R \to 0} \overline{\sigma_R}= \boxed{2\pi \int_{a}^{b}f(x)\sqrt{1+f'(x)^2}dx = P} \]
-    \subsubsection*{Если функция задана в параметрическом виде:}
+    \subsubsection*{Если функция задана в параметрическом виде:}\noindent
     Пусть 
     \[ \begin{cases}
         x=x(t)\\
@@ -1471,7 +1475,7 @@
         x=b \Rightarrow t=\beta
     \end{vmatrix}=\boxed{2\pi \int_{\alpha}^{\beta}y(t) \underbrace{\sqrt{x'(t)^2+y'(t)^2}}_{dl}dt} \]
     \[ \boxed{P_y=\int_{\alpha_1}^{\beta_1}x(t)\sqrt{x'(t)^2+y'(t)^2}dt} \]
-    \subsubsection*{Если функция задана в полярной системе координат:}
+    \subsubsection*{Если функция задана в полярной системе координат:}\noindent
     Пусть $r=r(\alpha) \;\;\; \alpha \leq \varphi \leq \beta$
     \[ \boxed{P_x=2\pi \int_{\alpha}^{\beta}r(\varphi)sin(\varphi)\sqrt{r^2(\varphi)+r'(\varphi)^2}d\varphi} \]
     \[ \boxed{P_y=2\pi \int_{\alpha_1}^{\beta_1}r(\varphi)cos(\varphi)\sqrt{r^2(\varphi)+r'(\varphi)^2}d\varphi} \]
@@ -1546,7 +1550,7 @@
         \end{gather*}
     \end{enumerate}
 
-    \subsection{Несобственные интегралы 1-го рода}
+    \subsection{Несобственные интегралы 1-го рода}\noindent
     Пусть $f(x)$ задана на конечном $[a;b)$.\\
     Допустим, что $f(x)$ интегрируема на $[a;b']$, $b'<b$ и неограничена в точке $x=b$. Тогда $f(x)$ не интегрируема по Риману на $[a;b]$.\\
     Если $\exists$ конечный $\lim_{b' \to b} \int_{a}^{b'}f(x)dx$, то он называется \textbf{несобственным} интегралом от $f(x)$ на $[a; b]$
@@ -1555,7 +1559,7 @@
     Аналогично, $\int_{-\infty}^{b}f(x)dx=\lim_{B \to -\infty} \int_{B}^{b}f(x)dx$\\
     \[ \int_{-\infty}^{\infty} f(x)dx=\int_{-\infty}^{C}f(x)dx+\int_{C}^{+\infty}f(x)dx \]
 
-    \subsection{Несобственные интегралы 2-го рода}
+    \subsection{Несобственные интегралы 2-го рода}\noindent
     Пусть $f(x)$ непрерывна $\forall x \in [a;b]/c \;\;\; a \leq c \leq b$\\
     Тогда: 
     \[ \int_{a}^{b}f(x)dx=\int_{a}^{c} f(x)dx+\int_{c}^{b} f(x)dx=\lim_{\varepsilon \to 0}\int_{a}^{c-\varepsilon}f(x)dx+\lim_{\varepsilon \to 0}\int_{c+\varepsilon}^{b}f(x)dx \]
@@ -1604,7 +1608,7 @@
         \end{enumerate}
     \end{enumerate}
 
-    \subsection{Свойство несобственных интегралов}
+    \subsection{Свойство несобственных интегралов}\noindent
     \underline{Замечание:} в точке $x=b$ - особенность
     \begin{enumerate}
         \item Линейность\\
@@ -1640,13 +1644,13 @@
         \begin{vmatrix}
             x=\frac{1}{t} & x=1 \Rightarrow t=1\\
             dx=-\frac{1}{t^2}dt & x=\infty \Rightarrow t=0
-        \end{vmatrix} = \int_{1}^{0} \frac{-\frac{dt}{t^2}}{\frac{1}{t}\sqrt{\frac{1}{t^2}-1}}=\int_{0}^{1}\frac{dt}{t\sqrt{\frac{1-t^2}{t^2}}}=\\
-        = \int_{0}^{1} \frac{dt}{t\sqrt{\frac{1-t^2}{t^2}}}=
-        \int_{0}^{1}\frac{dt}{\sqrt{1-t^2}}=\lim_{\varepsilon \to 0} \int_{0}^{1-\varepsilon}\frac{dt}{\sqrt{1-t^2}}=\lim_{\varepsilon \to 0} \arcsin t\Big|^{1-\varepsilon}_0=\\
+        \end{vmatrix} =\\
+        = \int_{1}^{0} \frac{-\frac{dt}{t^2}}{\frac{1}{t}\sqrt{\frac{1}{t^2}-1}}=\int_{0}^{1}\frac{dt}{t\sqrt{\frac{1-t^2}{t^2}}} = \int_{0}^{1} \frac{dt}{t\sqrt{\frac{1-t^2}{t^2}}} = \int_{0}^{1}\frac{dt}{\sqrt{1-t^2}} =\\
+        = \lim_{\varepsilon \to 0} \int_{0}^{1-\varepsilon}\frac{dt}{\sqrt{1-t^2}}=\lim_{\varepsilon \to 0} \arcsin t\Big|^{1-\varepsilon}_0=\\
         = \lim_{\varepsilon \to 0}[arcsin(1-\varepsilon)-arcsin(0)]=\frac{\pi}{2}
     \end{gather*}
 
-    \subsection{Несобственные интегралы от неотрицательных функций}
+    \subsection{Несобственные интегралы от неотрицательных функций}\noindent
     \textbf{Лемма:} Если $f(x)$ неотрицательна на $[a;b)$, то для сходимости $\int_{a}^{b}f(x)dx \Longleftrightarrow $ чтобы множество интегралов $\int_{a}^{b'} f(x)dx \;\;\; b' \in [a;b)$ было ограничено сверху.\\
     Т.е. чтобы $\exists\,c>0:\forall b':\int_{a}^{b'}f(x)dx \leq \mathbb{C}$\\
     \underline{Доказательство:}
@@ -1663,7 +1667,7 @@
             \textbf{Ч.т.д.}
         \end{center}
     \end{adjustwidth}
-    \subsubsection*{Теорема 6.17.1 (1-й признак сравнения несобственных интегралов)}\label{th:6.17.1}
+    \subsubsection*{Теорема 6.17.1 (1-й признак сравнения несобственных интегралов)}\label{th:6.17.1}\noindent
     Пусть $0\leq g(x) \leq f(x) \;\;\; x\in [a;b)$\\
     Тогда:
     \begin{enumerate}
@@ -1703,13 +1707,16 @@
             \end{center}
         \end{enumerate}
     \end{adjustwidth}
-    \underline{Пример:} $\int_{0}^{1} \ln(x)dx$\\
-    Пусть $f(x)=\ln(x)$\\
-    $g(x)=\frac{1}{x^2} \;\;\; \int_{0}^{1}\frac{dx}{x^2}$ - расх.\\
-    \[ \lim_{x \to 0}\frac{\ln(x)}{\frac{1}{x^2}}=\lim_{x \to 0}\frac{\frac{1}{x}}{-\frac{2}{x^3}}=\lim_{x \to 0}\frac{x^2}{-2}=0 \]
-    \[ g(x)=\frac{1}{\sqrt{x}} \;\;\; \int_{0}^{1}=\frac{dx}{\sqrt{x}} \text{ - сх.}\]
-    Рассмотрим 
-    \[ \lim_{x \to 0}\frac{\ln(x)}{\frac{1}{\sqrt{x}}}=\lim_{x \to 0}\frac{\frac{1}{x}}{-\frac{1}{2x^{\frac{3}{2}}}}=\lim_{x \to 0}(-2\sqrt{x})=0 \implies \int_{0}^{1}\ln(x)dx \text{ - сх.}\]
+    \underline{Пример:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        $\int_{0}^{1} \ln(x)dx$\\
+        Пусть $f(x)=\ln(x)$\\
+        $g(x)=\frac{1}{x^2} \;\;\; \int_{0}^{1}\frac{dx}{x^2}$ - расх.\\
+        \[ \lim_{x \to 0}\frac{\ln(x)}{\frac{1}{x^2}}=\lim_{x \to 0}\frac{\frac{1}{x}}{-\frac{2}{x^3}}=\lim_{x \to 0}\frac{x^2}{-2}=0 \]
+        \[ g(x)=\frac{1}{\sqrt{x}} \;\;\; \int_{0}^{1}=\frac{dx}{\sqrt{x}} \text{ - сх.}\]
+        Рассмотрим 
+        \[ \lim_{x \to 0}\frac{\ln(x)}{\frac{1}{\sqrt{x}}}=\lim_{x \to 0}\frac{\frac{1}{x}}{-\frac{1}{2x^{\frac{3}{2}}}}=\lim_{x \to 0}(-2\sqrt{x})=0 \implies \int_{0}^{1}\ln(x)dx \text{ - сх.}\]
+    \end{adjustwidth}
 
     \subsection{Критерий Коши сходимсоти несобственных интегралов. Абсолютно сходящиеся интегралы.}
     \subsubsection*{Теорема 6.18.1}\label{th:6.18.1}
@@ -1832,10 +1839,10 @@
 
 
     \section{Функции нескольких переменных}
-    \subsection{Основные понятия}
+    \subsection{Основные понятия}\noindent
     Рассмотрим упорядоченное множество $E$ пар чисел $(x; y)$\\
     Пары $(x_1; y_1)$ и $(x_2; y_2)$ равны $\Longleftrightarrow$ $x_1 = x_2, y_1 = y_2$.\par\noindent
-    Пусть каждой паре $(x; y) \in E$ по некоторому закону ставится в соответствие единственное число $z$. Тогда говорят, что на $E$ определена функция $z = f(x; y)$.\\
+    Пусть каждой паре $(x; y) \in E$ по некоторому закону ставится в соответствие единственное число $z$. Тогда говорят, что на $E$ определена \textbf{функция} $z = f(x; y)$.\\
     \underline{Примеры:}
     \begin{center}
         \includegraphics[max size={15cm}{10cm}]{7.1.1.png}
@@ -1853,31 +1860,31 @@
         \lambda\overline{x} + \mu \overline{y} = (\lambda x_1 + \mu y_1; \lambda x_2 + \mu y_2; \dots; \lambda x_n + \mu y_n)\\
         \overline{x}\overline{y} = x_1y_1 + \dots + x_ny_n
     \end{gather*}
-    Множество всех упорядоченных систем $\overline{x} = (x_1, \dots, x_n)$, для которых определены линейная комбинация и скалярное произведение двух элементов называется $n$-мерным арифметическим Евклидовым пространством.\par\noindent
+    Множество всех упорядоченных систем $\overline{x} = (x_1, \dots, x_n)$, для которых определены линейная комбинация и скалярное произведение двух элементов называется \textbf{$n$-мерным арифметическим Евклидовым пространством}.\par\noindent
     \textbf{В случае точки:}
     \begin{gather*}
         \rho (x,y) \text{ - расстояние между точками}\\
         \rho (x,y) = |x - y| = \sqrt{ \sum_{i = 1}^{n} (x_i - y_i)^2 }
     \end{gather*}
-    Множество точек $x = (x_1, \dots, x_n)$, для которых выполняется неравенство $\rho (x, x^0) < \varepsilon$, называется $\varepsilon$-окрестностью точки $x^0$.\\
-    Точки множества называется внутренними точками, если $\exists$ $\varepsilon$-окрестность, целиком содержащаяся в этом множестве.\\
-    Точки множества называется граничными точками, если $\forall$ её $\varepsilon$-окрестность содержит как внутренние, так и внешние точки.\\
-    Точки множества называется внешними точками, если $\exists$ $\varepsilon$-окрестность, не содержащая ни одной точки множества.\par\noindent
+    Множество точек $x = (x_1, \dots, x_n)$, для которых выполняется неравенство $\rho (x, x^0) < \varepsilon$, называется \textbf{$\varepsilon$-окрестностью} точки $x^0$.\\
+    Точки множества называется \textbf{внутренними} точками, если $\exists$ $\varepsilon$-окрестность, целиком содержащаяся в этом множестве.\\
+    Точки множества называется \textbf{граничными} точками, если $\forall$ её $\varepsilon$-окрестность содержит как внутренние, так и внешние точки.\\
+    Точки множества называется \textbf{внешними} точками, если $\exists$ $\varepsilon$-окрестность, не содержащая ни одной точки множества.\par\noindent
     Пусть в $R^n$
     \begin{center}
         \includegraphics[max size={15cm}{10cm}]{7.1.2.png}
     \end{center}
     Т.е. в пространстве $R^n$ задана последовательность $\{x^k\}$.\\
-    Точка $x^0 = (x^0_1, x^0_2, x^0_3, \dots, x^0_n)$ называется пределом последовательности $\{x^k\}$, если $\lim_{k\to\infty} \rho(x^k, x^0) = 0$\\
-    Обозначение: $\lim_{k\to\infty}x^k=x^0$\\
-    Или: Точка $x^0 = (x^0_1, x^0_2, x^0_3, \dots, x^0_n)$ называется пределом последовательности $\{x^k\}$, если $\forall \varepsilon > 0$ $\exists \text{ } n_0 \text{ } \big| \text{ } \forall n > n_0 : \rho(x^n, x^0) < \varepsilon$\\
+    Точка $x^0 = (x^0_1, x^0_2, x^0_3, \dots, x^0_n)$ называется \textbf{пределом} последовательности $\{x^k\}$, если $\lim_{k\to\infty} \rho(x^k, x^0) = 0$\\
+    \underline{Обозначение:} $\lim_{k\to\infty}x^k=x^0$\\
+    \underline{Или}: Точка $x^0 = (x^0_1, x^0_2, x^0_3, \dots, x^0_n)$ называется \textbf{пределом} последовательности $\{x^k\}$, если $\forall \varepsilon > 0$ $\exists \text{ } n_0 \text{ } \big| \text{ } \forall n > n_0 : \rho(x^n, x^0) < \varepsilon$\\
     Определение $\lim_{k\to\infty}x^k=x^0$ эквивалентно $n$ одномерным пределам.
     \[ \lim_{k\to\infty}x^k_1 = x^0_1; \lim_{k\to\infty}x^k_2 = x^0_2; \dots; \lim_{k\to\infty}x^k_n = x^0_n \]
 
     \subsection{Предел функций нескольких переменных в точке}
     \noindent Пусть функция $f(x_1, \dots, x_n)$ определена в $u(x^0)$, быть может за исключением самой точки $x^0$.\\
-    \textbf{По Гейне:} точка $a$ (одномерное число) называется пределом функции $f$ в точке $x^0$ ($f(x_1, \dots, x_n)$), если $\forall$ последовательности $\{x^k\} : \lim_{k\to\infty}x^k=x^0$, числовая последовательность $\{ f(x^k) \}$ (одномерная) имеет своим пределом точку $a$ ($\lim_{k\to x^0}f(x)=a$).\par\noindent
-    \textbf{По Коши:} точка $a$ называется пределом функции $f(x_1, \dots, x_n)$ в точке $x^0$, если
+    \textbf{По Гейне:} точка $a$ (одномерное число) называется \textbf{пределом функции} $f$ \textbf{в точке} $x^0$ ($f(x_1, \dots, x_n)$), если $\forall$ последовательности $\{x^k\} : \lim_{k\to\infty}x^k=x^0$, числовая последовательность $\{ f(x^k) \}$ (одномерная) имеет своим пределом точку $a$ ($\lim_{k\to x^0}f(x)=a$).\par\noindent
+    \textbf{По Коши:} точка $a$ называется \textbf{пределом функции} $f(x_1, \dots, x_n)$ \textbf{в точке} $x^0$, если
     \[ \forall \varepsilon > 0 \text{ } \exists \text{ } \delta = \delta(\varepsilon) > 0 : \rho(x, x^0) < \delta \implies |f(x_1, \dots, x_n) - a| < \varepsilon \]
     Рассмотрим функцию $f(x,y)$, заданную в окрестности точки $(x_0; y_0)$
     \begin{adjustwidth}{1.5em}{1.5em}
@@ -1891,9 +1898,9 @@
         \begin{center}
             \includegraphics[max size={15cm}{10cm}]{7.2.1.png}
         \end{center}
-        Рассмотрим $\underbrace{f(x; y)}_{\text{ф. 2-х перем. x, y}} = \underbrace{f(x_0+\omega_xt; y_0+\omega_yt)}_{\text{ф. 1 перем. t}}$.
-    \end{adjustwidth}
-    $\lim_{t \to 0} f(x_0+\omega_xt; y_0+\omega_yt)$, если он $\exists$, называется пределом функции $f(x, y)$ в точке $(x_0; y_0)$ по направлению $\overline{\omega}$.\\
+    \end{adjustwidth}\noindent
+    Рассмотрим $\underbrace{f(x; y)}_{\text{ф. 2-х перем. x, y}} = \underbrace{f(x_0+\omega_xt; y_0+\omega_yt)}_{\text{ф. 1 перем. t}}$.
+    $\lim_{t \to 0} f(x_0+\omega_xt; y_0+\omega_yt)$, если он $\exists$, называется \textbf{пределом функции} $f(x, y)$ \textbf{в точке} $(x_0; y_0)$ \textbf{по направлению} $\overline{\omega}$.\\
     \underline{Пример:}
     \begin{adjustwidth}{1.5em}{1.5em}
         Рассмотрим $f(x,y) = \frac{x^2y}{x^4 + y^2}$; $f(x,y)$ определена $\forall x, y \in R$, кроме точки $(0, 0)$.
@@ -1909,14 +1916,14 @@
         Пределы не совпали $\Rightarrow$ предел $\nexists$.
     \end{adjustwidth}
     Определение:
-    \[\begin{matrix}
-        \lim_{x \to x_0\, y \to y_0}f(x;y)=\infty & \forall M > 0\, \exists\, \delta = \delta(M): \rho(\underset{M(x,y)}{M}, \underset{M_0(x_0, y_0)}{M_0}) < \delta \Rightarrow |f(x;y)| > M\\
-        \lim_{x\to\infty\, y\to\infty}f(x,y) = a & \forall \varepsilon > 0\, \exists\, K = K(\varepsilon): |x| > K, |y| > K \Rightarrow |f(x,y) - a| < \varepsilon\\
-        \lim_{x\to-\infty\, y\to y_0}f(x,y) = -\infty & \forall M > 0\, \exists\, \delta = \delta(M): x < -\frac{1}{\delta}, |y-y_0|<\delta \Rightarrow f(x,y) < -M
-    \end{matrix}\]
+    \begin{align*}
+        &\lim_{x \to x_0\, y \to y_0}f(x;y)=\infty & &\forall M > 0\, \exists\, \delta = \delta(M): \rho(\underset{M(x,y)}{M}, \underset{M_0(x_0, y_0)}{M_0}) < \delta \Rightarrow |f(x;y)| > M\\
+        &\lim_{x\to\infty\, y\to\infty}f(x,y) = a & &\forall \varepsilon > 0\, \exists\, K = K(\varepsilon): |x| > K, |y| > K \Rightarrow |f(x,y) - a| < \varepsilon\\
+        &\lim_{x\to-\infty\, y\to y_0}f(x,y) = -\infty & &\forall M > 0\, \exists\, \delta = \delta(M): x < -\frac{1}{\delta}, |y-y_0|<\delta \Rightarrow f(x,y) < -M
+    \end{align*}
 
-    \subsection{Непрерывность функций нескольких переменных.}
-    Функция $f(x_1, \dots, x_n)$ называется непрерывной в точке $x^0 = (x^0_1, x^0_2, \dots, x^0_n)$, если она определена в некоторой окрестности точки $x^0$, в том числе и в самой точке $x^0$ и $\lim_{x \to x_0} f(x) = f(x^0)$ при $x = (x_1, \dots, x_n)$, $x^0 = (x^0_1, \dots, x^0_n)$.\par\noindent
+    \subsection{Непрерывность функций нескольких переменных.}\noindent
+    Функция $f(x_1, \dots, x_n)$ называется \textbf{непрерывной} в точке $x^0 = (x^0_1, x^0_2, \dots, x^0_n)$, если она определена в некоторой окрестности точки $x^0$, в том числе и в самой точке $x^0$ и $\lim_{x \to x_0} f(x) = f(x^0)$ при $x = (x_1, \dots, x_n)$, $x^0 = (x^0_1, \dots, x^0_n)$.\par\noindent
     \textbf{В эквивалентной форме:}
     \begin{enumerate}
         \item \[ \lim_{\Delta x_i \to 0} f(x^0_1 + \Delta x_1; x^0_2 + \Delta x_2; \dots; x^0_n + \Delta x_n) = f(x^0_1; x^0_2; \dots; x^0_n) \]
@@ -1932,7 +1939,7 @@
         x_n = \varphi_n(t)
     \end{cases} \]
     $a \le t \le b$, непрерывные на $[a;b]$, определяют непрерывную кривую в $R^n$, соединяющую точки $x^1 = (\varphi_1(a); \varphi_2(a); \dots; \varphi_n(a))$ и $x^2 = (\varphi_1(b); \varphi_2(b); \dots; \varphi_n(b))$, где $t$ - параметр кривой.\\
-    Множество $G$ называется связным, если $\forall$ его две точки можно соединить непрерывной кривой, целиком лежащей в $G$.
+    Множество $G$ называется \textbf{связным}, если $\forall$ его две точки можно соединить непрерывной кривой, целиком лежащей в $G$.
     
     \subsection{Частные производные функций нескольких переменных.}
     \[ f'(x) = \frac{df}{dx} = \lim_{\Delta x \to 0}\frac{f(x+\Delta x) - f(x)}{\Delta x} \]
@@ -1964,11 +1971,11 @@
     \begin{center}
         \includegraphics[max size={15cm}{10cm}]{7.5.1.png}
     \end{center}
-    Функция $z = f(x;y)$ называется дифференцируемой в точке $M_0 (x_0; y_0)$, если существуют конечные $A$ и $B$ такие, что приращение $\Delta z$ в окрестности точки $M_0$ представимо в виде
+    Функция $z = f(x;y)$ называется \textbf{дифференцируемой} в точке $M_0 (x_0; y_0)$, если существуют конечные $A$ и $B$ такие, что приращение $\Delta z$ в окрестности точки $M_0$ представимо в виде
     \[ \Delta z = A \Delta x + B \Delta y + o(\rho), \rho \to 0, \rho = \sqrt{\Delta x^2 + \Delta y^2} \]
     \underline{Замечание:} рассмотрим $\varepsilon = \varepsilon (\Delta x; \Delta y): \lim_{\rho \to 0}\varepsilon = 0$. Тогда $o(\rho) = \underset{\text{б. малое}}{\varepsilon(\Delta x; \Delta y)} \times \underset{\text{б. малое}}{\rho}$. Тогда:
     \[ \Delta z = A \Delta x + B \Delta y + \varepsilon (\Delta x; \Delta y) \times \rho \]
-    Если $z = f(x; y)$ дифференцируема в точке $(x_0; y_0)$, то линейная часть приращения $\Delta z = A \Delta x + B \Delta y$ называется дифференциалом функции $z$ в точке $(x_0; y_0)$.
+    Если $z = f(x; y)$ дифференцируема в точке $(x_0; y_0)$, то линейная часть приращения $\Delta z = A \Delta x + B \Delta y$ называется \textbf{дифференциалом} функции $z$ в точке $(x_0; y_0)$.
     \begin{gather*}
         \Delta x = dx, \Delta y = dy\\
         \Delta z = Adx + Bdy
@@ -2067,8 +2074,11 @@
     \begin{adjustwidth}{1.5em}{1.5em}
         Пусть $z = f(x;y)$ задана в $u(M_0; \delta)$, имеет частную производную $\frac{\partial f}{\partial x} \Big|_{M_0}$ и $\frac{\partial f}{\partial y} \Big|_{M_0}$, $\frac{\partial f}{\partial x}$ и $\frac{\partial f}{\partial y}$ непрерывны в точке $M_0$.\\
         Рассмотрим
-        \[ \Delta z = f(x_0 + \Delta x; y_0 + \Delta y) - f(x_0; y_0) = [ f(x_0 + \Delta x; y_0 + \Delta y) - f(x_0; y_0 + \Delta y) ] + [f(x_0; y_0 + \Delta y) - f(x_0; y_0)] \]
-        По \hyperref[th:4.12.4]{теореме Лагранжа}:
+        \begin{gather*}
+            \Delta z = f(x_0 + \Delta x; y_0 + \Delta y) - f(x_0; y_0) =\\
+            = [ f(x_0 + \Delta x; y_0 + \Delta y) - f(x_0; y_0 + \Delta y) ] + [f(x_0; y_0 + \Delta y) - f(x_0; y_0)]
+        \end{gather*}
+        По теореме Лагранжа (4.12.4):
         \begin{gather*}
             f(b) - f(a) = f'(\xi)(b-a), \xi \in (a, b)\\
             f(b) - f(a) = f'(a + \theta(b-a))(b-a), 0 < \theta < 1\\
@@ -2124,12 +2134,12 @@
     \end{gather*}
     \[ \frac{\partial f}{\partial t_j} = \frac{\partial f}{\partial x_1} \times \frac{\partial x_1}{\partial t_j} + \frac{\partial f}{\partial x_2} \times \frac{\partial x_2}{\partial t_j} + \dots + \frac{\partial f}{\partial x_n} \times \frac{\partial x_n}{\partial t_j} = \sum_{i=1}^{n} \frac{\partial f}{\partial x_i} \times \frac{\partial x_i}{\partial t_j} = \frac{\partial f}{\partial t_j} \]
 
-    \subsection{Инвариантность формы записи первого дифференциала.}
-    Если функции $x_i = x_i(t_1, \dots, t_m)$ ($i = \overline{1,n}$) непрерывны в точке $(t^0_1, \dots, t^0_m)$, а функция $y = f(x_1, \dots, x_n)$ имеет непрерывные частные производные в точке $x^0 = (x^0_1, \dots, x^0_n)$, где $x^0_i = x^0_i(t)$ ($i = \overline{1,n}$), тогда запись первого дифференциала обладает свойством инвариантности относительно независимых и зависимых переменных.
+    \subsection{Инвариантность формы записи первого дифференциала.}\noindent
+    Если функции $x_i = x_i(t_1, \dots, t_m)$ ($i = \overline{1,n}$) непрерывны в точке $(t^0_1, \dots, t^0_m)$, а функция $y = f(x_1, \dots, x_n)$ имеет непрерывные частные производные в точке $x^0 = (x^0_1, \dots, x^0_n)$, где $x^0_i = x^0_i(t)$ ($i = \overline{1,n}$), тогда запись первого дифференциала обладает свойством \textbf{инвариантности} относительно независимых и зависимых переменных.
     \[ dy = \frac{\partial f}{\partial x_1}dx_1 + \frac{\partial f}{\partial x_2}dx_2 + \dots + \frac{\partial f}{\partial x_n}dx_n = \sum_{i=1}^{n}\frac{\partial f}{\partial x_i}dx_i \]
     \[ dx_i = \frac{\partial x_i}{\partial t_1}dt_1 + \frac{\partial x_i}{\partial t_2}dt_2 + \dots + \frac{\partial x_i}{\partial t_m}dt_m = \sum_{j=1}^{m} \frac{\partial x_i}{\partial t_j}dt_j \]
 
-    \subsection{Геометрический смысл частных производных и дифференциалов.}
+    \subsection{Геометрический смысл частных производных и дифференциалов.}\noindent
     Рассмотрим $z = f(x; y)$. Пусть $z$ в точке $(x_0; y_0)$ имеет частную производную.
     \[ \frac{\partial f}{\partial x} \Big|_{(x_0; y_0)} = \frac{df(x; y_0)}{dx} \Big|_{x = x_0} = \tg \alpha \]
     \[ \alpha{ - угол наклона касательной к графику функции } z = f(x; y) \]
@@ -2148,7 +2158,7 @@
     \[ z = z_0 + \frac{\partial f}{\partial x} \Big|_{(x_0; y_0)} (x-x_0) + \frac{\partial f}{\partial y} \Big|_{(x_0; y_0)} (y-y_0) + o(\rho) \,\,\,\,\, (1) \]
     Плоскость, определяемая уравнением
     \[ z = z_0 + \frac{\partial f}{\partial x} \Big|_{(x_0; y_0)} (x-x_0) + \frac{\partial f}{\partial y} \Big|_{(x_0; y_0)} (y-y_0) \,\,\,\,\, (2) \]
-    называется касательной плоскостью к графику функции $z = f(x;y)$ в точке $(x_0; y_0)$.\\
+    называется \textbf{касательной плоскостью} к графику функции $z = f(x;y)$ в точке $(x_0; y_0)$.\\
     Обозначим в $(2)$ $z = z_{\text{кас}}$\\
     Тогда из $(1)$ и $(2)$ следует, что $z - z_{\text{кас}} = o(\rho), \rho \to 0$.
     \begin{center}
@@ -2161,7 +2171,7 @@
     \[ \bar{n} \left(\frac{\partial f}{\partial x} \Big|_{(x_0; y_0)} (x-x_0); \frac{\partial f}{\partial y} \Big|_{(x_0; y_0)} (y-y_0); -1\right) \]
     Прямая вида
     \[ \frac{x - x_0}{\left( \frac{\partial f}{\partial x} \right) \Big|_{(x_0; y_0)}} = \frac{y - y_0}{\left( \frac{\partial f}{\partial y} \right) \Big|_{(x_0; y_0)}} = \frac{z - z_0}{-1} \]
-    называется нормалью к поверхности $z = f(x; y)$ в точке $(x_0; y_0)$.\par\noindent
+    называется \textbf{нормалью} к поверхности $z = f(x; y)$ в точке $(x_0; y_0)$.\par\noindent
     \underline{Замечание:} если поверхность задана неявно $F(x,y,z) = 0$:
     \begin{adjustwidth}{1.5em}{1.5em}
         Уравнение касательной плоскости: 
@@ -2170,7 +2180,7 @@
         \[ \frac{x - x_0}{\left( \frac{\partial F}{\partial x} \right) \Big|_{M_0}} = \frac{y - y_0}{\left( \frac{\partial F}{\partial y} \right) \Big|_{M_0}} = \frac{z - z_0}{\left( \frac{\partial F}{\partial z} \right) \Big|_{M_0}} \]
     \end{adjustwidth}
     \subsubsection*{Частные дифференциалы}
-    Если частное приращение функции $z = f(x;y)$ и $\Delta_x f$ можно представить в виде $\Delta_x f = A \Delta x + \varepsilon$, то $A \Delta x$ называются частным дифференциалом функции $f(x;y)$ в точке 
+    Если частное приращение функции $z = f(x;y)$ и $\Delta_x f$ можно представить в виде $\Delta_x f = A \Delta x + \varepsilon$, то $A \Delta x$ называются \textbf{частным дифференциалом} функции $f(x;y)$ в точке 
     \[ d_x f = A\Delta x = Adx = \frac{\partial f}{\partial x} \Big|_{M_0}dx \]
     Аналогично
     \[ d_y f = \frac{\partial f}{\partial y} \Big|_{M_0}dy \]
@@ -2228,7 +2238,7 @@
     \[ \sqrt{(x - x_0)^2 = (y - y_0)^2 = (z - z_0)^2} = t\text{ - расстояние от точки } (x_0; y_0; z_0) \text{ до } (x; y; z) \]
     Рассмотрим $f(x;y;z)$ на построенном луче.\\
     Получится функция $f(x_0 + t\cos \alpha; y_0 + t \cos \beta; z_0 + t \cos \gamma)$.\par\noindent
-    Производная сложной функции $f$ по переменной $t$ в точке $t = 0$ называется производной функции $f$ в точке $(x_0; y_0; z_0)$ по направлению $l$.
+    Производная сложной функции $f$ по переменной $t$ в точке $t = 0$ называется \textbf{производной функции} $f$ \textbf{в точке} $(x_0; y_0; z_0)$ \textbf{по направлению} $l$.
     \[ \frac{\partial f}{\partial l} \Big|_{(x_0; y_0; z_0)} = \frac{df}{dt}\Big|_{t_0} \]
     \begin{center}
         или
@@ -2242,8 +2252,8 @@
     Вектор с координатами 
     \[ \left( \overline{\frac{\partial f}{\partial x}; \frac{\partial f}{\partial y}; \frac{\partial f}{\partial z}} \right) \]
     вычисленный в точке $(x_0; y_0; z_0)$, называется \textbf{градиентом} функции $f(x; y; z)$ в точке $(x_0; y_0; z_0)$.\\
-    Обозначение: $\overline{\text{grad}}f \Big|_{M_0}$.\par\noindent
-    $\overline{\nabla}$ - оператор Набла.
+    \underline{Обозначение:} $\overline{\text{grad}}f \Big|_{M_0}$.\par\noindent
+    $\overline{\nabla}$ - \textbf{оператор Набла}.
     \[ \overline{\nabla} = \left( \overline{ \frac{\partial \sqcup}{\partial x}; \frac{\partial \sqcup}{\partial y}; \frac{\partial \sqcup}{\partial z} } \right) \]
     *вместо $\sqcup$ подставляем функцию (например, $f$), относительно которой применяем оператор Набла.
     \[ \overline{\nabla} f = \overline{\text{grad}}f\text{,} \]
@@ -2267,7 +2277,7 @@
     Вектор градиента функции в точке $M_0$ направлен перпендикулярно линии уровня.\\
     Рассмотрим $f = f(x;y;z)$.\\
     Поверхность вида $f(x;y;z) = \mathbb{C}$ называется \textbf{поверхностью уровня функции} $f$.\\
-    Вектор $\overline{\text{grad}f \Big|_{M_0}}$ направлен по нормали к этой поверхности.
+    Вектор $\overline{\text{grad}}f \Big|_{M_0}$ направлен по нормали к этой поверхности.
 
     \subsection{Частные производные и дифференциалы высших порядков}\noindent
     Рассмотрим $f = f(x;y)$. Имеем $\frac{\partial f}{\partial x}$; $\frac{\partial f}{\partial y}$.\\
@@ -2295,8 +2305,8 @@
         \[ \varphi'(x) = f'(x; y_0 + \Delta y) - f'(x;y_0) \]
         Тогда
         \begin{gather*}
-            \Delta_{xy}f = \varphi (x_0 + \Delta x) - \varphi(x_0) \underset{\hyperref[th:4.12.4]{Th. Лагранжа}}{=} \varphi'(\xi)\Delta x = \varphi'(x_0 + \theta_1 \Delta x)\Delta x =\\
-            = [ f'_x(x_0 + \theta_1 \Delta x; y_0 + \Delta y) - f'_x(x_0 + \theta_1 \Delta x; y_0) ] \Delta x \underset{\hyperref[th:4.12.4]{Th. Лагранжа}}{=}\\
+            \Delta_{xy}f = \varphi (x_0 + \Delta x) - \varphi(x_0) \underset{Th. Лагранжа (4.12.4)}{=} \varphi'(\xi)\Delta x = \varphi'(x_0 + \theta_1 \Delta x)\Delta x =\\
+            = [ f'_x(x_0 + \theta_1 \Delta x; y_0 + \Delta y) - f'_x(x_0 + \theta_1 \Delta x; y_0) ] \Delta x \underset{Th. Лагранжа (4.12.4)}{=}\\
             = f_{xy}''(x_0 + \theta_1 \Delta x; y_0 + \theta_2 \Delta y)\Delta x \Delta y
         \end{gather*}
         Аналогично 
@@ -2322,7 +2332,7 @@
     Найдём второй дифференциал, рассматривая $df$ только как функцию $x_1\, \dots\, x_n$ (при фиксированных $dx_1\, \dots\, dx_n$).\\
     Обозначим дифференциал при повторном дифференцировании $\delta$:
     \[ \delta(df) = \sum_{i=1}^{n}\left[ \delta(\frac{\partial f}{\partial x_i}) \right] = \sum_{i=1}^{n} ( \sum_{j=1}^{n} \frac{\partial^2 f}{\partial x_j \partial x_i} \delta x_j )dx_i = \underbrace{\sum_{i=1}^{n} \sum_{j=1}^{n} \frac{\partial^2 f}{\partial x_j \partial x_i} dx_i \delta x_j}_{\substack{\text{билинейная форма} \\ \text{относительно переменных} \\ dx_1\, \dots\, dx_n;\,\, \delta x_1\, \dots\, \delta x_n}} \]
-    Соответствующая билинейной форме квадратичная форма $(dx_1 = \delta x_1; dx_2 = \delta x_2; \dots; dx_n = \delta x_n)$ называется \textbf{вторым дифференициалом функции} $f$.
+    Соответствующая билинейной форме квадратичная форма $(dx_1 = \delta x_1; dx_2 = \delta x_2; \dots; dx_n = \delta x_n)$ называется \textbf{вторым дифференциалом функции} $f$.
     \[ d^2 f = \delta (df) \Big|_{dx_i = \delta x_i} \]
     \[ d^2 f = \sum_{i=1}^{n} \sum_{j=1}^{n} \frac{\partial^2 f}{\partial x_i \partial x_j} dx_i dx_j \]
     Аналогично определяются дифференциалы более высокого порядка:
@@ -2348,7 +2358,7 @@
         d^2 f=\delta(d f) \Big|_{\delta x_i=d x_i}=\delta\left(\sum_{i=1}^n \frac{\partial f}{\partial x_i} d x_i\right)=\begin{vmatrix}d(u v)=u d v+v d u\\\\\end{vmatrix} \boxed{=} \\
         \boxed{=} \sum_{i=1}^n \frac{\partial f}{\partial x_i}\left(\delta d x_i\right)+\sum_{i=1}^n \delta\left(\frac{\partial f}{\partial x_i}\right) d x_i=\sum_{i=1}^n \frac{\partial f}{\partial x_i} d^2 x_i+\sum_{i=1}^n \sum_{i=j}^n \frac{\partial^2 f}{\partial x_j \partial x_i} d x_i d x_j
     \end{gather*}
-    В случае зависимости переменных $x_i$ первая сумма $\ne 0$, т.е. второй дифференциал не обладает свойством инвариантности формы записи относительно переменных.
+    В случае зависимости переменных $x_i$ первая сумма $\ne 0$, т.е. второй дифференциал \underline{не обладает} свойством инвариантности формы записи относительно переменных.
 
     \subsection{Формула Тейлора для функции двух переменных}
     \subsubsection*{Теорема 7.13.1}\label{th:7.13.1}
@@ -2396,7 +2406,7 @@
         \end{center}
     \end{adjustwidth}
 
-    \subsection{Экстремум функции нескольких переменных}
+    \subsection{Экстремум функции нескольких переменных}\noindent
     Рассмотрим $f = f(x_1\, \dots\, x_n)$. Пусть она определена в окрестности точки $(x^0_1\, \dots\, x^0_n)$.\\
     Точка $x^0$ называется \textbf{точкой локального максимума (минимума)}, если $\exists$ окрестность этой точки:
     \begin{align*} 
@@ -2416,7 +2426,7 @@
         Зафиксируем координаты: $x_2 = x^0_2; x_3 = x^0_3; \dots; x_n = x^0_n$.\\
         Тогда $f = f(x_1, x^0_2, x^0_3, \dots, x^0_n)$ - функция одной переменной.\\
         Т.к. по условию точка $x^0 = (x^0_1, x^0_2, \dots, x^0_n)$ - точка локального экстремума функции $f(x_1\, \dots\, x_n)$, то точка $x^0_1$ - точка локального экстремума функции $f(x_1, x^0_2, \dots, x^0_n)$.\\
-        Тогда по \hyperref[th:4.12.1]{теореме Ферма}:
+        Тогда по теореме Ферма (4.12.1):
         \[ \frac{df(x_1, x^0_2, \dots, x^0_n)}{dx_1} \Big|_{x_1 = x^0_1} = \frac{\partial f(x_1\, \dots\, x_n)}{\partial x_1} \Big|_{(x^0_1\, \dots\, x^0_n)} = 0 \]
         Аналогично можно доказать, что все остальные частные производные тоже равны нулю в точке $(x^0_1\, \dots\, x^0_n)$.
         \begin{center}
@@ -2444,7 +2454,7 @@
         Приращение $\Delta f$ в окрестности точки $(0; 0)$ имеет разные знаки $\Rightarrow$ точка $(0; 0)$ не является точкой экстремума.
     \end{adjustwidth}
 
-    \subsection{Достаточные условия локального экстремума}
+    \subsection{Достаточные условия локального экстремума}\noindent
     Рассмотрим
     \begin{gather*}
         d^2 f \Big|_{x^0} = \sum_{i=1}^{n}\sum_{j=1}^{n} \frac{\partial^2 f}{\partial x_i \partial x_j} \Big|_{x^0} dx_i dx_j = \quad (x^0 \text{ - стац. точка})\\
@@ -2538,7 +2548,7 @@
         \end{enumerate}
     \end{adjustwidth}
     
-    \subsection{Неявные функции}
+    \subsection{Неявные функции}\noindent
     Если $F(x;y)$ определена на некотором множестве $R_2$ и $\exists$ функция одной переменной, определённой на некотором $R_1$ и $F(x, f(x)) = 0$, то функция $f(x)$ называется \textbf{неявной функцией}, определённой уравнением $F(x;y) = 0$.
     \[ F(x;\underset{f(x)}{y}) = 0 = (x-x_0)^2 + (y-y_0)^2 \quad (x_0; y_0) \]
     \[ F(x;\underset{f(x)}{y}) = 0 = x^2 + y^2 + 1 \]
@@ -2551,7 +2561,7 @@
     \begin{adjustwidth}{1.5em}{1.5em}
         Пусть $F(x; y)$ непрерывна в окрестности точки $(x_0; y_0)$.\\
         По условию $F'_y(x_0; y_0) \ne 0$. Пусть для определённости $F'_y(x_0; y_0) > 0$.\\
-        По условию $F'_y$ непрерывна в точке $(x_0; y_0) \implies F'_y$ непрерывна в некоторой окрестности точки $(x_0; y_0)$ и (по \hyperref[th:3.3.2]{теореме о сохранении знака}) $F'_y > 0$ в этой окрестности точки $(x_0; y_0)$.\\
+        По условию $F'_y$ непрерывна в точке $(x_0; y_0) \implies F'_y$ непрерывна в некоторой окрестности точки $(x_0; y_0)$ и (по теореме о сохранении знака (3.3.2)) $F'_y > 0$ в этой окрестности точки $(x_0; y_0)$.\\
         Т.к. $F'_y > 0 \implies F(x; y)$ возрастает по переменной $y$ на $[y_0 - \varepsilon; y_0 + \varepsilon]$ и $F(x_0; y_0) = 0$ по условию.\\
         Тогда $F(x_0; y_0 - \varepsilon) < 0$, $F(x_0; y_0 + \varepsilon) > 0$.\\
         Т.к. $F(x;y)$ непрерывна в окрестности точки $(x_0; y_0)$, то $\exists\, \delta$ такая, что в $u_\delta(x_0)$ функция $F(x; y)$ сохраняет такой же знак, как и в точке $(x_0; y_0 - \varepsilon)$ и $(x_0; y_0 + \varepsilon)$.\\
@@ -2561,7 +2571,7 @@
             F(x; y_0 + \varepsilon) > 0
         \end{align*}
         Зафиксируем произвольное $x \in (x_0 - \delta; x_0 + \delta)$ и рассмотрим $F(x; y)$ функцию только переменной $y$ на $[ y_0 - \varepsilon; y_0 + \varepsilon ]$.\\
-        Эта функция непрерывна, строго возрастает и имеет противоположные знаки на концах отрезка. Тогда по \hyperref[th:3.8.3]{теореме Больцано-Коши (следствие)} $\exists$ значение $y^*$ (единственное) $\in (y_0 - \varepsilon; y_0 + \varepsilon)$ такое, что $F(x; y^*) = 0$.\\
+        Эта функция непрерывна, строго возрастает и имеет противоположные знаки на концах отрезка. Тогда по следствию из теоремы Больцано-Коши (3.8.3) $\exists$ значение $y^*$ (единственное) $\in (y_0 - \varepsilon; y_0 + \varepsilon)$ такое, что $F(x; y^*) = 0$.\\
         Таким образом определена однозначная функция такая, что каждому $x \in (x_0 - \delta; x_0 + \delta)$ соответствует единственное значение $y^* \in (y_0 - \varepsilon; y_0 + \varepsilon)$.\\
         Обозначим эту функцию $y^* = f(x)$.
         \[ \forall x \in (x_0 - \delta; x_0 + \delta) \quad F(x; y^*) = F(x; f(x)) = 0 \]
@@ -2572,7 +2582,7 @@
         \[ \forall \varepsilon_1 > 0\, \exists\, \delta_1 > 0 : |x - x^*| < \delta_1 \implies | f(x) - f(x^*)| < \varepsilon_1 \]
         Т.е. $y^* = f(x)$ непрерывна в точке $x^* \implies$ она непрерывна $\forall x \in (x_0 - \delta; x_0 + \delta)$.\\
         Пусть функция $F(x; y)$ в $u(x_0; y_0)$ имеет непрерывную частную производную $F'_x$.\\
-        Тогда по \hyperref[th:7.5.4]{достаточному условию дифференцируемости (Th. 7.5.4)} $F(x; y)$ дифференцируема в точке $(x_0; y_0)$.\\
+        Тогда по \hyperref[th:7.5.4]{достаточному условию дифференцируемости (7.5.4)} $F(x; y)$ дифференцируема в точке $(x_0; y_0)$.\\
         Тогда по определению дифференцируемости функции в точке
         \[ \Delta F = F'_x \Big|_{(x_0; y_0)} \Delta x + F'_y \Big|_{(x_0; y_0)} \Delta y + \overbrace{\varepsilon_1 \Delta x + \varepsilon_2 \Delta y}^{\text{\hyperref[th:7.5.1]{Th. 7.5.1}}} \]
         \[ F(\underset{=0}{x_0 + \Delta x}; y_0 + \Delta y) - F(\underset{=0}{x_0}; y_0) = F'_x \Big|_{(x_0; y_0)} \Delta x + F'_y \Big|_{(x_0; y_0)} \Delta y + \varepsilon_1 \Delta x + \varepsilon_2 \Delta y \]
@@ -2640,7 +2650,7 @@
     \[ y^0_i = f_i(x_1\, \dots\, x_m) \quad i = \overline{1, n} \]
     Все $y^*_i$ имеют непрерывную частную производную в окрестностях $u(x^0_1\, \dots\, x^0_n)$.
 
-    \subsection{Условный экстремум}
+    \subsection{Условный экстремум}\noindent
     Пусть задана функция $F = F(x_1\, \dots\, x_m; y_1\, \dots\, y_n)$\\
     \underline{Задача:} найти экстремум этой функции, если переменные $x_i, y_j$ связаны между собой уравнениями 
     \[ \begin{cases}
@@ -2652,22 +2662,24 @@
     Точка $M_0 (x^0_1\, \dots\, x^0_m; y^0_1\, \dots\, y^0_n)$, \underline{удовлетворяющая условиям связи}, называется точкой \textbf{условного максимума (минимума)}, если $\exists$ окрестность точки $M_0$ такая, что 
     \[ \forall (x_1\, \dots\, x_m; y_1\, \dots\, y_n) \in u(M_0) : \underset{(F(M) \ge F(M_0))}{F(M) \le F(M_0)} \]
     \underline{Пример:}
-    Рассмотрим $F(x;y) = x^2 + y^2$. Найти экстремум $F$ при условии: $x + y - 1 = 0$.
-    \begin{center}
-        \includegraphics[max size={15cm}{10cm}]{7.17.1.png}
-    \end{center}
-    1 способ:
-    \begin{gather*}
-        y = 1 - x\\
-        F(x, y(x)) = x^2 + (1 - x)^2 = x^2 + 1 - 2x + x^2 = 2x^2 - 2x + 1\\
-        F' = 4x - 2 = 0
-        x = \frac{1}{2}, y = 1 - x = \frac{1}{2}
-    \end{gather*}
-    Получили точку $\left( \frac{1}{2}; \frac{1}{2} \right)$
-    \begin{center}
-        \includegraphics[max size={15cm}{10cm}]{7.17.2.png}
-    \end{center}
-    Ответ: точка $\left( \frac{1}{2}; \frac{1}{2} \right)$ - точка условного минимума.\\
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Рассмотрим $F(x;y) = x^2 + y^2$. Найти экстремум $F$ при условии: $x + y - 1 = 0$.
+        \begin{center}
+            \includegraphics[max size={15cm}{10cm}]{7.17.1.png}
+        \end{center}
+        1 способ:
+        \begin{gather*}
+            y = 1 - x\\
+            F(x, y(x)) = x^2 + (1 - x)^2 = x^2 + 1 - 2x + x^2 = 2x^2 - 2x + 1\\
+            F' = 4x - 2 = 0
+            x = \frac{1}{2}, y = 1 - x = \frac{1}{2}
+        \end{gather*}
+        Получили точку $\left( \frac{1}{2}; \frac{1}{2} \right)$
+        \begin{center}
+            \includegraphics[max size={15cm}{10cm}]{7.17.2.png}
+        \end{center}
+        Ответ: точка $\left( \frac{1}{2}; \frac{1}{2} \right)$ - точка условного минимума.
+    \end{adjustwidth}
     \underline{В общем виде:}
     \begin{adjustwidth}{1.5em}{1.5em}
         Рассмотрим $F(x_1\, \dots\, x_m; y_1\, \dots\, y_n) = F$\\
@@ -2681,7 +2693,7 @@
         Сложность - в разрешении системы условий связи.
     \end{adjustwidth}
 
-    \subsection{Метод неопределённых множителей Лагранжа}
+    \subsection{Метод неопределённых множителей Лагранжа}\noindent
     Рассмотрим $F = F(x_1\, \dots\, x_m; y_1\, \dots\, y_n) \quad (1)$.
     \[ \begin{cases}
         f_1(x_1\, \dots\, x_m; y_1\, \dots\, y_n) = 0\\
@@ -2706,7 +2718,7 @@
     \[ dF = 0 \implies \frac{\partial F}{\partial x_1}dx_1 + \frac{\partial F}{\partial x_2}dx_2 + \dots + \frac{\partial F}{\partial x_m}dx_m + \frac{\partial F}{\partial y_1}dy_1 + \dots + \frac{\partial F}{\partial y_n}dy_n = 0 \]
     Значит 
     \[ -\overline{\text{grad}}F = \lambda_1 \overline{\text{grad}}f_1 + \dots + \lambda_n \overline{\text{grad}}f_n \]
-    \[ \overline{\text{grad}(F + \lambda_1 f_1 + \lambda_2 f_2 + \dots + \lambda_n f_n)} = 0 \]
+    \[ \overline{\text{grad}}(F + \lambda_1 f_1 + \lambda_2 f_2 + \dots + \lambda_n f_n) = 0 \]
     Функция $L = F + \lambda_1 f_1 + \lambda_2 f_2 + \dots + \lambda_n f_n$ называется \textbf{функцией Лагранжа}.\\
     $\lambda_1\, \dots\, \lambda_n$ - множители Лагранжа.\\
     Составим систему:
