@@ -11,6 +11,7 @@
 \usepackage{changepage}
 \usepackage{hyperref}
 \usepackage{cancel}
+\usepackage{adjustbox}
 \graphicspath{{./images/}}
 \setmainlanguage{russian}
 \setotherlanguage{english}
@@ -84,27 +85,26 @@
     \tableofcontents
     \pagebreak
     \section{Неопределённые интегралы}
-    \subsection{Определение. Основные понятия}
+    \subsection{Определение. Основные понятия}\noindent
     \underline{Задача}. Известна производная функции $f(x)$. Требуется найти саму функцию $f(x)$.\\
     Или: по известной скорости восстановить закон движения.\par\noindent
-    Функция $F(x)$ называется первообразной для функции $f(x)$ на некотором интервале $(a; b)$, если $F(x)$ дифференциуема на $(a; b)$ и $F'(x) = f(x)$.
+    Функция $F(x)$ называется \textbf{первообразной} для функции $f(x)$ на некотором интервале $(a; b)$, если $F(x)$ дифференцируема на $(a; b)$ и $F'(x) = f(x)$.
     \subsubsection*{Теорема 5.1.1}\label{th:5.1.1}
-    Если $F(x)$ первообразная для $f(x)$ на $(a; b)$, то $F(x) + \mathbb{C}$, $C = const$, тоже первообразная.\par\noindent
+    Если $F(x)$ первообразная для $f(x)$ на $(a; b)$, то $F(x) + \mathbb{C}$, $\mathbb{C} = const$, тоже первообразная.\par\noindent
     \underline{Доказательство:}
     \[ (F(x) + \mathbb{C})' = F'(x) = f(x) \]
     \begin{center}
         \textbf{Ч.т.д.}
     \end{center}
     \subsubsection*{Теорема 5.1.2}\label{th:5.1.2}
-    Для того, чтобы две дифференциуемые на $(a;b)$ функции были первообразными для одной и той же функции $\Leftrightarrow$ чтобы на $(a; b)$ они отличались на постоянную.\par\noindent
+    Для того, чтобы две дифференцируемые на $(a;b)$ функции были первообразными для одной и той же функции $\Longleftrightarrow$ чтобы на $(a; b)$ они отличались на постоянную.\par\noindent
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
         \textbf{Докажем необходимость ($\Rightarrow$)}\par\noindent
         Пусть $F_1(x)$ и $F_2(x)$ - две первообразные для $f(x)$ на $(a; b)$.\\
         Тогда по определению $F_1'(x) = F_2'(x) = f(x)$.\\
-        Пусть $\varphi(x) = F_1(x) - F_2(x), \phi'(x) = F_1'(x) - F_2'(x) = f(x) - f(x) = 0$.\\
+        Пусть $\varphi(x) = F_1(x) - F_2(x), \varphi'(x) = F_1'(x) - F_2'(x) = f(x) - f(x) = 0$.\\
         Тогда по \hyperref[th:4.12.5]{теореме 4.12.5} $\varphi(x) = const$.\par\noindent
-        
         \textbf{Докажем достаточность ($\Leftarrow$)}\par\noindent
         Пусть
         \begin{gather*}
@@ -117,20 +117,24 @@
             \textbf{Ч.т.д.}
         \end{center}
     \end{adjustwidth}
-    Совокупность всех первообразующих функции $f(x)$ на $(a; b)$ называется \underline{неопределенным интегралом} от функции $f(x)$ и обозначается 
+    Совокупность всех первообразующих функции $f(x)$ на $(a; b)$ называется \textbf{неопределенным интегралом} от функции $f(x)$ и обозначается 
     \[ \int f(x)dx \]
     $\int$ - знак интеграла, $f(x)dx$ - подынтегральное выражение, $f(x)$ - подынтегральная функция; $dx$ - знак.
     
     \subsection{Свойства неопределённого интеграла}
     \begin{enumerate}
         \item \[ d \int f(x) dx = f(x)dx \]
-        \underline{Доказательство:}
+        \begin{center}
+            \underline{Доказательство:}
+        \end{center}
         \[ d \int f(x)dx = d(F(x) + \mathbb{C}) = (F(x) + \mathbb{C})'dx = f(x)dx \]
         \begin{center}
             \textbf{Ч.т.д.}
         \end{center}
         \item \[ \int dF(x) = F(x) + \mathbb{C} \]
-        \underline{Доказательство:}
+        \begin{center}
+            \underline{Доказательство:}
+        \end{center}
         \[ \int dF(x) = \int F'(x)dx = \int f(x)dx = F(x) + \mathbb{C} \]
         \begin{center}
             \textbf{Ч.т.д.}
@@ -167,16 +171,15 @@
 
     \subsection{Формула замены переменной в неопределённом интеграле}
     \subsubsection*{Теорема 5.3.1}\label{th:5.3.1}
-    Пусть функции $y=f(x)$ и $x=\varphi(t)$ определены на $\Delta x$ и $\Delta t$ и $\varphi(\Delta t) \subset \Delta x$.\\
-    Если $f(x)$ имеет на $\Delta x$ первообразную $F(x)$, т.е. $\int \,f(x)dx = F(x) + \mathbb{C}$, а $\varphi(t)$ дифференциуема на $\Delta t$, то функция $F(\varphi(t))\phi'(t)$ имеет на $\Delta t$ первообразная $F(\varphi(t))$
-    \[ \boxed{\int \, f(x)dx = \int f(\varphi(t))\phi'(t)dt} \]
+    Пусть функции $y=f(x)$ и $x=\varphi(t)$ определены на $\Delta x$ и $\Delta t$ и $\varphi(\Delta t) \subset \Delta x$. Если $f(x)$ имеет на $\Delta x$ первообразную $F(x)$, т.е. $\int \,f(x)dx = F(x) + \mathbb{C}$, а $\varphi(t)$ дифференцируема на $\Delta t$, то функция $F(\varphi(t))\varphi'(t)$ имеет на $\Delta t$ первообразную $F(\varphi(t))$:
+    \[ \boxed{\int \, f(x)dx = \int f(\varphi(t))\varphi'(t)dt} \]
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
-        Функции $f(x)$ и $F(x)$ определены на $\Delta x$, $\phi (\Delta t)$ с $\Delta x$, т.е. определены сложные функции\\
+        Функции $f(x)$ и $F(x)$ определены на $\Delta x$, $\varphi (\Delta t)$ с $\Delta x$, т.е. определены сложные функции\\
         $f(\varphi(t))$ и $F(\varphi(t))$
-        \[ F(\varphi(t))' = F'(\varphi(t)) * \phi'(t) = f(\varphi(t)) * \phi'(t) \]
-        Т.е. по определению функция $F(\varphi(t))$ является первообразной для $f(\varphi(t))\phi'(t)$\\
-        Тогда $\underbrace{ f(\varphi(t))\phi'(t)dt } = F(\varphi(t)) + \mathbb{C} = F(x) + \mathbb{C} = \underbrace{ \int f(x)dx }$
+        \[ F(\varphi(t))' = F'(\varphi(t)) \times \varphi'(t) = f(\varphi(t)) \times \varphi'(t) \]
+        Т.е. по определению функция $F(\varphi(t))$ является первообразной для $f(\varphi(t))\varphi'(t)$\\
+        Тогда $\underbrace{ f(\varphi(t))\varphi'(t)dt } = F(\varphi(t)) + \mathbb{C} = F(x) + \mathbb{C} = \underbrace{ \int f(x)dx }$
         \begin{center}
             \textbf{Ч.т.д.}
         \end{center}
@@ -201,12 +204,30 @@
     \end{enumerate}
 
     \subsubsection*{Таблица интегралов}
-    % я не буду это писать
-    \includegraphics[width=0.7\linewidth,keepaspectratio]{5.3.1.png}
+    \begin{enumerate}
+        \item $\int x^n dx = \frac{x^{n+1}}{n+1} + \mathbb{C},\,\, n \ne -1$
+        \item $\int \frac{dx}{x} = \ln |x| + \mathbb{C}$\\
+        Особый случай №1: $\int \frac{dx}{\sqrt{x}} = 2\sqrt{x} + \mathbb{C}$
+        \item $\int a^xdx = \frac{a^x}{\ln a} + \mathbb{C}$
+        \item $\int e^xdx = e^x + \mathbb{C}$
+        \item $\int \sin x dx = -\cos x + \mathbb{C}$
+        \item $\int \cos x dx = \sin x + \mathbb{C}$
+        \item $\int \frac{dx}{\cos^2 x} = \tg x + \mathbb{C}$
+        \item $\int \frac{dx}{\sin^2 x} = -\ctg x + \mathbb{C}$
+        \item $\int \ch x dx = \sh x + \mathbb{C}$
+        \item $\int \sh x dx = \ch x + \mathbb{C}$
+        \item $\int \frac{dx}{\ch^2x} = \th x + \mathbb{C}$
+        \item $\int \frac{dx}{\sh^2x} = -\cth x + \mathbb{C}$
+        \item $\int \frac{dx}{x^2 + a^2} = \frac{1}{a} \arctg \frac{x}{a} + \mathbb{C}$
+        \item $\int \frac{dx}{x^2 - a^2} = \frac{1}{2a} \ln \left|\frac{x-a}{x+a}\right| + \mathbb{C}$ (высокий логарифм)
+        \item $\int \frac{dx}{\sqrt{x^2 \pm a^2}} = \ln \left|x + \sqrt{x^2 \pm a^2}\right| + \mathbb{C}$ (длинный логарифм)
+        \item $\int \frac{dx}{\sqrt{a^2 - x^2}} = \arcsin \frac{x}{a} + \mathbb{C} = -\arccos \frac{x}{a} + \mathbb{C}$
+        \item $\int \frac{dx}{\sin x} = \ln \left|\tg \frac{x}{2}\right| + \mathbb{C}$
+    \end{enumerate}
 
     \subsection{Формула интегрирования по частям}
     \subsubsection*{Теорема 5.4.1}\label{th:5.4.1}
-    Если функции $u(x)$ и $v(x)$ дифференциуемы на некотором промежутке и на этом промежутке $\exists \int vdu$, то на нём $\exists \int udv$ и
+    Если функции $u(x)$ и $v(x)$ дифференцируемы на некотором промежутке и на этом промежутке $\exists \int vdu$, то на нём $\exists \int udv$ и
     \[ \boxed{\int udv = uv - \int vdu} \]
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
@@ -222,7 +243,7 @@
     \subsubsection*{Формула интегрирования по частям применяется в случаях:}    
     \begin{enumerate}
         \item \begin{gather*}
-            \int P_n(x) * \underset{\text{таблич. интегралы}}{\begin{Bmatrix}
+            \int P_n(x) \times \underset{\text{таблич. интегралы}}{\begin{Bmatrix}
                 \sin \alpha x\\
                 \cos \alpha x\\
                 e^{\alpha x}\\
@@ -233,7 +254,7 @@
             \end{matrix}
         \end{gather*}
         \item \begin{gather*}
-            \int P_n(x) * \underset{\text{не таблич.}}{\begin{Bmatrix}
+            \int P_n(x) \times \underset{\text{не таблич.}}{\begin{Bmatrix}
                 \arcsin \alpha x\\
                 \arctg \alpha x\\
                 ln \alpha x\\
@@ -263,7 +284,7 @@
         %     = \frac{B}{2}\ln|t^2+a^2| + \frac{1}{a}\left(-\frac{Bp}{2} + \mathbb{C}\right)\arctg \frac{t}{a} + \mathbb{C}
         % \end{gather*}
         % \item \begin{gather*}
-        %     \int \frac{(Ax+B)}{(x^2 + px + q)^k}dx = \int \frac{(Ax+B)}{(x^2 + \boxed{2} * \frac{1}{2}p\boxed{x} + \frac{p^2}{4} - \frac{p^2}{4} + q)^k}dx =\\
+        %     \int \frac{(Ax+B)}{(x^2 + px + q)^k}dx = \int \frac{(Ax+B)}{(x^2 + \boxed{2} \times \frac{1}{2}p\boxed{x} + \frac{p^2}{4} - \frac{p^2}{4} + q)^k}dx =\\
         %     = \int \frac{(Ax+B)dx}{[(x + \frac{p}{2})^2 + \underbrace{q - \frac{p^2}{4}}_{a^2, \, >0}]^k} = \begin{vmatrix}
         %         t = x + \frac{p}{2}\\
         %         x = t - \frac{p}{2}\\
@@ -473,7 +494,7 @@
         $m$ - общий знаменатель дробей $r$.\\
         \underline{Замена:}
         \[ \boxed{\frac{ax + b}{cx + d} = t^m} \]
-        \[ x = \frac{t^m * d - b}{a - ct^m} = p(t) \]
+        \[ x = \frac{t^m \times d - b}{a - ct^m} = p(t) \]
         \[ dx = p'(t)dt \]
         \[ \boxed{=} \int R (p(t), (t^m)^{\frac{p_1}{m}}, \dots, (t^m)^{\frac{p_n}{m}})p'(t)dt = \underbrace{\int R_1(t)dt}_{\text{дробно рац. ф-ия}} \]
         \underline{Частный случай:}
@@ -568,165 +589,175 @@
 
     \section{Определенный интеграл. Геометрические и физические приложения определенного интеграла. Несобственные интегралы}
     \subsection{Задачи приводящие к понятию определённого интеграла.}
-    \subsection*{1. Площадь криволинейной трапеции} 
+    \subsubsection{Площадь криволинейной трапеции} 
     \begin{center}
-        \includegraphics[width=0.8\linewidth]{6.1.1.png}
+        \includegraphics[max size={\linewidth}{7cm}]{6.1.1.png}
     \end{center}
-    \indent $Пусть f(x)\geq 0$\\
+    \indent Пусть $f(x)\geq 0$\\
     \begin{enumerate}
-        \item Произведём разбиение [a;b] R\\ a=$x_0<x_1<\dots<x_n=b$
-        \item В каждом элементарном отрезке [$x_i;x_{i+1}$] произвольным образом выберем (.) $\xi_i$
-        \item Вычислим $f(\xi_i)$
-        \item Вычислим $f(\xi_i) \Delta x_i$
-        \item Вычислим $\sigma_r = \sum_{i=0}^{n-1} f(\xi_i) \Delta x_i$
-        \item Обозначим $\lambda_R - диаметр разбиения\\ \sigma_r=[x_i;x_i+1]\\ Пусть \sigma_r \rightarrow 0 \\ Вычислим \lim_{n \to \inf} \sigma_R = S$
+        \item Произведём разбиение $[a; b]$ - $R$.\\
+        $a=x_0<x_1<\dots<x_n=b$
+        \item В каждом элементарном отрезке $[x_i;x_{i+1}]$ произвольным образом выберем точку $\xi_i$.
+        \item Вычислим $f(\xi_i)$.
+        \item Вычислим $f(\xi_i) \Delta x_i$.
+        \item Вычислим $\sigma_R = \sum_{i=0}^{n-1} f(\xi_i) \Delta x_i$.
+        \item Обозначим $\lambda_R$ - диаметр разбиения.\\
+        $\sigma_R=[x_i;x_i+1]$\\
+        Пусть $\sigma_R \to 0$.\\
+        Вычислим $\lim_{n \to \infty} \sigma_R = S$.
     \end{enumerate}
     
-    \subsection*{2. Вычисление массы неоднородного тонкого стержня}
+    \subsubsection{Вычисление массы неоднородного тонкого стержня}
     \begin{center}
-        \includegraphics[width=0.8\linewidth]{6.2.1}
-    \end{center}
+        \includegraphics[max size={\linewidth}{7cm}]{6.2.1}
+    \end{center}\noindent
+    $\rho(\xi_i)$. Пусть $\rho = const = \rho (\xi_i)\;\;\forall x \in [x_i;x_{i+1}]$\\
+    $m_i=\rho(\xi_i) \Delta x_i$\\
+    \[m \approx \sum_{i} \rho(\xi_i) \Delta x_i=\sigma_R; m=\lim_{n \to \infty} \sigma_R\]
 
-    P$(\xi_i)$ Пусть $\rho = const = \rho (\xi_i) \forall x \in [x_i;x_{i+1}]$\\
-    $m_i=\rho(\xi_i) \Delta x_i$\\ $m \approx \sum_{i} \rho(\xi_i) \Delta x_i=\delta_r; m=\lim_{n \to \inf} \delta_r$
-
-    \subsection{Определение определённого интеграла}
-    \indent Пусть на [a;b] задана ф-ия f(x)\\
+    \subsection{Определение определённого интеграла}\noindent
+    Пусть на $[a;b]$ задана функция $f(x)$\\
     \begin{enumerate}
-        \item Произведём разбиение отрезка [a;b]\\
-        a=$x_0<x_1<\dots<x_n=b\,$ R Пусть $\lambda_r = \underset{i}{max}[x_i;x_{i+1}]$ - диаметр разбиения
-        \item В каждом элементарном [$x_i;x_{i+1}$] произвольным образом выберем $\xi_i$
-        \item Вычислим $f(\xi_i)\Delta x_i$
-        \item Составим $\sigma_r=\sum_{i=0}^{n-1} f(\xi_i) \Delta x_i$ - интегральная сумма
-        \item Если $\exists$ \underline{конечный} предел интегральной суммы $\sigma_r$ при $\lambda_r \to 0$,
-        не зависящий от способа разбиения [a;b] и выбора (.) $\xi_i$, то он называется определённым интегралом
-        от функции f(x) на [a;b]
-    \end{enumerate}
+        \item Произведём разбиение отрезка $[a;b]$ - R.\\
+        $R \;\; a=x_0<x_1<\dots<x_n=b$. Пусть $\lambda_r = \underset{i}{max}[x_i;x_{i+1}]$ - диаметр разбиения.
+        \item В каждом элементарном [$x_i;x_{i+1}$] произвольным образом выберем $\xi_i$.
+        \item Вычислим $f(\xi_i)\Delta x_i$.
+        \item Составим $\sigma_R=\sum_{i=0}^{n-1} f(\xi_i) \Delta x_i$ - интегральная сумма.
+        \item Если $\exists$ \underline{конечный} предел интегральной суммы $\sigma_R$ при $\lambda_r \to 0$, не зависящий от способа разбиения $[a;b]$ и выбора точки $\xi_i$, то он называется \textbf{определённым интегралом} от функции $f(x)$ на $[a;b]$.
+    \end{enumerate}\noindent
+    \underline{Обозначение:} 
+    \[\lim_{\sigma_R \to 0} \sigma_R = \int_{a}^{b} f(x)dx\]
 
-    \underline{Обозначение} : $\lim_{\sigma_R \to 0} \delta_r = \int_{a}^{b} f(x)dx$
-
-    \subsection*{Определение определённого интеграла на языке "$\varepsilon - \delta$"}
-    \underline{Определение} : Число I называется определённым интегралом от функции f(x)
-    на [a;b], если $\forall \varepsilon>0 \exists \delta = \delta(\varepsilon)>0: 
-    \forall \lambda_r < \delta \Rightarrow 1I-\sigma_r | <\varepsilon$
+    \subsubsection*{Определение определённого интеграла на языке "$\varepsilon - \delta$"}\noindent
+    Число I называется \textbf{определённым интегралом} от функции $f(x)$
+    на $[a;b]$, если 
+    \[\forall \varepsilon>0 \,\exists\, \delta = \delta(\varepsilon)>0: 
+    \forall \lambda_r < \delta \implies |I-\sigma_R | <\varepsilon\]
 
     \subsection{Необходимое условие интегрируемости функции}
-    \subsubsection*{Теорема 6.3.1}\label{th:6.3.1}
-    Если функция интегрируема на некотором отрезке, то она ограничена на нем \par\noindent
+    \subsubsection*{Теорема 6.3.1 (необходимое условие интегрируемости функции)}\label{th:6.3.1}
+    Если функция интегрируема на некотором отрезке, то она ограничена на нём.\par\noindent
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
-        Пусть f(x) интегрируема на [a;b] и I = $\int_{a}^{b} f(x)dx$($\exists$ конечное число)\\
-        Зафиксируем $\varepsilon$. Тогда по \underline{определению} $\exists \delta: \sigma_r<\delta \Rightarrow 1\delta_r - I|<\varepsilon$
-        I-$\varepsilon<\sigma_r<I+\varepsilon$ - множество интегральных сумм\\ $\sigma_r$ ограничено
-        Пойдем от противного: Пусть f(x) интегрируема на [a;b], но не ограничена на нём.\\
-        Произведем разбиение R отрезка [a;b]\\
-        Т.к. f(x) неограниченна на [a;b] $\Rightarrow$ f неограниченна по крайней мере на одном из элементарных отрезков [$x_i;x_{i+1}$]
-        Пусть для определённости этот отрезок $[x_0;x_1]$. Тогда $\forall n \in N \exists(.) \xi^{(n)}_0
-        :f(\xi^{(n)}_0)>n$, $\xi^{(n)}_0 \in [x_0;x_1]$\\
-        Тогда $\lim_{n \to \inf} f(\xi^{(n)}_0) = \inf$\\
-        Составим $\sigma_R$:\\
-        $\sigma_R = f(\xi^{(n)}_0) \Delta x_o + \sum_{i=1}^{n} f(\xi_i) \Delta x_i$\\
-        $\lim_{n \to inf} \sigma_r = \inf$; т.е. $\sigma_R$ неограниченна. Получили противоречие. f(x) ограничена
+        Пусть $f(x)$ интегрируема на $[a;b]$ и $I = \int_{a}^{b} f(x)dx$ ($\exists$ конечное число).\\
+        Зафиксируем $\varepsilon$. Тогда по определению $\exists$ $\delta: \lambda_r < \delta \implies |\sigma_R - I| < \varepsilon$.\\
+        $I-\varepsilon < \sigma_R < I+\varepsilon$ - множество интегральных сумм.\\
+        $\sigma_R$ ограничено.\\
+        Пойдем от противного: пусть $f(x)$ интегрируема на $[a;b]$, но не ограничена на нём.\\
+        Произведем разбиение отрезка $[a;b]$ - $R$.\\
+        Т.к. $f(x)$ неограничена на $[a;b] \implies f$ неограничена по крайней мере на одном из элементарных отрезков $[x_i;x_{i+1}]$.\\
+        Пусть для определённости этот отрезок $[x_0;x_1]$.\\
+        Тогда $\forall n \in N \,\,\exists \,\xi^{(n)}_0: f(\xi^{(n)}_0)>n$, $\xi^{(n)}_0 \in [x_0;x_1]$.\\
+        Тогда $\lim_{n \to \infty} f(\xi^{(n)}_0) = \infty$\\
+        Составим $\sigma_R$:
+        \[ \sigma_R = f(\xi^{(n)}_0) \Delta x_o + \sum_{i=1}^{n} f(\xi_i) \Delta x_i \]
+        \[ \lim_{n \to \infty} \sigma_R = \infty \]
+        Т.е. $\sigma_R$ неограничена. Получили противоречие, следовательно, $f(x)$ ограничена.
         \begin{center}
             \textbf{Ч.т.д.}
         \end{center}
+    \end{adjustwidth}\noindent
+    \underline{Замечание:} Ограниченность функции является необходимым условием, но не является достаточным.\\
+    Если функция ограничена, она не обязана быть интегрируемой. (!!!)\\
+    \underline{Пример:} Функция Дирихле́\\
+    \begin{adjustwidth}{1.5em}{1.5em}
+        $f(x) = \begin{cases}
+            1,x \in Q\\
+            0,x \in I
+        \end{cases}$
+        \begin{enumerate}
+            \item $[a;b]$ $R$\\
+            Пусть точка $\xi_i \in Q \implies f(\xi_i) = 1 \implies \sum_{i=0}^{n} f(\xi_i) \Delta x_i =
+            \sum_{i=0}^{n} \Delta x_i = b-a$\\
+            \[\lim_{\lambda_R \to 0} \sigma_R = \lim_{\lambda_R \to 0} (b-a) = b-a\]
+            \item $[a;b]$ $R$\\
+            Пусть точка $\xi_i \in I \implies f(\xi_i)=0$\\
+            \[\sigma_R = \sum_{i=0}^{n} f(\xi_i) \Delta x_i =0\]\\
+            \[\lim_{\lambda_R \to 0} \sigma_R = 0\]\\
+            \[\lim_{\lambda_R \to 0} \sigma_R = \nexists\]
+        \end{enumerate}
     \end{adjustwidth}
 
-    \underline{Замечание:} Ограниченность функции является необходимым условием, но не является достаточным.\\
-    \indent Если функция ограничена, она не обязана быть интегрируемой!!!\\
-    \underline{Пример:} Функция Дирихле́\\
-    $f(x) = \begin{cases}
-        1,x \in Q\\
-        0,x \in I
-    \end{cases}$
-    \begin{enumerate}
-        \item $[a;b]$ R\\
-        Пусть (.) $\xi_i \in Q \Rightarrow f(\xi_i) = 1 \Rightarrow \sum_{i=0}^{n} f(\xi_i) \Delta x_i =
-        \sum_{i=0}^{n} \Delta x_i = b-a$\\
-        $\lim_{\lambda_R \to 0} \sigma_r = \lim_{\lambda_R \to 0} (b-a) = b-a$
-        \item $[a;b]$ R\\
-        Пусть (.) $\xi_i \in I \Rightarrow f(\xi_)i=0$\\
-        $\sigma_R = \sum_{i=0}^{n} f(\xi_i) \Delta x_i =0$\\
-        $\lim_{\lambda_R \to 0} \sigma_R = 0$\\
-        $\lim_{\lambda_R \to 0} \sigma_R = \not \exists$
-    \end{enumerate}
-
     \subsection{Суммы Дарбу}
-    \includegraphics[width=0.8\linewidth]{6.4.1.png}\\
-    Пусть f(x) задана на [a;b] и ограничена на нём\\
-    R $a=x_0<x_1<\dots<x_n=b$\\
-    Пусть $mi = \underset{x \in [x_i;x_{i+1}]}{inf f(x)}$, $Mi = \underset{x \in [x_i;x_{i+1}]}{sup f(x)}$
-    Составим $\sigma_R = \sum_{i=0}^{n-1} f(\xi_i) \Delta x_i$\\
-    Рассмотрим\\
-    Суммы Дарбу $\begin{cases}
-        \underline{S_r} = \sum_{i=0}^{n-1} mi \Delta x_i\\
-        \overline{S_r} = \sum_{i=0}^{n-1} Mi \Delta x_i
-    \end{cases}$\\
-    Очевидно \underline{$S_R$}$\leq \sigma_R \leq \overline{S_r}$\\
-    Суммы Дарбу - необязательно интегрируемые суммы\\
-    \subsection*{Свойства сумм Дарбу:}
+    \begin{center}
+        \includegraphics[max size={\linewidth}{7cm}]{6.4.1.png}
+    \end{center}\noindent
+    Пусть $f(x)$ задана на $[a;b]$ и ограничена на нём.\\
+    $R\;\; a=x_0<x_1<\dots<x_n=b$\\
+    Пусть $m_i = \underset{x \in [x_i;x_{i+1}]}{\inf f(x)}$, $M_i = \underset{x \in [x_i;x_{i+1}]}{\sup f(x)}$.\\
+    Составим $\sigma_R$:
+    \[ \sigma_R = \sum_{i=0}^{n-1} f(\xi_i) \Delta x_i \]
+    Рассмотрим:\\
+    \begin{center}
+        \textbf{Суммы Дарбу:} $\begin{cases}
+            \underline{S_R} = \sum_{i=0}^{n-1} m_i \Delta x_i\\
+            \overline{S_R} = \sum_{i=0}^{n-1} M_i \Delta x_i
+        \end{cases}$
+    \end{center}
+    Очевидно, что $\underline{S_R} \leq \sigma_R \leq \overline{S_R}$\\
+    Суммы Дарбу - необязательно интегрируемые суммы.\\
+    \subsubsection*{Свойства сумм Дарбу:}
     \begin{enumerate}
-        \item Нижняя (верхняя) сумма Дарбу является точный нижней (верхней) гранью интегральным сумм
-        Римана, соответствующих данному разбиению R
+        \item Нижняя (верхняя) сумма Дарбу является точный нижней (верхней) гранью интегральным сумм Римана, соответствующих данному разбиению R.\par\noindent
         \underline{Доказательство:}
         \begin{adjustwidth}{1.5em}{1.5em}
-            \underline{$S_R$} = $\sum_{i=0}^{n-1} mi \Delta x_i = \sum_{i=0}^{n-1}
-            \underset{\xi_i \in \Delta x_i}{inf} f(\xi_i) \Delta x_i = \underset{\xi_i \in \Delta x_i}{inf}
-            \sum_{i=0}^{n-1} f(\xi_i) \Delta x_i = \underset{\xi_i \in \Delta x_i}{inf} \sigma_R$
+            \[ \underline{S_R} = \sum_{i = 0}^{n-1} m_i \Delta x_i = \sum_{i = 0}^{n - 1}\underset{\xi_i \in \Delta x_i}{\inf f(\xi_i)\Delta x_i} = \underset{\xi_i \in \Delta x_i}{\inf} \sum_{i = 0}^{n - 1} f(\xi_i)\Delta x_i = \underset{\xi_i \in \Delta x_i}{\inf} \sigma_R\]
         \end{adjustwidth}
-        \item Если к имеющимся у разбиения R точкам деления добавить новые точки, то верхняя сумма Дарбу
-        не возрастает, а нижняя сумма Дарбу не убывает.\\
+        \item Если к имеющимся у разбиения $R$ точкам деления добавить новые точки, то верхняя сумма Дарбу не возрастает, а нижняя сумма Дарбу не убывает.\par\noindent
         \underline{Доказательство:}
         \begin{adjustwidth}{1.5em}{1.5em}
-            \underline{Замечание:} для доказательства достаточно показать, что свойство выполняется при 
-            добавлении одной (.)\\
-            Пусть $\overline{S_R}$ - верхняя сумма Дарбу, отвечающая разбиению R\\
-            Пусть $\overline{S_R}$ - верхняя сумма Дарбу, отвечающая разбиению R' R'=R+(.)\\
-            $\overline{S_R}$ будет отличаться от $\overline{S_R}'$ тем, что вместо слагаемого Mi
-            $\Delta x_i$ будут Mi'(x'-$x_i$)+Mi''($x_{i+1}-x'$)\\
-            $M_i' = \underset{x \in [x_i;x']}{sup f(x)}$  $M_i''= \underset{x \in [x_i;x']}{sup f(x)}$\\
-            Так как $[x_i;x'] \sqsubset [x_i;x_{i+1}]$\\
-            $[x';x_{i+1}] \sqsubset [x_i;x_{i+1}]$, то $M_i' \leq M_i, M_i''\leq M_i$\\
-            Получим что $M_i'(x'-x_i)+M_i''(x_{i+1}-x') \leq M_i(x'-x_i+x_{i+1}-x') = M_i(x_{i+1}-x_i)$\\
-            Т. е. $\overline{S_r'} \leq \overline{S_r}$ Аналогично $\underline{S_R'} \leq \underline{S_R}$\\
+            \underline{Замечание:} для доказательства достаточно показать, что свойство выполняется при добавлении одной точки.\\
+            Пусть $\overline{S_R}$ - верхняя сумма Дарбу, отвечающая разбиению $R$\\
+            Пусть $\overline{S'_R}$ - верхняя сумма Дарбу, отвечающая разбиению $R'$, $R'=R+$добавленная точка.\\
+            $\overline{S_R}$ будет отличаться от $\overline{S'_R}$ тем, что вместо слагаемого $M_i \Delta x_i$ будут $M_i'(x'-x_i)+M_i''(x_{i+1}-x')$
+            \[\underset{x \in [x_i;x']}{M_i' = \sup f(x)}\]
+            \[ \underset{x \in [x_i;x']}{M_i''= \sup f(x)}\]
+            Т.к. $[x_i; x'] \subset [x_i; x_{i+1}]$, $[x'; x_{i+1}] \subset [x_i; x_{i+1}]$, то $M_i' \leq M_i$, $M_i''\leq M_i$\\
+            Получим, что $M_i'(x'-x_i)+M_i''(x_{i+1}-x') \leq M_i(x'-x_i+x_{i+1}-x') = M_i(x_{i+1}-x_i)$\\
+            Т. е. $\overline{S_R'} \leq \overline{S_R}$\\
+            Аналогично $\underline{S_R'} \leq \underline{S_R}$
             \begin{center}
                 \textbf{Ч.т.д.}
             \end{center}
         \end{adjustwidth}
-        \item Каждая нижняя сумма Дарбу не больше любой верхней\\
+        \item Каждая нижняя сумма Дарбу не больше любой верхней.\par\noindent
         \underline{Доказательство:}
         \begin{adjustwidth}{1.5em}{1.5em}
             Рассмотрим $R_1,R_2$ - различные разбиения\\
             Составим новое разбиение $R_3=R_1+R_2$\\
-            $\underline{S_{R_1}} \underset{\text{св-во 2}}{\leq} \underline{S_{R_3}} \underset{\text{по определению}}{\leq} \overline{S_{R_3}} \leq \overline{S_{R_2}}$\\
+            \[\underline{S_{R_1}} \underset{\text{св-во 2}}{\leq} \underline{S_{R_3}} \underset{\text{по определению}}{\leq} \overline{S_{R_3}} \leq \overline{S_{R_2}}\]
             \begin{center}
                 \textbf{Ч.т.д.}
             \end{center}
-        \end{adjustwidth}
-        \underline{Замечание:} Множество нижних сумм Дарбу \{$\underline{S_r}$\} всегда
-        ограничено какой-либо верхней суммой Дарбу. Значит это множество ограничено сверху. Тогда существует
-        точная верхняя грань множества нижних сумм Дарбу.\\
-        $\underset{R}{sup} \underline{S_r} = I*$\\
-        Аналогично $\exists I^* = \underset{R}{\text{inf}} \overline{S_r}$\\
-        $I_* \leq I^* \forall R$\\
+        \end{adjustwidth}\noindent
+        \underline{Замечание:} Множество нижних сумм Дарбу $\{\underline{S_R}\}$ всегда ограничено какой-либо верхней суммой Дарбу. Значит это множество ограничено сверху. Тогда $\exists$ точная верхняя грань множества нижних сумм Дарбу:
+        \[ \underset{R}{\sup} \underline{S_R} = I_* \]
+        Аналогично $\exists\,I^* = \underset{R}{\inf} \overline{S_R}$\\
+        $I_* \leq I^* \;\; \forall R$\\
         $\underline{S_R} \leq I_* \leq I^* \leq \overline{S_R}$
-        \item \subsubsection*{Теорема О существовании интеграла}\label{th:6.4.1}
-        Для того, чтобы определённый интеграл, ограниченный функции f(x) существовал $\Leftrightarrow \lim_{\lambda_R \to 0} (\overline{S_r}-\underline{S_r})=0$,
+        \item \subsubsection*{Теорема 6.4.1 (о существовании интеграла)}\label{th:6.4.1}
+        Для того, чтобы определённый интеграл, ограниченный функции $f(x)$ существовал $\Longleftrightarrow \lim_{\lambda_R \to 0} (\overline{S_r}- \underline{S_r})=0$,
         т.е. $\lim_{\lambda_R \to 0}\sum_{i=0}^{n-1} \omega_i \Delta x_i$ \par\noindent
         \underline{Доказательство:}
         \begin{adjustwidth}{1.5em}{1.5em}
-            $\Rightarrow$ Пусть определённый интеграл от ограниченной функции f(x) существует на [a;b]\\
-            Тогда $\lim_{\lambda_R \to 0} \sigma_R = I$, т.е. $\forall \varepsilon > 0 \exists \delta > 0:\lambda_R < \delta \Rightarrow 1 \sigma_R - I1 < \varepsilon$\\
-            $I-\varepsilon < \sigma_R < I+\varepsilon \forall R$\\
-            $\lim_{\lambda_R}(\overline{S_r}-\underline{S_r})=0\begin{cases}
+            \textbf{Докажем необходимость ($\Rightarrow$)}\\
+            Пусть определённый интеграл от ограниченной функции $f(x)$ $\exists$ на $[a;b]$\\
+            Тогда:
+            \[ \lim_{\lambda_R \to 0} \sigma_R = I\]
+            Т.е. 
+            \[ \forall \varepsilon > 0\,\exists\,\delta > 0: \lambda_R < \delta \Rightarrow |\sigma_R - I| < \varepsilon \]
+            \[ I - \varepsilon < \sigma_R < I+\varepsilon \;\;\; \forall R \]
+            Т.е.
+            \[ \left.\begin{matrix}
                 I-\varepsilon < \underline{S_r}<I+\varepsilon \Rightarrow \lim_{\lambda_R \to 0} \underline{S_r}=I\\
                 I-\varepsilon < \overline{S_R} < I + \varepsilon \Rightarrow \lim_{\lambda_R} \overline{S_r} = I\\
-            \end{cases}$\\
-            $\Leftarrow$ Пусть $\lim_{\lambda_R \to 0}(\overline{S_r}-\underline{S_R})=0$\\
-            Т. е. $\lim_{\lambda_R \to 0} \overline{S_R} = \lim_{\lambda_R \to 0} \underline{S_r}$\\
-            $\{\overline{S_R}\}$ Невозрастающая, ограниченная снизу, те $\lim_{\lambda_R} \overline{S_R} = I^*$\\
-            Аналогично $\lim_{\lambda_R} \underline{S_R} = I_*$. Тогда $I^* = I_* = I$\\
-            \includegraphics[width=0.8\linewidth]{6.4.2.png}
+            \end{matrix}\right\rbrace \lim_{\lambda_R}(\overline{S_r}-\underline{S_r})=0\]\noindent
+            \textbf{Докажем достаточность ($\Leftarrow$)}\\
+            Пусть $\lim_{\lambda_R \to 0}(\overline{S_R}-\underline{S_R})=0$\\
+            Т. е. $\lim_{\lambda_R \to 0} \overline{S_R} = \lim_{\lambda_R \to 0} \underline{S_R}$\\
+            $\{\overline{S_R}\}$ невозрастающая, ограниченная снизу, т.е. $\lim_{\lambda_R} \overline{S_R} = I^*$\\
+            Аналогично $\lim_{\lambda_R} \underline{S_R} = I_*$. Тогда $I^* = I_* = I$.\\
+            \includegraphics[max size={\linewidth}{7cm}]{6.4.2.png}
             \begin{center}
                 \textbf{Ч.т.д.}
             \end{center}
@@ -734,72 +765,82 @@
     \end{enumerate}
     %параграф 5 дописать надо%
     \subsection{Достаточное условия интегрируемости функций}
-    \subsubsection*{Теорема 6.5.1 }\label{th:6.5.1}
-    Функция непрерывная на отрезке интегрируема на нем \par\noindent
+    \subsubsection*{Теорема 6.5.1}\label{th:6.5.1}
+    Функция, непрерывная на отрезке, интегрируема на нём.\par\noindent
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
-        Если f(x) непрерывна на [a;b], то она равномерно непрерывна на нем.\\
-        Тогда $\forall \varepsilon>0 \exists \delta'>0:\forall x',x'' \in [a;b]: |x'-x''|<\delta \Rightarrow |f(x')-f(x'')|<\varepsilon$\\
-        Произведём разбиение R:$\lambda_R < \delta$\\
-        Тогда $\forall x',x'' \in [x_i;x_{i+1}]|x'-x''|\leq x_{i+1}-x_i=\Delta x_i < \delta \Rightarrow |f(x')-f(x'')|<\varepsilon$\\
-        Рассмотрим колебание функции f(x) на элементарном отрезке: $\omega_i=M_i-m_i = \underset{\Delta x_i}{sup}f(x)-\underset{\Delta x_i}{\text{inf}}f(x) \fbox{=}$\\
+        Если $f(x)$ непрерывна на $[a; b]$, то она равномерно непрерывна на нём.\\
+        Тогда:
+        \[\forall\varepsilon>0\,\exists\,\delta>0:\forall x',x'' \in [a;b]: |x'-x''|<\delta \Rightarrow |f(x')-f(x'')|<\varepsilon\]
+        Произведём разбиение $R: \lambda_R < \delta$\\
+        Тогда 
+        \[\forall x',x'' \in [x_i;x_{i+1}] \;\; |x'-x''| \leq x_{i+1}-x_i=\Delta x_i < \delta \Rightarrow |f(x')-f(x'')|<\varepsilon \]
+        Рассмотрим колебание функции $f(x)$ на элементарном отрезке: $\omega_i=M_i-m_i = \underset{\Delta x_i}{\sup}f(x)-\underset{\Delta x_i}{\inf}f(x) \fbox{=}$\\
         \underline{Замечание:}
-        \begin{math}
-            \underset{[a;b]}{sup} \lambda f(x) = \lambda \underset{[a;b]}{\text{inf}} f(x),\lambda < 0\\
-            \underset{[a;b]}{sup}(f(x)-g(x))=\underset{[a;b]}{sup} (f(x)+\underset{[a;b]}{sup} (-g(x))) = \underset{[a;b]}{sup} f(x)-\underset{[a;b]}{\text{inf}} g(x)\\
-        \end{math}
-        $\fbox{=} \underset{x',x'' \in \Delta x}{sup}|f(x')=f(x'')|<\varepsilon$\\
+        \begin{gather*}
+            \underset{[a;b]}{\sup} \lambda f(x) = \lambda \underset{[a;b]}{\inf} f(x),\lambda < 0\\
+            \underset{[a;b]}{\sup}(f(x)-g(x))=\underset{[a;b]}{\sup} (f(x)+\underset{[a;b]}{\sup} (-g(x))) = \underset{[a;b]}{\sup} f(x)-\underset{[a;b]}{\inf} g(x)\\
+        \end{gather*}
+        $\fbox{=} \underset{x',x'' \in \Delta x}{\sup}|f(x')=f(x'')|<\varepsilon$\\
         \begin{center}
-            \includegraphics[width=0.6\linewidth]{6.5.1.png}\\
+            \includegraphics[max size={\linewidth}{7cm}]{6.5.1.png}\\
         \end{center}
-        Рассмотрим $\sum_{i=0}^{n-1} \omega_i \Delta x_i < \varepsilon \sum_{i=0}^{n-1} \Delta x_i = \varepsilon (b-a)\\
-        \lim_{\lambda_R \to 0} \sum_{i=0}^{n-1} \omega_i \Delta x_i = 0 \Rightarrow$ f(x) интегрируема на [a;b]\\
+        Рассмотрим 
+        \[ \sum_{i=0}^{n-1} \omega_i \Delta x_i < \varepsilon \sum_{i=0}^{n-1} \Delta x_i = \varepsilon (b-a) \]
+        $\lim_{\lambda_R \to 0} \sum_{i=0}^{n-1} \omega_i \Delta x_i = 0 \implies f(x)$ интегрируема на $[a; b]$\\
         \begin{center}
             \textbf{Ч.т.д.}
         \end{center}
     \end{adjustwidth}
 
     \subsubsection*{Теорема 6.5.2}\label{th:6.5.2}
-    Ограниченная монотонная функция на отрезке, интегрируема на нём \par\noindent
+    Ограниченная монотонная функция на отрезке интегрируема на нём.\par\noindent
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
-        Пусть для определённости f(x) возрастает на [a;b]\\
-        f(a)<f(x)<f(b) $\forall x \in (a;b)$\\
-        \begin{math}
-            m_i=\underset{[x_i;x_{i+1}]}{\text{inf}} f(x) = f(x_i)\\
-            M_i = \underset{[x_i;x_{i+1}]}{sup}f(x)=f(x_{i+1})\\
-            \overline{S_R}-\underline{S_r}=\sum_{i=0}^{n-1} (M_i-m_i) \Delta x_i = \sum_{i=0}^{n-1}(f(x_{i+1})-f(x_i))\Delta x_i < \sum_{i=0}^{n-1}(f(x_{i+1}-f(x_i)))\delta = (f(x_n)-f(x_o))\delta=(f(b)-f(a))\delta \fbox{=}\\
-            \text{Пусть } \delta=\frac{f(b)-f(a)}{\varepsilon} \fbox{=} \varepsilon \\
-        \end{math}
-        Т.е. $\lim_{\lambda_R \to 0}(\overline{S_R}-\underline{S_R})=0$. Т.е.f(x) интегрируема на [a;b]
+        Пусть для определённости $f(x)$ возрастает на $[a;b]$
+        \[ f(a)<f(x)<f(b) \;\; \forall x \in (a;b)\]
+        \begin{gather*}
+            m_i=\underset{[x_i;x_{i+1}]}{\inf}f(x) = f(x_i)\\
+            M_i = \underset{[x_i;x_{i+1}]}{\sup}f(x)=f(x_{i+1})\\
+            \overline{S_R}-\underline{S_R}=\sum_{i=0}^{n-1} (M_i-m_i) \Delta x_i = \sum_{i=0}^{n-1}(f(x_{i+1})-f(x_i))\Delta x_i < \sum_{i=0}^{n-1}(f(x_{i+1}-f(x_i)))\delta =\\
+            = (\cancel{f(x_1)} - f(x_0) + \cancel{f(x_2)} - \cancel{f(x_1)} + \cancel{f(x_3)} - \cancel{f(x_2)} + \dots + f(x_n) - \cancel{f(x_n - 1)})\delta =\\
+            = (f(x_n)-f(x_o))\delta = (f(b)-f(a))\delta \fbox{=}
+        \end{gather*}
+        Пусть $\delta=\frac{\varepsilon}{f(b)-f(a)} \fbox{=} \varepsilon$.\\
+        Т.е. $\lim_{\lambda_R \to 0}(\overline{S_R}-\underline{S_R})=0$.\\
+        Т.е. $f(x)$ интегрируема на $[a; b]$.
         \begin{center}
             \textbf{Ч.т.д.}
         \end{center}
-    \end{adjustwidth}  
+    \end{adjustwidth}
     \underline{Замечание:}
     Монотонные функции могут быть разрывными.\\
-    Т.е. по   $\hyperref[th:6.5.2]{\text{Теореме 6.5.2 }} \exists$ разрывные интегрируемые функции\\
+    Т.е. по \hyperref[th:6.5.2]{теореме 6.5.2} $\exists$ разрывные интегрируемые функции.
     \begin{center}
-        \includegraphics[width=0.5\linewidth]{6.5.2.png}
+        \includegraphics[max size={\linewidth}{7cm}]{6.5.2.png}
     \end{center}
+
     \subsection{Свойства интегрируемых функций}
     \begin{enumerate}
-        \item $\int_{a}^{b} dx = b-a$\\
-        $\int_{a}^{b} dx = \int_{a}^{b} 1*dx$\\
-        $\sigma_R = \sum_{i=0}^{n-1} f(\xi_i)\Delta x_i=\sum_{i=0}^{n-1}\Delta x_i=b-a$\\
+        \item \[ \int_{a}^{b} dx = b-a \]
+        \[ \int_{a}^{b} dx = \int_{a}^{b} 1*dx \]
+        \[ \sigma_R = \sum_{i=0}^{n-1} f(\xi_i)\Delta x_i=\sum_{i=0}^{n-1}\Delta x_i=b-a \]
         $\lim_{\lambda_R \to 0} \sigma_R=b-a$
-        \item Если f(x) интегрируема на каждом из [a;c],[c;b](a<c<b), то она интегрируема на [a;b]\\
-        $\int_{a}^{b}f(x)dx=\int_{a}^{c}f(x)dx+\int_{c}^{b}f(x)dx$
+        \item Если $f(x)$ интегрируема на каждом из $[a; c]$, $[c; b]$ $(a<c<b)$, то она интегрируема на $[a;b]$
+        \[ \int_{a}^{b}f(x)dx=\int_{a}^{c}f(x)dx+\int_{c}^{b}f(x)dx \]
         \underline{Доказательство:}\\
-        \includegraphics[width=0.5\linewidth]{6.6.1.png}\\
         \begin{adjustwidth}{1.5em}{1.5em}
-            Произведем разбиение R[a;b]\\
-            R:$a=x_0<x_1<\dots<x_m=c<\dots<x_n=b$\\
+            а)
+            \begin{center}
+                \includegraphics[max size={\linewidth}{7cm}]{6.6.1.png}\\
+            \end{center}
+            Произведем разбиение $R$ $[a;b]$\\
+            $R$: $a=x_0<x_1<\dots<x_m=c<\dots<x_n=b$\\
             Пусть $R_1: a=x_0<x_1<\dots<x_m=c$\\
             $R_2:c=x_m<x_{m+1}<\dots<x_n=b$\\
             Составим $\sigma_R$\\
-            \begin{math}
-                \sigma_R = \sum_{i=0}^{n-1}f(\xi_i)\Delta x_i=\sum_{i=0}^{m-1}f(\xi_i)\Delta x_i+\sum_{i=m}^{n-1}f(\xi_i)\Delta x_i=\sigma_{R_1}+\sigma{R_2}\\
+            \begin{gather*}
+                \sigma_R = \sum_{i=0}^{n-1}f(\xi_i)\Delta x_i=\sum_{i=0}^{m-1}f(\xi_i)\Delta x_i+\sum_{i=m}^{n-1}f(\xi_i)\Delta x_i=\sigma_{R_1}+\sigma_{R_2}\\
                 \lim_{\lambda_R \to 0}\sigma_R=\lim_{\lambda_R \to 0}(\sigma_{R_1}+\sigma_{R_2})=
                 \begin{vmatrix}
                     \text{Если } \lambda_R \to 0 \Rightarrow \\
@@ -807,807 +848,939 @@
                 \end{vmatrix}
                 = \lim_{\lambda_R \to 0}\sigma_{R_1}=\lim_{\lambda_R \to 0}\sigma_{R_2}=
                 \int_{a}^{c}f(x)dx+\int_{c}^{b}f(x)dx\\
-            \end{math}
+            \end{gather*}
             \begin{center}
                 a)
                 \textbf{Ч.т.д.}
             \end{center}
-            б) Пусть R - произвольное разбиение, не содержащее (.) C.\\
-            R' - разбиение, содержащее (.) C.\\
-            Пусть известно $\lim_{\lambda_R \to 0}\sigma_R'=I$. Покажет, что $\lim_{\lambda_R \to 0}\sigma_R=I \forall R$\\
-            Пусть $R: a=x_0<x_1<\dots<\underset{x_m<c<x_{m+1}}{x_m<x_{m+1}}<x_n=b\\$
+            б) Пусть $R$ - произвольное разбиение, не содержащее точку $C$.\\
+            $R'$ - разбиение, содержащее точку $C$.\\
+            Пусть известно $\lim_{\lambda_R \to 0}\sigma_{R'}=I$. Покажем, что $\lim_{\lambda_R \to 0}\sigma_R=I \; \forall R$\par\noindent
+            Пусть 
+            \[ R: a=x_0<x_1<\dots<\underset{x_m < c < x_{m+1}}{x_m<x_{m+1}}< \dots <x_n=b \]
             \begin{center}
-                \includegraphics[width=0.5\linewidth]{6.6.2.png}
+                \includegraphics[max size={\linewidth}{7cm}]{6.6.2.png}
             \end{center}
-            \begin{math}
-                \sigma_R'=\sigma_R-f(\xi_m)(x_{m+1}-x+m)+f(\xi_m')(c-x_m)+f(\xi_m'')(x_{m+1}-c) \Rightarrow \sigma_R=\sigma_R'+A\\
-                \text{Рассмотрим }|A|=|f(\xi_m)(x_{m+1}-x+m)+f(\xi_m')(c-x_m)+f(\xi_m'')(x_{m+1}-c)| \leq 
-                |M(x_{m+1}-x_m)+M(c-x_m)+M(x_{m+1}-C)|=|2M(x_{m+1}-x_m)|\\ 
-                \lim_{\lambda_R \to 0}|A|=0 \text{   } \lim_{\lambda_R \to 0} \sigma_R = \lim_{\lambda_R \to 0}(\sigma_R'+A)=
-                \lim_{\lambda_R \to 0}\sigma_R'+\lim_{\lambda_R \to 0}A=
+            \[ \sigma_{R'}=\sigma_R-f(\xi_m)(x_{m+1}-x_m)+f(\xi_m')(c-x_m)+f(\xi_m'')(x_{m+1}-c) \implies \sigma_R=\sigma_{R'}+A\]
+            Рассмотрим
+            \begin{gather*}
+                |A|=|f(\xi_m)(x_{m+1}-x_m)+f(\xi_m')(c-x_m)+f(\xi_m'')(x_{m+1}-c)| \leq\\
+                \leq |M(x_{m+1}-x_m)+M(c-x_m)+M(x_{m+1}-C)|=|2M(x_{m+1}-x_m)|\\ 
+                \lim_{\lambda_R \to 0}|A|=0 \;\;\; \lim_{\lambda_R \to 0} \sigma_R = \lim_{\lambda_R \to 0}(\sigma_{R'}+A) = \lim_{\lambda_R \to 0}\sigma_{R'}+\lim_{\lambda_R \to 0}A =
                 \begin{vmatrix}
                     \text{Если } \lambda_R \to 0, \\
                     \text{то} \lambda_R' \to 0
-                \end{vmatrix} 
-                = \lim_{\lambda_R \to 0}\sigma_R' +\lim_{\lambda_R \to 0}A=I
-            \end{math}
+                \end{vmatrix} =\\
+                = \lim_{\lambda_R \to 0}\sigma_{R'} +\lim_{\lambda_R \to 0}A=I
+            \end{gather*}
             \begin{center}
                 \textbf{Ч.т.д.}
             \end{center}
         \end{adjustwidth}
-        \textbf{Следствие:} Из 2 следует интегрируемость кусочно-непрерывных функций\\
-        \underline{Определение:}
-        Функция называется кусочно-непрерывной на [a;b] если она имеет на нём \underline{конечное} число (.) разрыв I рода\\
-        На концах отрезка функция может быть не определена. Т.е. f(x) кусочно-непрерывна если \\$\exists R:\forall(.)x_k \text{   }k=\overline{0,n-1}$\\
-        $\exists \text{ конечные пределы } \lim_{x \to x_k+0} f(x), \lim_{x\to x_k-0}f(x)$\\
-        В (.) $x_k$ f(x) может быть определена или нет\\
+        \textbf{Следствие:} Из 2 следует интегрируемость кусочно-непрерывных функций.\\
+        Функция называется кусочно-непрерывной на $[a; b]$ если она имеет на нём \underline{конечное} число точек разрыва I рода.\\
+        На концах отрезка функция может быть не определена.\\
+        Т.е. $f(x)$ кусочно-непрерывна, если $\exists$ $R$ такое, что $\forall$ точек $x_k \;\;\; k=\overline{0,n-1}$ $\exists$ конечные пределы $\lim_{x \to x_k+0} f(x)$, $\lim_{x\to x_k-0}f(x)$
+        В точке $x_k$ $f(x)$ может быть определена, или нет.\\
         \begin{center}
-            \includegraphics[width=0.4\linewidth]{6.6.3.png}\\
+            \includegraphics[max size={\linewidth}{7cm}]{6.6.3.png}\\
             \begin{math}
                 f_k(x)=\begin{cases}
-                f(x_k+0),x=x_k\\
-                f(x),x_k<x<x_{k+1}\\
-                f(x_{k+1}-0),x=x_k+1\\
-            \end{cases}
+                    f(x_k+0),x=x_k\\
+                    f(x),x_k<x<x_{k+1}\\
+                    f(x_{k+1}-0),x=x_{k+1}\\
+                \end{cases}
             \end{math}
         \end{center}
-        Тогда для таких функций свойство 2 выполняется $f_k$ в (.) $x_k$ может быть неопределенна.
-        В этой случае нужно доопределить f(x) в этих (.). Т.е. $\int_{a}^{b} f(x) dx=\sum_{i=0}^{n-1}\int_{x_k}^{x_{k+1}}f_k(x)dx$
-        \item Если функции f(x) и g(x) интегрируемы на [a;b],то $\forall \lambda , \mu$ функция $\lambda f-\mu g$ также интегрируема на [a;b].\\
-        $\int_{a}^{b}[\lambda f(x) + \mu g(x)]dx=\lambda \int_{a}^{b}f(x)dx + \mu \int_{a}^{b} g(x) dx$\\
+        Тогда для таких функций свойство 2 выполняется.\\
+        $f_k$ в точке $x_k$ может быть неопределенна.\\
+        В этой случае нужно доопределить $f(x)$ в этих точках, т.е. 
+        \[ \int_{a}^{b} f(x) dx=\sum_{k=0}^{n-1}\int_{x_k}^{x_{k+1}}f_k(x)dx\]
+        \item Если функции $f(x)$ и $g(x)$ интегрируемы на $[a; b]$, то $\forall \lambda , \mu$ функция $\lambda f+\mu g$ также интегрируема на $[a; b]$.
+        \[ \int_{a}^{b}[\lambda f(x) + \mu g(x)]dx=\lambda \int_{a}^{b}f(x)dx + \mu \int_{a}^{b} g(x) dx \]
         \underline{Доказательство:}
         \begin{adjustwidth}{1.5em}{1.5em}
-            Пусть R - произвольное разбиение\\
-            $\sigma_R(\lambda f(x) + \mu g(x))=\sum_{i=0}^{n-1}(\lambda f(\xi_i) + \mu g(\xi_i))\Delta x_i = \lambda \sum_{i=0}^{n-1} f(\xi_i) \Delta x_i +
-            \mu \sum_{i=0}^{n-1} g(\xi_i)\Delta x_i = \lambda \sigma_R(f)+\mu\sigma_R(g)$\\
-            Т. К.f(x) и g(x) интегрируемы на [a;b] то существует конечный предел правой части => существует конечный 
-            $\lim_{\lambda_R \to 0}\sigma_R (\lambda f + \mu g) = \lambda \lim_{\lambda_R \to 0}\sigma_R(f)+\mu \lim_{\lambda_R \to 0}\sigma_R(g)\\
-            \int_{a}^{b}[\lambda f(x)+\mu g(x)]dx=\lambda \int_{a}^{b}f(x)dx+\mu \int_{a}^{b} g(x)dx$
+            Пусть $R$ - произвольное разбиение\\
+            \begin{gather*}
+                \sigma_R(\lambda f(x) + \mu g(x))=\sum_{i=0}^{n-1}(\lambda f(\xi_i) + \mu g(\xi_i))\Delta x_i =\\
+                = \lambda \sum_{i=0}^{n-1} f(\xi_i) \Delta x_i +
+                \mu \sum_{i=0}^{n-1} g(\xi_i)\Delta x_i =\\
+                = \lambda \sigma_R(f)+\mu\sigma_R(g)    
+            \end{gather*}
+            
+            Т.к. $f(x)$ и $g(x)$ интегрируемы на $[a; b]$, то $\exists$ конечный предел правой части $\implies$ $\exists$ конечный предел и левой части: 
+            \[ \lim_{\lambda_R \to 0}\sigma_R (\lambda f + \mu g) = \lambda \lim_{\lambda_R \to 0}\sigma_R(f)+\mu \lim_{\lambda_R \to 0}\sigma_R(g) \]
+            \[ \int_{a}^{b}[\lambda f(x)+\mu g(x)]dx=\lambda \int_{a}^{b}f(x)dx+\mu \int_{a}^{b} g(x)dx \]
             \begin{center}
                 \textbf{Ч.т.д.}
             \end{center}
         \end{adjustwidth}
-        \item Интегрируемость произведения интегрируемых функций: Если f(x) и g(x) интегрируемы на [a;b], то их произведение тоже интегрируемо.\\
+        \item Интегрируемость произведения интегрируемых функций: Если $f(x)$ и $g(x)$ интегрируемы на $[a; b]$, то их произведение тоже интегрируемо.\\
         \underline{Доказательство:}
         \begin{adjustwidth}{1.5em}{1.5em}
-            Если f(x) и g(x) интегрируемы на [a;b] то они ограничены на нём (необходимое условие интегрируемости).Т.е. $\forall
-            x \in [a;b] |f(x)|\leq A,|g(x)|\leq A \Rightarrow |f(x)g(x)|\leq A^2,\text{Т.е. } |f(x)g(x)|$ ограничены.
-            \underline{Замечание:} Рассмотрим 
-            \begin{math}
-                f(x')g(x')-f(x)g(x)=f(x')g(x')-f(x)g(x)-f(x)g(x')+f(x)g(x')=(f(x')-f(x)g(x'))+(g(x')-g(x))f(x)\\
+            Если $f(x)$ и $g(x)$ интегрируемы на $[a; b]$, то они ограничены на нём (по необходимому условию интегрируемости).\\
+            Т.е. 
+            \[ \forall x \in [a;b] \;\;\; |f(x)|\leq A,|g(x)|\leq A \implies |f(x)g(x)|\leq A^2\]
+            Т.е. $|f(x)g(x)|$ ограничены.\\
+            \underline{Замечание:}\\
+            Рассмотрим 
+            \begin{gather*}
+                f(x')g(x')-f(x)g(x)=f(x')g(x')-f(x)g(x)-f(x)g(x')+f(x)g(x')=(f(x')-f(x))g(x')+(g(x')-g(x))f(x)\\
                 |f(x')g(x')-f(x)g(x)| \leq |f(x')-f(x)||g(x')|+|g(x')-g(x)||f(x)| \leq A(|f(x')-f(x)|+|g(x')-g(x)|)\\
-            \end{math}
-            Введем разбиение R и выберем (.) x и x' в одном и том же отрезке разбиения $[x_k;x_{k+1}]\\ \omega_k(fg)\leq A(\omega_k(f)+\omega_k(g))$\\
-            Т.е. $\sum_{k=0}^{n-1} \omega_k (fg) \Delta x_k \leq A \sum_{k=0}^{n-1}\omega_k(f)\Delta x_k+\sum_{i=0}^{n-1}\omega_k(g)\Delta x_k$\\
-            Переходя к lim при $\lambda_k \to 0$, получим $\lim_{\lambda_R \to 0} \sum_{k=0}^{n-1} \omega_k(fg) \Delta x_k=0$, Т.е.  f(x)g(x) интегрируема на [a;b] по \hyperref[th:6.4.1]{Теореме 6.4.1}\\
+            \end{gather*}
+            Введем разбиение $R$ и выберем точку $x$ и $x'$ в одном и том же отрезке разбиения $[x_k;x_{k+1}]$ 
+            \[ \omega_k(fg)\leq A(\omega_k(f)+\omega_k(g)) \]
+            Т.е. 
+            \[\sum_{k=0}^{n-1} \omega_k (fg) \Delta x_k \leq A \sum_{k=0}^{n-1}\omega_k(f)\Delta x_k+A\sum_{i=0}^{n-1}\omega_k(g)\Delta x_k\]
+            Переходя к lim при $\lambda_k \to 0$, получим $\lim_{\lambda_R \to 0} \sum_{k=0}^{n-1} \omega_k(fg) \Delta x_k=0$, т.е. $f(x)g(x)$ интегрируема на $[a; b]$ по \hyperref[th:6.4.1]{теореме 6.4.1}.
             \begin{center}
                 \textbf{Ч.т.д.}
             \end{center}
         \end{adjustwidth}
-        \item $\int_{a}^{a} f(x)dx=0 (\Delta x_i=0)$
-        \item $\int_{a}^{b} f(x)dx=-\int_{b}^{a} f(x)dx(x_{k+1}-x_k=-(x_k-x_{k+1}))$
+        \item $\int_{a}^{a} f(x)dx=0 \;\;\; (\Delta x_i=0)$
+        \item $\int_{a}^{b} f(x)dx=-\int_{b}^{a} f(x)dx \;\;\; (x_{k+1}-x_k=-(x_k-x_{k+1}))$
     \end{enumerate}
+    
     \subsection{Оценки интегралов. Формулы среднего значения.}
     \begin{enumerate}
         \item Оценки интегралов:\\
         \begin{adjustwidth}{1.5em}{1.5em}
-            a) Если f(x) интегрируема и $\forall x \in [a;b] f(x)\geq 0,\text{ то } \int_{a}^{b} f(x)dx \geq 0$
+            a) Если $f(x)$ интегрируема и $\forall x \in [a;b] f(x)\geq 0,\text{ то } \int_{a}^{b} f(x)dx \geq 0$\\
             \underline{Доказательство:}
             \begin{adjustwidth}{1.5em}{1.5em}
-                Составим $\sigma_R=\sum_{k=0}^{n-1} f(\xi_k)\Delta x_k \geq 0\\
-                \lim_{\lambda_R \to 0}\sigma_R=\int_{a}^{b}f(x)dx\geq 0$
+                Составим 
+                \[ \sigma_R=\sum_{k=0}^{n-1} f(\xi_k)\Delta x_k \geq 0 \]
+                \[ \lim_{\lambda_R \to 0}\sigma_R=\int_{a}^{b}f(x)dx\geq 0 \]
                 \begin{center}
                     \textbf{Ч.т.д.}
                 \end{center}
             \end{adjustwidth}
-            \textbf{Следствие:} Если f(x) и g(x) интегрируемы на [a;b] и $\forall x \in [a;b] f(x)\geq g(x), \text{ то } 
-            \int_{a}^{b}f(x)dx \geq \int_{a}^{b} g(x)dx$\\
+            \textbf{Следствие:} Если $f(x)$ и $g(x)$ интегрируемы на $[a;b]$ и $\forall x \in [a;b]\; f(x)\geq g(x)$, то $\int_{a}^{b}f(x)dx \geq \int_{a}^{b} g(x)dx$\\
             \underline{Доказательство:}
             \begin{adjustwidth}{1.5em}{1.5em}
-                Рассмотрим f(x)-g(x)$\geq 0 \overset{a)}{\Rightarrow} \int_{a}^{b} (f(x)-g(x))dx \geq 0 \\
-                \int_{a}^{b} f(x)dx-\int_{a}^{b}g(x)dx\geq 0 \text{ (св-во 3) } \Rightarrow \int_{a}^{b}f(x)dx\geq\int_{a}^{b}g(x)dx$
+                Рассмотрим 
+                \[ f(x)-g(x)\geq 0 \overset{a)}{\implies} \int_{a}^{b} (f(x)-g(x))dx \geq 0 \]
+                \[ \int_{a}^{b} f(x)dx-\int_{a}^{b}g(x)dx\geq 0 \text{ (св-во 3) } \implies \int_{a}^{b}f(x)dx\geq\int_{a}^{b}g(x)dx\]
                 \begin{center}
                     \textbf{Ч.т.д.}
                 \end{center}
             \end{adjustwidth}
-            б) Если f(x) интегрируема на [a;b], то |f(x)| тоже интегрируема на [a;b] и $|\int_{a}^{b}f(x)dx|\leq \int_{a}^{b}|f(x)| dx$\\
+            б) Если $f(x)$ интегрируема на $[a;b]$, то $\left|f(x)\right|$ тоже интегрируема на $[a;b]$ и $\left|\int_{a}^{b}f(x)dx\right|\leq \int_{a}^{b}\left|f(x)\right| dx$\\
             \underline{Доказательство:}
             \begin{adjustwidth}{1.5em}{1.5em}
-                \begin{math}
+                \begin{gather*}
                     \sigma_R=\sum_{k=0}^{n-1} f(\xi_k)\Delta x_k\\
-                    |\sigma_R|=|\sum_{k=0}^{n-1} f(\xi_k)\Delta x_k| \leq \sum_{k=0}^{n-1}|f(\xi_k)|\Delta x_k
+                    |\sigma_R|=\left|\sum_{k=0}^{n-1} f(\xi_k)\Delta x_k\right| \leq \sum_{k=0}^{n-1}|f(\xi_k)|\Delta x_k
                     =\sigma_R(|f|)\\
-                    \lim_{\lambda_R \to 0}|\sigma_R|=|\int_{a}^{b}f(x)dx|\leq \lim_{\lambda_R \to 0}\sigma_R (|f|)=\int_{a}^{b}|f(x)|dx\\
-                \end{math}
+                    \lim_{\lambda_R \to 0}|\sigma_R|=\left|\int_{a}^{b}f(x)dx\right|\leq \lim_{\lambda_R \to 0}\sigma_R (|f|)=\int_{a}^{b}|f(x)|dx\\
+                \end{gather*}
             \end{adjustwidth}
         \end{adjustwidth}
         \item Непрерывность интегралов:\\
-        \underline{Определение: } Функция F(x) = $\int_{a}^{x}f(t)dt$ - функция с переменным верхним пределом\\
+        Функция $F(x) = \int_{a}^{x}f(t)dt$ - функция с \textbf{переменным верхним пределом}.
         \begin{center}
-            \includegraphics[width=0.6\linewidth]{6.7.1.png}
+            \includegraphics[max size={\linewidth}{7cm}]{6.7.1.png}
         \end{center}
-        Аналогично G(x) = $\int_{x}^{b}f(t)dt$ - функция с переменным нижним пределом
-        \subsubsection*{Теорема 6.7.1}\label{th:6.7.1}
-        Если функция f(x) интегрируема на [a;b], то F(x),G(x) непрерывна на [a;b].\par\noindent
-        \underline{Доказательство:}
-        \begin{adjustwidth}{1.5em}{1.5em}
-            Д-во проведем для F(x)\\
-            f(x) ограничена на [a;b] (необходимое условие интегрируемости), Т.е. $\forall x \in [a;b]\\ |f(x)|\leq C\\
-            F(x+\Delta x)=\int_{a}^{x+\Delta x}f(t)dt=\int_{a}^{x}f(t)dt = \int_{a}^{x} f(t)dt+\int_{x}^{x+\Delta x}f(t)dt$\\
-            Рассмотрим $\Delta F(x) = F(x + \Delta x) - F(x)=\int_{a}^{x} f(t)dt+\int_{x}^{x+\Delta x}f(t)dt-\int_{a}^{x}f(t)dt=
+        Аналогично $G(x) = \int_{x}^{b}f(t)dt$ - функция с \textbf{переменным нижним пределом}.
+    \end{enumerate}
+    \subsubsection*{Теорема 6.7.1}\label{th:6.7.1}
+    Если функция $f(x)$ интегрируема на $[a;b]$, то $F(x), G(x)$ непрерывны на $[a;b]$.\par\noindent
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Д-во проведем для $F(x)$.\par\noindent
+        $f(x)$ ограничена на $[a;b]$ (необходимое условие интегрируемости), т.е. $\forall x \in [a;b]$ $|f(x)|\leq C$
+        \[ F(x+\Delta x)=\int_{a}^{x+\Delta x}f(t)dt= \int_{a}^{x} f(t)dt+\int_{x}^{x+\Delta x}f(t)dt \]
+        Рассмотрим 
+        \begin{gather*}
+            \Delta F(x) = F(x + \Delta x) - F(x)=\int_{a}^{x} f(t)dt+\int_{x}^{x+\Delta x}f(t)dt-\int_{a}^{x}f(t)dt=
             \int_{x}^{x+\Delta x}f(t)dt\\
-            |\Delta F(x)| = | \int_{x}^{x+\Delta x }f(x)dt| \leq C |\int_{x}^{x+\Delta x}dt|=C|\Delta x|\\
-            \lim_{\Delta x \to 0}|\Delta F(x)| = 0 \Rightarrow \lim_{\Delta x \to 0}\Delta F(x)=0 \Rightarrow$F(x) непрерывна в (.) X\\
-            Т.К. x- производная в (.) [a;b] $\Rightarrow$F(x) непрерывна на [a;b]
-            \begin{center}
-                \textbf{Ч.т.д.}
-            \end{center}
-            \textbf{Следствие:} Если f(x) интегрируема на [a;b](и непрерывна на нём), то $\lim_{\varepsilon \to 0} \int_{a+\varepsilon}^{b-\varepsilon}
-            f(x)dx=\int_{a}^{b}f(x)dx$\\
-            \underline{Доказательство:}
-            \begin{adjustwidth}{1.5em}{1.5em}
-                \begin{math}
-                    \lim_{\varepsilon \to 0} \int_{a+\varepsilon}^{b-\varepsilon}f(x)dx = \lim_{\varepsilon \to 0}(\int_{a+\varepsilon}^{C}f(x)dx+\int_{C}^{b-\varepsilon}f(x)dx) =
-                    \lim_{\varepsilon \to 0} \int_{a+\varepsilon}^{C} f(x)dx+\lim_{\varepsilon \to 0}\int_{c}^{b-\varepsilon}f(x)dx=
-                    \int_{a}^{c} f(x)dx+\int_{c}^{b} f(x)dx = \int_{a}^{b}f(x)dx
-                \end{math}
-                \begin{center}
-                    \textbf{Ч.т.д.}
-                \end{center}
-            \end{adjustwidth}
-        \end{adjustwidth}
-        \subsubsection*{Теорема 6.7.2 Интегральная теорема о среднем}\label{th:6.7.2}
-        Пусть f(x) и g(x) интегрируемы на [a;b] $\forall x \in [a;b] m \leq f(x) \leq M$ g(x) не меняет знак на [a;b]\\ Тогда $\exists \mu : m\leq \mu \leq M: 
-        \int_{a}^{b} f(x)g(x)dx = \mu \int_{a}^{b}g(x)dx$\par\noindent
+            \left|\Delta F(x)\right| = \left| \int_{x}^{x+\Delta x }f(x)dt\right| \leq \mathbb{C} \left|\int_{x}^{x+\Delta x}dt\right|= \mathbb{C} \left|\Delta x\right|
+        \end{gather*}
+        $\lim_{\Delta x \to 0}|\Delta F(x)| = 0 \Rightarrow \lim_{\Delta x \to 0}\Delta F(x)=0 \Rightarrow F(x)$ непрерывна в точке $x$.\\
+        Т.к. $x$ - производная точек $[a; b] \Rightarrow F(x)$ непрерывна на $[a;b]$.
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+        \textbf{Следствие:} Если $f(x)$ интегрируема на $[a;b]$ (и непрерывна на нём), то $\lim_{\varepsilon \to 0} \int_{a+\varepsilon}^{b-\varepsilon}f(x)dx=\int_{a}^{b}f(x)dx$.\\
         \underline{Доказательство:}
         \begin{adjustwidth}{1.5em}{1.5em}
-            \begin{math}
-                m \leq f(x) \leq M | * g(x)\\
-                g(x)\geq 0 : mg(x)\leq f(x)g(x)\leq Mg(x) \Rightarrow m \int_{a}^{b} g(x) dx \leq \int_{a}^{b}f(x)g(x)dx \leq M \int_{a}^{b}g(x)dx | : \int_{a}^{b} g(x)dx\\
-                g(x)\leq 0 : mg(x)\geq f(x)g(x)\geq Mg(x) \Rightarrow m \int_{a}^{b} g(x) dx \geq \int_{a}^{b}f(x)g(x)dx \geq M \int_{a}^{b}g(x)dx | : \int_{a}^{b} g(x)dx\\
-                \text{Если } \int_{a}^{b} g(x)dx = 0 \Rightarrow \int_{a}^{b} f(x)g(x)dx =0 \text{ в обоих случаях и } \mu \text{ любое} 
-            \end{math}
+            \begin{gather*}
+                \lim_{\varepsilon \to 0} \int_{a+\varepsilon}^{b-\varepsilon}f(x)dx = \lim_{\varepsilon \to 0}\left(\int_{a+\varepsilon}^{c}f(x)dx+\int_{c}^{b-\varepsilon}f(x)dx\right) =\\
+                = \lim_{\varepsilon \to 0} \int_{a+\varepsilon}^{c} f(x)dx+\lim_{\varepsilon \to 0}\int_{c}^{b-\varepsilon}f(x)dx = \int_{a}^{c} f(x)dx+\int_{c}^{b} f(x)dx = \int_{a}^{b}f(x)dx
+            \end{gather*}
             \begin{center}
                 \textbf{Ч.т.д.}
             \end{center}
-            Если $\int_{a}^{b} g(x) dx \not = 0$ при $\Rightarrow  \underset{g(x)<0 \Rightarrow \int_{a}^{b} g(x)dx<0}{g(x) > 0 \int_{a}^{b} g(x)dx >0} $\\
-            Разделим на $\int_{a}^{b} g(x)dx,$ в обоих случаях получим: $m \leq \frac{\int_{a}^{b}f(x)g(x)dx}{\underset{\mu}{\int_{a}^{b}g(x)dx}}\leq M\\
-            m\leq \mu \leq M \text{   } \int_{a}^{b} f(x)g(x)dx=\mu\int_{a}^{b}g(x)dx$
-            \begin{center}
-                \textbf{Ч.т.д.}
-            \end{center}
-            \textbf{Следствие:} При дополнительно условии о том, что f(x) непрерывна на [a;b], тогда на (a;b) $\exists (.) \xi:\int_{a}^{b}f(x)g(x)dx=f(\xi)\int_{a}^{b}g(x)dx$\\
-            В частности, пусть $g(x)=1 \text{   } \int_{a}^{b} f(x) dx=f(\xi)(b-a) \Rightarrow f(\xi)=\frac{1}{b-a}\int_{a}^{b}f(x)dx$ - формула среднего значения\\
-            $f(\xi)=\frac{\int_{a}^{b} f(x)dx}{b-a}$\\
-            \begin{center}
-                \includegraphics[width=0.7\linewidth]{6.7.2.png}
-            \end{center}
-            \underline{Доказательство:}
-            \begin{adjustwidth}{1.5em}{1.5em}
-                Если $\int_{a}^{b} g(x)dx=0,$ то верно $\forall \xi$\\
-                Пусть $\int_{a}^{b} g(x)dx \not = 0$ и для определенности g(x)>0,$\underset{m=\underset{x \in [a;b]}{\text{inf}}f(x) M=\underset{x \in [a;b]}{sup}f(x)}{m\leq f(x) \leq M}$\\ 
-            \end{adjustwidth}
-            и по \hyperref[th:6.7.2]{Теореме 6.7.2} $m \leq \mu \leq M$\\
+        \end{adjustwidth}
+    \end{adjustwidth}
+    \subsubsection*{Теорема 6.7.2 (интегральная теорема о среднем)}\label{th:6.7.2}
+    Пусть $f(x)$ и $g(x)$ интегрируемы на $[a;b]$, $\forall x \in [a;b]\;\; m \leq f(x) \leq M$ $g(x)$ не меняет знак на $[a;b]$\\
+    Тогда $\exists \mu : m\leq \mu \leq M: \int_{a}^{b} f(x)g(x)dx = \mu \int_{a}^{b}g(x)dx$.\par\noindent
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        \begin{gather*}
+            m \leq f(x) \leq M\;\;\;\; \Big| \times g(x)\\
+            g(x)\geq 0 : mg(x)\leq f(x)g(x)\leq Mg(x) \implies m \int_{a}^{b} g(x) dx \leq \int_{a}^{b}f(x)g(x)dx \leq M \int_{a}^{b}g(x)dx \;\;\;\; \Big| : \int_{a}^{b} g(x)dx\\
+            g(x)\leq 0 : mg(x)\geq f(x)g(x)\geq Mg(x) \implies m \int_{a}^{b} g(x) dx \geq \int_{a}^{b}f(x)g(x)dx \geq M \int_{a}^{b}g(x)dx \;\;\;\; \Big| : \int_{a}^{b} g(x)dx\\
+        \end{gather*}
+        Если $\int_{a}^{b} g(x)dx = 0 \implies \int_{a}^{b} f(x)g(x)dx =0$ в обоих случаях и $\mu$ любое. 
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+        Если $\int_{a}^{b} g(x) dx \ne 0$ при 
+        \[ \begin{matrix}
+            g(x) > 0 \implies \int_{a}^{b} g(x)dx >0\\
+            g(x)<0 \implies \int_{a}^{b} g(x)dx<0
+        \end{matrix} \]
+        Разделим на $\int_{a}^{b} g(x)dx$, в обоих случаях получим: 
+        \[ m \leq \frac{\int_{a}^{b}f(x)g(x)dx}{\underbrace{\int_{a}^{b}g(x)dx}_{\mu}}\leq M \]
+        \[ m\leq \mu \leq M \] 
+        \[ \int_{a}^{b} f(x)g(x)dx=\mu\int_{a}^{b}g(x)dx \]
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+        \textbf{Следствие:} При дополнительно условии о том, что $f(x)$ непрерывна на $[a;b]$, тогда на $(a;b)$ $\exists$ точка $\xi$ такая, что $\int_{a}^{b}f(x)g(x)dx=f(\xi)\int_{a}^{b}g(x)dx$.\\
+        В частности, пусть $g(x)=1$.
+        \[ \int_{a}^{b} f(x) dx=f(\xi)(b-a) \implies f(\xi)= \boxed{\frac{1}{b-a}\int_{a}^{b}f(x)dx} \text{ - формула среднего значения} \]
+        \[ f(\xi)=\frac{\int_{a}^{b} f(x)dx}{b-a} \]
+        \begin{center}
+            \includegraphics[max size={\linewidth}{7cm}]{6.7.2.png}
+        \end{center}
+        \underline{Доказательство:}
+        \begin{adjustwidth}{1.5em}{1.5em}
+            Если $\int_{a}^{b} g(x)dx=0$, то верно $\forall \xi$\\
+            Пусть $\int_{a}^{b} g(x)dx \not = 0$ и для определенности $g(x)>0$.
+            \[ m \le f(x) \le M \]
+            \[ \underset{x \in [a; b]}{m = \inf f(x)} \;\;\;\; \underset{x \in [a; b]}{M = \sup f(x)} \]
+            И по \hyperref[th:6.7.2]{интегральной теореме о среднем (6.7.2)} $m \leq \mu \leq M$.
             \begin{enumerate}
-                \item Случай: Пусть $m<\mu<M$\\
-                По 2-ой теореме Вейерштрасса $\exists \alpha, \beta \in [a;b]: f(\alpha) = m,f(\beta) = M$\\
-                Тогда по Теореме Больцано-Коши $\exists (.) \xi:\underset{m<\mu <M \text{   } \mu=f(\xi)}{m<f(\xi)<(M)}$
+                \item случай:\\
+                Пусть $m<\mu<M$\\
+                По 2-ой теореме Вейерштрасса (3.8.2) $\exists\,\alpha, \beta \in [a;b]: f(\alpha) = m,f(\beta) = M$\\
+                Тогда по теореме Больцано-Коши (3.8.3) $\exists$ точка $\xi$ такая, что:
+                \[ m < f(\xi) < M \]
+                \[ m < \mu < M \;\;\;\; \mu = f(\xi) \]
                 \begin{center}
                     \textbf{Ч.т.д.}
                 \end{center}
-                \item Случай: $\mu=M \text{ или } \mu=m$\\
+                \item случай:\\
+                $\mu=M \text{ или } \mu=m$\\
                 Пусть для определенности $\mu=M$\\
-                Покажем, что и в этом случае на (a;b) $\exists (.) \xi: f(\xi)=\mu=M$\\
-                Пойдем от противного: Пусть на (a;b) $\not \exists (.) \xi:f(\xi)=\mu=M.$ Тогда своего наибольшего значения
-                f(x) достигает в какой-либо (.) или x=a или x=b\\
-                Рассмотрим [$a+\varepsilon;b-\varepsilon$] f(x) непрерывна на нём $\Rightarrow$ по 2-ой Теореме Вейерштрасса\\
-                Пусть (.) $x_0$, в которой f(x) достигает своего наибольшего значения.\\
-                Тогда $M-f(x_0)=\underset{x \in [a+\varepsilon;b-\varepsilon]}{min}f(x)$\\
-                Т.К. $\mu=M,$ то по \hyperref[th:6.7.2]{Теореме 6.7.2} $\int_{a}^{b} f(x)g(x)dx=M\int_{a}^{b}g(x)dx \Rightarrow \int_{a}^{b}
-                (M-f(x))g(x)dx=0$\\
-                Рассмотрим $\int_{a}^{b}(M-f(x))g(x)dx\geq\int_{a+\varepsilon}^{b-\varepsilon}(M-f(x))g(x)dx \geq (M-f(x_0)) \underset{>0}{\int_{a+\varepsilon}^{b-\varepsilon} g(x)dx>0}$ Получили противоречие
-                $\Rightarrow \exists (.) \xi \in (a;b): f(\xi)=M=\mu$\\
+                Покажем, что и в этом случае на $(a;b)$ $\exists$ точка $\xi$ такая, что $f(\xi)=\mu=M$.\\
+                Предположим противное: пусть на $(a;b)$ $\nexists$ точка $\xi$ такая, что $f(\xi)=\mu=M$.\\
+                Тогда своего наибольшего значения $f(x)$ достигает в какой-либо точке или $x=a$, или $x=b$.\\
+                Рассмотрим $[a+\varepsilon; b-\varepsilon]$: $f(x)$ непрерывна на нём $\implies$ по 2-ой теореме Вейерштрасса (3.8.2) $\exists$ точка $x_0$, в которой $f(x)$ достигает своего наибольшего значения.\\
+                Тогда: 
+                \[ M-f(x_0)=\underset{x \in [a+\varepsilon; b-\varepsilon]}{\min(M - f(x))} \]
+                Т.к. $\mu=M$, то по \hyperref[th:6.7.2]{интегральной теореме о среднем (6.7.2)}: 
+                \[ \int_{a}^{b} f(x)g(x)dx=M\int_{a}^{b}g(x)dx \implies \overbrace{\int_{a}^{b}(M-f(x))g(x)dx=0} \]
+                Рассмотрим 
+                \[ \int_{a}^{b}(M-f(x))g(x)dx\geq\int_{a+\varepsilon}^{b-\varepsilon}(M-f(x))g(x)dx \geq (M-f(x_0)) \underbrace{\int_{a+\varepsilon}^{b-\varepsilon} g(x)dx>0}_{>0} \]
+                Получили противоречие $\implies \exists$ точка $\xi \in (a;b)$ такая, что $f(\xi)=M=\mu$.
                 \begin{center}
                     \textbf{Ч.т.д.}
                 \end{center}
             \end{enumerate}
         \end{adjustwidth}
-        \subsubsection*{Теорема 6.7.3 Дифференцирование интеграла по верхнему пределу}\label{th:6.7.3}
-        Если f(x) интегрируема на [a;b] и непрерывна в (.) $x_0 \in [a;b]$, то $F(x)=\int_{a}^{x}f(t)dt$ дифференцируема в этой (.) и F'($x_0$)=f($x_0$) \par\noindent
-        \underline{Доказательство:}\\
-        \begin{adjustwidth}{1.5em}{1.5em}
-            \begin{math}
-                \lim_{\Delta x \to 0}  \frac{\Delta F}{\Delta x} = F'(x_0)\\
-                \Delta F=\int_{x_0}^{x_0+\Delta x}f(t)dt \text{   } x_0 \in [a;b],x_0+\Delta x \in [a;b]\\
-                \frac{1}{\Delta x}\int_{x_0}^{x_0+\Delta x}dt=1\\
-                \text{\underline{Замечание: } Рассмотрим} |\frac{\Delta F}{\Delta X}-f(x_0)| = |\frac{1}{\Delta x}\int_{x_0}^{x_0+\Delta x}f(t)dt-\frac{f(x_0)}{\Delta x}\int_{x_0}^{x_0+\Delta x}dt|=
-                |\frac{1}{\Delta x}\int_{x_0}^{x_0+\Delta x}(f(t)-f(x_0))dt| \leq \frac{1}{|\Delta x|}\int_{x_0}^{x_0+\Delta X}|f(t)-f(x_0)|dt| \fbox{<}\\
-                \text{Т.к. f(x) непрерывна в (.) $x_0$, то} \forall \varepsilon > 0 \exists \delta>0:|x-x_0|<\delta \Rightarrow |f(x)-f(x_0)|<\varepsilon\\
-                \text{Пусть $|\Delta x| < \delta$. Тогда } \forall t \in [x_0;x_0+\Delta x]\\
-                |t-x_0|\leq|\Delta x| < \delta \Rightarrow |f(t)-f(x_0)| < \varepsilon\\
-                \fbox{<} \frac{\varepsilon}{\Delta x}|\int_{x_0}^{x_0+\Delta x}dt|=\varepsilon. \text{Т.е. } \lim_{\Delta x \to 0} \frac{\Delta F}{\Delta x} = F'(x_0)=f(x_0)
-            \end{math}
-            \begin{center}
-                \textbf{Ч.т.д.}
-            \end{center}
-        \end{adjustwidth}
-        \underline{Замечание:} Рассмотрим
-        \begin{math}
-            \int_{a}^{b} f(x)dx=\int_{a}^{b}f(t)dt\\
-            \int_{a}^{b} f(t)dt=\int_{a}^{x}f(t)dt+\int_{x}^{b} f(t)dt \text{   } x \in (a;b)\\
-            \int_{a}^{b} f(t) dt = F(x)+G(x) \text{   } G'(x)=-F'(x)\\
-            0=F'(x)+G'(x)\text{   }G'(x_0)=-F'(x_0)=-f(x_0)
-        \end{math}
-    \end{enumerate}
-    \subsection{Существование первообразных для непрерывных функций. \\Основные правила интегрирования}
-    \subsubsection*{Теорема 6.8.1 О Существовании первообразных для непрерывной функции}\label{th:6.8.1}
-    Если f(x) непрерывна $\forall x \in [a;b],$ то на [a;b] у нее существует первообразная\\
-    Если $x_0$ - производная: $x_0 \in [a;b]$, то $F(x)=\int_{x_0}^{x}f(t)dt $ является одной из первообразных на [a;b]\par\noindent
-    \underline{Доказательство:}
-    \begin{adjustwidth}{1.5em}{1.5em}
-        Для доказательства надо показать, что F'(x)=f(x). \hyperref[th:6.7.3]{Теорему 6.7.3}\\
-        ()$F'(x_0)=f(x_0)$. Но так как $x_0$ - производная: $x_o \in [a;b],$ то это равенство выполняется $\forall x \in [a;b]$)
     \end{adjustwidth}
-    \begin{center}
-        \textbf{Ч.т.д.}
-    \end{center}
-    \underline{Замечание:}$F(x)=\int_{x_0}^{x}f(t)dt$\\
-    Если $x>x_0, F'(x)=f(x)$\\
-    Если $x<x_0, F'(x)=[\underset{G(x)}{\underline{-\int_{x}^{x_0}f(t)dt}}]=-(-f(x))=f(x)$\\
-    \underline{Замечание:}$\int f(x)dx=F(x)+C$\\
-    $\underset{\text{связь между неопределенным и определённым интегралом}}{\int f(x)dx = \int_{x_0}^{x}f(t)dt+C}$
-    \subsubsection*{Теорема 6.8.2 Основная теорема интегрального исчисления}\label{th:6.8.2}
-    Если f(x) непрерывна на [a;b], то какова бы не была на [a;b] её первообразная Ф(x), то справедлива формула 
-    $\int_{a}^{b}f(x)dx=$Ф(x)$\Big|^{b}_{a}=$Ф(b)-Ф(a)- функция Ньютона-Лейбница \par\noindent
+    \subsubsection*{Теорема 6.7.3 (дифференцирование интеграла по верхнему пределу)}\label{th:6.7.3}
+    Если $f(x)$ интегрируема на $[a;b]$ и непрерывна в точке $x_0 \in [a;b]$, то $F(x)=\int_{a}^{x}f(t)dt$ дифференцируема в этой точке и $F'(x_0)=f(x_0)$. \par\noindent
     \underline{Доказательство:}\\
     \begin{adjustwidth}{1.5em}{1.5em}
-        По \hyperref[th:6.8.1]{Теореме 6.8.1} F(x)=$\int_{a}^{x} f(t)dt$ - является первообразной для f(x) на [a;b]\\
-        Т.к. F(x) и Ф(x) - две первообразные для одной и той же f(x) на [a;b], то \\
-        \begin{math}
-            F(x)=\text{Ф(x)}+C\\
-            \int_{a}^{x}f(t)dt = \text{Ф(x)+C}\\
-        \end{math}
-        Пусть x=a 0=Ф(а)+С $\Rightarrow C=-$Ф(а). Тогда $\int_{a}^{x}f(t)dt=$Ф(x)-Ф(а)\\
-        Пусть x=b $\int_{a}^{b} f(t)dt=$Ф(b)-Ф(а)\\
-        Если переобозначить, то $\int_{a}^{b}f(x)dx=F(b)-F(a)$
-    \end{adjustwidth}
-    \begin{center}
-        \textbf{Ч.т.д.}
-    \end{center}
-    \subsubsection*{Теорема 6.8.3 Замена переменной в определённом интеграле}\label{th:6.8.3}
-    Пусть f(x) задана на $\Delta x,x=\phi(t)$ задана на $\Delta t$. $\phi(\Delta t) \subset \Delta x$, Т.е. задана сложная функция ($f(\phi(t))$). Если f(x) непрерывна на 
-    $\Delta t$, то $\int_{a}^{b}f(x)dx=\int_{a}^{x}f(\phi(t))\phi'(t)dt, a=\phi(\alpha),b=\phi(\beta)$\par\noindent
-    \underline{Доказательство:}
-    \begin{adjustwidth}{1.5em}{1.5em}
-        Пусть F(x) - является первообразной для f(x) на [a;b]\\
-        $\int_{a}^{b} f(x)dx=F(x)\Big|^{b}_{a}$\\
-        $(F(\phi(t)))'=F'(\phi(t))\phi'(t)=f(\phi (t))\phi'(t)$\\
-        Т.е. $F(\phi(t))$ является первообразной для $f(\phi(t))\phi'(t) $ на [$\alpha;\beta$]\\
-        $\int_{\alpha}^{\beta}f(\phi(t))\phi'(t)dt=F(\phi(t))\Big|^{\beta}_{\alpha}=F(\phi(\beta))-F(\phi(\alpha))=F(b)-F(a)=\int_{a}^{b}f(x)dx$
-    \end{adjustwidth}
-    \begin{center}
-        \textbf{Ч.т.д.}
-    \end{center}
-    \subsubsection*{Теорема 6.8.4 Формула интегрирования по частям}\label{th:6.8.4}
-    Если u(x),u'(x),v(x),v'(x) непрерывна на [a;b] то $\int_{a}^{b} udv = uv \Big|^b_a-\int_{a}^{b}vdu$\par\noindent
-    \underline{Доказательство:}
-    \begin{adjustwidth}{1.5em}{1.5em}
-        $(uv)'=u'v+uv'\\ \int_{a}^{b} (uv)'dx=\int_{a}^{b} u'v dx+\int_{a}^{b}uv'dx\\ uv \Big|^b_a=\int_{a}^{b}vdu + \int_{a}^{b} udv\\
-        \int_{a}^{b}udv=uv\Big|^b_a-\int_{a}^{b} vdu$
-    \end{adjustwidth}
-    \begin{center}
-        \textbf{Ч.т.д.}
-    \end{center}
-    \subsection{Геометрические приложения определённого интеграла. Площадь криволинейной трапеции}
-    \begin{enumerate}
-        \item f(x) задана явно на [a;b], пусть f(x) $\geq 0$\\
-        $R: a=x_0<x_1<\dots<x_n=b$\\
-        В каждом $[x_i;x_{i+1}]$ произвольно (.)$\xi_i$. Вычислим f($\xi_i$). Вычислим $f(\xi_i)\Delta x_i$.\\
-        Составим $\sigma_R=\sum_{i=0}^{n-1}f(\xi_i)\Delta x_i\\
-        \lim_{\lambda_R \to 0}\sigma_R=\int_{a}^{b} f(x)dx=S\\ S=S_1+S_2+S_3$
+        \begin{gather*}
+            \lim_{\Delta x \to 0}  \frac{\Delta F}{\Delta x} = F'(x_0)\\
+            \Delta F=\int_{x_0}^{x_0+\Delta x}f(t)dt \;\;\;\; x_0 \in [a;b],x_0+\Delta x \in [a;b]\\
+            \frac{1}{\Delta x}\int_{x_0}^{x_0+\Delta x}dt=1
+        \end{gather*}
+        \underline{Замечание:} рассмотрим 
+        \begin{gather*}
+            \left|\frac{\Delta F}{\Delta X}-f(x_0)\right| = \left|\frac{1}{\Delta x}\int_{x_0}^{x_0+\Delta x}f(t)dt-\frac{f(x_0)}{\Delta x}\int_{x_0}^{x_0+\Delta x}dt\right| =\\
+            = \left|\frac{1}{\Delta x}\int_{x_0}^{x_0+\Delta x}(f(t)-f(x_0))dt\right| \leq \frac{1}{|\Delta x|}\left|\int_{x_0}^{x_0+\Delta X}\left|f(t)-f(x_0)\right|dt\right| \fbox{<}\\
+        \end{gather*}
+        Т.к. $f(x)$ непрерывна в точке $x_0$, то $\forall \varepsilon > 0\,\exists\,\delta>0:|x-x_0|<\delta \implies |f(x)-f(x_0)|<\varepsilon$\\
+        Пусть $|\Delta x| < \delta$. Тогда $\forall t \in [x_0;x_0+\Delta x]$:
+        \[ |t-x_0| \leq |\Delta x| < \delta \implies \left|f(t)-f(x_0)\right| < \varepsilon \]
+        \[ \fbox{<} \frac{\varepsilon}{\Delta x}\left|\int_{x_0}^{x_0+\Delta x}dt\right|=\varepsilon.\]
+        Т.е. 
+        \[ \lim_{\Delta x \to 0} \frac{\Delta F}{\Delta x} = F'(x_0)=f(x_0) \]
         \begin{center}
-            $S=S_1+S_2+S_3$\\
-            \includegraphics[width=0.6\linewidth]{6.9.1.png} 
+            \textbf{Ч.т.д.}
         \end{center}
+    \end{adjustwidth}
+    \underline{Замечание:} рассмотрим
+    \begin{align*}
+        \int_{a}^{b} f(x)dx&=\int_{a}^{b}f(t)dt & &\\
+        \int_{a}^{b} f(t)dt&=\int_{a}^{x}f(t)dt+\int_{x}^{b} f(t)dt & x &\in (a;b)\\
+        \int_{a}^{b} f(t) dt &= F(x)+G(x) & G'(x)&=-F'(x)\\
+        0&=F'(x)+G'(x) & G'(x_0)&=-F'(x_0)=-f(x_0)
+    \end{align*}
+
+    \subsection{Существование первообразных для непрерывных функций. Основные правила интегрирования.}
+    \subsubsection*{Теорема 6.8.1 (о существовании первообразной для непрерывной функции)}\label{th:6.8.1}
+    Если $f(x)$ непрерывна $\forall x \in [a;b]$, то на $[a; b]$ у нее $\exists$ первообразная.\\
+    Если $x_0$ - произвольная: $x_0 \in [a;b]$, то $F(x)=\int_{x_0}^{x}f(t)dt$ является одной из первообразных на $[a;b]$\par\noindent
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Для доказательства надо показать, что $F'(x)=f(x)$. Смотреть доказательство \hyperref[th:6.7.3]{теоремы дифференцирования интеграла по верхнему пределу (6.7.3)}\\
+        ($F'(x_0)=f(x_0)$, но т.к. $x_0$ - произвольная: $x_0 \in [a;b]$, то это равенство выполняется $\forall x \in [a;b]$).
         \begin{center}
-            S=$\int_{a}^{b}(\underset{большая}{f_1(x)} -  \underset{меньшая}{f_2(x)})dx$\\
-            \includegraphics[width=0.7\linewidth]{6.9.2.png}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+    \underline{Замечание:} $F(x)=\int_{x_0}^{x}f(t)dt$\\
+    Если $x>x_0, \;\;\; F'(x)=f(x)$\\
+    Если $x<x_0, \;\;\; F'(x)=\left[-\underbrace{\int_{x}^{x_0}f(t)dt}_{G(x)}\right]'=-(-f(x))=f(x)$\par\noindent
+    \underline{Замечание:} $\int f(x)dx=F(x)+\mathbb{C}$\\
+    \[ \underset{\text{связь между неопределенным и определённым интегралом}}{\int f(x)dx = \int_{x_0}^{x}f(t)dt+\mathbb{C}} \]
+    \subsubsection*{Теорема 6.8.2 (основная теорема интегрального исчисления)}\label{th:6.8.2}
+    Если $f(x)$ непрерывна на $[a; b]$, то какова бы не была на $[a;b]$ её первообразная $\Phi(x)$, то справедлива формула 
+    \[ \int_{a}^{b}f(x)dx=\Phi(x)\Big|^{b}_{a}=\Phi(b)-\Phi(a) \text{ - \underline{формула Ньютона-Лейбница}} \]\par\noindent
+    \underline{Доказательство:}\\
+    \begin{adjustwidth}{1.5em}{1.5em}
+        По \hyperref[th:6.8.1]{теореме о существовании первообразной для непр. функции (6.8.1)} $F(x)=\int_{a}^{x} f(t)dt$ является первообразной для $f(x)$ на $[a;b]$\\
+        Т.к. $F(x)$ и $\Phi(x)$ - две первообразные для одной и той же $f(x)$ на $[a;b]$, то
+        \begin{gather*}
+            F(x)=\Phi(x)+\mathbb{C}\\
+            \int_{a}^{x}f(t)dt = \Phi(x) + \mathbb{C}\\
+        \end{gather*}
+        Пусть $x=a \;\;\;\;\; 0=\Phi(а)+\mathbb{С} \implies \mathbb{C}=-\Phi(а)$. Тогда $\int_{a}^{x}f(t)dt=\Phi(x)-\Phi(а)$.\\
+        Пусть $x=b \;\;\;\;\; \int_{a}^{b} f(t)dt=\Phi(b)-\Phi(а)$.\\
+        Если переобозначить, то 
+        \[ \int_{a}^{b}f(x)dx=F(b)-F(a) \]
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+    \subsubsection*{Теорема 6.8.3 (о замене переменной в определённом интеграле)}\label{th:6.8.3}
+    Пусть $f(x)$ задана на $\Delta x$, $x=\varphi(t)$ задана на $\Delta t$.\\
+    $\varphi(\Delta t) \subset \Delta x$, т.е. задана сложная функция $f(\varphi(t))$.\\ Если $f(x)$ непрерывна на $\Delta x$, а $\varphi(t)$ и $\varphi'(t)$ непрерывны на $\Delta t$, то 
+    \[ \int_{a}^{b}f(x)dx=\int_{\alpha}^{\beta}f(\varphi(t))\varphi'(t)dt \;\;\;\;\; a=\varphi(\alpha), b=\varphi(\beta) \]\noindent
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        Пусть $F(x)$ - является первообразной для $f(x)$ на $[a;b]$.
+        \[ \int_{a}^{b} f(x)dx=F(x)\Big|^{b}_{a} \]
+        \[ (F(\varphi(t)))'=F'(\varphi(t))\varphi'(t)=f(\varphi (t))\varphi'(t) \]
+        Т.е. $F(\varphi(t))$ является первообразной для $f(\varphi(t))\varphi'(t) $ на $[\alpha; \beta]$.
+        \[ \int_{\alpha}^{\beta}f(\varphi(t))\varphi'(t)dt=F(\varphi(t))\Big|^{\beta}_{\alpha}=F(\varphi(\beta))-F(\varphi(\alpha))=F(b)-F(a)=\int_{a}^{b}f(x)dx \]
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+    \subsubsection*{Теорема 6.8.4 (формула интегрирования по частям)}\label{th:6.8.4}
+    Если $u(x)$, $u'(x)$, $v(x)$, $v'(x)$ непрерывны на $[a;b]$, то 
+    \[ \int_{a}^{b} udv = uv \Big|^b_a-\int_{a}^{b}vdu \]\noindent
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+        \begin{gather*}
+            (uv)'=u'v+uv'\\
+            \int_{a}^{b} (uv)'dx=\int_{a}^{b} u'v dx+\int_{a}^{b}uv'dx\\
+            uv \Big|^b_a=\int_{a}^{b}vdu + \int_{a}^{b} udv\\
+            \int_{a}^{b}udv=uv\Big|^b_a-\int_{a}^{b} vdu
+        \end{gather*}
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
+    \end{adjustwidth}
+
+    \subsection{Геометрические приложения определённого интеграла. Площадь криволинейной трапеции.}
+    \begin{enumerate}
+        \item $f(x)$ задана явно на $[a; b]$\\
+        Пусть $f(x) \geq 0$
+        \begin{center}
+            \includegraphics[max size={\linewidth}{7cm}]{6.9.1.png} 
+        \end{center}
+        $R: a=x_0<x_1<\dots<x_n=b$\\
+        В каждом $[x_i; x_{i+1}]$ произвольно выберем точку $\xi_i$.\\
+        Вычислим $f(\xi_i)$.\\
+        Вычислим $f(\xi_i)\Delta x_i$.\\
+        Составим $\sigma_R$:
+        \[ \sigma_R = \sum_{i=0}^{n-1}f(\xi_i)\Delta x_i \]
+        \[ \lim_{\lambda_R \to 0}\sigma_R=\int_{a}^{b} f(x)dx=S \]
+        \[ S=S_1+S_2+S_3 \]
+        \begin{center}
+            \includegraphics[max size={\linewidth}{7cm}]{6.9.2.png} 
+        \end{center}
+        \[S=\int_{a}^{b}(\underset{\text{большая}}{f_1(x)} - \underset{\text{меньшая}}{f_2(x)})dx\]
+        \begin{center}
+            \includegraphics[max size={\linewidth}{7cm}]{6.9.3.png}
         \end{center}
         \item Если функция задана параметрически\\
-        $\begin{cases}
-            x=(t)\\
-            y=y(t)
-        \end{cases} \alpha \leq t \leq \beta$\\
-        $\begin{cases}
-            x=cos(t)\\
-            y=sin(t)
-        \end{cases} 0 \leq t \leq 2 \pi$\\
-        S=$\int_{a}^{b} f(x)dx = \int_{a}^{b} ydx=
+        \begin{align*}
+            \begin{cases}
+                x=x(t)\\
+                y=y(t)
+            \end{cases} \;\;&\;\;\; \alpha \leq t \leq \beta
+             & 
+            \begin{cases}
+                x=cos(t)\\
+                y=sin(t)
+            \end{cases} \;\;&\;\;\; 0 \leq t \leq 2 \pi
+        \end{align*}
+        \[ S=\int_{a}^{b} f(x)dx = \int_{a}^{b} ydx=
         \begin{vmatrix}
             x=x(t)\\
             a=x(\alpha)\\
             b=x(\beta)
-        \end{vmatrix} = $\fbox{$\int_{a}^{b}y(t)x'(t)dt=S$}
-        \item Вычисление S криволинейной трапеции в полярной системе координат. \\ Полярная система координат:
+        \end{vmatrix} = \boxed{\int_{\alpha}^{\beta}y(t)x'(t)dt=S} \]
+        \item Вычисление площади криволинейной трапеции в полярной системе координат. \\
+        Полярная система координат:
         \begin{center}
-            \includegraphics[width=0.9\linewidth]{6.9.3.png}\\
+            \includegraphics[max size={\linewidth}{100em}]{6.9.4.png}\\
         \end{center}
         Некоторые кривые в полярной системе координат:
         \begin{center}
-            \includegraphics[width=0.7\linewidth]{6.9.4.png}\\
+            \includegraphics[max size={\linewidth}{7cm}]{6.9.5.png}\\
         \end{center}
         \begin{center}
-            \includegraphics[width=0.9\linewidth]{6.9.5.png}\\
+            \includegraphics[max size={\linewidth}{100em}]{6.9.6.png}\\
         \end{center}
+        \underline{Пример:} как записать прямую в полярной системе координат?
+        \begin{adjustwidth}{1.5em}{1.5em}
+            \[ y = x + 1 \]
+            \[ r \sin \varphi = r \cos \varphi + 1 \]
+            \[ r (\sin \varphi - \cos \varphi) = 1 \]
+            \[ r = \frac{1}{\sin \varphi - \cos \varphi} \]
+        \end{adjustwidth}
         \underline{Площадь криволинейной трапеции в полярной системе координат:}\\
-        Найти площадь криволинейной сектора, ограниченного дугой\\
-        r$=r(\phi)$ и двумя полярными радиусами $\phi = \alpha$ и $\phi = \beta$\\
-        $R: \alpha=\phi_0<\phi_1<\dots<\phi_n=\beta$\\
-        В каждом элементарном секторе выберем произвольно:$\phi=\xi_i$\\
-        Вычислим $r(\xi_i)$\\
-        Тогда площадь элементарного кругового сектора: $S_i=\frac{1}{2} r^2(\xi_i) \Delta \phi_i$\\
-        Составим $\sigma_R=\sum_{i=0}^{n-1} \frac{1}{2} r^2(\xi_i) \Delta \phi_i$\\
-        Тогда $S=\lim_{\lambda_R \to 0}\sigma_r = \int_{a}^{b}\frac{1}{2} r^2(\xi_i) \Delta \phi_i=S$
+        Найти площадь криволинейной сектора, ограниченного дугой $r=r(\varphi)$ и двумя полярными радиусами $\varphi = \alpha$ и $\varphi = \beta$
         \begin{center}
-            \includegraphics[width=0.7\linewidth]{6.9.6.png}
+            \includegraphics[max size={\linewidth}{7cm}]{6.9.7.png}
         \end{center}
+        $R: \alpha=\varphi_0<\varphi_1<\dots<\varphi_n=\beta$\\
+        В каждом элементарном секторе выберем произвольно $\varphi=\xi_i$.\\
+        Вычислим $r(\xi_i)$.\\
+        Тогда площадь элементарного кругового сектора: 
+        \[ S_i=\frac{1}{2} r^2(\xi_i) \Delta \varphi_i \]
+        Составим $\sigma_R$:
+        \[ \sigma_R = \sum_{i=0}^{n-1} \frac{1}{2} r^2(\xi_i) \Delta \varphi_i \]
+        Тогда: 
+        \[ S=\lim_{\lambda_R \to 0}\sigma_R = \boxed{ \int_{a}^{b}\frac{1}{2} r^2(\xi_i) \Delta \varphi_i=S }\]
     \end{enumerate}
+
     \subsection{Вычисление длины кривой.}
-    \underline{Определение: } Уравнения вида: $\begin{cases}
+    Уравнения вида: 
+    \[ \begin{cases}
         x=x(t)\\
         y=y(t)\\
         z=z(t)
-    \end{cases} a\leq t \leq b$\\
-    Где x(t),y(t),z(t) непрерывны определяют в пространстве непрерывную кривую Г\\
-    \underline{Определение: } если функции x(t),y(t),z(t) не точно непрерывны, но и имеют непрерывные x'(t),y'(t),z'(t),
-    одновременно не образующиеся в ноль $\forall t \int [a;b] (x'(t)^2,y'(t)^2,z'(t)^2 \ne 0), $ то кривая называется гладкой.\\
-    $R:a=x_0<x_1<\dots<x_n=b$\\
-    Каждой (.) $x_i$ на кривой соответствует $(.) M_i$. Соединим все соседние (.) ломанными $M_i,M_{i+1}$.\\
-    $|\text{Г}_n|=\sum_{i=0}^{n-1}|M_iM_{i+1}|$
+    \end{cases} \;\;\;\;\; a\leq t \leq b \]
+    \indent где $x(t)$, $y(t)$, $z(t)$ непрерывны определяют в пространстве \textbf{непрерывную кривую} $Г$.\\
+    Если функции $x(t)$, $y(t)$, $z(t)$ не только непрерывны, но и имеют непрерывные $x'(t)$, $y'(t)$, $z'(t)$, одновременно не образующиеся в ноль $\forall t \in [a;b] \;\;\; (x'(t)^2 + y'(t)^2 + z'(t)^2 \ne 0), $ то кривая называется \textbf{гладкой}.
     \begin{center}
-        \includegraphics[width=0.5\linewidth]{6.10.1.png}
+        \includegraphics[max size={\linewidth}{7cm}]{6.10.1.png}
     \end{center}
-    \underline{Определение: } Если существует конечный предел $\lim_{\lambda_R \to 0} |\text{Г}_n|$, то он называется длиной кривой y=f(x) на [a;b].\\
-    Или: длина кривой - точная верхняя грань $|\text{Г}_n|$. l=sup|$\text{Г}_n$|. Если l - конечное, то кривая называется спрямляемой.\\
-    Найдем |$M_iM_{i+1}$|.\\
-    |$M_iM_{i+1}$|=$\sqrt{\Delta x_i^2+\Delta y_i^2}=\sqrt{\Delta x_i^2(1+\frac{\Delta y_i^2}{\Delta x_i^2})}+\sqrt{1+\frac{\Delta y_i^2}{\Delta x_i^2}}*\Delta x_i=
-    \begin{vmatrix}
-        \text{Теорема Лагранжа}\\
-        f(b)-f(a)=f'(\xi)(b-a)\\
-        \Delta y_i=f'(\xi)\Delta x_i
-    \end{vmatrix}=\sqrt{1+\frac{f'(\xi)^2 \Delta x_i^2}{\Delta x_i^2}}\Delta x_i=\sqrt{1+f'(\xi_i)^2}\Delta x_i$\\
-    Составим $\sigma_R=\sum_{i=0}^{n-1}\sqrt{1+f'(\xi_i)^2}\Delta x_i$\\
-    \underline{Замечание:} (.) $\xi_i$ берется из Теоремы Лагранжа, но можно показать, что lim будет существовать при произвольном
-    выборе $(.) \xi_i$\\
-    Тогда $\lim_{\lambda_R \to 0} \sigma_R = l =\int_{a}^{b} \sqrt{1+y'(x)^2}dx$
-    \subsection*{Длина дуги для функции, заданной параметрически:}
-    \begin{math}
-        \text{Пусть } \begin{cases}
-            x=x(t)\\
-            y=y(t)
-        \end{cases} \alpha \leq t \leq \beta \text{  Пусть  } x(\alpha)=a,x(\beta)=b\\
-        \text{Рассмотрим } l=\int_{a}^{b} \sqrt{1+f'(x)^2}dx=
+    $ R: a=x_0<x_1<\dots<x_n=b $\\
+    Каждой точке $x_i$ на кривой соответствует точке $M_i$. Соединим все соседние точки ломаными $M_iM_{i+1}$.
+    \[ \left|Г}n\right|=\sum_{i=0}^{n-1}\left|M_iM_{i+1}\right| \]
+    Если $\exists$ конечный предел $\lim_{\lambda_R \to 0} \left|Г_n\right|$, то он называется \textbf{длиной} кривой $y=f(x)$ на $[a; b]$\\
+    Или: \textbf{длина} кривой - точная верхняя грань $\left|Г_n\right| \;\;\; l=\sup\left|Г_n\right|$\\
+    Если $l$ - конечное, то кривая называется \textbf{спрямляемой}.\\
+    Найдем $\left|M_iM_{i+1}\right|$:\\
+    \begin{center}
+        \includegraphics[max size={\linewidth}{7cm}]{6.10.1.png}
+    \end{center}
+    \begin{gather*}
+        |M_iM_{i+1}|=\sqrt{\Delta x_i^2+\Delta y_i^2}=\sqrt{\Delta x_i^2\left(1+\frac{\Delta y_i^2}{\Delta x_i^2}\right)}+\sqrt{1+\frac{\Delta y_i^2}{\Delta x_i^2}} \times \Delta x_i =\\
+        = \begin{vmatrix}
+            \text{Теорема Лагранжа (4.12.4)}\\
+            f(b)-f(a)=f'(\xi)(b-a)\\
+            \Delta y_i=f'(\xi)\Delta x_i
+        \end{vmatrix}=\sqrt{1+\frac{f'(\xi)^2 \Delta x_i^2}{\Delta x_i^2}}\Delta x_i=\sqrt{1+f'(\xi_i)^2}\Delta x_i
+    \end{gather*}
+    Составим $\sigma_R$:
+    \[ \sigma_R = \sum_{i=0}^{n-1}\sqrt{1+f'(\xi_i)^2}\Delta x_i \]
+    \underline{Замечание:} точка $\xi_i$ берётся из теоремы Лагранжа (4.12.4), но можно показать, что $\lim$ будет существовать при произвольном выборе точки $\xi_i$.\\
+    Тогда 
+    \[ \lim_{\lambda_R \to 0} \sigma_R = \boxed{ l =\int_{a}^{b} \sqrt{1+y'(x)^2}dx } \]
+    \subsubsection*{Длина дуги для функции, заданной параметрически:}
+    Пусть
+    \[ \begin{cases}
+        x=x(t)\\
+        y=y(t)
+    \end{cases} \;\;\;\;\; \alpha \leq t \leq \beta \]
+    Пусть
+    \[ x(\alpha)=a, x(\beta)=b \]
+    Рассмотрим
+    \begin{gather*}
+        l=\int_{a}^{b} \sqrt{1+f'(x)^2}dx=
         \begin{vmatrix}
             x=x(t)\\
             dx=x'(t)dt\\
-            x=a \Rightarrow t=\alpha\\
-            x=b \Rightarrow t= \beta
-        \end{vmatrix}=\int_{\alpha}^{\beta} \sqrt{1+(\frac{y'_t}{x'_t})^2}x'(t)dt=\int_{\alpha}^{\beta} 
-        \sqrt{\frac{x'(t)^2+y'(t)^2}{x'(t)^2}}x'(t)dt=\int_{\alpha}^{\beta}\sqrt{x'(t)^2+y'(t)^2}dt = l
-    \end{math}
-    \subsection*{Длина дуги для функции, заданной в полярной системе координат:}
-    Пусть задана функция в виде\\
-    $r=r(\phi) \text{   } \alpha \leq \phi \leq \beta \text{   } r(\phi)=r$\\
-    $\begin{cases}
-        x=rcos(\phi)\\
-        y=rsin(\phi)
-    \end{cases}=
-    \begin{cases}
-        x=r(\phi)cos(\phi)\\
-        y=r(\phi)sin(\phi)
-    \end{cases}=
-    \begin{cases}
-        x'=r'cos(\phi)-rsin(\phi)\\
-        y'=r'sin(\phi)+rcos(\phi)
-    \end{cases}\\
-    x'^2=r'^2cos^2\phi-2rr'sin\phi cos\phi+r^2sin^2\phi\\
-    y^2=r'^2sin^2\phi+2rr'sin\phi cos\phi + r^2cos^2\phi\\
-    x'^2+y'^2=r'^2r^2$\\
-    \begin{center}
-        \fbox{$l=\int_{\alpha}^{\beta} \sqrt{r^2(\phi)+r'(\phi)^2}d\phi$}
-    \end{center}
-    $l=\int_{a}^{b}\sqrt{1+f'(x)^2}dx=\underset{(l)}{\int}dl \\ 
-    \underset{\text{дифференциал дуги}}{dl} = \sqrt{1+f'(x)^2}dx \\
-    dl=\sqrt{r^2+r'^2}d\phi \\
-    dl=\sqrt{x'^2+y'^2}dt$
+            x=a \implies t=\alpha\\
+            x=b \implies t= \beta
+        \end{vmatrix}=\int_{\alpha}^{\beta} \sqrt{1+(\frac{y'_t}{x'_t})^2}x'(t)dt =\\
+        = \int_{\alpha}^{\beta} \sqrt{\frac{x'(t)^2+y'(t)^2}{x'(t)^2}}x'(t)dt = \boxed{ \int_{\alpha}^{\beta}\sqrt{x'(t)^2+y'(t)^2}dt = l }
+    \end{gather*}
+    \subsubsection*{Длина дуги для функции, заданной в полярной системе координат:}
+    Пусть задана функция в виде
+    \begin{align*}
+        &r=r(\varphi) & &\alpha \leq \varphi \leq \beta & &r(\varphi)=r
+    \end{align*}
+    \begin{align*}
+        &\begin{cases}
+            x=rcos(\varphi)\\
+            y=rsin(\varphi)
+        \end{cases} & 
+        &\begin{cases}
+            x=r(\varphi)cos(\varphi)\\
+            y=r(\varphi)sin(\varphi)
+        \end{cases} & 
+        &\begin{cases}
+            x'=r'cos(\varphi)-rsin(\varphi)\\
+            y'=r'sin(\varphi)+rcos(\varphi)
+        \end{cases}
+    \end{align*}
+    \begin{gather*}
+        x'^2=r'^2cos^2\varphi-2rr'sin(\varphi) cos(\varphi)+r^2sin^2\varphi\\
+        y^2=r'^2sin^2\varphi+2rr'sin(\varphi) cos(\varphi) + r^2cos^2\varphi\\
+        x'^2+y'^2=r'^2r^2
+    \end{gather*}
+    \[ \boxed{ l=\int_{\alpha}^{\beta} \sqrt{r^2(\varphi)+r'(\varphi)^2}d\varphi } \]
+    \[ l=\int_{a}^{b}\sqrt{1+f'(x)^2}dx=\underset{(l)}{\int}dl \]
+    \[ \underset{\text{дифференциал дуги}}{dl} = \sqrt{1+f'(x)^2}dx \]
+    \[ dl=\sqrt{x'^2+y'^2}dt \]
+    \[ dl=\sqrt{r^2+r'^2}d\varphi \]
+
     \subsection{Вычисление объема тела вращения}
-    Пусть задана кривая y=f(x) $a\leq x\leq b$\\
-    $R:a=x_0<x_1<\dots<x_n=b$\\
-    В каждом элементарном $[x_i;x_{i+1}]$ произвольно выберем (.) $\xi_i$\\
-    Вычислим f($\xi_i$). Тогда $V_i=\pi f^2(\xi_i)\Delta x_i$\\
-    Составим $\sigma_R=\sum_{i=0}^{n-1}V_i=\sum_{i=0}^{n-1}\pi f^2(\xi_i)\Delta x_i$\\
-    $V=\pi R^2h\text{   } \lim_{\lambda_R \to 0}\sigma_R = \pi \int_{a}^{b}f^2(x)dx=V_x$
+    Пусть задана кривая $y=f(x) \;\;\; a\leq x\leq b$
     \begin{center}
-        \includegraphics[width=0.7\linewidth]{6.11.1.png}
+        \includegraphics[max size={\linewidth}{7cm}]{6.11.1.png}
     \end{center}
-    \subsection*{\underline{Если кривая задана в параметрическом виде:}}
-    \begin{math}
-        \begin{cases}
-            x=x(t)\\
-            y=y(t)
-        \end{cases} \alpha \leq t \leq \beta \; x(\alpha)=a \; x(\beta)=b\\
+    \[ R:a=x_0<x_1<\dots<x_n=b \]
+    В каждом элементарном $[x_i; x_{i+1}]$ произвольно выберем точку $\xi_i$\\
+    Вычислим $f(\xi_i)$. Тогда $V_i=\pi f^2(\xi_i)\Delta x_i$\\
+    Составим $\sigma_R$:
+    \[ \sigma_R = \sum_{i=0}^{n-1}V_i=\sum_{i=0}^{n-1}\pi f^2(\xi_i)\Delta x_i \]
+    \[ \lim_{\lambda_R \to 0}\sigma_R = \boxed {\pi \int_{a}^{b}f^2(x)dx=V_x } \]
+    \subsubsection*{Если кривая задана в параметрическом виде:}
+    \[ \begin{cases}
+        x=x(t)\\
+        y=y(t)
+    \end{cases} \;\;\; \alpha \leq t \leq \beta \;\;\; x(\alpha)=a \;\;\; x(\beta)=b \]
+    \begin{gather*}
         V=\pi \int_{a}^{b}f^2(x)dx =
         \begin{vmatrix}
             x=x(t)\\
             dx=x'(t)dt\\
-            x=a \Rightarrow t=\alpha\\
-            x=a \Rightarrow t=\beta
+            x=a \implies t=\alpha\\
+            x=a \implies t=\beta
         \end{vmatrix}=
-        \fbox{$\pi \int_{\alpha}^{\beta} y^2(t)x'(t)dt=V_x$}\\
-        \fbox{$V_y=\pi \int_{c}^{d} x^2(y)dy=\pi \int_{\alpha_1}^{\beta_1} x^2(t)y'(t)dt$}
-    \end{math}
-    \subsection*{\underline{Если кривая задана в полярной системе координат:}}
-    Пусть $r=r(\phi) \; \alpha \leq \phi \leq \beta$\\
-    \begin{math}
-        \begin{cases}
-            x=rcos(\phi)=r(\phi)cos\phi\\
-            y=r(\phi)sin\phi
-        \end{cases}\\
-        x'(\phi)=r'cos\phi-rsin\phi\\
-        \fbox{$V_x=\pi \int_{\alpha}^{\beta} r^2(\phi)sin^2\phi (r'(\phi)cos \phi -r(\phi)sin\phi)d\phi$}\\
-        \fbox{$V_y=\pi \int_{\alpha_1}^{\beta_1}r^2(\phi)cos^2(\phi)(r'(\phi)sin\phi + r(\phi)cos\phi)d\phi$}
-    \end{math}
+        \boxed{\pi \int_{\alpha}^{\beta} y^2(t)x'(t)dt=V_x}\\
+        \boxed{V_y=\pi \int_{c}^{d} x^2(y)dy=\pi \int_{\alpha_1}^{\beta_1} x^2(t)y'(t)dt}
+    \end{gather*}
+    \subsubsection*{Если кривая задана в полярной системе координат:}
+    Пусть $r=r(\varphi) \;\;\; \alpha \leq \varphi \leq \beta$
+    \[ \begin{cases}
+        x=rcos(\varphi)=r(\varphi)cos\varphi\\
+        y=r(\varphi)sin\varphi
+    \end{cases} \]
+    \begin{gather*}
+        x'(\varphi)=r'cos\varphi-rsin\varphi\\
+        \boxed{$V_x=\pi \int_{\alpha}^{\beta} r^2(\varphi)sin^2\varphi (r'(\varphi)cos \varphi -r(\varphi)sin\varphi)d\varphi$}\\
+        \boxed{$V_y=\pi \int_{\alpha_1}^{\beta_1}r^2(\varphi)cos^2\varphi(r'(\varphi)sin\varphi + r(\varphi)cos\varphi)d\varphi$}
+    \end{gather*}
+
     \subsection{Площадь поверхностей тела вращения}
-    Пусть f(x) $\geq 0 \; \forall x \in [a;b]\\
-    R:a=x_0<x_1<x_2<\dots<x_n=b$\\
-    Обозначим $f(a)=M_0,\dots,f(\xi_i)=M_i,\dots,f(b)=M_n$\\
-    Соединим (.) $M_i$ ломанными\\
-    $\Delta l_i = |M_iM_{i=1}| = \sqrt{1+f'(\xi_i)^2}\Delta x_i \; \Delta x_i$ - произвольная (.)$\in [x_i;x_{i+1}].
-    \\P_i=\pi(f(x_{i+1}+f(x_i)))\sqrt{1+f'(\xi_i)^2}\Delta x_i$\\
-    Составим $\sigma_R = \sum_{i=0}^{n-1}P_i=\sum_{i=0}^{n-1}\pi(f(x_{i+1}+f(x_i)))\sqrt{1+f'(\xi_i)^2 \Delta x_i}$
-    $S_\text{бок} = \pi (R+r)L$\\
-    Обозначим $S_\text{бок} = P$.\\
+    Пусть $f(x) \geq 0 \;\;\; \forall x \in [a;b]$\\
     \begin{center}
-        \includegraphics[width=0.5\linewidth]{6.12.1.png}
+        \includegraphics[max size={\linewidth}{7cm}]{6.12.1.png}
     \end{center}
-    $\sigma_R$ не является интегральной суммой т.к. её значение зависит от $\overset{\underline{x}}{3} (.): \xi_i,x_i,x_{i+1}$
-    Рассмотрим $\overline{\sigma_r} = \sum_{i=0}^{n-1} \pi(f(\xi_i)+f(\xi_i))\sqrt{1+f'(\xi_i)^2}\Delta x_i=2\pi \sum_{i=0}^{n-1}f(\xi_i)sqrt{1+f'(\xi_i)^2}\Delta x_i$\\
-    $\overline{\sigma_R}$ - интегральная сумма\\
-    Можно показать что: $\forall \delta > 0 \exists \varepsilon > 0: \lambda_R<\delta \Rightarrow |\sigma_R-\overline{\sigma_R}|<\varepsilon$\\
-    Это значит что $\lim_{\lambda_R \to 0}\sigma_R=\lim_{\lambda_R \to 0}\overline{\sigma_R}$\\
-    $\lim_{\lambda_R \to 0} \sigma_R = \lim_{\lambda_R \to 0} \overline{\sigma_R}=2\pi \int_{a}^{b}f(x)\sqrt{1+f'(x)^2}dx=P$\\
-    \subsection*{Если функция задана в параметрическом виде:}
-    Пусть $\begin{cases}
+    \[ R:a=x_0<x_1<x_2<\dots<x_n=b \]
+    \[ S_{\text{бок}} = \pi (R + r)l \]
+    Обозначим $S_{\text{бок}} = P$.\\
+    Обозначим $f(a)=M_0,\dots,f(x_i)=M_i,\dots,f(b)=M_n$\\
+    Соединим точки $M_i$ ломаными.
+    \[ \Delta l_i = |M_iM_{i=1}| = \sqrt{1+f'(\xi_i)^2}\Delta x_i \; \Delta x_i \]
+    $\xi_i$ - произвольная точка $\in [x_i; x_{i+1}]$.
+    \[ P_i = \pi(f(x_{i+1}+f(x_i)))\sqrt{1+f'(\xi_i)^2}\Delta x_i \]
+    Составим $\sigma_R$:
+    \[ \sigma_R = \sum_{i=0}^{n-1}P_i=\sum_{i=0}^{n-1}\pi(f(x_{i+1}+f(x_i)))\sqrt{1+f'(\xi_i)^2 \Delta x_i} \]
+    $\sigma_R$ не является интегральной суммой т.к. её значение зависит от $\overset{\underline{x}}{3}$ точек: $\xi_i$, $x_i$, $x_{i+1}$.
+    Рассмотрим 
+    \[ \overline{\sigma_R} = \sum_{i=0}^{n-1} \pi(f(\xi_i)+f(\xi_i))\sqrt{1+f'(\xi_i)^2}\Delta x_i=2\pi \sum_{i=0}^{n-1}f(\xi_i)\sqrt{1+f'(\xi_i)^2}\Delta x_i \]
+    $\overline{\sigma_R}$ - интегральная сумма.\\
+    Можно показать, что: 
+    \[ \forall \delta > 0 \, \exists \, \varepsilon > 0: \lambda_R<\delta \implies |\sigma_R-\overline{\sigma_R}|<\varepsilon \]
+    Это значит, что $\lim_{\lambda_R \to 0}\sigma_R=\lim_{\lambda_R \to 0}\overline{\sigma_R}$
+    \[ \lim_{\lambda_R \to 0} \sigma_R = \lim_{\lambda_R \to 0} \overline{\sigma_R}= \boxed{2\pi \int_{a}^{b}f(x)\sqrt{1+f'(x)^2}dx = P} \]
+    \subsubsection*{Если функция задана в параметрическом виде:}
+    Пусть 
+    \[ \begin{cases}
         x=x(t)\\
         y=y(t)
-    \end{cases} \alpha \leq t \leq \beta \; x(\alpha)=a,x(\beta)=b\\
-    P_x=\int_{a}^{b}f(x)\sqrt{1+f'(x)^2}dx=\begin{vmatrix}
+    \end{cases} \;\;\; \alpha \leq t \leq \beta \;\;\; x(\alpha)=a, x(\beta)=b \]
+    \[ P_x=\int_{a}^{b}f(x)\sqrt{1+f'(x)^2}dx=\begin{vmatrix}
         x=x(t)\\
         dx=x'(t)dt\\
         x=a \Rightarrow t=\alpha\\
         x=b \Rightarrow t=\beta
-    \end{vmatrix}=$\fbox{$2\pi \int_{\alpha}^{\beta}y(t) \underset{dl}{\sqrt{x'(t)^2+y'(t)^2}dt}$}\\
-    \fbox{$P_y=\int_{\alpha_1}^{\beta_1}x(t)\sqrt{x'(t)^2+y'(t)^2}dt$}
-    \subsection*{Если функция задана в полярной системе координат:}
-    Пусть $r=r(\alpha), \alpha \leq \phi \leq \beta$\\
-    \fbox{$P_x=2\pi \int_{\alpha}^{\beta}r(\phi)sin(\phi)\sqrt{r^2(\phi)+r'(\phi)^2}d\phi$}\\
-    \fbox{$P_x=2\pi \int_{\alpha}^{\beta}r(\phi)cos(\phi)\sqrt{r^2(\phi)+r'(\phi)^2}d\phi$}
+    \end{vmatrix}=\boxed{2\pi \int_{\alpha}^{\beta}y(t) \underbrace{\sqrt{x'(t)^2+y'(t)^2}}_{dl}dt} \]
+    \[ \boxed{P_y=\int_{\alpha_1}^{\beta_1}x(t)\sqrt{x'(t)^2+y'(t)^2}dt} \]
+    \subsubsection*{Если функция задана в полярной системе координат:}
+    Пусть $r=r(\alpha) \;\;\; \alpha \leq \varphi \leq \beta$
+    \[ \boxed{P_x=2\pi \int_{\alpha}^{\beta}r(\varphi)sin(\varphi)\sqrt{r^2(\varphi)+r'(\varphi)^2}d\varphi} \]
+    \[ \boxed{P_y=2\pi \int_{\alpha_1}^{\beta_1}r(\varphi)cos(\varphi)\sqrt{r^2(\varphi)+r'(\varphi)^2}d\varphi} \]
+
     \subsection{Физические приложения определенного интеграла}
     \begin{enumerate}
         \item Вычисление рабочей силы\\
-        Пусть (.) движется вдоль оси oX под действием переменной силы F(x). \\Точка перемещается из x=a в x=b перемещается\\
+        Пусть точка движется вдоль оси $OX$ под действием переменной силы $F(x)$.\\
+        Точка перемещается из $x=a$ в $x=b$.
+        \begin{center}
+            \includegraphics[max size={\linewidth}{7cm}]{6.13.1.png}
+        \end{center}
         \begin{enumerate}
-            \item R: $a=x_0<x_1<\dots<x_n=b$
+            \item $R: a=x_0<x_1<\dots<x_n=b$
             \item Выберем $\xi_i$
-            \item Вычислим F($\xi_i$)
+            \item Вычислим $F(\xi_i)$
             \item Составим $\sigma_R=\sum_{i=0}^{n-1}A_i=\sum_{i=0}^{n-1}F(\xi_i)\Delta x_i$
-            $A=\lim_{\lambda_R \to 0}\sigma_R=\int_{a}^{b}F(x)dx$
+            \[ A=\lim_{\lambda_R \to 0}\sigma_R=\int_{a}^{b}F(x)dx \]
         \end{enumerate}
-        \item Центр тяжести кривой и её моменты относительно осей: рассмотрим f(x) $\geq$ 0 на [a;b]\\
-        R:a=$x_0<x_1<\dots<x_n=b$\\
-        Будем рассматривать $M_i,M_{i+1}$ - как ломанные, имеющие массу. $\rho =$[кг/м] - линейная плотность\\
-        Составим сумму $\sigma_R=\sum_{i=0}^{n-1}f(\xi_i)\rho(\xi_i)\Delta L_i=\sum_{i=0}^{n-1} f(\xi_i)\rho(\xi_i)\sqrt{1+f'(\xi_i)^2}\Delta x_i$\\
-        $\lim_{\lambda_R \to 0}\sigma_R=\int_{a}^{b}\underset{r}{f(x)} \underset{m}{\rho\sqrt{1+f'(x)^2}}=M_x$ - момент кривой относительно оси oX\\
-        С другой стороны ($x_0,y_0$) - центр тяжести кривой.\\$Mx=my_0$\\
-        $my_0=\int_{a}^{b}f(x)\rho\sqrt{1+f'(x^2)}dx;\rho ly_0=\int_{a}^{b}f(x)\rho(x)\sqrt{1+f'(x)^2}dx|пусть \rho = const\\
-        ly_0=\int_{a}^{b}f(x)\sqrt{1+f'(x)^2}dx\\
-        l2\pi y_0=2 \pi \int_{a}^{b} f(x)\sqrt{1+f'(x)^2}dx$\\
-        \subsubsection*{Теорема 6.13.1  1-ая Теорема Гульдена}\label{th:6.13.1}
-        Площадь поверхности, полученной вращением кривой относительно оси oX, равна длине этой кривой, умноженной на длину окружности, которую описывает центр тяжести вокруг оси oX.\par\noindent
+        \item Центр тяжести кривой и её моменты относительно осей\\
+        Рассмотрим $f(x) \geq 0$ на $[a;b]$
+        \begin{center}
+            \includegraphics[max size={\linewidth}{7cm}]{6.13.2.png}
+        \end{center}
+        $R: a=x_0<x_1<\dots<x_n=b$\\
+        Будем рассматривать $M_iM_{i+1}$ - как ломаные, имеющие массу. $\rho =$[кг/м] - линейная плотность.\\
+        Составим сумму $\sigma_R$:
+        \[ \sigma_R=\sum_{i=0}^{n-1}f(\xi_i)\rho(\xi_i)\Delta L_i=\sum_{i=0}^{n-1} f(\xi_i)\rho(\xi_i)\sqrt{1+f'(\xi_i)^2}\Delta x_i \]
+        \[ \lim_{\lambda_R \to 0}\sigma_R=\int_{a}^{b}\underset{r}{f(x)} \underbrace{\rho\sqrt{1+f'(x)^2}}_{m}=M_x \] $M_x$ - момент кривой относительно оси OX.\\
+        С другой стороны $(x_0, y_0)$ - центр тяжести кривой.\\
+        \[ M_x=my_0 \]
+        \begin{gather*}
+            my_0=\int_{a}^{b}f(x)\rho(x)\sqrt{1+f'(x)^2}dx\\
+            \rho ly_0=\int_{a}^{b}f(x)\rho(x)\sqrt{1+f'(x)^2}dx \;\;\;\;\; \Big| \text{ Пусть } \rho = const\\
+            ly_0=\int_{a}^{b}f(x)\sqrt{1+f'(x)^2}dx\\
+            l2\pi y_0=2 \pi \int_{a}^{b} f(x)\sqrt{1+f'(x)^2}dx
+        \end{gather*}
+        \subsubsection*{Теорема 6.13.1 (I-я теорема Гульдена)}\label{th:6.13.1}
+        Площадь поверхности, полученной вращением кривой относительно оси $OX$, равна длине этой кривой, умноженной на длину окружности, которую описывает центр тяжести вокруг оси $OX$.\par\noindent
         \underline{Доказательство:}
         \begin{adjustwidth}{1.5em}{1.5em}
-            См. выше\\
-            $\begin{cases}
-                x_0=\frac{M_y}{m}\\
-                y_0=\frac{M_x}{m}
-            \end{cases} =
-            \begin{cases}
-                x_0=\frac{\int_{a}^{b}x\rho (x)\sqrt{1+f'(x)^2}dx}{\int_{a}^{b}\underset{\rho}{\rho (x)}\underset{dl}{\sqrt{1+f'(x)^2}dx}dx}\\
-                y_0=\frac{\int_{a}^{b}y\rho (x)\sqrt{1+f'(x)^2}dx}{\int_{a}^{b}\rho (x)\sqrt{1+f'(x)^2}dx}
-            \end{cases}$
+            См. выше.
+            \[ x_0=\frac{M_y}{m} \;\;\;\;\; y_0=\frac{M_x}{m} \]
+            \[ x_0=\frac{\int_{a}^{b}x\rho (x)\sqrt{1+f'(x)^2}dx}{\int_{a}^{b}\underbrace{\rho (x)}_{\rho}\underbrace{\sqrt{1+f'(x)^2}dx}_{dl}} \]
+            \[ y_0=\frac{\int_{a}^{b}y\rho (x)\sqrt{1+f'(x)^2}dx}{\int_{a}^{b}\rho (x)\sqrt{1+f'(x)^2}dx} \]
         \end{adjustwidth}
-        \item Центр тяжести плоской фигуры и её момент относительно осей:\\
-        Пусть $f(x)\geq 0,g(x)\geq 0. \forall x \in [a;b]$
-        Пусть $0 \leq g(x) \leq f(x)\\
-        R:a=x_0<x_1<\dots<x_n=b$\\
-        Выберем произвольно (.) $\xi_i\in [x_i,x_{i+1}]. \rho(\xi_i)=const$\\
-        Составим $\sigma_R$\\
-        $\sigma_R=\sum_{i=0}^{n-1}\frac{1}{2} \underset{r_x}{[f[\xi_i]+g(\xi_i)]}\rho(\xi_i)\overset{\text{высота}}{[f(\xi_i)-g(\xi_i)]}\overset{\text{ширина}}{\Delta x_i}$\\
-        $[\rho]-\frac{\text{кг}}{\text{м}^2} - $поверхностная плотность\\
-        $\lim_{\lambda_R \to 0} = \int_{R}^{b}\frac{1}{2}\rho (x) [f^2(x)-g^2(x)]dx=M_x$\\
-        С другой стороны $M_x=my_0(y_0$ - у координата центра тяжести)\\
-        \begin{math}
+        \item Центр тяжести плоской фигуры и её момент относительно осей:
+        \begin{center}
+            \includegraphics[max size={\linewidth}{7cm}]{6.13.3.png}
+        \end{center}
+        Пусть $f(x)\geq 0, g(x)\geq 0 \;\;\; \forall x \in [a;b]$\\
+        Пусть $0 \leq g(x) \leq f(x)$\\
+        $R:a=x_0<x_1<\dots<x_n=b$\\
+        Выберем произвольно точку $\xi_i \in [x_i,x_{i+1}]$\\
+        $\rho(\xi_i)=const$\\
+        Центр тяжести прямоугольника находится на расстоянии $\frac{1}{2}(f(\xi_i) + g(\xi_i))$\\
+        Составим $\sigma_R$:
+        \[ \sigma_R=\sum_{i=0}^{n-1}\frac{1}{2} \underbrace{[f(\xi_i)+g(\xi_i)]}_{r_x} \underbrace{\overbrace{\rho(\xi_i)}^{\rho}\overbrace{\overbrace{[f(\xi_i)-g(\xi_i)]}^{\text{высота}}\overbrace{\Delta x_i}^{\text{ширина}}}^{S}}_{m \text{ прямоуг.}} \]
+        $[\rho]$ - кг/$\text{м}^2$ - поверхностная плотность.
+        \[ \lim_{\lambda_R \to 0} \sigma_R = \int_{R}^{b}\frac{1}{2}\rho (x) [f^2(x)-g^2(x)]dx=M_x \]
+        С другой стороны $M_x=my_0$, где $y0$ - $у$-координата центра тяжести.\\
+        \begin{gather*}
             my_0=\int_{a}^{b}\frac{1}{2}\rho (x)[f^2(x)-g^2(x)]dx\\
-            \rho Sy_0=\int_{a}^{b}\frac{1}{2}\rho (x)[f^2(x)-g^2(x)]dx|:\rho=const|*2\pi\\
-            S*2\pi y_0=\pi \int_{a}^{b} [f^2(x)-g^2(x)]dx\\
-        \end{math}
-        \subsubsection*{Теорема 6.13.2 2-ая Теорема Гульдена}\label{th:6.13.2}
-        Объём тела, полученного вращением плоской фигуры вокруг оси oX, равен площади этой фигуры, умноженной на длину окружности, которую описывает центр тяжести вокруг оси oX.\par\noindent
-        $\begin{cases}
+            \rho Sy_0=\int_{a}^{b}\frac{1}{2}\rho (x)[f^2(x)-g^2(x)]dx \;\;\;\;\; \Big| : \rho=const \;\; \Big| \times 2\pi\\
+            2S\pi y_0=\pi \int_{a}^{b} [f^2(x)-g^2(x)]dx\\
+        \end{gather*}
+        \subsubsection*{Теорема 6.13.2 (II-я теорема Гульдена)}\label{th:6.13.2}
+        Объём тела, полученного вращением плоской фигуры вокруг оси $OX$, равен площади этой фигуры, умноженной на длину окружности, которую описывает центр тяжести вокруг оси $OX$.\par\noindent
+        \begin{gather*}
             y_0=\frac{M_x}{m}=\frac{\frac{1}{2}\int_{a}^{b}\rho (x)[f^2(x)-g^2(x)]dx}{\int_{a}^{b}\rho(x)[f(x)-g(x)]dx}\\
             x_0=\frac{M_y}{m}=\frac{\int_{a}^{b}x\rho (x)[f(x)-g(x)]dx}{\int_{a}^{b}\rho (x)[f(x)-g(x)]dx}
-        \end{cases}$
+        \end{gather*}
     \end{enumerate}
-    \subsection{Несобственные интегралы I рода}
-    \underline{Определение: } Пусть f(x) задана на конечном [a;b)\\
-    Допустим что f(x) интегрируема на [a;b'],b'<b и неограниченна в (.) x=b. Тогда f(x) не интегрируема по Риману на [a;b] \\
-    Если существует конечный $\lim_{b' \to b} \int_{a}^{b'}f(x)dx,$ то он называется несобственным интегралом от f(x) на [a;b]\\
-    $\int_{a}^{b}f(x)dx=\lim_{b' \to b}\int_{a}^{b'} f(x)dx$\\
-    \underline{Определение: } Если b=$\inf$, т.е. f(x) задана на [a;$+ \infty]$ и интегрируема на $\forall [a;A],a<A<\infty$ и существует конечный
-    $\lim_{A \to \inf}\int_{a}^{A} f(x)dx,$ то он называется несобственным интегралом 1-рода от функции f(x) на [a;$+\infty$]\\
-    Аналогично, $\int_{-\infty}^{b}f(x)dx=\lim_{B \to -\infty} \int_{B}^{b}f(x)dx\\
-    \int_{-\infty}^{\infty} f(x)dx=\int_{-\infty}^{C}f(x)dx+\int_{C}^{+\infty}f(x)dx$
+
+    \subsection{Несобственные интегралы 1-го рода}
+    Пусть $f(x)$ задана на конечном $[a;b)$.\\
+    Допустим, что $f(x)$ интегрируема на $[a;b']$, $b'<b$ и неограничена в точке $x=b$. Тогда $f(x)$ не интегрируема по Риману на $[a;b]$.\\
+    Если $\exists$ конечный $\lim_{b' \to b} \int_{a}^{b'}f(x)dx$, то он называется \textbf{несобственным} интегралом от $f(x)$ на $[a; b]$
+    \[ \int_{a}^{b}f(x)dx=\lim_{b' \to b}\int_{a}^{b'} f(x)dx \]
+    Если $b=\infty$, т.е. $f(x)$ задана на $[a; +\infty)$ и интегрируема на $\forall [a;A],a<A<\infty$ и $\exists$ конечный $\lim_{A \to \infty}\int_{a}^{A} f(x)dx$, то он называется \textbf{несобственным} интегралом \textbf{1-го рода} от функции $f(x)$ на $[a;+\infty)$.\\
+    Аналогично, $\int_{-\infty}^{b}f(x)dx=\lim_{B \to -\infty} \int_{B}^{b}f(x)dx$\\
+    \[ \int_{-\infty}^{\infty} f(x)dx=\int_{-\infty}^{C}f(x)dx+\int_{C}^{+\infty}f(x)dx \]
+
     \subsection{Несобственные интегралы 2-го рода}
-    \underline{Определение: } Пусть f(x) непрерывна $\forall x \in [a;b]/c \; a \leq c \leq b$\\
-    Тогда $\int_{a}^{b}f(x)dx=\int_{a}^{c} f(x)dx+\int_{c}^{b} f(x)dx=\lim_{\varepsilon \to 0}\int_{a}^{c-\varepsilon}f(x)dx+\lim_{\varepsilon \to 0}\int_{c+\varepsilon}^{b}f(x)dx$\\
-    Если оба предела существуют то интеграл сходится.\\
-    Если хотя бы один не существует или $\pm \infty$, то расходится.\\
-    \underline{Замечание:} (.) C может быть c=a или c=b\\
-    \underline{Замечание:} Можно записать в виде $\int_{a}^{b}f(x)dx=\lim_{x \to c-0}\int_{a}^{c}f(x)dx+\lim_{x \to c+0} \int_{c}^{b}f(x)dx$\\
+    Пусть $f(x)$ непрерывна $\forall x \in [a;b]/c \;\;\; a \leq c \leq b$\\
+    Тогда: 
+    \[ \int_{a}^{b}f(x)dx=\int_{a}^{c} f(x)dx+\int_{c}^{b} f(x)dx=\lim_{\varepsilon \to 0}\int_{a}^{c-\varepsilon}f(x)dx+\lim_{\varepsilon \to 0}\int_{c+\varepsilon}^{b}f(x)dx \]
+    Если оба предела $\exists$, то интеграл сходится.\\
+    Если хотя бы один $\nexists$ или $\pm \infty$, то расходится.\\
+    \underline{Замечание:} точка $c$ может быть $c=a$ или $c=b$.\\
+    \underline{Замечание:} можно записать в виде 
+    \[ \int_{a}^{b}f(x)dx=\lim_{x \to c-0}\int_{a}^{c}f(x)dx+\lim_{x \to c+0} \int_{c}^{b}f(x)dx \]
     \underline{Пример:}\\
     \begin{enumerate}
         \item Рассмотрим $\int_{1}^{\infty}\frac{dx}{x^k}$
         \begin{enumerate}
-            \item k=1. $\int_{1}^{\infty}\frac{dx}{x}=\lim_{A \to \infty}\int_{1}^{A} \frac{dx}{x}=\lim_{A \to \infty} ln |x|\Big|^A_1 = \lim_{A \to \infty}(ln |A|-ln1)=\infty$ - рсх.
-            \item k $\ne, k \geq 0 \; \int_{1}^{\infty} \frac{dx}{x^k}=\lim_{A \to \infty}\int_{1}^{A} \frac{dx}{x^k}=\lim_{A \to \infty} (\frac{x^{-k+1}}{-k+1}\Big|^A_1)=\lim_{A \to \infty}
-            (\frac{A^{1-k}}{1-k}-\frac{1}{1-k})=\begin{cases}
-                \infty,0\leq k<1 \text{-рсх}\\
-                \frac{1}{k-1},k>1\text{-сх}
-            \end{cases} \int_{1}^{\infty}\frac{dx}{x^k}=\begin{cases}
-                \text{сх при k>1}\\
-                \text{рсх при k$\leq 1$}
-            \end{cases}$
+            \item $k=1$
+            \[ \int_{1}^{\infty}\frac{dx}{x}=\lim_{A \to \infty}\int_{1}^{A} \frac{dx}{x}=\lim_{A \to \infty} \ln |x|\Big|^A_1 = \lim_{A \to \infty}(\ln |A|-\ln 1)=\infty \text{ - расх.} \]
+            \item $k \ne 0, k \geq 0$ 
+            \begin{gather*}
+                \int_{1}^{\infty} \frac{dx}{x^k}=\lim_{A \to \infty}\int_{1}^{A} \frac{dx}{x^k}=\lim_{A \to \infty} (\frac{x^{-k+1}}{-k+1}\Big|^A_1)=\lim_{A \to \infty}
+                (\frac{A^{1-k}}{1-k}-\frac{1}{1-k}) =\\
+                = \begin{cases}
+                    \infty, \;\;\; 0\leq k<1 \text{ - расх.}\\
+                    \frac{1}{k-1}, \;\;\; k>1\text{ - сх.}
+                \end{cases} 
+            \end{gather*}
+            \[ \int_{1}^{\infty}\frac{dx}{x^k}=\begin{cases}
+                \text{сх. при }k>1\\
+                \text{расх. при }k \leq 1
+            \end{cases} \]
         \end{enumerate}
-        \item $\int_{0}^{1} \frac{dx}{x^k} \; \varepsilon>0$
+        \item $\int_{0}^{1} \frac{dx}{x^k} \;\;\; \varepsilon>0$
         \begin{enumerate}
-            \item k=1, $\int_{0}^{1} \frac{dx}{x}=\lim_{\varepsilon \to 0}\int_{0+\varepsilon}^{1}\frac{dx}{x}=\lim_{\varepsilon \to 0}ln|x|\Big|^1_\varepsilon =\lim_{\varepsilon \to 0}(ln1-ln|\varepsilon|)=+\infty$ - рсх
-            \item $k\ne 1, \int_{0}^{1} \frac{dx}{x^k} = \lim_{\varepsilon \to 0}\int_{\varepsilon}^{1}\frac{dx}{x^k}=\lim_{\varepsilon \to 0}\frac{x^{-k+1}}{-k+1}\Big|^1_\varepsilon =\lim_{\varepsilon \to 0}
+            \item $k=1$ 
+            \[ \int_{0}^{1} \frac{dx}{x}=\lim_{\varepsilon \to 0}\int_{0+\varepsilon}^{1}\frac{dx}{x}=\lim_{\varepsilon \to 0}\ln |x|\Big|^1_\varepsilon =\lim_{\varepsilon \to 0}(\ln 1-\ln |\varepsilon|)=+\infty \text{ - рсх} \]
+            \item $k\ne 1$ 
+            \[ \int_{0}^{1} \frac{dx}{x^k} = \lim_{\varepsilon \to 0}\int_{\varepsilon}^{1}\frac{dx}{x^k}=\lim_{\varepsilon \to 0}\frac{x^{-k+1}}{-k+1}\Big|^1_\varepsilon =\lim_{\varepsilon \to 0}
             (\frac{1}{1-k}-\frac{\varepsilon^{1-k}}{1-k})=\begin{cases}
-                \frac{1}{1-k},k<1\\
-                \infty,k>1
-            \end{cases} \\\int_{0}^{1}\frac{dx}{x^k}=\begin{cases}
-                \frac{1}{1-k},k<1\\
-                \text{рсх}, k\geq 1
-            \end{cases}$
+                \frac{1}{1-k}, \;\;\; k<1\\
+                \infty, \;\;\; k>1
+            \end{cases} \]
+            \[ \int_{0}^{1}\frac{dx}{x^k} = \begin{cases}
+                \frac{1}{1-k}, \;\;\; k<1\\
+                \text{расх.}, \;\;\; k\geq 1
+            \end{cases} \]
         \end{enumerate}
     \end{enumerate}
+
     \subsection{Свойство несобственных интегралов}
-    \underline{Замечание:} в (.) x=b - особенность
+    \underline{Замечание:} в точке $x=b$ - особенность
     \begin{enumerate}
         \item Линейность\\
-        Если $\int_{a}^{b}f(x)dx и \int_{a}^{b} g(x)dx$ сходятся, то $\int_{a}^{b} [\lambda f(x)+\mu g(x)]dx$ тоже сходятся\\
-        $\int_{a}^{b}[\lambda f(x)+\mu g(x)]dx=\lambda \int_{a}^{b} f(x)dx + \mu \int_{a}^{b}g(x)dx$\\
+        Если $\int_{a}^{b}f(x)dx$ и $\int_{a}^{b} g(x)dx$ сходятся, то $\int_{a}^{b} [\lambda f(x)+\mu g(x)]dx$ тоже сходится.
+        \[ \int_{a}^{b}[\lambda f(x)+\mu g(x)]dx=\lambda \int_{a}^{b} f(x)dx + \mu \int_{a}^{b}g(x)dx \]\noindent
         \underline{Доказательство:}
         \begin{adjustwidth}{1.5em}{1.5em}
-            Рассмотрми $\int_{a}^{b}[\lambda f(x)+\mu g(x)]dx=\lim_{b' \to b} \int_{a}^{b}[\lambda f(x)+\mu g(x)]dx= \\ \lim_{b' \to b}[\lambda \int_{a}^{b'}f(x)dx+\mu \int_{a}^{b'}g(x)dx]=
-            \lambda\lim_{b' \to b} \int_{a}^{b'}f(x)dx+\mu\lim_{b' \to b}\int_{a}^{b'}g(x)dx=\\ \lambda \int_{a}^{b}f(x)dx+\mu \int_{a}^{b}g(x)dx$
+            Рассмотрим 
+            \begin{gather*}
+                \int_{a}^{b}[\lambda f(x)+\mu g(x)]dx=\lim_{\underset{(b' < b)}{b' \to b}} \int_{a}^{b}\left[\lambda f(x)+\mu g(x)\right]dx= \\ \lim_{b' \to b}\left[\lambda \int_{a}^{b'}f(x)dx+\mu \int_{a}^{b'}g(x)dx\right]=
+                \lambda\lim_{b' \to b} \int_{a}^{b'}f(x)dx+\mu\lim_{b' \to b}\int_{a}^{b'}g(x)dx=\\ \lambda \int_{a}^{b}f(x)dx+\mu \int_{a}^{b}g(x)dx
+            \end{gather*}
             \begin{center}
                 \textbf{Ч.т.д.}
             \end{center}
         \end{adjustwidth}
-        \item Если $\int_{a}^{b} f(x)dx$ и $\int_{a}^{b} g(x)dx$ сходятся и $\forall x \in [a;b) f(x) \leq g(x), $ то $\int_{a}^{b}f(x)dx \leq \int_{a}^{b}g(x)dx$\\
+        \item Если $\int_{a}^{b} f(x)dx$ и $\int_{a}^{b} g(x)dx$ сходятся и $\forall x \in [a;b) \;\;\; f(x) \leq g(x)$, то $\int_{a}^{b}f(x)dx \leq \int_{a}^{b}g(x)dx$.\par\noindent
         \underline{Доказательство:}
         \begin{adjustwidth}{1.5em}{1.5em}
-            $\forall b<b' \; \int_{a}^{b'} f(x) \leq \int_{a}^{b'} g(x)dx$(оценки интервалов)\\
-            Переходя к $\lim_{b' \to b}$ при $b' \to b$, получим
-            \begin{center}
-                \textbf{Ч.т.д.}
-            \end{center}
+            \[ \forall b<b' \; \int_{a}^{b'} f(x) \leq \int_{a}^{b'} g(x)dx \text{ (оценки интервалов)}\]
+            Переходя к $\lim_{b' \to b}$ при $b' \to b$, получим \textbf{Ч.т.д.}
         \end{adjustwidth}
         \item Формула замены переменной\\
-        Если f(x) непрерывна $\forall x \in [a;b) = \Delta x$\\
-        $\phi(t)$ непрерывно дифференцируема на [$\alpha;\underset{\Delta t}{\beta})(\phi(t)$ непрерывна и $\phi'(t)$ непрерывна)\\
-        $\phi(\Delta t) \subset \Delta x,a=\phi(\alpha),b=\lim_{t \to \beta}\phi(t)$\\
-        Тогда $\int_{a}^{b}f(x)dx=\int_{\alpha}^{\beta} f(\phi(t))\phi'(t)dt$
+        Если $f(x)$ непрерывна $\forall x \in [a;b) = \Delta x$, $\varphi(t)$ непрерывно дифференцируема на $\left[\alpha;\underset{\Delta t}{\beta}\right)$ ($\varphi(t)$ непрерывна и $\varphi'(t)$ непрерывна), $\varphi(\Delta t) \subset \Delta x$, $a=\varphi(\alpha)$, $b=\lim_{t \to \beta}\varphi(t)$\\
+        Тогда $\int_{a}^{b}f(x)dx=\int_{\alpha}^{\beta} f(\varphi(t))\varphi'(t)dt$.
         \item Формула интегрирования по частям\\
-        Если u(x) и v(x) непрерывна на [a;b), u'(x),v'(x) конечно-непрерывна на [a;b'] a<b'<b, \\ то $\int_{a}^{b}udv=uv\Big|^b_a - \int_{a}^{b}vdu$\\
-        $\int_{a}^{b}udv=\lim_{b' \to b} (u(b')v(b')-u(a)v(a)-\int_{a}^{b'}vdu)$
+        Если $u(x)$ и $v(x)$ непрерывны на $[a;b)$; $u'(x)$, $v'(x)$ конечно-непрерывны на $[a;b'] \;\;\; a<b'<b$, то $\int_{a}^{b}udv=uv\Big|^b_a - \int_{a}^{b}vdu$
+        \[ \int_{a}^{b}udv=\lim_{b' \to b} \left(u(b')v(b')-u(a)v(a)-\int_{a}^{b'}vdu\right) \]
     \end{enumerate}
-    \underline{Пример:}\\
+    \underline{Пример:}
+    \begin{gather*}
+        \int_{1}^{\infty}\frac{dx}{x\sqrt{x^2-1}}=\lim_{\substack{A \to \infty \\ \varepsilon \to 0}} \int_{1+\varepsilon}^{A} \frac{dx}{x\sqrt{x^2-1}} =
+        \begin{vmatrix}
+            x=\frac{1}{t} & x=1 \Rightarrow t=1\\
+            dx=-\frac{1}{t^2}dt & x=\infty \Rightarrow t=0
+        \end{vmatrix} = \int_{1}^{0} \frac{-\frac{dt}{t^2}}{\frac{1}{t}\sqrt{\frac{1}{t^2}-1}}=\int_{0}^{1}\frac{dt}{t\sqrt{\frac{1-t^2}{t^2}}}=\\
+        = \int_{0}^{1} \frac{dt}{t\sqrt{\frac{1-t^2}{t^2}}}=
+        \int_{0}^{1}\frac{dt}{\sqrt{1-t^2}}=\lim_{\varepsilon \to 0} \int_{0}^{1-\varepsilon}\frac{dt}{\sqrt{1-t^2}}=\lim_{\varepsilon \to 0} \arcsin t\Big|^{1-\varepsilon}_0=\\
+        = \lim_{\varepsilon \to 0}[arcsin(1-\varepsilon)-arcsin(0)]=\frac{\pi}{2}
+    \end{gather*}
 
-    \[\int_{1}^{\infty}\frac{dx}{x\sqrt{x^2-1}}=\lim_{\substack{A \to \infty \\ \varepsilon \to 0}} \int_{1+\varepsilon}^{A} \frac{dx}{x\sqrt{x^2-1}} =
-    \begin{vmatrix}
-        x=\frac{1}{t} & x=1 \Rightarrow t=1\\
-        dx=-\frac{1}{t^2}dt & x=\infty \Rightarrow t=0
-    \end{vmatrix} = \int_{1}^{0} \frac{-\frac{dt}{t^2}}{\frac{1}{t}\sqrt{\frac{1}{t^2}-1}}=\int_{0}^{1}\frac{dt}{t\sqrt{\frac{1-t^2}{t^2}}}=\] \\
-    \[\int_{0}^{1} \frac{dt}{t\sqrt{\frac{1-t^2}{t^2}}}=
-    \int_{0}^{1}\frac{dt}{\sqrt{1-t^2}}=\lim_{\varepsilon \to 0} \int_{0}^{1-\varepsilon}\frac{dt}{\sqrt{1-t^2}}=\lim_{\varepsilon \to 0} arcsin t\Big|^{1-\varepsilon}_0=\\
-    \lim_{\varepsilon \to 0}[arcsin(1-\varepsilon)-arcsin(0)]=\frac{\pi}{2} \] \\
     \subsection{Несобственные интегралы от неотрицательных функций}
-    \textbf{Лемма :} Если f(x) неотрицательна на [a;b), то для сходимости $\int_{a}^{b}f(x)dx \longleftrightarrow $ чтобы множество
-    интегралов $\int_{a}^{b'} f(x)dx \; b' \in [a;b)$ было ограничено сверху. Т.е. чтобы $\exists c>0:\forall b':\int_{a}^{b'}f(x)dx \leq C$\\
+    \textbf{Лемма:} Если $f(x)$ неотрицательна на $[a;b)$, то для сходимости $\int_{a}^{b}f(x)dx \Longleftrightarrow $ чтобы множество интегралов $\int_{a}^{b'} f(x)dx \;\;\; b' \in [a;b)$ было ограничено сверху.\\
+    Т.е. чтобы $\exists\,c>0:\forall b':\int_{a}^{b'}f(x)dx \leq \mathbb{C}$\\
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
-        Рассмотрим $\phi(b') = \int_{a}^{b'} f(x)dx - $ функия с переменным верхним пределом.\\
-        Пусть a<b'<b''<b\\
-        Рассмотрим $\phi(b'')=\int_{a}^{b''}f(x)dx = \int_{a}^{b'}f(x)dx+\int_{b'}^{b''}f(x)dx\geq \int_{a}^{b'}f(x)dx=\phi(b'),$ Т.е. если $b'<b'' \Rightarrow
-        \phi(b')\leq \phi(b'').$ Т.е. $\phi(b') $ неубывающая функция.\\
-        Существование $\int_{a}^{b}f(x)dx$ означает по определению существование конечного предела $\lim_{b' \to b}\phi(b')=\int_{a}^{b}f(x)dx,$ который существует $\longleftrightarrow$ когда $\phi(b')$
-        ограничена сверху, Т.е. $\phi(b') \leq C.$
+        Рассмотрим $\varphi(b') = \int_{a}^{b'} f(x)dx$ - функция с переменным верхним пределом.\\
+        Пусть $a<b'<b''<b$\\
+        Рассмотрим 
+        \[ \varphi(b'')=\int_{a}^{b''}f(x)dx = \int_{a}^{b'}f(x)dx+\int_{b'}^{b''}f(x)dx\geq \int_{a}^{b'}f(x)dx=\varphi(b')\]
+        Т.е. если $b'<b'' \implies \varphi(b')\leq \varphi(b'')$.\\
+        Т.е. $\varphi(b')$ - неубывающая функция.\\
+        Существование $\int_{a}^{b}f(x)dx$ означает (по определению) существование конечного предела $\lim_{b' \to b}\varphi(b')=\int_{a}^{b}f(x)dx$, который $\exists$ $\Longleftrightarrow$ когда $\varphi(b')$
+        ограничена сверху, т.е. $\varphi(b') \leq \mathbb{C}$.
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
     \end{adjustwidth}
-    \begin{center}
-        \textbf{Ч.т.д.}
-    \end{center}
-    \subsubsection*{Теорема 6.17.1 Признак сравнения несобственных интегралов (Первый признак)}\label{th:6.17.1}
-    Пусть $0\leq g(x) \leq f(x). x\in [a;b)$\par\noindent
-    Тогда \begin{enumerate}
-        \item Если $\int_{a}^{b}f(x)dx$ сх $\Rightarrow \int_{a}^{b}g(x)dx$ сх
-        \item Если $\int_{a}^{b}g(x)dx$ рсх $\Rightarrow \int_{a}^{b}f(x)dx$ рсх 
+    \subsubsection*{Теорема 6.17.1 (1-й признак сравнения несобственных интегралов)}\label{th:6.17.1}
+    Пусть $0\leq g(x) \leq f(x) \;\;\; x\in [a;b)$\\
+    Тогда:
+    \begin{enumerate}
+        \item Если $\int_{a}^{b}f(x)dx$ сх. $\implies \int_{a}^{b}g(x)dx$ сх.
+        \item Если $\int_{a}^{b}g(x)dx$ расх. $\implies \int_{a}^{b}f(x)dx$ расх.
     \end{enumerate}
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
         \begin{enumerate}
-            \item Пусть $\int_{a}^{b}f(x)dx $ сх, тогда множество интегралов $\int_{a}^{b'}f(x)dx$ по лемме ограничены сверху.
-            Т.к. $g(x) \leq f(x) \Rightarrow \int_{a}^{b'}g(x)dx \leq \int_{a}^{b'}f(x)dx \Rightarrow \forall b' \in (a;b)$ множество интегралов $\int_{a}^{b'}
-            g(x)dx$ будут ограничены сверху. $\Rightarrow$ по лемме $\int_{a}^{b}g(x)dx$ сх.
-            \item Пусть $\int_{a}^{b}g(x)dx$ рсх, тогда $\int_{a}^{b}f(x)dx$ не может сходится,т.к. если бы они сх, то $\int_{a}^{b}g(x)dx$ тоже сх по п.1, а это не так.
+            \item Пусть $\int_{a}^{b}f(x)dx$ сх., тогда множество интегралов $\int_{a}^{b'}f(x)dx$ по лемме ограничены сверху.\\
+            Т.к. $g(x) \leq f(x) \implies \int_{a}^{b'}g(x)dx \leq \int_{a}^{b'}f(x)dx \implies \forall b' \in (a;b)$ множество интегралов $\int_{a}^{b'}g(x)dx$ будут ограничены сверху $\implies$ по лемме $\int_{a}^{b}g(x)dx$ сх.
+            \item Пусть $\int_{a}^{b}g(x)dx$ расх., тогда $\int_{a}^{b}f(x)dx$ не может сходится, т.к. если бы они сх., то $\int_{a}^{b}g(x)dx$ тоже сх. по пункту 1, а это не так.
         \end{enumerate}
         \begin{center}
             \textbf{Ч.т.д.}
         \end{center}
     \end{adjustwidth}
-    \subsubsection*{Теорема 6.17.2 Следствие признака сравнения (Второй признак сравнения)}\label{th:}
-    Пусть $\forall x \in [a;b) f(x)\geq 0,g(x)\geq 0$ и $\lim_{x \to b}\frac{f(x)}{g(x)}=k$\par\noindent
+    \subsubsection*{Теорема 6.17.2 (следствие 1-го признака сравнения или 2-й признак сравнения)}\label{th:}
+    Пусть $\forall x \in [a;b) \;\;\; f(x)\geq 0,g(x)\geq 0$ и $\lim_{x \to b}\frac{f(x)}{g(x)}=k$
     \begin{enumerate}
-        \item Если $\int_{a}^{b}g(x)dx$ - сх. $0\leq k< \infty$ - конечные $\Rightarrow \int_{a}^{b}f(x)dx$ сх.
-        \item Если $\int_{a}^{b}g(x)dx$ - рсх. $0<k\leq \infty \Rightarrow \int_{a}^{b}f(x)dx$ - рсх.
+        \item Если $\int_{a}^{b}g(x)dx$ - сх., $0\leq k< \infty$ - конечное $\implies \int_{a}^{b}f(x)dx$ сх.
+        \item Если $\int_{a}^{b}g(x)dx$ - расх., $0 < k \leq \infty \implies \int_{a}^{b}f(x)dx$ - расх.
     \end{enumerate}
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
         \begin{enumerate}
             \item Пусть $0\leq k < \infty$\\
-            Т.К. $\lim_{x \to b} \frac{f(x)}{g(x)} = k$, то $\exists b' \in [a;b):\forall x\in (b';b) \frac{f(x)}{g(x)}<{k+1}$\\
-            $\int_{a}^{b}g(x)dx - $сх $\Rightarrow \int_{b}^{b}g(x)dx$ сх $\Rightarrow \int_{b'}^{b}(k+1)g(x)dx$ сх $\Rightarrow \int_{b'}^{b}f(x)dx$ сх 
-            по признаку сравнения $\Rightarrow \int_{a}^{b}f(x)dx$сх.
+            Т.к. $\lim_{x \to b} \frac{f(x)}{g(x)} = k$, то $\exists\,b' \in [a;b):\forall x\in (b';b) \; \frac{f(x)}{g(x)}<{k+1}$\\
+            $\int_{a}^{b}g(x)dx$ - сх. $\implies \int_{b}^{b}g(x)dx$ - сх. $\implies \int_{b'}^{b}(k+1)g(x)dx$ - сх. $\implies \int_{b'}^{b}f(x)dx$ сх. по признаку сравнения $\implies \int_{a}^{b}f(x)dx$ сх.
             \item Пусть $0<k\leq \infty$. Пусть $0<k'<k$.\\
-            $\int_{a}^{b}g(x)dx$ - рсх. Тогда $\forall x \in (b';b) \frac{f(x)}{g(x)}>k'$\\
-            f(x)>k'g(x)\\
-            $\int_{a}^{b}g(x)dx$ рсх. $\Rightarrow \int_{b'}^{b} g(x)dx$ рсх. $\Rightarrow \int_{b'}^{b} k'g(x)dx$ рсх. $\Rightarrow \int_{b'}^{b}f(x)dx$ по признаку
-            сравнения $\Rightarrow \int_{a}^{b}f(x)dx$ рсх. 
+            $\int_{a}^{b}g(x)dx$ - расх. Тогда $\forall x \in (b';b) \; \frac{f(x)}{g(x)}>k'$\\
+            $f(x)>k'g(x)$\\
+            $\int_{a}^{b}g(x)dx$ расх. $\implies \int_{b'}^{b} g(x)dx$ расх. $\implies \int_{b'}^{b} k'g(x)dx$ расх. $\implies \int_{b'}^{b}f(x)dx$ по признаку
+            сравнения $\implies \int_{a}^{b}f(x)dx$ расх. 
             \begin{center}
                 \textbf{Ч.т.д.}
             \end{center}
         \end{enumerate}
     \end{adjustwidth}
-    \underline{Пример:}  $\int_{0}^{1} ln(x)dx$\\
-    Пусть f(x)=ln(x)\\
-    $g(x)=\frac{1}{x^2} \; \int_{0}^{1}\frac{dx}{x^2}$ - рсх.\\
-    $\lim_{x \to 0}\frac{ln(x)}{\frac{1}{x^2}}=\lim_{x \to 0}\frac{\frac{1}{x}}{-\frac{2}{x^3}}=\lim_{x \to 0}\frac{x^2}{-2}=0$\\
-    $g(x)=\frac{1}{\sqrt{x}} \; \int_{0}^{1}=\frac{dx}{\sqrt{x}}-$ сх.\\
-    Рассмотрим $\lim_{x \to 0}\frac{ln(x)}{\frac{1}{\sqrt{x}}}=\lim_{x \to 0}\frac{\frac{1}{x}}{-\frac{1}{2x^{\frac{3}{2}}}}=\lim_{x \to 0}(-2\sqrt{x})=0
-    \Rightarrow \int_{0}^{1}ln(x)dx$- сх.
+    \underline{Пример:} $\int_{0}^{1} \ln(x)dx$\\
+    Пусть $f(x)=\ln(x)$\\
+    $g(x)=\frac{1}{x^2} \;\;\; \int_{0}^{1}\frac{dx}{x^2}$ - расх.\\
+    \[ \lim_{x \to 0}\frac{\ln(x)}{\frac{1}{x^2}}=\lim_{x \to 0}\frac{\frac{1}{x}}{-\frac{2}{x^3}}=\lim_{x \to 0}\frac{x^2}{-2}=0 \]
+    \[ g(x)=\frac{1}{\sqrt{x}} \;\;\; \int_{0}^{1}=\frac{dx}{\sqrt{x}} \text{ - сх.}\]
+    Рассмотрим 
+    \[ \lim_{x \to 0}\frac{\ln(x)}{\frac{1}{\sqrt{x}}}=\lim_{x \to 0}\frac{\frac{1}{x}}{-\frac{1}{2x^{\frac{3}{2}}}}=\lim_{x \to 0}(-2\sqrt{x})=0 \implies \int_{0}^{1}\ln(x)dx \text{ - сх.}\]
+
     \subsection{Критерий Коши сходимсоти несобственных интегралов. Абсолютно сходящиеся интегралы.}
     \subsubsection*{Теорема 6.18.1}\label{th:6.18.1}
-    $\int_{a}^{b}f(x)dx$ сх $\Longleftrightarrow$ когда $\forall \varepsilon > 0 \exists a<b_0<b:\forall b',b'':b_0<b'<b''<b$\par\noindent
-    $\Big| \int_{b'}^{b''}f(x)dx \Big| < \varepsilon$
+    $\int_{a}^{b}f(x)dx$ сх. $\Longleftrightarrow$ когда $\forall \varepsilon > 0\,\exists\,a<b_0<b:\forall b',b'':b_0<b'<b''<b$
+    \[ \left| \int_{b'}^{b''}f(x)dx \right| < \varepsilon \]
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
-        Рассмотрим $\phi(b_0)=\int_{a}^{b_0}f(x)dx$ - функция с переменным верхним пределом.\\
-        Существование $\int_{a}^{b}f(x)dx$ означает существование $\lim_{b_0 \to b}\phi(b_0)$\\
-        $\lim_{b_0 \to b}\phi(b_0) \exists \Longleftrightarrow$ когда $\exists$ окружность (.) b: $\forall b',b'' \in $ окружности: $|b''-b'|<\delta \Rightarrow |\phi(b'')-\phi(b')|<\varepsilon$\\
-        А это означает $\Big| \int_{a}^{b''}f(x)dx - \int_{a}^{b'}f(x)dx \Big| < \varepsilon \Rightarrow \Big| \int_{b'}^{b''} f(x)dx \Big| < \varepsilon$
+        Рассмотрим $\varphi(b_0)=\int_{a}^{b_0}f(x)dx$ - функция с переменным верхним пределом.\\
+        Существование $\int_{a}^{b}f(x)dx$ означает существование $\lim_{b_0 \to b}\varphi(b_0)$\\
+        $\lim_{b_0 \to b}\varphi(b_0)$ $\exists \Longleftrightarrow$ когда $\exists$ окрестность точки $b$: $\forall b',b'' \in $ окружности выполняется $|b''-b'|<\delta \implies |\varphi(b'')-\varphi(b')|<\varepsilon$\\
+        А это означает $\left| \int_{a}^{b''}f(x)dx - \int_{a}^{b'}f(x)dx \right| < \varepsilon \implies \left| \int_{b'}^{b''} f(x)dx \right| < \varepsilon$
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
     \end{adjustwidth}
-    \begin{center}
-        \textbf{Ч.т.д.}
-    \end{center}
-    \underline{Определение: } Пусть f(x) задана на [a;b) и интегрируема по Риману $\forall [a;b'] a<b'<b$\\
-    $\int_{a}^{b}f(x)dx$ называется пбсолютно сходящимися, если сходятся $\int_{a}^{b}|f(x)|dx$
-    \subsubsection*{Теорема 6.18.2 Критерий Коши абсолютной сходимости несобственных интегралов}\label{th:6.18.2}
-    Для того, чтобы $\int_{a}^{b}f(x)dx$ абсолютно сх $\Longleftrightarrow \forall \varepsilon >0 \exists b_0:a<b_0<b: \forall b',b'':\\b_0<b'<b''<b \Rightarrow |\int_{b'}^{b''}|f(x)dx|| < \varepsilon$\par\noindent
+    Пусть $f(x)$ задана на $[a;b)$ и интегрируема по Риману $\forall\,[a;b'] \;\;\; a<b'<b$\\
+    $\int_{a}^{b}f(x)dx$ называется \textbf{абсолютно сходящимся}, если сходятся $\int_{a}^{b}|f(x)|dx$.
+    \subsubsection*{Теорема 6.18.2 (критерий Коши абсолютной сходимости несобственных интегралов)}\label{th:6.18.2}
+    Для того, чтобы $\int_{a}^{b}f(x)dx$ абсолютно сх. $\Longleftrightarrow$ 
+    \[ \forall \varepsilon >0\,\exists\,b_0:a<b_0<b: \forall b',b'':\\b_0<b'<b''<b \implies \left|\int_{b'}^{b''}|f(x)|dx\right| < \varepsilon \]
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
-        следует из критерия Коши для интеграла $\int_{a}^{b}|f(x)|dx$
+        Следует из критерия Коши для интеграла $\int_{a}^{b}|f(x)|dx$
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
     \end{adjustwidth}
-    \begin{center}
-        \textbf{Ч.т.д.}
-    \end{center}
-    \subsubsection*{Теорема 18.3}\label{th:6.18.3}
+    \subsubsection*{Теорема 6.18.3}\label{th:6.18.3}
     Если несобственный интеграл абсолютно сходится, то он сходится.\par\noindent
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
-        $\int_{a}^{b}|f(x)|dx$ сх, тогда по критерию Коши на (a;b) $\exists b_0:b_0<b'<b''<b \Rightarrow |\int_{b'}^{b''}|f(x)|dx|< \varepsilon$\\
-        Рассмотрим $|\int_{b'}^{b''}f(x)dx|\leq |\int_{b'}^{b''}|f(x)|dx|<\varepsilon,$ Т.е. выполняется критерий Коши сходимости интеграла $\int_{a}^{b}f(x)dx$
+        $\int_{a}^{b}|f(x)|dx$ сходится, тогда по критерию Коши на $(a;b)$ $\exists\,b_0:b_0<b'<b''<b \implies \left|\int_{b'}^{b''}|f(x)|dx\right|< \varepsilon$\\
+        Рассмотрим $\left|\int_{b'}^{b''}f(x)dx\right|\leq \left|\int_{b'}^{b''}|f(x)|dx\right|<\varepsilon$\\
+        Т.е. выполняется критерий Коши сходимости интеграла $\int_{a}^{b}f(x)dx$
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
     \end{adjustwidth}
-    \begin{center}
-        \textbf{Ч.т.д.}
-    \end{center}
-    \underline{Свойство: } Если $\int_{a}^{b}f(x)dx$ абсолютно сходится\\
-    g(x) интегируема по Риману $\forall [a;b'] \subset [a;b)$ и ограничена на [a;b), то $\int_{a}^{b}f(x)g(x)dx$ сх.\\
+    \textbf{Свойство:} Если $\int_{a}^{b}f(x)dx$ абсолютно сходится, $g(x)$ интегрируема по Риману $\forall\,[a;b'] \subset [a;b)$ и ограничена на $[a;b)$, то $\int_{a}^{b}f(x)g(x)dx$ сх.\par\noindent
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
-        $\int_{a}^{b'}f(x)dx \exists $ по условию, $\int_{a}^{b'}g(x)dx \exists$ по условию $\Rightarrow \int_{a}^{b'}f(x)g(x)dx \exists$(по свойству)\\
-        Рассмотрим $\int_{a}^{b}|f(x)g(x)|dx \leq \underset{\text{абсолютная сх по условию}}{c\int_{a}^{b}|f(x)|dx}$\\
+        $\int_{a}^{b'}f(x)dx \;\; \exists$ по условию, $\int_{a}^{b'}g(x)dx \;\; \exists$ по условию $\implies \int_{a}^{b'}f(x)g(x)dx \;\; \exists$ (по свойству).\\
+        Рассмотрим $\int_{a}^{b}|f(x)g(x)|dx \leq \underbrace{c\int_{a}^{b}|f(x)|dx}_{\text{абс. сх. по условию}}$\\
         Тогда $\int_{a}^{b}|f(x)g(x)|dx$ сх, по 1-му признаку сравнения.\\
         Тогда $\int_{a}^{b}f(x)g(x)dx$ сх. абсолютно по Опр.
     \end{adjustwidth}
     \begin{center}
         \textbf{Ч.т.д.}
     \end{center}
+
     \subsection{Признаки сходимости Дирихле́ и Абеля несобственных интегралов 1-го рода}
     \subsubsection*{Теорема 6.19.1 Признак Дирихле́}\label{th:6.19.1}
-    Если на полуоси $x\geq a$\par\noindent
+    Если на полуоси $x\geq a$
     \begin{enumerate}
-        \item f(x) непрерывна и имеет ограниченную первообразную на $x\geq a$
-        \item g(x) непрерывно дифференцируема и убывает при этом $\lim_{x \to \infty}g(x)=0$
+        \item $f(x)$ непрерывна и имеет ограниченную первообразную на $x\geq a$
+        \item $g(x)$ непрерывно дифференцируема и убывает при этом $\lim_{x \to \infty}g(x)=0$
     \end{enumerate}
     Тогда $\int_{a}^{\infty}f(x)g(x)dx$ сх.\\
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
-        Пусть F(x) - ограниченная первообразная f(x) на $x \geq a$\\
-        Рассмотрим $\int_{a}^{b}f(x)g(x)dx=\int_{a}^{b}\underset{u}{g(x)} \underset{du}{d(F(x))}=g(x)F(x)\Big|^b_a-\int_{a}^{b}F(x)g'(x)dx=
-        g(b)F(b)-g(a)F(a)-\int_{a}^{b}F(x)g'(x)dx$\\
-        Рассмотрим $\lim_{b \to \infty}\underset{\rightarrow 0}{g(b)} \underset{\rightarrow \text{огр.}}{F(b)}=0.$ Докажем что $\int_{a}^{\infty}F(x)g'(x)dx$ сх.\\
-        Рассмотрим $\int_{a}^{b}|F(x)g'(x)|dx=-\int_{a}^{b}|F(x)|g'(x)dx \leq -c \int_{a}^{b}g'(x)dx=-c g(x)\Big|^b_a=\\c(g(a)-g(b))\leq cg(a)-const$
-        Получим что множество интегралов $\int_{a}^{b}|F(x)g'(x)|dx$ ограничены сверху $\Rightarrow \int_{a}^{\infty}|F(x)g'(x)|dx$ сх(по Лемме \S 17)
-        $\Rightarrow \int_{a}^{\infty}F(x)g'(x)dx$ абсолютно сходится по опрделению $\Rightarrow$ сх.(\hyperref[th:6.18.3]{Th. 6.18.3})\\
-        Тогда $\int_{a}^{\infty}f(x)g(x)dx$ сходятся. 
+        Пусть $F(x)$ - ограниченная первообразная $f(x)$ на $x \geq a$\\
+        Рассмотрим 
+        \begin{gather*}
+            \int_{a}^{b}f(x)g(x)dx=\int_{a}^{b}\underbrace{g(x)}_{u} \underbrace{d(F(x))}_{du}=g(x)F(x)\Big|^b_a-\int_{a}^{b}F(x)g'(x)dx =\\
+            = \underbrace{g(b)F(b)}_{\to 0}-\underbrace{g(a)F(a)}_{\text{const}}-\int_{a}^{b}F(x)g'(x)dx
+        \end{gather*}
+        Рассмотрим $\lim_{b \to \infty}\underbrace{g(b)}_{\to 0} \underbrace{F(b)}_{\text{огр.}}=0$. Докажем, что $\int_{a}^{\infty}F(x)g'(x)dx$ сх.\\
+        Рассмотрим 
+        \begin{gather*}
+            \int_{a}^{b}|F(x)g'(x)|dx=-\int_{a}^{b}|F(x)|g'(x)dx \leq -c \int_{a}^{b}g'(x)dx=-c g(x)\Big|^b_a =\\
+            = c(g(a)-g(b))\leq cg(a) \text{ - const}
+        \end{gather*}
+        Получим, что множество интегралов $\int_{a}^{b}|F(x)g'(x)|dx$ ограничены сверху $\implies \int_{a}^{\infty}|F(x)g'(x)|dx$ сх. (по лемме из 6.17) $\implies \int_{a}^{\infty}F(x)g'(x)dx$ абсолютно сх. по определению $\implies$ сх. (\hyperref[th:6.18.3]{теорема 6.18.3})\\
+        Тогда $\int_{a}^{\infty}f(x)g(x)dx$ сходится.
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
     \end{adjustwidth}
-    \begin{center}
-        \textbf{Ч.т.д.}
-    \end{center}
-    \subsubsection*{Теорема 6.19.2 Признак Абеля}\label{th:6.19.2}
-    Если на $x\geq a$\par\noindent
+    \subsubsection*{Теорема 6.19.2 (признак Абеля)}\label{th:6.19.2}
+    Если на $x\geq a$
     \begin{enumerate}
-        \item f(x) непрерывна на $x \geq a$ и $\int_{a}^{\infty}f(x)dx$ сх.
-        \item g(x) непрерывно дифференцируема, ограниченна и монотонна.
+        \item $f(x)$ непрерывна на $x \geq a$ и $\int_{a}^{\infty}f(x)dx$ сх.
+        \item $g(x)$ непрерывно дифференцируема, ограниченна и монотонна.
     \end{enumerate}
-    Тогда $\int_{a}^{\infty}f(x)g(x)dx$ сх.\\
+    Тогда $\int_{a}^{\infty}f(x)g(x)dx$ сх.\par\noindent
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
-        \underline{Замечание:} $\int_{a}^{\infty}f(x)g(x)dx$ и $\int_{a}^{\infty}f(x)(-g(x))dx$ сх. или рсх. одновременно.\\
-        Тогда одна из функция g(x) или (-g(x)) будет убывающей(невозрастающей).\\
-        Пусть для определённости g(x) убывает.\\
-        По условию $\lim_{x \to \infty}g(x)=C$\\
-        Т.е. $\lim_{x \to \infty}(g(x)-C)=0$\\
-        Рассмотрим f(x)g(x) = f(x)g(x)-cf(x)+cf(x)=f(x)[g(x)-c]+cf(x)\\
-        Надо показать что $\int_{a}^{\infty}f(x)[g(x)-c]dx$ сх. и $\int_{a}^{\infty}cf(x)dx$ сх.\\
+        \underline{Замечание:} $\int_{a}^{\infty}f(x)g(x)dx$ и $\int_{a}^{\infty}f(x)(-g(x))dx$ сх. или расх. одновременно. Тогда одна из функция $g(x)$ или $(-g(x))$ будет убывающей (невозрастающей).\\
+        Пусть для определённости $g(x)$ убывает.\\
+        По условию $\lim_{x \to \infty}g(x) = \mathbb{C}$\\
+        Т.е. $\lim_{x \to \infty}(g(x) - \mathbb{C}) = 0$\\
+        Рассмотрим 
+        \[ f(x)g(x) = f(x)g(x)-cf(x)+cf(x)=f(x)[g(x)-c]+cf(x) \]
+        Надо показать, что $\int_{a}^{\infty}f(x)[g(x)-c]dx$ сх. и $\int_{a}^{\infty}cf(x)dx$ сх.\\
         $c\int_{a}^{\infty}f(x)dx$ сх. по условию.\\
-        Рассмотрим $\int_{a}^{\infty}f(x)dx=\int_{a}^{\infty}f(t)dt=\lim_{x \to \infty}\int_{a}^{x}f(t)dt=
-        \lim_{x \to \infty}F(x); \int_{a}^{\infty}f(x)dx$ сх.  $\Rightarrow \lim_{x \to \infty}F(x) \exists \Rightarrow F(x)$ ограничена в окржуности бесконечно удалённой точки.\\
-        F(x) первообразная для f(x) на $x \leq a$\\
-        Рассмотрим $\int_{a}^{\infty}f(x)[g(x)-c]dx.$ Тогда интеграл сходится по признаку Дирихле́, Т.е. $\int_{a}^{\infty}f(x)g(x)dx$ сх.\\
+        Рассмотрим 
+        \[ \int_{a}^{\infty}f(x)dx=\int_{a}^{\infty}f(t)dt= \underbrace{\lim_{x \to \infty}\int_{a}^{x}f(t)dt}_{F(x)} =\lim_{x \to \infty}F(x)\]
+        $\int_{a}^{\infty}f(x)dx$ сх. $\implies \lim_{x \to \infty}F(x) \;\; \exists \implies F(x)$ ограничена в окрестности бесконечно удалённой точки.\\
+        $F(x)$ - первообразная для $f(x)$ на $x \leq a$\\
+        Рассмотрим 
+        \[ \int_{a}^{\infty} \underbrace{f(x)}_{\substack{\text{непр.}\\\text{имеет огр. первообр.}}} \underbrace{[g(x)-c]}_{\substack{\text{непр.}\\\text{дифф-ма}\\\text{убыв. и стр. к 0}}}dx\] 
+        Тогда интеграл сходится по признаку Дирихле́.\\
+        Т.е. $\int_{a}^{\infty}f(x)g(x)dx$ сх.
+        \begin{center}
+            \textbf{Ч.т.д.}
+        \end{center}
     \end{adjustwidth}
-    \begin{center}
-        \textbf{Ч.т.д.}
-    \end{center}
     \underline{Примеры:}\\
     \begin{enumerate}
-        \item $\int_{1}^{\infty}\frac{sin(x)}{x^\alpha}dx \; \alpha>0$\\
-        f(x) = sin(x)(непр. имеет огр. перв.) \; g(x)=$\frac{1}{x^\alpha}$(непрерывно диф-ма $\lim_{x \to \infty}\frac{1}{x^\alpha}=0$, убывает)\\
+        \item $\int_{1}^{\infty}\frac{\sin(x)}{x^\alpha}dx \;\;\; \alpha>0$\\
+        $f(x) = \sin x$ (непр., имеет огр. первообр.)\\
+        $g(x)=\frac{1}{x^\alpha}$ (непр., диф-ма, $\lim_{x \to \infty}\frac{1}{x^\alpha}=0$, убывает)\\
         Интеграл сходится по признаку Дирихле́
-        \item $\int_{1}^{\infty}\frac{sin(x)arctg(x)}{x^\alpha}dx \; \alpha>0$\\
-        $f(x)=\frac{sin(x)}{x^\alpha}$(непр. и $\int_{1}^{\infty}\frac{sin(x)}{x^\alpha}$ сх.) \; g(x)=arctg(x)(непр. дифф-ма,огр. возрастает)\\
-        Тогда $\int_{1}^{\infty}\frac{sin(x)arctg(x)}{x^\alpha}dx$ сх. по признаку Абеля.
+        \item $\int_{1}^{\infty}\frac{\sin x \arctg x}{x^\alpha}dx \;\;\; \alpha>0$\\
+        $f(x)=\frac{\sin x}{x^\alpha}$ (непр. и $\int_{1}^{\infty}\frac{\sin x}{x^\alpha}$ сх.)\\
+        $g(x)=\arctg x$ (непр., дифф-ма, огр., возрастает)\\
+        Тогда $\int_{1}^{\infty}\frac{\sin x \arctg x}{x^\alpha}dx$ сх. по признаку Абеля.
     \end{enumerate}
+
+
 
     \section{Функции нескольких переменных}
     \subsection{Основные понятия}
     Рассмотрим упорядоченное множество $E$ пар чисел $(x; y)$\\
-    Пары $(x_1; y_1)$ и $(x_2; y_2)$ равны $\Leftrightarrow$ $x_1 = x_2, y_1 = y_2$.\par\noindent
+    Пары $(x_1; y_1)$ и $(x_2; y_2)$ равны $\Longleftrightarrow$ $x_1 = x_2, y_1 = y_2$.\par\noindent
     Пусть каждой паре $(x; y) \in E$ по некоторому закону ставится в соответствие единственное число $z$. Тогда говорят, что на $E$ определена функция $z = f(x; y)$.\\
     \underline{Примеры:}
     \begin{center}
-        \includegraphics{7.1.1.png}
+        \includegraphics[max size={\linewidth}{7cm}]{7.1.1.png}
     \end{center}
     Рассмотрим множество упорядоченных систем
     \[ (x_1, x_2, \dots, x_n), n \in N \]
@@ -1634,7 +1807,7 @@
     Точки множества называется внешними точками, если $\exists$ $\varepsilon$-окрестность, не содержащая ни одной точки множества.\par\noindent
     Пусть в $R^n$
     \begin{center}
-        \includegraphics{7.1.2.png}
+        \includegraphics[max size={\linewidth}{7cm}]{7.1.2.png}
     \end{center}
     Т.е. в пространстве $R^n$ задана последовательность $\{x^k\}$.\\
     Точка $x^0 = (x^0_1, x^0_2, x^0_3, \dots, x^0_n)$ называется пределом последовательности $\{x^k\}$, если $\lim_{k\to\infty} \rho(x^k, x^0) = 0$\\
@@ -1658,7 +1831,7 @@
         \end{cases}\text{ - параметрическое уравнение прямой} \]
         Пусть $t \ge 0$. Получим луч, выходящий из точки $(x_0; y_0)$ в направлении $\overline{\omega}$.
         \begin{center}
-            \includegraphics{7.2.1.png}
+            \includegraphics[max size={\linewidth}{7cm}]{7.2.1.png}
         \end{center}
         Рассмотрим $\underbrace{f(x; y)}_{\text{ф. 2-х перем. x, y}} = \underbrace{f(x_0+\omega_xt; y_0+\omega_yt)}_{\text{ф. 1 перем. t}}$.
     \end{adjustwidth}
@@ -1715,7 +1888,7 @@
     \[ \frac{\partial f}{\partial y} = x^y \ln x \]
     \underline{Замечание (\textbf{!!!}):} из существования у функции всех частных производных \textbf{НЕ} следует непрерывность этой функции в рассматриваемой точке (в отличие от функции одной переменной).
     \begin{center}
-        \includegraphics{7.4.1.png}
+        \includegraphics[max size={\linewidth}{7cm}]{7.4.1.png}
     \end{center}
     \begin{gather*}
         f(x, y) = \begin{cases}
@@ -1727,23 +1900,23 @@
         \lim_{x\to 0\, y\to 0}f(x,y) = | y = x | = 1 \ne f(0;0) = 0
     \end{gather*}
 
-    \subsection{Дифференциуемость функций нескольких переменных.}\noindent
+    \subsection{Дифференцируемость функций нескольких переменных.}\noindent
     Пусть функция $z = f(x;y)$ определена в некоторой окрестности точки $M_0 = u(M_0, \delta)$.\\
     Пусть точка $M (x; y) \in u(M_0; \delta)$.
     \begin{center}
-        \includegraphics{7.5.1.png}
+        \includegraphics[max size={\linewidth}{7cm}]{7.5.1.png}
     \end{center}
-    Функция $z = f(x;y)$ называется дифференциуемой в точке $M_0 (x_0; y_0)$, если существуют конечные $A$ и $B$ такие, что приращение $\Delta z$ в окрестности точки $M_0$ представимо в виде
+    Функция $z = f(x;y)$ называется дифференцируемой в точке $M_0 (x_0; y_0)$, если существуют конечные $A$ и $B$ такие, что приращение $\Delta z$ в окрестности точки $M_0$ представимо в виде
     \[ \Delta z = A \Delta x + B \Delta y + o(\rho), \rho \to 0, \rho = \sqrt{\Delta x^2 + \Delta y^2} \]
-    \underline{Замечание:} рассмотрим $\varepsilon = \varepsilon (\Delta x; \Delta y): \lim_{\rho \to 0}\varepsilon = 0$. Тогда $o(\rho) = \underset{\text{б. малое}}{\varepsilon(\Delta x; \Delta y)} * \underset{\text{б. малое}}{\rho}$. Тогда:
-    \[ \Delta z = A \Delta x + B \Delta y + \varepsilon (\Delta x; \Delta y) * \rho \]
-    Если $z = f(x; y)$ дифференциуема в точке $(x_0; y_0)$, то линейная часть приращения $\Delta z = A \Delta x + B \Delta y$ называется дифференциалом функции $z$ в точке $(x_0; y_0)$.
+    \underline{Замечание:} рассмотрим $\varepsilon = \varepsilon (\Delta x; \Delta y): \lim_{\rho \to 0}\varepsilon = 0$. Тогда $o(\rho) = \underset{\text{б. малое}}{\varepsilon(\Delta x; \Delta y)} \times \underset{\text{б. малое}}{\rho}$. Тогда:
+    \[ \Delta z = A \Delta x + B \Delta y + \varepsilon (\Delta x; \Delta y) \times \rho \]
+    Если $z = f(x; y)$ дифференцируема в точке $(x_0; y_0)$, то линейная часть приращения $\Delta z = A \Delta x + B \Delta y$ называется дифференциалом функции $z$ в точке $(x_0; y_0)$.
     \begin{gather*}
         \Delta x = dx, \Delta y = dy\\
         \Delta z = Adx + Bdy
     \end{gather*}
     \subsubsection*{Теорема 7.5.1}\label{th:7.5.1}
-    Для того, чтобы функция $z = f(x;y)$, заданная в $u(M_0; \delta)$, была дифференциуемой в точке $M_0$ $\Leftrightarrow$ чтобы существовали: 
+    Для того, чтобы функция $z = f(x;y)$, заданная в $u(M_0; \delta)$, была дифференцируемой в точке $M_0$ $\Longleftrightarrow$ чтобы существовали: 
     \[\varepsilon_1 = \varepsilon_1(\Delta x; \Delta y)\]
     \begin{center}
         и
@@ -1760,7 +1933,7 @@
     \noindent\underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
         \textbf{Докажем необходимость ($\Rightarrow$)}\par\noindent
-        Пусть $z = f(x; y)$ дифференциуема в точке $M_0$. Тогда по определению:
+        Пусть $z = f(x; y)$ дифференцируема в точке $M_0$. Тогда по определению:
         \[ \Delta z = A \Delta x + B \Delta y + \varepsilon (\Delta x; \Delta y)\rho \]
         Рассмотрим 
         \[ \varepsilon_\rho = \varepsilon \sqrt{\Delta x^2 + \Delta y^2} = \frac{\varepsilon (\Delta x^2 + \Delta y^2)}{\sqrt{\Delta x^2 + \Delta y^2}} = \left( \frac{\varepsilon \Delta x}{\sqrt{\Delta x^2 + \Delta y^2}} \right)\Delta x + \left( \frac{\varepsilon \Delta y}{\sqrt{\Delta x^2 + \Delta y^2}} \right)\Delta y \]
@@ -1791,17 +1964,17 @@
         Рассмотрим
         \[ |\varepsilon| = \left| \varepsilon_1 \frac{\Delta x}{\rho} + \varepsilon_2 \frac{\delta y}{\rho} \right| \le |\varepsilon_1| \underbrace{\frac{|\Delta x|}{\rho}}_{= 1} + |\varepsilon_2| \underbrace{\frac{|\Delta y|}{\rho}}_{= 1} \le |\varepsilon_1| + |\varepsilon_2| \]
         \[ \lim_{\rho \to 0}\varepsilon = 0 \]
-        То есть
+        Т.е.
         \[ \Delta z = A \Delta x + B \Delta y + \varepsilon (\Delta x; \Delta y)\rho \]
         \begin{center}
             \textbf{Ч.т.д.}
         \end{center}
     \end{adjustwidth}
     \subsubsection*{Теорема 7.5.2}\label{th:7.5.2}
-    Если функция дифференциуема в некоторой точке, то она непрерывна в этой точке.\par\noindent
+    Если функция дифференцируема в некоторой точке, то она непрерывна в этой точке.\par\noindent
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
-        Так как функция дифференциуема в точке $M_0$, то по определению:
+        Т.к. функция дифференцируема в точке $M_0$, то по определению:
         \[ \Delta z = A \Delta x + B \Delta y + \varepsilon_1 \Delta x + \varepsilon_2 \Delta y \]
         \[ \lim_{\rho \to 0} \Delta z = 0 \]
         \begin{center}
@@ -1809,14 +1982,14 @@
         \end{center}
     \end{adjustwidth}
     \subsubsection*{Теорема 7.5.3}\label{th:7.5.3}
-    Если функция $z = f(x; y)$ дифференциуема в точке $(x_0; y_0)$, то в этой точке $\exists$ частные производные по $x$ и по $y$:
+    Если функция $z = f(x; y)$ дифференцируема в точке $(x_0; y_0)$, то в этой точке $\exists$ частные производные по $x$ и по $y$:
     \[ \frac{\partial f}{\partial x} \Big|_{M_0} = A \]
     \[ \frac{\partial f}{\partial y} \Big|_{M_0} = B \]
     Тогда 
     \[ dz = A\Delta x + B\Delta y = \frac{\partial f}{\partial x} \Big|_{M_0}dx + \frac{\partial f}{\partial y} \Big|_{M_0}dy \]
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
-        Т.к. $z = f(x;y)$ дифференциуема в точке $M_0$, то по определению:
+        Т.к. $z = f(x;y)$ дифференцируема в точке $M_0$, то по определению:
         \[ \Delta z = A \Delta x + B \Delta y + \varepsilon_1 \Delta x + \varepsilon_2 \Delta y \]
         Пусть $\Delta y = 0$. Тогда 
         \[ \Delta_x z = A \Delta x + \varepsilon_1 \Delta x \]
@@ -1829,9 +2002,9 @@
             \textbf{Ч.т.д.}
         \end{center}
     \end{adjustwidth}
-    \underline{Замечание:} функция, имеющая в некоторой точке частные производные, может быть недифференцируемой функцией в этой точке, т.к. дифференциуемая функция обязана быть непрерывной, а есть случаи, когда функция имеет конечные частные производные, но не является непрерывной.
-    \subsubsection*{Теорема 7.5.4 (достаточное условие дифференциуемости)}\label{th:7.5.4}
-    Если функция имеет в окрестности точки частные производные и они \underline{непрерывны} в этой точке, то функция дифференциуема в этой точке.\par\noindent
+    \underline{Замечание:} функция, имеющая в некоторой точке частные производные, может быть недифференцируемой функцией в этой точке, т.к. дифференцируемая функция обязана быть непрерывной, а есть случаи, когда функция имеет конечные частные производные, но не является непрерывной.
+    \subsubsection*{Теорема 7.5.4 (достаточное условие дифференцируемости)}\label{th:7.5.4}
+    Если функция имеет в окрестности точки частные производные и они \underline{непрерывны} в этой точке, то функция дифференцируема в этой точке.\par\noindent
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
         Пусть $z = f(x;y)$ задана в $u(M_0; \delta)$, имеет частную производную $\frac{\partial f}{\partial x} \Big|_{M_0}$ и $\frac{\partial f}{\partial y} \Big|_{M_0}$, $\frac{\partial f}{\partial x}$ и $\frac{\partial f}{\partial y}$ непрерывны в точке $M_0$.\\
@@ -1860,26 +2033,26 @@
         \end{vmatrix} \,\,\,\,\, (**) \]
         Подставим $(**)$ в $(*)$. Тогда
         \[ \Delta z = f'_x(x_0; y_0)\Delta x + f'_y(x_0; y_0)\Delta y + \varepsilon_1\Delta x + \varepsilon_2 \Delta y \]
-        Т.е. по определению функция дифференциуема в точке $(x_0; y_0)$.
+        Т.е. по определению функция дифференцируема в точке $(x_0; y_0)$.
         \begin{center}
             \textbf{Ч.т.д.}
         \end{center}
     \end{adjustwidth}
 
-    \subsection{Дифференциуемость сложной функции.}
+    \subsection{Дифференцируемость сложной функции.}
     \subsubsection*{Теорема 7.6.1 (о производной сложной функции)}\label{th:7.6.1}
-    Если $x = x(t)$, $y = y(t)$ дифференциуемы в точке $t_0$, а функция $z = f(x;y)$ дифференциуема в точке $(x_0; y_0)$, где $x_0 = x(t_0)$, $y_0 = y(t_0)$, тогда сложная функция $f(x(t), y(t))$ дифференциуема в точке $t_0$ и 
-    \[ \frac{df}{dt} = \frac{\partial f}{\partial x} * \frac{dx}{dt} + \frac{\partial f}{\partial y} * \frac{dy}{dt} \]
+    Если $x = x(t)$, $y = y(t)$ дифференцируемы в точке $t_0$, а функция $z = f(x;y)$ дифференцируема в точке $(x_0; y_0)$, где $x_0 = x(t_0)$, $y_0 = y(t_0)$, тогда сложная функция $f(x(t), y(t))$ дифференцируема в точке $t_0$ и 
+    \[ \frac{df}{dt} = \frac{\partial f}{\partial x} \times \frac{dx}{dt} + \frac{\partial f}{\partial y} \times \frac{dy}{dt} \]
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
-        Так как $f(x;y)$ дифференциуема в точке $(x_0; y_0)$, то по определению:
+        Т.к. $f(x;y)$ дифференцируема в точке $(x_0; y_0)$, то по определению:
         \[ \Delta z = \frac{\partial z}{\partial x} \Delta x + \frac{\partial z}{\partial y} \Delta y + \varepsilon_1 \Delta x + \varepsilon_2 \Delta y \,\,\,\,\, (*) \]
         \[ \lim_{\rho \to 0} \varepsilon_1 = \lim_{\rho \to 0} \varepsilon_2 = 0 \]
-        Так как $x(t), y(t)$ дифференциуемы в точке $t_0 \Rightarrow$ они непрерывны в точке $t_0 \Rightarrow$ т.е. при $\Delta t \to 0 \Rightarrow \Delta x, \Delta y \to 0 \Rightarrow \Delta t \to 0 \Rightarrow \rho \to 0$.\\
-        То есть $\lim_{\rho \to 0} \varepsilon_1 = \lim_{\rho \to 0}\varepsilon_2 = \lim_{\Delta t \to 0} \varepsilon_1 = \lim_{\Delta \to 0}\varepsilon_2 = 0$.\\
+        Т.к. $x(t), y(t)$ дифференцируемы в точке $t_0 \Rightarrow$ они непрерывны в точке $t_0 \Rightarrow$ т.е. при $\Delta t \to 0 \Rightarrow \Delta x, \Delta y \to 0 \Rightarrow \Delta t \to 0 \Rightarrow \rho \to 0$.\\
+        Т.е. $\lim_{\rho \to 0} \varepsilon_1 = \lim_{\rho \to 0}\varepsilon_2 = \lim_{\Delta t \to 0} \varepsilon_1 = \lim_{\Delta \to 0}\varepsilon_2 = 0$.\\
         Разделим (*) на $\Delta t$:
-        \[ \frac{\Delta z}{\Delta t} = \frac{\partial f}{\partial x} * \frac{dx}{dt} + \frac{\partial f}{\partial y} * \frac{dy}{dt} + \varepsilon_1 \frac{\Delta x}{\Delta t} + \varepsilon_2 \frac{\Delta y}{\Delta t} \]
-        \[ \lim_{\Delta t \to 0} \frac{\Delta z}{\Delta t} = \frac{dz}{dt} = \frac{\partial f}{\partial x} * \frac{dx}{dt} + \frac{\partial f}{\partial y} * \frac{dy}{dt} \]
+        \[ \frac{\Delta z}{\Delta t} = \frac{\partial f}{\partial x} \times \frac{dx}{dt} + \frac{\partial f}{\partial y} \times \frac{dy}{dt} + \varepsilon_1 \frac{\Delta x}{\Delta t} + \varepsilon_2 \frac{\Delta y}{\Delta t} \]
+        \[ \lim_{\Delta t \to 0} \frac{\Delta z}{\Delta t} = \frac{dz}{dt} = \frac{\partial f}{\partial x} \times \frac{dx}{dt} + \frac{\partial f}{\partial y} \times \frac{dy}{dt} \]
         \begin{center}
             \textbf{Ч.т.д.}
         \end{center}
@@ -1891,7 +2064,7 @@
         \vdots\\
         x_n = x_n(t_1, \dots, t_m)\\
     \end{gather*}
-    \[ \frac{\partial f}{\partial t_j} = \frac{\partial f}{\partial x_1} * \frac{\partial x_1}{\partial t_j} + \frac{\partial f}{\partial x_2} * \frac{\partial x_2}{\partial t_j} + \dots + \frac{\partial f}{\partial x_n} * \frac{\partial x_n}{\partial t_j} = \sum_{i=1}^{n} \frac{\partial f}{\partial x_i} * \frac{\partial x_i}{\partial t_j} = \frac{\partial f}{\partial t_j} \]
+    \[ \frac{\partial f}{\partial t_j} = \frac{\partial f}{\partial x_1} \times \frac{\partial x_1}{\partial t_j} + \frac{\partial f}{\partial x_2} \times \frac{\partial x_2}{\partial t_j} + \dots + \frac{\partial f}{\partial x_n} \times \frac{\partial x_n}{\partial t_j} = \sum_{i=1}^{n} \frac{\partial f}{\partial x_i} \times \frac{\partial x_i}{\partial t_j} = \frac{\partial f}{\partial t_j} \]
 
     \subsection{Инвариантность формы записи первого дифференциала.}
     Если функции $x_i = x_i(t_1, \dots, t_m)$ ($i = \overline{1,n}$) непрерывны в точке $(t^0_1, \dots, t^0_m)$, а функция $y = f(x_1, \dots, x_n)$ имеет непрерывные частные производные в точке $x^0 = (x^0_1, \dots, x^0_n)$, где $x^0_i = x^0_i(t)$ ($i = \overline{1,n}$), тогда запись первого дифференциала обладает свойством инвариантности относительно независимых и зависимых переменных.
@@ -1907,9 +2080,9 @@
         y = y_0
     \end{cases} \text{в точке } (x_0; y_0)\right) \]
     \begin{center}
-        \includegraphics{7.8.1.png}
+        \includegraphics[max size={\linewidth}{7cm}]{7.8.1.png}
     \end{center}
-    Пусть $z = f(x;y)$ дифференциуема в точке $(x_0; y_0)$.
+    Пусть $z = f(x;y)$ дифференцируема в точке $(x_0; y_0)$.
     \[ \Delta z = \frac{\partial f}{\partial x} \Big|_{(x_0; y_0)} \Delta x + \frac{\partial f}{\partial y} \Big|_{(x_0; y_0)} \Delta y + o(\rho), \rho \to 0 \]
     \[ \Delta z = z - z_0 \]
     \[ \Delta y = y - y_0 \]
@@ -1921,10 +2094,10 @@
     Обозначим в $(2)$ $z = z_{\text{кас}}$\\
     Тогда из $(1)$ и $(2)$ следует, что $z - z_{\text{кас}} = o(\rho), \rho \to 0$.
     \begin{center}
-        \includegraphics{7.8.2.png}
+        \includegraphics[max size={\linewidth}{7cm}]{7.8.2.png}
     \end{center}
     Рассмотрим $(2)$:
-    \[ 1 * z_{\text{кас}} = z + \underbrace{\frac{\partial f}{\partial x} \Big|_{(x_0; y_0)} (x-x_0) + \frac{\partial f}{\partial y} \Big|_{(x_0; y_0)} (y-y_0)} \]
+    \[ 1 \times z_{\text{кас}} = z + \underbrace{\frac{\partial f}{\partial x} \Big|_{(x_0; y_0)} (x-x_0) + \frac{\partial f}{\partial y} \Big|_{(x_0; y_0)} (y-y_0)} \]
     \[ z_{\text{кас}} = z_0 + df \Big|_{(x_0; y_0)} \]
     \[ df \Big|_{x_0; y_0} = z_{\text{кас}} - z_0 \]
     \[ \bar{n} \left(\frac{\partial f}{\partial x} \Big|_{(x_0; y_0)} (x-x_0); \frac{\partial f}{\partial y} \Big|_{(x_0; y_0)} (y-y_0); -1\right) \]
@@ -1949,7 +2122,7 @@
 
     \subsection{Применение дифференциалов в приближённых вычислениях.}\noindent
     Рассмотрим $f = f(x; y; z)$.\\
-    Пусть $f$ дифференциуема в точке $M_0 (x_0; y_0; z_0)$.\\
+    Пусть $f$ дифференцируема в точке $M_0 (x_0; y_0; z_0)$.\\
     Тогда 
     \[ \Delta f = \frac{\partial f}{\partial x} \Big|_{M_0}dx + \frac{\partial f}{\partial y} \Big|_{M_0}dy + \frac{\partial f}{\partial z} \Big|_{M_0}dz + o(\rho), \rho \to 0\]
     \[ \Delta f = df \Big|_{M_0} + \cancel{o(\rho)}, \rho \to 0 \]
@@ -1957,9 +2130,9 @@
     \[ \boxed{ f(x; y; z) \approx f(x_0; y_0; z_0) + \frac{\partial f}{\partial x} \Big|_{M_0}dx + \frac{\partial f}{\partial y} \Big|_{M_0}dy + \frac{\partial f}{\partial z} \Big|_{M_0}dz  } \]
     \underline{Пример:} вычислить приближённо.
     \begin{adjustwidth}{1.5em}{1.5em}
-        \[ \frac{1.03^2}{\sqrt[3]{0.98} * \sqrt[4]{1.05}} = ? \]
+        \[ \frac{1.03^2}{\sqrt[3]{0.98} \times \sqrt[4]{1.05}} = ? \]
         Рассмотрим 
-        \[ f(x; y; z) = \frac{x^2}{\sqrt[3]{y} * \sqrt[4]{z}} \]
+        \[ f(x; y; z) = \frac{x^2}{\sqrt[3]{y} \times \sqrt[4]{z}} \]
         \begin{gather*}
             x = 1.03 = x_0 + \Delta x = 1 + 0.03\\
             y = 0.98 = y_0 + \Delta y = 1 - 0.02\\
@@ -1969,11 +2142,11 @@
         \[ \Delta x = 0.03\,\, \Delta y = -0.02\,\, \Delta z = 0.05 \]
         \[ f(x_0; y_0; z_0) = 1 \]
         \begin{align*}
-            \frac{\partial f}{\partial x} &= \frac{2x}{\sqrt[3]{y} * \sqrt[4]{z}} & \frac{\partial f}{\partial x} \Big|_{M_0} &= 2\\
+            \frac{\partial f}{\partial x} &= \frac{2x}{\sqrt[3]{y} \times \sqrt[4]{z}} & \frac{\partial f}{\partial x} \Big|_{M_0} &= 2\\
             \frac{\partial f}{\partial y} &= \frac{x^2}{\sqrt[4]{z}}\frac{(-\frac{1}{3})}{\sqrt[3]{y^4}} & \frac{\partial f}{\partial y} \Big|_{M_0} &= -\frac{1}{3}\\
             \frac{\partial f}{\partial z} &= \frac{x^2}{\sqrt[3]{y}}\frac{(-\frac{1}{4})}{\sqrt[4]{z^5}} & \frac{\partial f}{\partial z} \Big|_{M_0} &= -\frac{1}{4}\\
         \end{align*}
-        \[ \frac{1.03^2}{\sqrt[3]{0.98} * \sqrt[4]{1.05}} \approx 1 + 2 * 0.03 - \frac{1}{3} * (-0.02) - \frac{1}{4} * 0.05 \approx 1.0482 \]
+        \[ \frac{1.03^2}{\sqrt[3]{0.98} \times \sqrt[4]{1.05}} \approx 1 + 2 \times 0.03 - \frac{1}{3} \times (-0.02) - \frac{1}{4} \times 0.05 \approx 1.0482 \]
     \end{adjustwidth}
 
     \subsection{Производная по направлению функции в точке. Градиент функции в точке.}\noindent
@@ -1981,7 +2154,7 @@
     Пусть она определена в окрестности точки $(x_0; y_0; z_0)$ и пусть задан произвольный вектор $\overline{l} \ne 0$.\\
     Пусть $\overline{l_0} = \frac{\overline{l}}{|\overline{l}|} = \underset{\text{направленные косинусы}}{\left( \overline{\cos \alpha; \cos \beta; \cos \gamma} \right)}$
     \begin{center}
-        \includegraphics{7.10.1.png}
+        \includegraphics[max size={\linewidth}{7cm}]{7.10.1.png}
     \end{center}
     Запишем уравнение луча, выходящего из точки $(x_0; y_0; z_0)$ в направлении вектора $l$:
     \[ \frac{x - x_0}{\cos \alpha} = \frac{y - y_0}{\cos \beta} = \frac{z - z_0}{\cos \gamma} = t \]
@@ -2011,18 +2184,18 @@
     Вектор с координатами 
     \[ \left( \overline{\frac{\partial f}{\partial x}; \frac{\partial f}{\partial y}; \frac{\partial f}{\partial z}} \right) \]
     вычисленный в точке $(x_0; y_0; z_0)$, называется \textbf{градиентом} функции $f(x; y; z)$ в точке $(x_0; y_0; z_0)$.\\
-    Обозначение: $\overline{\text{grad}f} \Big|_{M_0}$.\par\noindent
+    Обозначение: $\overline{\text{grad}}f \Big|_{M_0}$.\par\noindent
     $\overline{\nabla}$ - оператор Набла.
     \[ \overline{\nabla} = \left( \overline{ \frac{\partial \sqcup}{\partial x}; \frac{\partial \sqcup}{\partial y}; \frac{\partial \sqcup}{\partial z} } \right) \]
     *вместо $\sqcup$ подставляем функцию (например, $f$), относительно которой применяем оператор Набла.
-    \[ \overline{\nabla} f = \overline{\text{grad}f}\text{,} \]
-    \[ \boxed{=} \, \boxed{ \overline{\text{grad}f}\Big|_{M_0} * \overline{l_0} = \frac{\partial f}{\partial l}\Big|_{M_0} } \]
-    \[ \overline{a}\overline{b} = |\overline{a}||\overline{b}|\cos(\underbrace{\overline{a}, \overline{b}}_{\varphi}) = \text{пр}_{\overline{b}} \overline{a} * |\overline{b}| \]
+    \[ \overline{\nabla} f = \overline{\text{grad}}f\text{,} \]
+    \[ \boxed{=} \, \boxed{ \overline{\text{grad}}f\Big|_{M_0} \times \overline{l_0} = \frac{\partial f}{\partial l}\Big|_{M_0} } \]
+    \[ \overline{a}\overline{b} = |\overline{a}||\overline{b}|\cos(\underbrace{\overline{a}, \overline{b}}_{\varphi}) = \text{пр}_{\overline{b}} \overline{a} \times |\overline{b}| \]
     \begin{center}
-        \includegraphics{7.10.2.png}
+        \includegraphics[max size={\linewidth}{7cm}]{7.10.2.png}
     \end{center}
-    \[ \boxed{ \frac{\partial f}{\partial l} \Big|_{M_0} = \text{пр}_{\overline{l_0}}\overline{\text{grad}f}\Big|_{M_0} } \]
-    \[ \frac{\partial f}{\partial l}\Big|_{M_0} = \overline{\text{grad}f}\Big|_{M_0} * \overline{l_0} = |\overline{\text{grad}f}|\Big|_{M_0} * |\underset{=1}{\overline{l_0}}| * \cos \varphi \Rightarrow \frac{\partial f}{\partial l} \to \max \Leftrightarrow \varphi = 0 \]
+    \[ \boxed{ \frac{\partial f}{\partial l} \Big|_{M_0} = \text{пр}_{\overline{l_0}}\overline{\text{grad}}f\Big|_{M_0} } \]
+    \[ \frac{\partial f}{\partial l}\Big|_{M_0} = \overline{\text{grad}}f\Big|_{M_0} \times \overline{l_0} = |\overline{\text{grad}}f|\Big|_{M_0} \times |\underset{=1}{\overline{l_0}}| \times \cos \varphi \Rightarrow \frac{\partial f}{\partial l} \to \max \Longleftrightarrow \varphi = 0 \]
     Наибольшее значение $\frac{\partial f}{\partial l}\Big|_{M_0}$ будет иметь в направлении градиента в этой точке.\par\noindent
     \underline{Замечание:} Если $\overline{\nabla} f\Big|_{M_0} = \overline{0}$, то это значит, что производные функции по всем направлениям в этой точке равны $0$.
 
@@ -2030,7 +2203,7 @@
     Рассмотрим $z = f(x;y)$.\\
     Линия вида $f(x;y) = \mathbb{C}$ называется \textbf{линией уровня от функции} $Z$.
     \begin{center}
-        \includegraphics{7.11.1.png}
+        \includegraphics[max size={\linewidth}{7cm}]{7.11.1.png}
     \end{center}
     \[ \frac{x-x_0}{\frac{\partial f}{\partial x}} = \frac{y-y_0}{\frac{\partial f}{\partial y}} \]
     Вектор градиента функции в точке $M_0$ направлен перпендикулярно линии уровня.\\
@@ -2129,7 +2302,7 @@
     \[ f(x_0 + \Delta x; y_0 + \Delta y) = \sum_{k=0}^{n} \frac{1}{k!}\left( \frac{\partial }{\partial x}\Delta x + \frac{\partial }{\partial y}\Delta y \right)^{(k)} f \Big|_{(x_0; y_0)} + \underbrace{o(\rho^n)}_{\text{ост. член в форме Пеано}} \]
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
-        Рассмотрим $F(t)$. Пусть $F(t)$ $(n + 1)$ раз дифференциуема в точке $t_0$. Тогда:
+        Рассмотрим $F(t)$. Пусть $F(t)$ $(n + 1)$ раз дифференцируема в точке $t_0$. Тогда:
         \[ F(t) = F(t_0) + \frac{F'(t_0)}{1!}(t-t_0) + \frac{F''(t_0)}{2!}(t-t_0)^2 + \dots + \frac{F^{(n)}(t_0)}{n!}(t-t_0)^n + \frac{F^{(n+1)}(\xi)}{(n+1)!}(t-t_0)^{n+1} \]
         \[ \underbrace{F(t) - F(t_0)}_{\Delta F} = \frac{1}{1!}dF\Big|_{t=t_0} + \frac{1}{2!}d^2F\Big|_{t=t_0} + \dots + \frac{1}{n!}d^nF\Big|_{t=t_0} + \frac{1}{(n+1)!}d^{n+1}F\Big|_{t=\xi} \]
         Рассмотрим $f = f(x; y)$. Пусть $M_0(x_0; y_0)$, $M(x; y) = M(x_0 + \Delta x; y_0 + \Delta y)$.\\
@@ -2167,24 +2340,24 @@
 
     \subsection{Экстремум функции нескольких переменных}
     Рассмотрим $f = f(x_1\, \dots\, x_n)$. Пусть она определена в окрестности точки $(x^0_1\, \dots\, x^0_n)$.\\
-    Точка $x^0$ называется \textbf{точкой локального максимума (минимума)}, если существует окрестность этой точки:
+    Точка $x^0$ называется \textbf{точкой локального максимума (минимума)}, если $\exists$ окрестность этой точки:
     \begin{align*} 
         \forall x = (x_1\, \dots\, x_n) \in \text{ окрестности } \quad &f(x) \le f(x^0) \\
         &(f(x) \ge f(x^0))
     \end{align*}
     \underline{Замечание:} если неравенство строгое, то точка $x^0$ называется точкой \textbf{строгого} локального максимума (минимума).\par\noindent
     Точки локального максимума и минимума функции называются \textbf{точками экстремума} функции.\\
-    Точка $x^0$ называется точкой локального максимума (минимума), если существует окрестность этой точки такая, что $\Delta f = f(x) - f(x^0)$ не меняет знак.\\
+    Точка $x^0$ называется точкой локального максимума (минимума), если $\exists$ окрестность этой точки такая, что $\Delta f = f(x) - f(x^0)$ не меняет знак.\\
     $\Delta f \ge 0$ - точка локального минимума.\\
     $\Delta f \le 0$ - точка локального максимума.
     \subsubsection*{Теорема 7.14.1 (необходимое условие экстремума)}\label{th:7.14.1}
-    Если функция определена в окрестности точки экстремума $x^0$ и если в этой окрестности существует частная производная первого порядка $\frac{\partial f}{\partial x_i}\,(i = \overline{1;n})$, то все они равны нулю в этой точке.\par\noindent
+    Если функция определена в окрестности точки экстремума $x^0$ и если в этой окрестности $\exists$ частная производная первого порядка $\frac{\partial f}{\partial x_i}\,(i = \overline{1;n})$, то все они равны нулю в этой точке.\par\noindent
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
         Пусть $i = 1$. Докажем, что $\frac{\partial f}{\partial x_1} \Big|_{x^0} = 0$.\\
         Зафиксируем координаты: $x_2 = x^0_2; x_3 = x^0_3; \dots; x_n = x^0_n$.\\
         Тогда $f = f(x_1, x^0_2, x^0_3, \dots, x^0_n)$ - функция одной переменной.\\
-        Так как по условию точка $x^0 = (x^0_1, x^0_2, \dots, x^0_n)$ - точка локального экстремума функции $f(x_1\, \dots\, x_n)$, то точка $x^0_1$ - точка локального экстремума функции $f(x_1, x^0_2, \dots, x^0_n)$.\\
+        Т.к. по условию точка $x^0 = (x^0_1, x^0_2, \dots, x^0_n)$ - точка локального экстремума функции $f(x_1\, \dots\, x_n)$, то точка $x^0_1$ - точка локального экстремума функции $f(x_1, x^0_2, \dots, x^0_n)$.\\
         Тогда по \hyperref[th:4.12.1]{теореме Ферма}:
         \[ \frac{df(x_1, x^0_2, \dots, x^0_n)}{dx_1} \Big|_{x_1 = x^0_1} = \frac{\partial f(x_1\, \dots\, x_n)}{\partial x_1} \Big|_{(x^0_1\, \dots\, x^0_n)} = 0 \]
         Аналогично можно доказать, что все остальные частные производные тоже равны нулю в точке $(x^0_1\, \dots\, x^0_n)$.
@@ -2196,7 +2369,7 @@
     Точки, в которых все частные производные равны нулю или не существуют, называются \textbf{критическими} точками функции $f$.\par\noindent
     \underline{Замечание:} пусть точка $x^0 = (x^0_1\, \dots\, x^0_n)$ - стационарная точка. Тогда
     \[ df \Big|_{x^0} = 0 \]
-    \[ \overline{\text{grad}f} \Big|_{x^0} = \overline{0} \]
+    \[ \overline{\text{grad}}f \Big|_{x^0} = \overline{0} \]
     \underline{Замечание:} условие равенства нулю всех частных производных в точке является необходимым условием, но не является достаточным.\\
     \underline{Пример:}
     \begin{adjustwidth}{1.5em}{1.5em}
@@ -2230,7 +2403,7 @@
     Если для любого набора $(h_1\, \dots\, h_n)$ $\Phi(h_1\, \dots\, h_n) \underset{(\le 0)}{\ge 0}$, то квадратичная форма называется \textbf{квазизнакоопределённой}.\\
     Если $\Phi(h_1\, \dots\, h_n)$ принимает как положительные значений, так и отрицательные, так и нулевые значения, то квадратичная форма называется \textbf{квазизнакопеременной}.
     \subsubsection*{Теорема 7.15.1 (достаточные условия экстремума)}\label{th:7.15.1}
-    Пусть $f = f(x_1\, \dots\, x_n)$ дважды непрерывно дифференциуема в окрестности критической точки $x^0 = (x^0_1; x^0_2; \dots; x^0_n)$. Тогда, если:
+    Пусть $f = f(x_1\, \dots\, x_n)$ дважды непрерывно дифференцируема в окрестности критической точки $x^0 = (x^0_1; x^0_2; \dots; x^0_n)$. Тогда, если:
     \begin{enumerate}
         \item $d^2f \Big|_{x^0}$ является положительно определённой квадратичной формой, тогда $x^0$ - точка минимума.
         \item $d^2f \Big|_{x^0}$ является отрицательно определённой квадратичной формой, тогда $x^0$ - точка максимума.
@@ -2321,9 +2494,9 @@
         Пусть $F(x; y)$ непрерывна в окрестности точки $(x_0; y_0)$.\\
         По условию $F'_y(x_0; y_0) \ne 0$. Пусть для определённости $F'_y(x_0; y_0) > 0$.\\
         По условию $F'_y$ непрерывна в точке $(x_0; y_0) \implies F'_y$ непрерывна в некоторой окрестности точки $(x_0; y_0)$ и (по \hyperref[th:3.3.2]{теореме о сохранении знака}) $F'_y > 0$ в этой окрестности точки $(x_0; y_0)$.\\
-        Так как $F'_y > 0 \implies F(x; y)$ возрастает по переменной $y$ на $[y_0 - \varepsilon; y_0 + \varepsilon]$ и $F(x_0; y_0) = 0$ по условию.\\
+        Т.к. $F'_y > 0 \implies F(x; y)$ возрастает по переменной $y$ на $[y_0 - \varepsilon; y_0 + \varepsilon]$ и $F(x_0; y_0) = 0$ по условию.\\
         Тогда $F(x_0; y_0 - \varepsilon) < 0$, $F(x_0; y_0 + \varepsilon) > 0$.\\
-        Так как $F(x;y)$ непрерывна в окрестности точки $(x_0; y_0)$, то $\exists\, \delta$ такая, что в $u_\delta(x_0)$ функция $F(x; y)$ сохраняет такой же знак, как и в точке $(x_0; y_0 - \varepsilon)$ и $(x_0; y_0 + \varepsilon)$.\\
+        Т.к. $F(x;y)$ непрерывна в окрестности точки $(x_0; y_0)$, то $\exists\, \delta$ такая, что в $u_\delta(x_0)$ функция $F(x; y)$ сохраняет такой же знак, как и в точке $(x_0; y_0 - \varepsilon)$ и $(x_0; y_0 + \varepsilon)$.\\
         Таким образом $\forall x \in (x_0 - \delta; x_0 + \delta)$ выполняется
         \begin{align*}
             F(x; y_0 - \varepsilon) < 0\\
@@ -2341,8 +2514,8 @@
         \[ \forall \varepsilon_1 > 0\, \exists\, \delta_1 > 0 : |x - x^*| < \delta_1 \implies | f(x) - f(x^*)| < \varepsilon_1 \]
         Т.е. $y^* = f(x)$ непрерывна в точке $x^* \implies$ она непрерывна $\forall x \in (x_0 - \delta; x_0 + \delta)$.\\
         Пусть функция $F(x; y)$ в $u(x_0; y_0)$ имеет непрерывную частную производную $F'_x$.\\
-        Тогда по \hyperref[th:7.5.4]{достаточному условию дифференциуемости (Th. 7.5.4)} $F(x; y)$ дифференциуема в точке $(x_0; y_0)$.\\
-        Тогда по определению дифференциуемости функции в точке
+        Тогда по \hyperref[th:7.5.4]{достаточному условию дифференцируемости (Th. 7.5.4)} $F(x; y)$ дифференцируема в точке $(x_0; y_0)$.\\
+        Тогда по определению дифференцируемости функции в точке
         \[ \Delta F = F'_x \Big|_{(x_0; y_0)} \Delta x + F'_y \Big|_{(x_0; y_0)} \Delta y + \overbrace{\varepsilon_1 \Delta x + \varepsilon_2 \Delta y}^{\text{\hyperref[th:7.5.1]{Th. 7.5.1}}} \]
         \[ F(\underset{=0}{x_0 + \Delta x}; y_0 + \Delta y) - F(\underset{=0}{x_0}; y_0) = F'_x \Big|_{(x_0; y_0)} \Delta x + F'_y \Big|_{(x_0; y_0)} \Delta y + \varepsilon_1 \Delta x + \varepsilon_2 \Delta y \]
         \underline{Замечание:} 
@@ -2358,7 +2531,7 @@
             \frac{\Delta y}{\Delta x} = - \frac{F'_x \Big|_{(x_0; y_0)} + \varepsilon_1}{F'_y \Big|_{(x_0; y_0)} + \varepsilon_2}
         \end{gather*}
         \underline{Замечание:} $\rho = \sqrt{\Delta x^2 + \Delta y^2}$
-        Так как функция $y^* = f(x)$ непрерывна в $u(x_0)$, то $\lim_{\Delta x \to 0} \Delta y = 0$.
+        Т.к. функция $y^* = f(x)$ непрерывна в $u(x_0)$, то $\lim_{\Delta x \to 0} \Delta y = 0$.
         \[
             \lim_{\Delta x \to 0}\rho = \lim_{\Delta x \to 0} \sqrt{\Delta x^2 + \Delta y^2} = 0
         \]
@@ -2377,7 +2550,7 @@
     При дополнительном условии $F'_{x_i}$ непрерывна в точке $(x^0_1\, \dots\, x^0_n; y_0)$, функция $y^* = f(x_1\, \dots\, x_n)$ имеет в точке $(x^0_1\, \dots\, x^0_n)$ частную производную:
     \[ \frac{\partial f}{\partial x_i} = -\frac{F'_{x_i}}{F'_{y}} \quad i = \overline{1,n} \]
     Рассмотрим $F(x_1\, \dots\, x_n; y) = 0$.
-    \[ \frac{\partial y}{\partial x_2} = \frac{\partial F}{\partial x_2} * 1 + \frac{\partial F}{\partial y}\frac{\partial y}{\partial x_2} = 0 \]
+    \[ \frac{\partial y}{\partial x_2} = \frac{\partial F}{\partial x_2} \times 1 + \frac{\partial F}{\partial y}\frac{\partial y}{\partial x_2} = 0 \]
     \[ \frac{\partial y}{\partial x_2} = -\frac{F'_{x_2}}{F'_y} \]
     \subsubsection*{Системы функций, заданных неявно}\noindent
     Рассмотрим совокупность неявных функций $y_1\, \dots\, y_n$, определяемых системой уравнений
@@ -2423,7 +2596,7 @@
     \underline{Пример:}
     Рассмотрим $F(x;y) = x^2 + y^2$. Найти экстремум $F$ при условии: $x + y - 1 = 0$.
     \begin{center}
-        \includegraphics{7.17.1.png}
+        \includegraphics[max size={\linewidth}{7cm}]{7.17.1.png}
     \end{center}
     1 способ:
     \begin{gather*}
@@ -2434,7 +2607,7 @@
     \end{gather*}
     Получили точку $\left( \frac{1}{2}; \frac{1}{2} \right)$
     \begin{center}
-        \includegraphics{7.17.2.png}
+        \includegraphics[max size={\linewidth}{7cm}]{7.17.2.png}
     \end{center}
     Ответ: точка $\left( \frac{1}{2}; \frac{1}{2} \right)$ - точка условного минимума.\\
     \underline{В общем виде:}
