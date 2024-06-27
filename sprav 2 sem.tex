@@ -2297,8 +2297,14 @@
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
         Рассмотрим повторные приращения:
-        \[ \Delta_{xy} f = \Delta x (\Delta y f) = \Delta x [ f(x_0; y_0 + \Delta y) - f(x_0; y_0) ] = [ f(x_0 + \Delta x; y_0 + \Delta y) - f(x_0 + \Delta x; y_0) ] - [ f(x_0; y_0 + \Delta y) - f(x_0; y_0) ] \]
-        \[ \Delta_{yx} f = \Delta y (\Delta x f) = \Delta y [ f(x_0 + \Delta x; y_0) - f(x_0; y_0) ] = [ f(x_0 + \Delta x; y_0 + \Delta y) - f(x_0; y_0 + \Delta y) ] - [ f(x_0 + \Delta x; y_0) - f(x_0; y_0) ] \]
+        \begin{gather*}
+            \Delta_{xy} f = \Delta x (\Delta y f) = \Delta x [ f(x_0; y_0 + \Delta y) - f(x_0; y_0) ] =\\
+            = [ f(x_0 + \Delta x; y_0 + \Delta y) - f(x_0 + \Delta x; y_0) ] - [ f(x_0; y_0 + \Delta y) - f(x_0; y_0) ]
+        \end{gather*} 
+        \begin{gather*}
+            \Delta_{yx} f = \Delta y (\Delta x f) = \Delta y [ f(x_0 + \Delta x; y_0) - f(x_0; y_0) ] =\\
+            = [ f(x_0 + \Delta x; y_0 + \Delta y) - f(x_0; y_0 + \Delta y) ] - [ f(x_0 + \Delta x; y_0) - f(x_0; y_0) ]
+        \end{gather*}
         \[ \Delta_{xy}f = \Delta_{yx}f \]
         Обозначим
         \[ \varphi(x) = f(x, y_0 + \Delta y) - f(x; y_0) \]
